@@ -1,0 +1,7 @@
+.row.admin-detail-row
+  - if local_assigns[:type] == :half_and_half
+    .col-sm-6: span.bold= label
+    .col-sm-6: span= value
+  - else
+    .col-xs-3: span.bold= label
+    .col-xs-9: span= value

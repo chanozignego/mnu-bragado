@@ -1,56 +1,53 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  namespace :admin do
+    DashboardManifest::DASHBOARDS.each do |resource_name|
+      dashboard = DashboardManifest.get_dashboard(resource_name)
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+      route_options = { except: dashboard.excluded_member_actions }
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+      #Mass Assigment routes
+      if resource_name =~ /\//
+        ns, res_name = resource_name.split '/'
+        namespace ns do
+          namespace res_name do
+            post :mass_assignment
+          end
+        end
+      else
+        namespace resource_name do
+          post :mass_assignment
+        end
+      end
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+      route_config_block = -> do
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+        member do
+          dashboard::MEMBER_ACTIONS.each do |action|
+            public_send(
+              action.fetch(:http_method),
+              action.fetch(:name)
+            )
+          end if dashboard.const_defined?("MEMBER_ACTIONS")
+        end
+      end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+      DashboardManifest::DASHBOARDS.each do |resource_name|
+        if resource_name =~ /\//
+          ns, res_name = resource_name.split '/'
+          namespace ns do
+            resources res_name, route_options, &route_config_block
+          end
+        else
+          resources resource_name, route_options, &route_config_block
+        end
+      end
+    end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
+  end
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  devise_for :users, path: :admin, controllers: {sessions: 'admin/sessions'}
+
 end

@@ -1,0 +1,69 @@
+= render 'header', page: page
+
+.row
+  .col-xs-12
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5
+            = t("administrate.details")
+      .row.admin-common-panel__content
+        .col-xs-12
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:car_listing_id)
+            .col-xs-9
+              %span
+                = "##{page.resource.car_listing_id}"
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:car_listing_type)
+            .col-xs-9
+              %span
+                = page.resource.listing_type
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:created_at)
+            .col-xs-9
+              %span
+                = page.resource.created_at
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:buyer_full_name)
+            .col-xs-9
+              %span
+                = page.resource.buyer_full_name
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:buyer_gender)
+            .col-xs-9
+              %span
+                = page.resource.buyer_formatted_gender
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:buyer_email)
+            .col-xs-9
+              %span
+                = page.resource.buyer_email
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:buyer_phone_number)
+            .col-xs-9
+              %span
+                = page.resource.buyer_phone_number
+          .row.admin-detail-row
+            .col-xs-3
+              %span.bold
+                = PurchaseRequest.human_attribute_name(:comments)
+            .col-xs-9
+              %span
+                = page.resource.comments
+
+          = render 'item_actions', page: page

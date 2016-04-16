@@ -1,0 +1,20 @@
+- dashboard = local_assigns[:dashboard]
+
+- if dashboard.try(:const_defined?, "MEMBER_ACTIONS")
+  - dashboard::MEMBER_ACTIONS.each do |action|
+
+    - if action[:if].present? ? action[:if].call(resource) : true
+
+      - action_name = action.fetch(:name)
+
+      - link_name = t("administrate.actions").fetch(action_name)
+ 
+      - link_path = if action[:link_method]
+        - instance_exec resource, &action[:link_method]
+      - else
+        - [action_name, namespace, resource]
+
+      - css_class = local_assigns[:link_class] || "action-#{action_name}"
+      - _method = action[:http_method] || :get
+
+      = link_to link_name, link_path , class: css_class, method: _method

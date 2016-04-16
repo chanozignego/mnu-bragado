@@ -1,0 +1,40 @@
+-new_entity = local_assigns.has_key?(:new_entity) ? new_entity : true
+
+= simple_form_for([namespace, page.resource], html: { class: "admin-common-panel form" }) do |f|
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = t("administrate.details")
+  
+  .row.admin-common-panel__content
+    .col-xs-12
+      - if page.resource.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(page.resource.errors.count, "error")
+            prohibited this #{page.resource_name} from being saved:
+          %ul
+            - page.resource.errors.full_messages.each do |message|
+              %li
+                = message
+                
+      .form-inputs
+        - page.attributes.each do |attribute|
+          %div{:class => "form-field form-field--#{attribute.html_class}"}
+            = render_field attribute, f: f
+
+      .form-actions.mt20
+        = button_tag( type: "submit", class:"btn btn-primary") do
+          - if new_entity
+            %span
+              = I18n.t("administrate.actions.new_entity", entity: f.object.class.model_name.human)
+            %i.fa.fa-plus.ml5
+          - else
+            %span
+              = I18n.t("administrate.actions.edit_entity", entity: f.object.class.model_name.human)
+            %i.fa.fa-pencil.ml5
+
+        = link_to :back, class: "btn btn-default ml10" do
+          %span
+            = I18n.t("administrate.actions.back")
+          %i.fa.fa-reply.ml5

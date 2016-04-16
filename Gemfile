@@ -1,47 +1,92 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
+gem "rails", "4.2.5"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# ENV managing
+gem "dotenv-rails", groups: %i[development test]
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# Misc
+gem "letter_opener", group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
+# Debugging
+gem "pry"
+gem "pry-rails"
+gem "pry-byebug"
+gem "pry-remote"
+gem "pry-stack_explorer"
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
+# Persistance
+gem "pg", "~> 0.15"
+
+# Model stuff
+gem "mini_magick"
+gem "carrierwave"
+gem "carrierwave-base64"
+gem "countries"
+gem "searchlight"
+gem "money-rails"
+gem "deep_cloneable", "~> 2.2.0"
+gem "email_validator"
+gem "acts-as-taggable-on", "~> 3.4"
+
+# Templating and frontend stuff
+gem "sass-rails", "~> 5.0"
+gem "uglifier", ">= 1.3.0"
+gem "slim"
+gem "haml", "~> 4.0.3"
+gem "bower-rails"
+gem "i18n-js", ">= 3.0.0.rc8"
+gem "rails-i18n", "~> 4.0.0"
+gem "simple_form"
+
+# Asset Gems (use bower if possible pls?)
+gem "bootstrap-wysihtml5-rails"
+gem "js-routes"
+gem "cocoon"
+gem "bootstrap-sass"
+gem "inline_svg"
+
+# Auth
+gem "devise"
+
+# Admin
+gem "administrate",
+  github: "micapam/administrate",
+  branch: "feature/namespaced-models"
+
+# Testing
+gem "rspec-rails"
+gem "factory_girl_rails"
+gem "database_cleaner"
+gem "faker"
+
+# Controller stuff
+gem "angular_rails_csrf"
+gem "draper"
+gem "oj" # faster json rendering
+gem "oj_mimic_json"
+
+# Mailing
+gem "mailgun_rails"
+
+# Background jobs
+gem "sidekiq"
+gem "sidetiq"
+
+# Doc
+group :development do
+  gem "yard"
+  gem "yard-rails-plugin", ">= 0.1.0", github: "lorddoig/yard-rails-plugin"
+  gem "yard-activerecord"
+end
+
+# Deployment
+gem "newrelic_rpm"
+gem "foreman", "0.63.0"
+gem "stackmint", git: "ssh://git@gitlab.demos.redmintlabs.com:1022/redmint/stackmint.git"
+gem "puma"

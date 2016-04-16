@@ -1,0 +1,27 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-animate": "1.4.4",
+    "angular-touch": "latest",
+    "angular-ui-router": "latest",
+    "ng-file-upload": "latest",
+    "angular-slick": "latest",
+    "arctext-js": "latest",
+    "angular-bootstrap": "latest",
+    "humps": "latest",
+    "fontawesome": "latest",
+    "angularjs-rails-resource": "latest",
+    "angular-ui-select": "latest",
+    "angular-sanitize": "latest",
+    "js-polyfills": "latest",
+    "angular-mailto": "latest",
+    "angular-socialshare": "latest",
+    "Swiper": "git@github.com:nolimits4web/Swiper.git",
+    "angular-swiper": "latest",
+    "jquery-backstretch": "git@github.com:srobbin/jquery-backstretch.git",
+    "unsemantic": "git@github.com:nathansmith/unsemantic.git",
+    "select2-bootstrap-theme": "latest"
+  }
+}

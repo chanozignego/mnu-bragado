@@ -1,0 +1,20 @@
+- if dashboard.implements_action?(:show)
+  = link_to t("administrate.actions.show"),
+    [namespace, resource],
+    class: "action-show"
+
+- if dashboard.implements_action?(:edit)
+  = link_to t("administrate.actions.edit"),
+    [:edit, namespace, resource],
+    class: "action-edit"
+
+- if dashboard.implements_action?(:destroy)
+  = link_to t("administrate.actions.destroy"),
+    [namespace, resource],
+    class: "table__action--destroy",
+    method: :delete,
+    data: { confirm: t("administrate.actions.confirm") }
+
+= render "member_actions",
+  dashboard: dashboard_class,
+  resource: resource

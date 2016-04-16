@@ -1,0 +1,51 @@
+es-AR:
+  administrate:
+    controller:
+      create:
+        success: Registro creado satisfactoriamente
+        error: No pudo crearse el registro
+      destroy:
+        success: Registro eliminados satisfactoriamente
+        error: No pudo eliminarse el registro
+      update:
+        success: Registro actualizado satisfactoriamente
+        error: No pudo actualizarse el registro
+    actions:
+      destroy: Eliminar
+      edit: Editar
+      show: Ver
+      confirm: ¿Está Seguro?
+      add_entity: "Agregar %{entity}"
+      update_entity: "Actualizar %{entity}"
+      remove_entity: "Eliminar %{entity}"
+      create_entity: "Crear %{entity}"
+      new_entity: "Agregar %{entity}"
+      edit_entity: "Editar %{entity}"
+      back: Volver
+      update_entity: "Actualizar %{entity}"
+      search: Buscar
+      approve: Publicar
+      unapprove: Despublicar
+      preview_mode: Previsualizar
+      clean_filters: Limpiar filtros
+      activate: Activar
+      deactivate: Desactivar
+      upload_file: Subir archivo
+    mass_assignment:
+      label: Acciones en masa
+      actions:
+        destroy: Eliminar
+      flash_messages:
+        success: Acción en masa realizada satisfactoriamente
+    items_not_found: No se han encontrado resultados
+    filters: Filtros
+    details: Detalles
+    property: Propiedad
+    color: Color
+    variant: Variante
+    options: Opciones
+    option: Opción
+    texture: Textura
+    image: Imágen
+    upload_image: Subir Imágen
+    select_option: "Seleccionar %{option}"

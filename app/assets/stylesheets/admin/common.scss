@@ -1,0 +1,113 @@
+// admin/common.scss
+// Common styles for admin panel
+
+// Variables
+
+$admin-background: #f8f8f8;
+$admin-border: #e7e7e7;
+$admin-accent: #eee;
+$admin-navbar-width: 180px;
+
+// Page wrapper reset styles
+#page-wrapper {
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+#page-wrapper > .row{
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (max-width: 768px){
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 768px){
+  // Config the admin left nav bar width
+  .sidebar{ width: $admin-navbar-width; }
+  #page-wrapper{ margin-left: $admin-navbar-width; }
+}
+
+// Header
+
+.admin-header__container{
+  background-color: $admin-background;
+  border-bottom: 1px solid $admin-border;
+  margin-bottom: 30px;
+}
+
+.admin-header{
+  position: relative;
+  height: 81px;
+}
+
+.admin-header__title{
+  font-size: 2em; //32px
+  margin: 5px 0 0 0;
+}
+
+.admin-header__breadcrumb{
+  font-size: 0.75em; //12px
+  text-transform: uppercase;
+  color: darken(white, 35%);
+  margin: 0;
+}
+
+.admin-header-buttons{
+  float: right;
+  right: 15px; //Bootstrap columns padding
+}
+
+.admin-header-buttons__item{
+  display: inline-block;
+  margin-left: 15px;
+}
+
+// Items not found
+
+.items-not-found{
+  text-align: center;
+  color: $admin-border;
+  margin-top: 80px;
+}
+
+.items-not-found__icon{
+  font-size: 90px;
+}
+
+.items-not-found__text{
+  font-size: 24px;
+  margin-top: 20px
+}
+
+// Common panel
+
+.admin-common-panel{
+  background-color: $admin-background;
+  border: 1px solid $admin-border;
+  border-radius: 5px;
+}
+
+.admin-common-panel__header{
+  background-color: $admin-accent;
+  border-bottom: 1px solid $admin-border;
+  font-size: 0.88em; //14px
+  margin: 0;
+}
+
+.admin-common-panel__content{
+  margin: 20px 0;
+}
+
+// Details
+
+.admin-detail-row{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.texture-image-preview{
+  max-width: 400px;
+}

@@ -1,0 +1,27 @@
+.js-item-container
+  = simple_form_for([namespace, page.resource], html: { class: "form js-item-form" }) do |f|
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5= t("administrate.details")
+
+      .row.admin-common-panel__content
+        .col-md-12
+          = f.input :id, readonly: true if f.object.persisted?
+          = f.input :car_listing_id, readonly: true if f.object.persisted?
+          = f.input :comments, as: :text
+          = f.simple_fields_for :buyer, f.object.buyer || f.object.build_buyer do |variant_form|
+            = render 'buyer_fields', f: variant_form, item: f.object
+          %br
+
+        .col-xs-12
+          .form-actions.mt20
+            = button_tag(type: "submit", class:"btn btn-primary") do
+              %span
+                = submit_entity_label(f.object)
+              %i.fa.fa-plus.ml5
+            = link_to :back, class: "btn btn-default ml10" do
+              %span
+                = I18n.t("administrate.actions.back")
+              %i.fa.fa-reply.ml5
+

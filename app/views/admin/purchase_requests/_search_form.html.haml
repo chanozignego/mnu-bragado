@@ -1,0 +1,22 @@
+= simple_form_for PurchaseRequest.new, url: admin_purchase_requests_path, html: { class: 'admin-common-panel mb30' }, method: :get do |f|
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = t("administrate.filters")
+  .row.admin-common-panel__content
+    .col-xs-12
+      .row
+        .col-xs-4
+          = f.input :buyer_email, label: false, placeholder: I18n.t("activerecord.attributes.purchase_request.buyer_email"), wrapper_html: { class: 'mb0' }
+        .col-xs-4
+          = f.input :buyer_full_name, label: false, placeholder: I18n.t("activerecord.attributes.purchase_request.buyer_full_name"), wrapper_html: { class: 'mb0' }
+        .col-xs-4
+          = f.input :buyer_phone_number, label: false, placeholder: I18n.t("activerecord.attributes.purchase_request.buyer_phone_number"), wrapper_html: { class: 'mb0' }
+      %br
+      .row
+        .col-xs-4
+          = f.input :created_at, label: false, as: :date, placeholder: I18n.t("activerecord.attributes.purchase_request.created_at"), wrapper_html: { class: 'mb0' }
+        .col-xs-4
+          = f.input :car_listing_id, label: false, placeholder: I18n.t("activerecord.attributes.purchase_request.car_listing_id"), wrapper_html: { class: 'mb0' }
+        .col-xs-4
+          = f.button :submit, t("administrate.actions.search"), class: "btn btn-large btn-primary width-100p"

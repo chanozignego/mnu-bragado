@@ -1,0 +1,24 @@
+/ Sidebar
+/ This partial is used to display the sidebar in Administrate.
+/ By default, the sidebar contains navigation links
+/ for all resources in the admin dashboard,
+/ as defined by the DashboardManifest.
+/ %ul.sidebar__list
+/   - DashboardManifest::DASHBOARDS.each do |resource|
+/     %li
+/       = link_to(                                                            |
+/           display_resource_name(resource),                                  |
+/           [namespace, resource],                                            |
+/           class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" |
+/         )                                                                   |
+
+.navbar-default.sidebar{:role => "navigation"}
+  .sidebar-nav.navbar-collapse
+    %ul#side-menu.nav
+      - DashboardManifest::DASHBOARDS.each do |resource| #.drop(1)
+        %li
+          = link_to [:admin, resource.to_s.gsub('/', '_')],
+            class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" do
+            %i.fa.fa-table.fa-fw
+            - _resource_class = resource.classify.constantize
+            = display_resource_name(_resource_class)

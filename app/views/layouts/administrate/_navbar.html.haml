@@ -1,0 +1,23 @@
+/ Navigation
+%nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    =link_to "MNU Bragado", admin_root_path, class: "navbar-brand"
+  / /.navbar-header
+  %ul.nav.navbar-top-links.navbar-right
+    / /.dropdown
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        %i.fa.fa-user.fa-fw
+        = current_user.full_name
+        %i.fa.fa-caret-down
+      %ul.dropdown-menu.dropdown-user
+        %li
+          = link_to destroy_user_session_path, :method => :delete do 
+            %i.fa.fa-sign-out.fa-fw
+              Logout
+  = render partial: "layouts/administrate/sidebar"

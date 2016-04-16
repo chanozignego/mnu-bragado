@@ -1,0 +1,17 @@
+= simple_form_for search, url: admin_users_path, html: { class: 'admin-common-panel mb30' } , method: :get do |f|
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = t("administrate.filters")
+  .row.admin-common-panel__content
+    .col-xs-3
+      = f.input :email_cont, label: false, placeholder: t("activerecord.attributes.user.email"), wrapper_html: { class: "mb0" }
+    .col-xs-3
+      = f.input :first_name_cont, label: false, placeholder: t("activerecord.attributes.user.first_name"), wrapper_html: { class: "mb0" }
+    .col-xs-3
+      = f.input :last_name_cont, label: false, placeholder: t("activerecord.attributes.user.last_name"), wrapper_html: { class: "mb0" }
+    .col-xs-3
+      = button_tag( type: "submit", class:"btn btn-large btn-primary width-100p") do
+        %span
+          = t("administrate.actions.search")
+        %i.fa.fa-search.ml5

@@ -1,0 +1,29 @@
+- content_for(:search) do
+  %form.search
+    %li.sidebar-search
+      .input-group.custom-search-form
+        %input.form-control{placeholder: "Search...", type: "text", name: "search", value: search_term}/
+        %span.input-group-btn
+          %button.btn.btn-default{:type => "button"}
+            %i.fa.fa-search
+
+= render 'header', page: page, show_buttons: true
+
+- if search
+  .row
+    .col-xs-12
+      = render 'search_form', search: search
+
+- if resources.present?
+  .row
+    .col-xs-12
+      = render "mass_assignment_dropdown"
+  .row
+    .col-xs-12
+      = render "collection", collection_presenter: page, resources: resources
+- else
+  .row
+    .col-xs-12
+      = render 'items_not_found' 
+
+= paginate resources

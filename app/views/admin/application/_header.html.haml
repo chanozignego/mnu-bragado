@@ -1,0 +1,10 @@
+- show_buttons = local_assigns[:show_buttons].present?
+
+%header.row.admin-header__container
+  .col-xs-12.admin-header
+    .center-vertical
+      /%h5.admin-header__breadcrumb Breadcrumb > Breadcrumb
+      %h1.admin-header__title
+        = display_resource_name(resource_class)
+    .admin-header-buttons.center-vertical
+      = render "header_buttons", page: page if show_buttons

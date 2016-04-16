@@ -1,0 +1,44 @@
+es:
+  administrate:
+    controller:
+      create:
+        success: Registro creado satisfactoriamente
+      destroy:
+        success: Registro eliminados satisfactoriamente
+        error: No pudo eliminarse el registro
+    actions:
+      destroy: Delete
+      edit: Edita
+      show: Show
+      confirm: Are you sure?
+      add_entity: "Add %{entity}"
+      update_entity: "Update %{entity}"
+      remove_entity: "Delete %{entity}"
+      create_entity: "Create %{entity}"
+      new_entity: "New %{entity}"
+      edit_entity: "Edita %{entity}"
+      back: Back
+      update_entity: "Update %{entity}"
+      search: Search
+      approve: Approve
+      preview_mode: Preview
+      clean_filters: Clearn filters
+      upload_file: Upload file
+    mass_assignment:
+      label: Mass assignment
+      actions:
+        destroy: Delete
+      flash_messages:
+        success: Successfuly mass assignment
+    items_not_found: Items not fount
+    filters: Filters
+    details: Details
+    property: Property
+    color: Color
+    variant: Variant
+    options: Options
+    option: Option
+    texture: Texture
+    image: Image
+    upload_image: Upload image
+    select_option: "Select %{option}"

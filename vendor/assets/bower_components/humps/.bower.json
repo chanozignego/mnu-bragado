@@ -1,0 +1,32 @@
+{
+  "name": "humps",
+  "main": "humps.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/domchristie/humps",
+  "authors": [
+    "Dom Christie <christiedom@gmail.com>"
+  ],
+  "description": "Underscore-to-camelCase converter (and vice versa) for strings and object keys in JavaScript.",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "271da6c0220c99a34e98e784d49e7077afc077c4"
+  },
+  "_source": "git://github.com/domchristie/humps.git",
+  "_target": "*",
+  "_originalSource": "humps"
+}

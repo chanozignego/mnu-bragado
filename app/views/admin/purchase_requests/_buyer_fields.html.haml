@@ -1,0 +1,21 @@
+.admin-common-panel
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = PurchaseRequest.human_attribute_name(:buyer)
+  .row.admin-common-panel__content
+    .col-md-6
+      = f.input :first_name, required: false
+    .col-md-6
+      = f.input :last_name, required: false
+    .col-md-12
+      = f.input :gender, required: false, include_blank: true, 
+        collection: User.genders.keys,
+        placeholder: I18n.t("administrate.select_option",
+          option: User.human_attribute_name(:gender)),
+        selected: f.object.gender,
+        label_method: -> (g) { t("user.genders")[g.to_sym] }
+    .col-xs-12
+      = f.input :email, required: false
+    .col-xs-12
+      = f.input :phone_number, required: false

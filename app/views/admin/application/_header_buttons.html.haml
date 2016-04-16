@@ -1,0 +1,4 @@
+- if dashboard.implements_action?(:new)
+  = link_to([:new, namespace, page.resource_name], class: "btn btn-primary admin-header-buttons__item") do
+    %span= I18n.t("administrate.actions.new_entity", entity: resource_class.model_name.human)
+    %i.fa.fa-plus.ml5

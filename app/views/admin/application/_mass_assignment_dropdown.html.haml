@@ -1,0 +1,13 @@
+.dropdown
+  =link_to "#", class: "dropdown-toggle btn btn-default", data: {toggle: :dropdown}, "aria-expanded" => false do
+    =I18n.t("administrate.mass_assignment.label")
+    %span.caret.ml5
+  %ul.dropdown-menu
+    - dashboard_class::MASS_ASSIGNMENT_ACTIONS.each_with_index do |action, index|
+      %li
+        - url = url_for(controller: [namespace, resource_class.model_name.collection].join("/"), action: :mass_assignment)
+        = link_to I18n.t("administrate.mass_assignment.actions.#{action}"), url,
+          class: "js-mass-action-link",
+          data: {action: action, method: :put}
+      - unless (dashboard_class::MASS_ASSIGNMENT_ACTIONS.length - 1) == index
+        %li.divider
