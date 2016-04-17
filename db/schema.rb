@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416175900) do
+ActiveRecord::Schema.define(version: 20160416204838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "locatable_id"
+    t.string   "locatable_type"
+    t.string   "province"
+    t.string   "city"
+    t.string   "street_name"
+    t.string   "street_number"
+    t.string   "zip_code"
+    t.text     "details"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "email"
+    t.integer  "location_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "schools", ["location_id"], name: "index_schools_on_location_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

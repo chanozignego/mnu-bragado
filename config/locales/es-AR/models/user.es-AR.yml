@@ -1,0 +1,21 @@
+es-AR:
+  user:
+    genders:
+      male: Masculino
+      female: Femenino
+  activerecord:
+    attributes:
+      user:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Celular
+        gender: Sexo
+        password: Contraseña
+        password_confirmation: Confirmación Contraseña
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      user:
+        one: Usuario
+        other: Usuarios

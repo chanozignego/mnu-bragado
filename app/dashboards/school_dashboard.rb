@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < ApplicationDashboard
+class SchoolDashboard < ApplicationDashboard
   ALLOW_MASS_ASSIGNMENT = false
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -10,9 +10,12 @@ class UserDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    first_name: Field::String,
-    last_name: Field::String,
+    name: Field::String,
+    location_province: Field::String,
+    location_city: Field::String,
+    location_street: Field::String,
     email: Field::String,
+    phone_number: Field::String,
     created_at: Field::DateTime
   }
 
@@ -22,8 +25,11 @@ class UserDashboard < ApplicationDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :first_name,
-    :last_name,
+    :name,
+    :location_province,
+    :location_city,
+    :location_street,
+    :phone_number,
     :email
   ]
 
@@ -35,8 +41,6 @@ class UserDashboard < ApplicationDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :first_name,
-    :last_name
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [
