@@ -1,0 +1,16 @@
+es-AR:
+  activerecord:
+    attributes:
+      location:
+        province: Provincia
+        city: Ciudad
+        street_name: Calle
+        street_number: Número
+        zip_code: Código Postal
+        details: Detalles
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      location:
+        one: Ubicación
+        other: Ubicaciones

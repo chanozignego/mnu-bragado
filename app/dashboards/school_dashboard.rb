@@ -41,6 +41,12 @@ class SchoolDashboard < ApplicationDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :name,
+    :location_province,
+    :location_city,
+    :location_street,
+    :phone_number,
+    :email
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [
