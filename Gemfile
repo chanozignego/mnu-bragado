@@ -89,6 +89,6 @@ end
 #gem "newrelic_rpm"
 #gem "foreman", "0.63.0"
 #gem "stackmint", git: "ssh://git@gitlab.demos.redmintlabs.com:1022/redmint/stackmint.git"
-#gem "puma"
+gem "puma"
 
 ruby "2.2.4"
