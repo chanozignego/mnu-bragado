@@ -58,6 +58,6 @@ module MnuBragado
       ].each { |c| c.layout "administrate/signed_out" }
     end
 
-    config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST") }
+    #config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST") }
   end
 end
