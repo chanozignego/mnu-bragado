@@ -1,0 +1,27 @@
+.admin-common-panel
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = School.human_attribute_name(:medical_data)
+  .row.admin-common-panel__content
+    .col-md-6
+      = f.input :has_chronic_desease, inline_label: "¿Padece alguna enfermedad crónica?", as: :boolean, checked_value: true, unchecked_value: false
+      = f.input :chronic_desease_detail
+
+      = f.input :take_medication, inline_label: "¿Está tomando algún medicamento?", as: :boolean, checked_value: true, unchecked_value: false
+      = f.input :medication_detail
+      
+      = f.input :has_medical_background, inline_label: "Antecedentes (operaciones, convulsiones, etc.)", as: :boolean, checked_value: true, unchecked_value: false
+      = f.input :medical_background_detail
+      
+      = f.input :has_allergy, inline_label: "¿Padece alergias de algún tipo? (comidas, medicamentos, picaduras de insectos u otras)", as: :boolean, checked_value: true, unchecked_value: false
+      = f.input :allergy_detail
+      
+      = f.input :has_specific_diet, inline_label: "¿Debe serguir alguna dieta especial?", as: :boolean, checked_value: true, unchecked_value: false
+      = f.input :specific_diet_detail
+      
+      = f.input :is_vegetarian, inline_label: "¿Es vegetariana/o?", as: :boolean, checked_value: true, unchecked_value: false
+      
+      = f.input :doctor_name, label: "Nombre y apellido del médico de cabecera"
+      = f.input :doctor_phone_number, label: "Teléfono en donde se lo pueda ubicar"
+      = f.input :urgency_clinic, label: "¿A qué lugar derivar en caso de urgencia?"

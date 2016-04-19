@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416204838) do
+ActiveRecord::Schema.define(version: 20160419051721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,65 @@ ActiveRecord::Schema.define(version: 20160416204838) do
   end
 
   add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
+
+  create_table "medical_data", force: :cascade do |t|
+    t.integer  "medicable_id"
+    t.string   "medicable_type"
+    t.boolean  "has_chronic_desease",       default: false
+    t.string   "chronic_desease_detail"
+    t.boolean  "take_medication",           default: false
+    t.string   "medication_detail"
+    t.boolean  "has_medical_background",    default: false
+    t.string   "medical_background_detail"
+    t.boolean  "has_allergy",               default: false
+    t.string   "allergy_detail"
+    t.boolean  "has_specific_diet",         default: false
+    t.string   "specific_diet_detail"
+    t.boolean  "is_vegetarian",             default: false
+    t.string   "doctor_name"
+    t.string   "doctor_phone_number"
+    t.string   "urgency_clinic"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
+
+  add_index "medical_data", ["medicable_type", "medicable_id"], name: "index_medical_data_on_medicable_type_and_medicable_id", using: :btree
+
+  create_table "people", force: :cascade do |t|
+    t.integer  "personable_id"
+    t.string   "personable_type"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "dni"
+    t.date     "birthdate"
+    t.integer  "age"
+    t.integer  "location_id"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "blood_type"
+    t.string   "rh_factor"
+    t.string   "medical_insurance"
+    t.string   "medical_insurance_affiliate_number"
+    t.string   "medical_insurance_phone_number"
+    t.string   "emergency_person"
+    t.string   "emergency_person_relationship"
+    t.string   "emergency_person_phone_number"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "people", ["location_id"], name: "index_people_on_location_id", using: :btree
+  add_index "people", ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id", using: :btree
+
+  create_table "professors", force: :cascade do |t|
+    t.integer  "people_id"
+    t.integer  "medical_data_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "professors", ["medical_data_id"], name: "index_professors_on_medical_data_id", using: :btree
+  add_index "professors", ["people_id"], name: "index_professors_on_people_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
     t.string   "name",         null: false

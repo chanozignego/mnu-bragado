@@ -1,0 +1,38 @@
+.admin-common-panel
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        = School.human_attribute_name(:person)
+  .row.admin-common-panel__content
+    .col-md-12
+      = f.input :first_name, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :last_name, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :dni, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :birthdate, required: false, as: :date, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :age, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :phone_number, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :email, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :blood_type, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :rh_factor, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :medical_insurance, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :medical_insurance_affiliate_number, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :medical_insurance_phone_number, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :emergency_person, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
+    .col-xs-12
+      = f.input :emergency_person_phone_number, required: false, input_html: {class: "form-control"}
+
+

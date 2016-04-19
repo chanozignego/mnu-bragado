@@ -8,18 +8,12 @@
       .row.admin-common-panel__content
         .col-md-12
           = f.input :id, readonly: true, input_html: {class: "form-control"} if f.object.persisted?
-          = f.input :name, input_html: {class: "form-control"}
-          %br
-        .col-md-4
-          = f.input :email, input_html: {class: "form-control"}
-        .col-md-4
-          = f.input :phone_number, input_html: {class: "form-control"}
-        .col-md-4
-          = f.input :fax_number, input_html: {class: "form-control"}
-          %br
         .col-md-12
-          = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|
-            = render 'location_fields', f: variant_form, item: f.object
+          = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
+            = render 'admin/shared/person_fields', f: variant_form, item: f.object
+        .col-md-12
+          = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+            = render 'admin/shared/medical_data_fields', f: variant_form, item: f.object
           %br
 
         .col-xs-12

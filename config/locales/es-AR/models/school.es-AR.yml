@@ -9,6 +9,7 @@ es-AR:
         phone_number: Teléfono
         location_street: Direccion
         location: Ubicación
+        fax_number: Fax
         created_at: Fecha de creación
         updated_at: Última actualización
     models:
