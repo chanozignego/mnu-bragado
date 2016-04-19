@@ -1,7 +1,6 @@
 module Admin
   class ProfessorsController < Admin::ApplicationController
 
-
     # private
 
     #   def permitted_attributes

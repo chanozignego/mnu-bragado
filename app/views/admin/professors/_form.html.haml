@@ -11,6 +11,7 @@
         .col-md-12
           = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
             = render 'admin/shared/person_fields', f: variant_form, item: f.object
+          %br
         .col-md-12
           = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
             = render 'admin/shared/medical_data_fields', f: variant_form, item: f.object

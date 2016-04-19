@@ -1,0 +1,26 @@
+es-AR:
+  activerecord:
+    attributes:
+      person:
+        first_name: Nombre
+        last_name: Apellido
+        dni: DNI
+        birthdate: Fecha de nacimiento
+        age: Edad
+        phone_number: Teléfono
+        email: Email
+        blood_type: Tipo de sange
+        rh_factor: Factor RH
+        medical_insurance: Obra Social
+        medical_insurance_affiliate_number: Numero de afiliado
+        medical_insurance_phone_number: Teléfono
+        in_case_of_emergency: En caso de emergencia avisar a 
+        emergency_person: Nombre y Apellido
+        emergency_person_relationship: Parentesco
+        emergency_person_phone_number: Teléfono
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      person:
+        one: Persona
+        other: Personas

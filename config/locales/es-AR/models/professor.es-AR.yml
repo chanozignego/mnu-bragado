@@ -1,0 +1,12 @@
+es-AR:
+  activerecord:
+    attributes:
+      professor:
+        person: Datos personales
+        medical_data: Datos médicos
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      professor:
+        one: Profesor
+        other: Profesores
