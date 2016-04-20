@@ -42,6 +42,8 @@ es-AR:
       updated: "Has actualizado tu cuenta correctamente."
     sessions:
       log_in: "Entrar"
+      email: "Email"
+      password: "Contraseña"
       remember_me: "Recordarme"
       signed_in: "Has iniciado sesión correctamente."
       signed_out: "Has cerrado la sesión correctamente."
