@@ -12,6 +12,8 @@ class DashboardManifest
   DASHBOARDS = [
     "users",
     "professors",
+    "authorities",
+    "delegates",
     "schools"
   ]
 

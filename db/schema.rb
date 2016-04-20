@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419051721) do
+ActiveRecord::Schema.define(version: 20160420191033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,20 @@ ActiveRecord::Schema.define(version: 20160419051721) do
   end
 
   add_index "medical_data", ["medicable_type", "medicable_id"], name: "index_medical_data_on_medicable_type_and_medicable_id", using: :btree
+
+  create_table "partakers", force: :cascade do |t|
+    t.integer  "people_id"
+    t.integer  "medical_data_id"
+    t.integer  "professor_id"
+    t.integer  "school_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "partakers", ["medical_data_id"], name: "index_partakers_on_medical_data_id", using: :btree
+  add_index "partakers", ["people_id"], name: "index_partakers_on_people_id", using: :btree
+  add_index "partakers", ["professor_id"], name: "index_partakers_on_professor_id", using: :btree
+  add_index "partakers", ["school_id"], name: "index_partakers_on_school_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.integer  "personable_id"

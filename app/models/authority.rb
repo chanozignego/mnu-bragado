@@ -1,0 +1,2 @@
+class Authority < Partaker
+end
