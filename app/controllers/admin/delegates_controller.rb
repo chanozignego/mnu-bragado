@@ -1,6 +1,6 @@
 module Admin
   class DelegatesController < Admin::ApplicationController
-    self.decorator_class = Admin::DelegateDecorator
+    #self.decorator_class = Admin::DelegateDecorator
     
     private
 

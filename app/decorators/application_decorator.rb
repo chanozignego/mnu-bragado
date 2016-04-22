@@ -40,6 +40,10 @@ class ApplicationDecorator < Draper::Decorator
       end
     end
 
+    def self.collection_decorator_class
+      PaginatingDecorator
+    end
+
     private
 
     def get_enum_translation_key(enum_name)
