@@ -1,0 +1,47 @@
+.property-fields{
+  .property-field{
+    display: none;
+    &.active{display: block;}
+  }
+}
+
+.property-type-select,
+.prototype-select {
+  margin-bottom: 15px;
+}
+
+.options-container{
+  margin-bottom: 20px;
+}
+
+.add-entity{
+  margin-bottom: 30px;
+}
+
+.nested-model-title{
+  margin-bottom: 20px;
+}
+
+input[type='color']{
+  padding: 0px;
+  width: 20%;  
+}
+.image-preview{margin-bottom: 20px;}
+
+.show-resource{
+  .panel-body{
+    dt, dd {display: inline-block;}
+  }
+}
+.color-box{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.input.radio-buttons {
+  display: inline-flex;
+  .radio-buttons {
+    margin-left: 15px;
+  }
+}
