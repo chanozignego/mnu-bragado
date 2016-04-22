@@ -1,0 +1,59 @@
+.js-item-container
+  = simple_form_for([namespace, page.resource], html: { class: "form js-item-form" }) do |f|
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5= t("administrate.details")
+
+      .row.admin-common-panel__content
+        .col-md-12
+          - if f.object.persisted?
+            .col-md-12.form-group
+              = f.input :id, readonly: true, input_html: {class: "form-control"}
+          .col-md-12.form-group
+            = f.input :professor_id, required: false, input_html: {class: "form-control"},
+              collection: Professor.all,
+              placeholder: I18n.t("administrate.select_option",
+                option: Delegate.human_attribute_name(:professor)),
+              selected: f.object.professor.try(:id),
+              include_blank: true,
+              label_method: -> (prof) { "#{prof.first_name} #{prof.last_name}" }
+
+          .col-md-12.form-group
+            = f.input :school_id, required: false, input_html: {class: "form-control"},
+              collection: School.all,
+              placeholder: I18n.t("administrate.select_option",
+                option: Delegate.human_attribute_name(:school)),
+              selected: f.object.school.try(:id),
+              include_blank: true,
+              label_method: -> (sch) { "#{sch.name} - #{sch.location.city}, #{sch.location.province}" }
+
+          .col-md-12.form-group
+            = f.input :rol, required: false, input_html: {class: "form-control"},
+              collection: Delegate.rols.keys,
+              placeholder: I18n.t("administrate.select_option",
+                option: Delegate.human_attribute_name(:rol)),
+              selected: f.object.rol,
+              include_blank: true,
+              label_method: -> (org) { t("partaker.rols")[org.to_sym] }
+
+        .col-md-12
+          = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
+            = render 'admin/shared/person_fields', f: variant_form, item: f.object
+          %br
+        .col-md-12
+          = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+            = render 'admin/shared/medical_data_fields', f: variant_form, item: f.object
+          %br
+
+        .col-xs-12
+          .form-actions.mt20
+            = button_tag(type: "submit", class:"btn btn-primary") do
+              %span
+                = submit_entity_label(f.object)
+              %i.fa.fa-plus.ml5
+            = link_to :back, class: "btn btn-default ml10" do
+              %span
+                = I18n.t("administrate.actions.back")
+              %i.fa.fa-reply.ml5
+

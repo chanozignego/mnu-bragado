@@ -15,7 +15,7 @@ module Admin
         [
           :id, :first_name, :last_name, :dni, :birthdate, :age, 
           :phone_number, :email, :blood_type, :rh_factor, 
-          :medica_insurance, :medica_insurance_affiliate_number, :medica_insurance_phone_number,
+          :medical_insurance, :medical_insurance_affiliate_number, :medical_insurance_phone_number,
           :emergency_person, :emergency_person_relationship, :emergency_person_phone_number,
           location_attributes: location_attributes
         ]

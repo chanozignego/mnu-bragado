@@ -1,0 +1,17 @@
+es-AR:
+  partaker:
+    rols:
+      ag: Delegado AG
+      cs: Delegado CS
+      segib: Delegado SEGIB
+      sti: Embajador
+  activerecord:
+    attributes:
+      partaker:
+        rol: Rol
+        professor: Docente responsable
+        professor_id: Docente responsable
+        school: Escuela
+        school_id: Escuela
+        created_at: Fecha de creación
+        updated_at: Última actualización
