@@ -1,0 +1,12 @@
+es-AR:
+  activerecord:
+    attributes:
+      authority:
+        person: Datos personales
+        medical_data: Datos médicos
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      authority:
+        one: Autoridad
+        other: Autoridades

@@ -1,7 +1,7 @@
 module Admin
   class DelegatesController < Admin::ApplicationController
     #self.decorator_class = Admin::DelegateDecorator
-    
+
     private
 
       def permitted_attributes
@@ -34,5 +34,10 @@ module Admin
       def location_attributes
         %i[id province city zip_code street_name street_number details]
       end
+
+      def scoped_collection
+        Delegate.all
+      end
+
   end
 end

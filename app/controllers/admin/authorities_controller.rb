@@ -5,7 +5,7 @@ module Admin
 
       def permitted_attributes
         [
-          :id, 
+          :id, :rol, :school_id, :professor_id,
           person_attributes: person_attributes,
           medical_data_attributes: medical_data_attributes
         ]
@@ -32,6 +32,10 @@ module Admin
 
       def location_attributes
         %i[id province city zip_code street_name street_number details]
+      end
+
+      def scoped_collection
+        Authority.all
       end
   end
 end
