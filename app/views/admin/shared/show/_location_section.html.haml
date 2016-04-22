@@ -1,0 +1,15 @@
+.admin-common-panel
+  .row.admin-common-panel__header
+    .col-xs-12
+      .col-xs-11
+        %h5
+          = title
+      .col-xs-1
+        %button.pull-right{style: "margin-top: 5px;", data: {toggle: "collapse",  target: "#location_section"}}
+          .glyphicon.glyphicon-chevron-down
+  .row.admin-common-panel__content.collapse.in{id: "location_section"}  
+    .col-xs-12
+      - %i[province city zip_code street_name street_number details].each do |attr|
+        = render "show_field",
+          label: Location.human_attribute_name(attr),
+          value: resource.public_send(attr)

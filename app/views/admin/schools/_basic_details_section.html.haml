@@ -1,0 +1,5 @@
+- %i[name phone_number fax_number email].each do |attr|
+  = render "show_field",
+    label: School.human_attribute_name(non_formatted_method(attr)),
+    value: resource.public_send(attr)
+

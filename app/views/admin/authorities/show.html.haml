@@ -1,0 +1,26 @@
+/ = render 'header', page: page
+
+/ .row
+/   .col-xs-12
+/     .admin-common-panel
+/       .row.admin-common-panel__header
+/         .col-xs-12
+/           %h5
+/             = t("administrate.details")
+/       .row.admin-common-panel__content
+/         .col-xs-12
+/           = render 'admin/car_listings/common/show/basic_details_section', page: page
+
+/           .col-xs-12
+/             - if page.resource.inspector.present?
+/               = render 'admin/car_listings/common/show/user_section', page: page, title: CarListing.human_attribute_name(:inspector), resource: page.resource.inspector 
+
+/             - if page.resource.seller.present?
+/               = render 'admin/car_listings/common/show/seller_section', page: page
+
+/             - if page.resource.car.present?
+/               = render 'admin/car_listings/common/show/car_section', page: page
+
+
+/       .item-actions{style: "margin: 20px;"}
+/         = render 'item_actions', page: page

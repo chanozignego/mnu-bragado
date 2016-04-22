@@ -1,0 +1,19 @@
+= render 'header', page: page
+
+.row
+  .col-xs-12
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5
+            = t("administrate.details")
+      .row.admin-common-panel__content
+        .col-xs-12
+          = render 'basic_details_section', page: page, resource: page.resource
+
+          .col-xs-12
+            - if page.resource.location.present?
+              = render 'admin/shared/show/location_section', page: page, title: School.human_attribute_name(:location), resource: page.resource.location 
+
+      .item-actions{style: "margin: 20px;"}
+        = render 'item_actions', page: page
