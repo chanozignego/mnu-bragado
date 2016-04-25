@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422212218) do
+ActiveRecord::Schema.define(version: 20160425142907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "delegations", force: :cascade do |t|
+    t.string   "country",    null: false
+    t.integer  "year",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.integer  "locatable_id"
@@ -63,8 +70,10 @@ ActiveRecord::Schema.define(version: 20160422212218) do
     t.datetime "updated_at",      null: false
     t.integer  "rol"
     t.string   "type"
+    t.integer  "delegation_id"
   end
 
+  add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
   add_index "partakers", ["medical_data_id"], name: "index_partakers_on_medical_data_id", using: :btree
   add_index "partakers", ["people_id"], name: "index_partakers_on_people_id", using: :btree
   add_index "partakers", ["professor_id"], name: "index_partakers_on_professor_id", using: :btree
