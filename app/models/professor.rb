@@ -10,4 +10,8 @@ class Professor < ActiveRecord::Base
 
   delegate :first_name, :last_name, :email, :phone_number, to: :person, allow_nil: true
 
+  def full_name
+  	"#{first_name} #{last_name}"
+  end	
+
 end

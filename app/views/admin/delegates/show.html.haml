@@ -1,0 +1,42 @@
+= render 'header', page: page
+
+.row
+  .col-xs-12
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5
+            = t("administrate.details")
+      .row.admin-common-panel__content
+        .col-xs-12
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:school)
+            .col-sm-9
+              .span
+                = page.resource.school.name
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:professor)
+            .col-sm-9
+              .span
+                = page.resource.professor.full_name
+          
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:rol)
+            .col-sm-9
+              .span
+                = page.resource.rol
+
+          = render 'admin/shared/show/person_section', page: page, title: Delegate.human_attribute_name(:person), resource: page.resource.person, show_title: false
+
+          = render 'admin/shared/show/medical_data_section', page: page, title: Delegate.human_attribute_name(:medical_data), resource: page.resource.medical_data
+
+      .item-actions{style: "margin: 20px;"}
+        = render 'item_actions', page: page

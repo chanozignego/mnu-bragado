@@ -1,0 +1,147 @@
+- if show_title
+  .admin-common-panel
+    .row.admin-common-panel__header
+      .col-xs-12
+        .col-xs-11
+          %h5
+            = title
+        .col-xs-1
+          %button.pull-right{style: "margin-top: 5px;", data: {toggle: "collapse",  target: "#person_section"}}
+            .glyphicon.glyphicon-chevron-down
+.row.admin-common-panel__content.collapse.in{id: "person_section"}  
+
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:first_name)
+    .col-sm-9
+      .span
+        = resource.first_name
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:last_name)
+    .col-sm-9
+      .span
+        = resource.last_name
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:dni)
+    .col-sm-9
+      .span
+        = resource.dni
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:birthdate)
+    .col-sm-9
+      .span
+        = resource.birthdate
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:age)
+    .col-sm-9
+      .span
+        = resource.age
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:phone_number)
+    .col-sm-9
+      .span
+        = resource.phone_number
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:email)
+    .col-sm-9
+      .span
+        = resource.email
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:blood_type)
+    .col-sm-9
+      .span
+        = resource.blood_type
+  .row.admin-detail-row
+    .col-sm-3
+      .span.bold
+        = Person.human_attribute_name(:rh_factor)
+    .col-sm-9
+      .span
+        = resource.rh_factor
+
+  .col-sm-6
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          .col-xs-11
+            %h5
+              = Person.human_attribute_name(:medical_insurance)
+          .col-xs-1
+            %button.pull-right{style: "margin-top: 5px;", data: {toggle: "collapse",  target: "#medical_insurance_section"}}
+              .glyphicon.glyphicon-chevron-down
+      .row.admin-common-panel__content.collapse.in{id: "medical_insurance_section"}  
+        .col-xs-12
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:medical_insurance)
+            .col-sm-6
+              .span
+                = resource.medical_insurance
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:medical_insurance_affiliate_number)
+            .col-sm-6
+              .span
+                = resource.medical_insurance_affiliate_number
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:medical_insurance_phone_number)
+            .col-sm-6
+              .span
+                = resource.medical_insurance_phone_number
+
+  .col-sm-6
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          .col-xs-11
+            %h5
+              = Person.human_attribute_name(:in_case_of_emergency)
+          .col-xs-1
+            %button.pull-right{style: "margin-top: 5px;", data: {toggle: "collapse",  target: "#emergency_person_section"}}
+              .glyphicon.glyphicon-chevron-down
+      .row.admin-common-panel__content.collapse.in{id: "emergency_person_section"}  
+        .col-xs-12
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:emergency_person)
+            .col-sm-6
+              .span
+                = resource.emergency_person
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:emergency_person_relationship)
+            .col-sm-6
+              .span
+                = resource.emergency_person_relationship
+          .row.admin-detail-row
+            .col-sm-6
+              .span.bold
+                = Person.human_attribute_name(:emergency_person_phone_number)
+            .col-sm-6
+              .span
+                = resource.emergency_person_phone_number
+
+
+  - if resource.location.present?
+    = render 'admin/shared/show/location_section', page: page, title: Person.human_attribute_name(:location), resource: resource.location 

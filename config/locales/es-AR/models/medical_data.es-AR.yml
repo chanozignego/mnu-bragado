@@ -1,0 +1,25 @@
+es-AR:
+  activerecord:
+    attributes:
+      medical_datum:
+        has_chronic_desease: ¿Padece alguna enfermedad crónica?
+        chronic_desease_detail: Detalles de la enfermedad
+        take_medication: ¿Está tomando algún medicamento?
+        medication_detail: Detalles del medicamento
+        has_medical_background: Antecedentes (operaciones, convulsiones, etc.)
+        medical_background_detail: Detalles de los antecedentes
+        has_allergy: ¿Padece alergias de algún tipo? (comidas, medicamentos, picaduras de insectos u otras)
+        allergy_detail: Detalles de la alergia
+        has_specific_diet: ¿Debe serguir alguna dieta especial?
+        specific_diet_detail: Detalles de la dieta
+        is_vegetarian: ¿Es vegetariana/o?
+        in_case_of_medical_emergency: En caso de emergencia medica
+        doctor_name: Nombre del doctor
+        doctor_phone_number: Teléfono del doctor
+        urgency_clinic: Derivar a
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      medical_data:
+        one: Datos médicos
+        other: Datos médicos
