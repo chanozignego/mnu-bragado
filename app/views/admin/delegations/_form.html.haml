@@ -12,6 +12,8 @@
               = f.input :id, readonly: true, input_html: {class: "form-control"}
           .col-md-12.form-group
             = f.input :country, as: :string, input_html: {class: "form-control"}
+          .col-md-12.form-group
+            = f.input :year, as: :integer, input_html: {class: "form-control"}
 
 
           .col-xs-12
@@ -26,10 +28,10 @@
                       .glyphicon.glyphicon-chevron-down
               .row.admin-common-panel__content.collapse.in{id: "delegates_form"}  
                 .col-xs-12
-                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :sti, title: "Sala de Tratados Internacionales", label: "Embajador", field: "sti_delegate", collection: Delegate.sti
-                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :ag, title: "Asamblea General", label: "Delegado", field: "ag_delegate", collection: Delegate.ag
-                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :cs, title: "Consejo de Seguridad", label: "Delegado", field: "cs_delegate", collection: Delegate.cs
-                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :segib, title: "Secretaría General Iberoamericana", label: "Delegado", field: "segib_delegate", collection: Delegate.segib
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :sti, title: I18n.t('delegation.sti_title'), label: I18n.t('delegation.sti_delegate'), field: "sti_delegate", collection: Delegate.sti
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :ag, title: I18n.t('delegation.ag_title'), label: I18n.t('delegation.ag_delegate'), field: "ag_delegate", collection: Delegate.ag
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :cs, title: I18n.t('delegation.cs_title'), label: I18n.t('delegation.cs_delegate'), field: "cs_delegate", collection: Delegate.cs
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :segib, title: I18n.t('delegation.segib_title'), label: I18n.t('delegation.segib_delegate'), field: "segib_delegate", collection: Delegate.segib
 
             %br
 

@@ -1,0 +1,22 @@
+es-AR:
+  delegation:
+    sti_title: Sala de Tratados Internacionales
+    ag_title: Asamblea General
+    cs_title: Consejo de Seguridad
+    segib_title: Secretaría General Iberoamericana
+    sti_delegate: Embajador
+    ag_delegate: Delegado de Asamblea General
+    cs_delegate: Delegado de Consejo de Seguridad
+    segib_delegate: Delegado de SEGIB
+  activerecord:
+    attributes:
+      delegation:
+        country: País
+        year: Año
+        delegates: Delegados
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      delegation:
+        one: Delegacion
+        other: Delegaciones
