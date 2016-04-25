@@ -11,12 +11,17 @@ es-AR:
   activerecord:
     attributes:
       delegation:
+        sti_delegate: Embajador
+        ag_delegate: Delegado de Asamblea General
+        cs_delegate: Delegado de Consejo de Seguridad
+        segib_delegate: Delegado de SEGIB
         country: País
         year: Año
         delegates: Delegados
+        delegates_count: Delegados
         created_at: Fecha de creación
         updated_at: Última actualización
     models:
       delegation:
-        one: Delegacion
+        one: Delegación
         other: Delegaciones
