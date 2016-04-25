@@ -9,8 +9,6 @@ class Partaker < ActiveRecord::Base
     has_one :medical_data, as: :medicable, class_name: "MedicalDatum"
   end
 
-  #has_one :professor, class_name: "Professor"
-  #has_one :school, class_name: "School"
   belongs_to :professor, class_name: "Professor"
   belongs_to :school, class_name: "School"
 
@@ -20,4 +18,8 @@ class Partaker < ActiveRecord::Base
   accepts_nested_attributes_for :medical_data
   accepts_nested_attributes_for :professor
   accepts_nested_attributes_for :school
+
+  def full_name
+    "#{first_name} #{last_name} #{person.present? ? " - DNI #{person.dni}" : ""} #{school.present? ? " - Escuela #{school.name}" : ""}"
+  end
 end

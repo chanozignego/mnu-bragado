@@ -14,6 +14,7 @@ class DashboardManifest
     "professors",
     "authorities",
     "delegates",
+    "delegations",
     "schools"
   ]
 

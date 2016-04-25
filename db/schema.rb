@@ -17,11 +17,26 @@ ActiveRecord::Schema.define(version: 20160425142907) do
   enable_extension "plpgsql"
 
   create_table "delegations", force: :cascade do |t|
-    t.string   "country",    null: false
-    t.integer  "year",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "country",            null: false
+    t.integer  "year",               null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "sti_delegate_id"
+    t.integer  "ag_delegate1_id"
+    t.integer  "ag_delegate2_id"
+    t.integer  "cs_delegate1_id"
+    t.integer  "cs_delegate2_id"
+    t.integer  "segib_delegate1_id"
+    t.integer  "segib_delegate2_id"
   end
+
+  add_index "delegations", ["ag_delegate1_id"], name: "index_delegations_on_ag_delegate1_id", using: :btree
+  add_index "delegations", ["ag_delegate2_id"], name: "index_delegations_on_ag_delegate2_id", using: :btree
+  add_index "delegations", ["cs_delegate1_id"], name: "index_delegations_on_cs_delegate1_id", using: :btree
+  add_index "delegations", ["cs_delegate2_id"], name: "index_delegations_on_cs_delegate2_id", using: :btree
+  add_index "delegations", ["segib_delegate1_id"], name: "index_delegations_on_segib_delegate1_id", using: :btree
+  add_index "delegations", ["segib_delegate2_id"], name: "index_delegations_on_segib_delegate2_id", using: :btree
+  add_index "delegations", ["sti_delegate_id"], name: "index_delegations_on_sti_delegate_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.integer  "locatable_id"
@@ -70,10 +85,8 @@ ActiveRecord::Schema.define(version: 20160425142907) do
     t.datetime "updated_at",      null: false
     t.integer  "rol"
     t.string   "type"
-    t.integer  "delegation_id"
   end
 
-  add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
   add_index "partakers", ["medical_data_id"], name: "index_partakers_on_medical_data_id", using: :btree
   add_index "partakers", ["people_id"], name: "index_partakers_on_people_id", using: :btree
   add_index "partakers", ["professor_id"], name: "index_partakers_on_professor_id", using: :btree

@@ -1,0 +1,47 @@
+.js-item-container
+  = simple_form_for([namespace, page.resource], html: { class: "form js-item-form" }) do |f|
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5= t("administrate.details")
+
+      .row.admin-common-panel__content
+        .col-md-12
+          - if f.object.persisted?
+            .col-md-12.form-group
+              = f.input :id, readonly: true, input_html: {class: "form-control"}
+          .col-md-12.form-group
+            = f.input :country, as: :string, input_html: {class: "form-control"}
+
+
+          .col-xs-12
+            .admin-common-panel
+              .row.admin-common-panel__header
+                .col-xs-12
+                  .col-xs-11
+                    %h5
+                      = Delegation.human_attribute_name(:delegates)
+                  .col-xs-1
+                    %button.pull-right{style: "margin-top: 5px;", type: "button", data: {toggle: "collapse",  target: "#delegates_form"}}
+                      .glyphicon.glyphicon-chevron-down
+              .row.admin-common-panel__content.collapse.in{id: "delegates_form"}  
+                .col-xs-12
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :sti, title: "Sala de Tratados Internacionales", label: "Embajador", field: "sti_delegate", collection: Delegate.sti
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :ag, title: "Asamblea General", label: "Delegado", field: "ag_delegate", collection: Delegate.ag
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :cs, title: "Consejo de Seguridad", label: "Delegado", field: "cs_delegate", collection: Delegate.cs
+                  = render "admin/delegations/delegate_fields", f: f, item: f.object, type: :segib, title: "Secretaría General Iberoamericana", label: "Delegado", field: "segib_delegate", collection: Delegate.segib
+
+            %br
+
+
+        .col-xs-12
+          .form-actions.mt20
+            = button_tag(type: "submit", class:"btn btn-primary") do
+              %span
+                = submit_entity_label(f.object)
+              %i.fa.fa-plus.ml5
+            = link_to :back, class: "btn btn-default ml10" do
+              %span
+                = I18n.t("administrate.actions.back")
+              %i.fa.fa-reply.ml5
+
