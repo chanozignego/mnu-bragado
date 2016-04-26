@@ -15,7 +15,7 @@
 .navbar-default.sidebar{:role => "navigation"}
   .sidebar-nav.navbar-collapse
     %ul#side-menu.nav
-      - DashboardManifest::DASHBOARDS.each do |resource| #.drop(1)
+      - DashboardManifest::DASHBOARDS.each do |resource| 
         %li
           = link_to [:admin, resource.to_s.gsub('/', '_')],
             class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" do

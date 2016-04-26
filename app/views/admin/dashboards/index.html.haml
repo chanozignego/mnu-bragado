@@ -1,0 +1,127 @@
+- content_for(:search) do
+  %form.search
+    %li.sidebar-search
+      .input-group.custom-search-form
+        %input.form-control{placeholder: "Search...", type: "text", name: "search", value: search_term}/
+        %span.input-group-btn
+          %button.btn.btn-default{:type => "button"}
+            %i.fa.fa-search
+
+= render 'header', page: page, show_buttons: true
+
+.row
+  .col-lg-3.col-md-6
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-group.fa-5x
+          .col-xs-9.text-right
+            .huge 26
+            %div Participantes
+      %a{:href => "#"}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+
+  .col-lg-3.col-md-6
+    .panel.panel-green
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-flag.fa-5x
+          .col-xs-9.text-right
+            .huge 12
+            %div Delegaciones
+      %a{:href => admin_delegations_path}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-yellow
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-user.fa-5x
+          .col-xs-9.text-right
+            .huge 124
+            %div Delegados
+      %a{:href => admin_delegates_path}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-red
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.glyphicon.glyphicon-education.fa-5x
+          .col-xs-9.text-right
+            .huge 13
+            %div Autoridades
+      %a{:href => admin_authorities_path}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+
+
+
+
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        Estadisticas
+
+      / /.panel-heading
+      .row
+        .col-lg-12
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px;"}
+              %thead
+                %tr
+                  %th.text-center Año
+                  %th.text-center Delegaciones
+                  %th.text-center Participantes
+                  %th.text-center Delegados
+                  %th.text-center Autoridades
+                  %th.text-center Capacitadores
+              %tbody
+                %tr
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                %tr
+                  %td.text-center 2015
+                  %td.text-center $234.34
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                %tr
+                  %td.text-center 2014
+                  %td.text-center $724.17
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                %tr
+                  %td.text-center 2013
+                  %td.text-center $23.71
+                  %td.text-center 2016
+                  %td.text-center $321.33
+                  %td.text-center 2016
+                  %td.text-center $321.33
+
