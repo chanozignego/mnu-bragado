@@ -10,6 +10,10 @@
           - if f.object.persisted?
             .col-md-12.form-group
               = f.input :id, readonly: true, input_html: {class: "form-control"}
+          
+          .col-md-12.form-group
+            = f.input :year, as: :select, collection: (2013..@current_year).to_a, selected: f.object.year || @current_year, input_html: {class: "form-control"}
+
           .col-md-12.form-group
             = f.input :professor_id, required: false, input_html: {class: "form-control"},
               collection: Professor.all,

@@ -8,6 +8,7 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     prepend_before_filter :authenticate_user!
     before_filter :authenticate_admin
+    before_filter :set_current_year
 
     helper Admin::ApplicationHelper
     delegate :dashboard_class, :current_controller_name, :controller_path_name, to: :resource_resolver
@@ -48,6 +49,10 @@ module Admin
     #     after_resource_destroy_success
     #   end
     # end
+
+    def set_current_year
+      @current_year = Date.today.year
+    end
 
     def dashboard_class
       Object.const_get(resource_class_name + "Dashboard")
