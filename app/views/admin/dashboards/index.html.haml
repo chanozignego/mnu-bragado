@@ -8,7 +8,8 @@
           .col-xs-3
             %i.fa.fa-group.fa-5x
           .col-xs-9.text-right
-            .huge 26
+            .huge 
+              = @statistics.first[:partakers]
             %div Participantes
       %a{:href => "#"}
         .panel-footer
@@ -24,7 +25,8 @@
           .col-xs-3
             %i.fa.fa-flag.fa-5x
           .col-xs-9.text-right
-            .huge 12
+            .huge
+              = @statistics.first[:delegations]
             %div Delegaciones
       %a{:href => admin_delegations_path}
         .panel-footer
@@ -39,7 +41,8 @@
           .col-xs-3
             %i.fa.fa-user.fa-5x
           .col-xs-9.text-right
-            .huge 124
+            .huge 
+              = @statistics.first[:delegates]
             %div Delegados
       %a{:href => admin_delegates_path}
         .panel-footer
@@ -54,7 +57,8 @@
           .col-xs-3
             %i.fa.glyphicon.glyphicon-education.fa-5x
           .col-xs-9.text-right
-            .huge 13
+            .huge 
+              = @statistics.first[:authorities]
             %div Autoridades
       %a{:href => admin_authorities_path}
         .panel-footer
@@ -73,7 +77,6 @@
         %i.fa.fa-bar-chart-o.fa-fw
         Estadisticas
 
-      / /.panel-heading
       .row
         .col-lg-12
           .table-responsive
@@ -101,5 +104,5 @@
                       %td.text-center
                         = stat[:authorities]
                       %td.text-center
-                        20
+                        -
 
