@@ -2,6 +2,10 @@ es-AR:
   activerecord:
     attributes:
       delegate:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Teléfono
         year: Año
         person: Datos personales
         medical_data: Datos médicos

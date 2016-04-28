@@ -2,6 +2,10 @@ es-AR:
   activerecord:
     attributes:
       professor:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Teléfono
         person: Datos personales
         medical_data: Datos médicos
         created_at: Fecha de creación
