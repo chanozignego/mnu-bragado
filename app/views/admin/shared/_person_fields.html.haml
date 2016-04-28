@@ -5,11 +5,10 @@
 .form-group.col-xs-4
   = f.input :dni, required: false, input_html: {class: "form-control"}
 .form-group.col-xs-4
-  = f.label :birthdate
-  = f.input :birthdate, label: false, required: false, as: :date, start_year: Time.zone.now.year - 120, end_year: Time.zone.now.year - 17, input_html: {class: "form-inline"}
+  = f.input :birthdate, required: false, as: :string, input_html: {class: "form-control", id: "birthdatepicker"}
 .form-group.col-xs-4
   = f.input :age, required: false, input_html: {class: "form-control"}
-.form-group.col-xs-6  
+.form-group.col-xs-6
   = f.input :phone_number, required: false, input_html: {class: "form-control"}
 .form-group.col-xs-6
   = f.input :email, required: false, input_html: {class: "form-control"}
@@ -65,3 +64,5 @@
           = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
 
   %br
+
+= javascript_include_tag "admin/person/form"

@@ -1,3 +1,4 @@
+//= require jquery
 //= require jquery/jquery.min
 //= require jquery_ujs
 //= require selectize
