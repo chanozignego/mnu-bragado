@@ -1,12 +1,3 @@
-- content_for(:search) do
-  %form.search
-    %li.sidebar-search
-      .input-group.custom-search-form
-        %input.form-control{placeholder: "Search...", type: "text", name: "search", value: search_term}/
-        %span.input-group-btn
-          %button.btn.btn-default{:type => "button"}
-            %i.fa.fa-search
-
 = render 'header', page: page, show_buttons: true
 
 .row
@@ -96,32 +87,19 @@
                   %th.text-center Autoridades
                   %th.text-center Capacitadores
               %tbody
-                %tr
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                %tr
-                  %td.text-center 2015
-                  %td.text-center $234.34
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                %tr
-                  %td.text-center 2014
-                  %td.text-center $724.17
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                %tr
-                  %td.text-center 2013
-                  %td.text-center $23.71
-                  %td.text-center 2016
-                  %td.text-center $321.33
-                  %td.text-center 2016
-                  %td.text-center $321.33
+                - if @statistics.present? 
+                  - @statistics.each do |stat| 
+                    %tr
+                      %td.text-center 
+                        = stat[:year]
+                      %td.text-center
+                        = stat[:delegations]
+                      %td.text-center
+                        = stat[:partakers]
+                      %td.text-center
+                        = stat[:delegates]
+                      %td.text-center
+                        = stat[:authorities]
+                      %td.text-center
+                        20
 
