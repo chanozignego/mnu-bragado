@@ -14,6 +14,7 @@ class DelegateDashboard < ApplicationDashboard
     last_name: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    participated: Field::Boolean, 
     created_at: Field::DateTime
   }
 
@@ -26,7 +27,8 @@ class DelegateDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :email,
-    :phone_number
+    :phone_number,
+    :participated
   ]
 
   # SHOW_PAGE_ATTRIBUTES

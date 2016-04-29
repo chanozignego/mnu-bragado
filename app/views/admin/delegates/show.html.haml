@@ -13,6 +13,23 @@
           .row.admin-detail-row
             .col-sm-3
               .span.bold
+                = Delegate.human_attribute_name(:id)
+            .col-sm-9
+              .span
+                = page.resource.id
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:participated)
+            .col-sm-9
+              .span
+                = page.resource.participated
+
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
                 = Delegate.human_attribute_name(:school)
             .col-sm-9
               .span

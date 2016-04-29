@@ -1,5 +1,7 @@
 class Person < ActiveRecord::Base
 
+	belongs_to :personable
+
   with_options dependent: :destroy do
     has_one :location, as: :locatable, inverse_of: :locatable
   end

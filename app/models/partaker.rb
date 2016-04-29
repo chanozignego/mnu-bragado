@@ -8,7 +8,7 @@ class Partaker < ActiveRecord::Base
   enum rol: ROLES
 
   with_options dependent: :destroy do
-    has_one :person, as: :personable, class_name: "Person"
+    has_one :person, as: :personable, inverse_of: :personable, class_name: "Person"
     has_one :medical_data, as: :medicable, class_name: "MedicalDatum"
   end
 
