@@ -44,6 +44,9 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :delegates do
+      post :check_participation
+    end
 
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end

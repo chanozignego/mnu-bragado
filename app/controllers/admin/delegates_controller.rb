@@ -2,6 +2,11 @@ module Admin
   class DelegatesController < Admin::ApplicationController
     #self.decorator_class = Admin::DelegateDecorator
 
+    def check_participation
+      CheckParticipationTask.run
+      redirect_to action: :index
+    end
+
     private
 
       def permitted_attributes
