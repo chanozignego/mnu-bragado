@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require freelancer
-//= require bootstrap
+//= require agency
 //= require cbpAnimatedHeader
 //= require classie
 //= require contact_me
 //= require jqBootstrapValidation
 //= require jquery
+//= require bootstrap
