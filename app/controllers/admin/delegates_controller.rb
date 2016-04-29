@@ -41,7 +41,7 @@ module Admin
       end
 
       def scoped_collection
-        Delegate.all
+        Delegate.where(year: @current_year)
       end
 
   end

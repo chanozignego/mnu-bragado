@@ -35,7 +35,7 @@ module Admin
       end
 
       def scoped_collection
-        Authority.all
+        Authority.where(year: @current_year)
       end
   end
 end
