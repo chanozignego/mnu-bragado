@@ -1,0 +1,10 @@
+es-AR:
+  activerecord:
+    attributes:
+      dashboard:
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      dashboard:
+        one: Dashboard
+        other: Dashboard
