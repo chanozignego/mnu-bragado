@@ -1,0 +1,19 @@
+es-AR:
+  activerecord:
+    attributes:
+      trainer:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        rol: Rol
+        facebook_url: Facebook
+        twitter_url: Twitter
+        instagram_url: Instagram
+        principal_image: Imágen principal
+        secondary_image: Imágen secundaria
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      trainer:
+        one: Capacitador
+        other: Capacitadores

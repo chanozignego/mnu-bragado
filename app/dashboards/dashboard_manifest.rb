@@ -16,7 +16,8 @@ class DashboardManifest
     "authorities",
     "delegates",
     "delegations",
-    "schools"
+    "schools",
+    "trainers"
   ]
 
   # `ROOT_DASHBOARD`

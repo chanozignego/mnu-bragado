@@ -1,19 +1,19 @@
 module Admin
   class TrainersController < Admin::ApplicationController
-    #self.decorator_class = Admin::DelegateDecorator
 
     private
 
       def permitted_attributes
         [
           :id, :facebook_url, :twitter_url, :instagram_url, :rol,
+          :principal_image, :secondary_image,
           user_attributes: user_attributes
         ]
       end
 
       def user_attributes
         [
-          :id, :first_name, :last_name, :email
+          :id, :first_name, :last_name, :email, :password
         ]
       end
 
