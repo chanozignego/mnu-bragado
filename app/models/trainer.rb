@@ -4,6 +4,9 @@ class Trainer < ActiveRecord::Base
 
   accepts_nested_attributes_for :user
 
+  mount_uploader :principal_image, PictureUploader
+  mount_uploader :secondary_image, PictureUploader
+
   delegate :first_name, :last_name, :email, :phone_number, to: :user, allow_nil: true
 
 end

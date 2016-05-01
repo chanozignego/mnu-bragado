@@ -153,8 +153,10 @@ ActiveRecord::Schema.define(version: 20160501210135) do
     t.string   "facebook_url"
     t.string   "twitter_url"
     t.string   "instagram_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "principal_image"
+    t.string   "secondary_image"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

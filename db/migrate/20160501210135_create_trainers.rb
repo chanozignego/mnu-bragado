@@ -9,6 +9,9 @@ class CreateTrainers < ActiveRecord::Migration
       t.string :twitter_url
       t.string :instagram_url
 
+      t.string :principal_image
+      t.string :secondary_image
+
       t.timestamps null: false
     end
   end
