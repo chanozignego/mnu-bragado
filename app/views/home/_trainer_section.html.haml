@@ -1,0 +1,20 @@
+.col-sm-3
+  .team-member
+    %img.img-responsive.img-circle{:alt => "", :src => trainer.principal_image.thumb.url, target: '_blank'}
+    %h4 
+      = trainer.full_name
+    %p.text-muted
+      = trainer.rol
+    %ul.list-inline.social-buttons
+      - if trainer.twitter_url.present?
+        %li
+          %a{href: trainer.twitter_url}
+            %i.fa.fa-twitter
+      - if trainer.facebook_url.present?
+        %li
+          %a{href: trainer.facebook_url}
+            %i.fa.fa-facebook
+      - if trainer.instagram_url.present?
+        %li
+          %a{href: trainer.instagram_url}
+            %i.fa.fa-instagram
