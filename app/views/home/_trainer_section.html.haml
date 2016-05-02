@@ -1,7 +1,7 @@
 .col-sm-3
   .team-member
-    %img.img-responsive.img-circle{:alt => "", :src => trainer.principal_image.thumb.url, class: "hover"}
-    %img.img-responsive.img-circle{:alt => "", :src => trainer.secondary_image.thumb.url, class: "nohover"}
+    = image_tag trainer.principal_image.thumb.url, class: "hover img-responsive img-circle"
+    = image_tag trainer.secondary_image.thumb.url, class: "nohover img-responsive img-circle"
     %h4 
       = trainer.full_name
     %p.text-muted
