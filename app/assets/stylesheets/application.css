@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  *= require_variables
- *= require_freelancer
  *= require_agency
+ *= require_home
  *= require_bootstrap
  *= require_bootstrap.min.css
  */

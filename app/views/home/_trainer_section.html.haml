@@ -1,6 +1,7 @@
 .col-sm-3
   .team-member
-    %img.img-responsive.img-circle{:alt => "", :src => trainer.principal_image.thumb.url, target: '_blank'}
+    %img.img-responsive.img-circle{:alt => "", :src => trainer.principal_image.thumb.url, class: "hover"}
+    %img.img-responsive.img-circle{:alt => "", :src => trainer.secondary_image.thumb.url, class: "nohover"}
     %h4 
       = trainer.full_name
     %p.text-muted
@@ -8,13 +9,13 @@
     %ul.list-inline.social-buttons
       - if trainer.twitter_url.present?
         %li
-          %a{href: trainer.twitter_url}
+          %a{href: trainer.twitter_url, target: '_blank'}
             %i.fa.fa-twitter
       - if trainer.facebook_url.present?
         %li
-          %a{href: trainer.facebook_url}
+          %a{href: trainer.facebook_url, target: '_blank'}
             %i.fa.fa-facebook
       - if trainer.instagram_url.present?
         %li
-          %a{href: trainer.instagram_url}
+          %a{href: trainer.instagram_url, target: '_blank'}
             %i.fa.fa-instagram

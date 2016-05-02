@@ -1,0 +1,20 @@
+.team-member img.hover {
+  display: none;
+}
+
+.team-member img.nohover:hover {
+  display: none;
+  .hover{
+    display: block;
+  }
+} 
+
+.team-member img.hover:hover {
+  display: block;
+  .nohover{
+    display: none;
+  }
+} 
+
+
+

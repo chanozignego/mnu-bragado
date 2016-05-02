@@ -10,7 +10,7 @@ class PictureUploader < FileUploader
   end
 
   version :smallthumb do
-    process :resize_to_fill => [100, 100]
+    process :resize_to_fill => [150, 150]
   end
 
 end

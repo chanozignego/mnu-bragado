@@ -1,0 +1,102 @@
+= render 'header', page: page
+
+.row
+  .col-xs-12
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5
+            = t("administrate.details")
+      .row.admin-common-panel__content
+        .col-xs-12
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:id)
+            .col-sm-9
+              .span
+                = page.resource.id
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:first_name)
+            .col-sm-9
+              .span
+                = page.resource.first_name
+
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:last_name)
+            .col-sm-9
+              .span
+                = page.resource.last_name
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:email)
+            .col-sm-9
+              .span
+                = page.resource.email
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:rol)
+            .col-sm-9
+              .span
+                = page.resource.rol
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:facebook_url)
+            .col-sm-9
+              .span
+                = page.resource.facebook_url
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:twitter_url)
+            .col-sm-9
+              .span
+                = page.resource.twitter_url
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:instagram_url)
+            .col-sm-9
+              .span
+                = page.resource.instagram_url
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:principal_image)
+            .col-sm-9
+              .span
+                = image_tag page.resource.principal_image.try(:smallthumb)
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:secondary_image)
+            .col-sm-9
+              .span
+                = image_tag page.resource.secondary_image.try(:smallthumb)
+
+
+
+
+
+
+
+
+      .item-actions{style: "margin: 20px;"}
+        = render 'item_actions', page: page

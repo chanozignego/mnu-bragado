@@ -4,6 +4,7 @@
   = f.input :last_name, required: false, input_html: {class: "form-control"}
 .form-group.col-xs-12
   = f.input :email, required: false, input_html: {class: "form-control"}
-.form-group.col-xs-12
-  = f.input :password, required: false, input_html: {class: "form-control"}
+- unless object.persisted?
+  .form-group.col-xs-12
+    = f.input :password, required: false, input_html: {class: "form-control"}
 
