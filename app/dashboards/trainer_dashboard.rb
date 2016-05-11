@@ -14,6 +14,7 @@ class TrainerDashboard < ApplicationDashboard
     last_name: Field::String,
     email: Field::String,
     rol: Field::String,
+    index_number: Field::Number,
     created_at: Field::DateTime
   }
 
@@ -26,7 +27,8 @@ class TrainerDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :email,
-    :rol
+    :rol,
+    :index_number
   ]
 
   # SHOW_PAGE_ATTRIBUTES
