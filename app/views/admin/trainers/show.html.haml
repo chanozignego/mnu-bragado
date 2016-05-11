@@ -21,6 +21,14 @@
           .row.admin-detail-row
             .col-sm-3
               .span.bold
+                = Trainer.human_attribute_name(:index_number)
+            .col-sm-9
+              .span
+                = page.resource.index_number
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
                 = Trainer.human_attribute_name(:first_name)
             .col-sm-9
               .span
