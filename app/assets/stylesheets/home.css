@@ -1,3 +1,4 @@
+//Team Section
 .team-member img.hover {
   display: none;
 }
@@ -16,9 +17,10 @@
   }
 }
 
-header {
-  background-image: url('https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/12087222_625663870909890_8410275137166496918_o.jpg');
-} 
-
-
+//About Section
+.timeline-item {
+  -webkit-box-shadow: none; 
+  border: none; 
+  box-shadow: none;
+}
 
