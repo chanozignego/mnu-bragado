@@ -1,6 +1,6 @@
 .col-sm-3
   .team-member
-    %img.img-responsive.img-circle{:alt => "", :src => "img/team/2.jpg"}/
+    %img.img-responsive.img-circle{style: "width: 250px; height: 250px;",:alt => "", :src => "img/team/#{trainer.principal_image_name}"}/
     = #image_tag trainer.principal_image.thumb, class: "img-responsive img-circle"
     = #image_tag trainer.secondary_image.thumb, class: "hover img-responsive img-circle"
     %h4 

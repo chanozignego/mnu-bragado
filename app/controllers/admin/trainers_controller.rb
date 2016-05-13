@@ -7,6 +7,7 @@ module Admin
         [
           :id, :facebook_url, :twitter_url, :instagram_url, :rol,
           :principal_image, :secondary_image, :index_number,
+          :principal_image_name,
           user_attributes: user_attributes
         ]
       end
