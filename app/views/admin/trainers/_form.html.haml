@@ -42,9 +42,6 @@
               hint: f.object.secondary_image.try(:file).try(:filename)
             = f.input :secondary_image_cache, as: :hidden
 
-          .col-md-12.form-group
-            = f.input :principal_image_name, required: false, input_html: {class: "form-control"}
-
         .col-xs-12
           .form-actions.mt20
             = button_tag(type: "submit", class:"btn btn-primary") do

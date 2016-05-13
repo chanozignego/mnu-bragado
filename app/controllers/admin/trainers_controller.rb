@@ -6,8 +6,7 @@ module Admin
       def permitted_attributes
         [
           :id, :facebook_url, :twitter_url, :instagram_url, :rol,
-          :principal_image, :secondary_image, :index_number,
-          :principal_image_name,
+          :principal_image, :secondary_image, :index_number
           user_attributes: user_attributes
         ]
       end
