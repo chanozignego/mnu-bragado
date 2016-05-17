@@ -3,24 +3,23 @@
     .row
       .col-lg-12.text-center
         %h2.section-heading Contacto
-        /%h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
     .row
       .col-lg-12
-        %form#contactForm{:name => "sentMessage", :novalidate => ""}
+        = simple_form_for (@query || Query.new), url: query_path do |f|
           .row
             .col-md-6
               .form-group
-                %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Nombre *", :required => "", :type => "text"}/
+                = f.input :name, label: false, placeholder: "Nombre *", required: true, type: :text, input_html: {id: "name", class: "form-control", "data-validation-required-message" => "Por favor, ngrese su nombre."}
                 %p.help-block.text-danger
               .form-group
-                %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Email *", :required => "", :type => "email"}/
+                = f.input :email, label: false, placeholder: "Email *", required: true, type: :email, input_html: {id: "email", class: "form-control", "data-validation-required-message" => "Por favor, ingrese su email."}
                 %p.help-block.text-danger
               .form-group
-                %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Teléfono", :required => "", :type => "tel"}/
+                = f.input :phone_number, label: false, placeholder: "Teléfono (opcional)", required: false, type: :teñ, input_html: {id: "phone", class: "form-control"}
                 %p.help-block.text-danger
             .col-md-6
               .form-group
-                %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Tu mensaje *", :required => ""}
+                = f.input :message, label: false, placeholder: "Su mensaje *", required: true, type: :textarea, input_html: {id: "message", class: "form-control", "data-validation-required-message" => "Por favor, ingrese su mensaje."}
                 %p.help-block.text-danger
             .clearfix
             .col-lg-12.text-center

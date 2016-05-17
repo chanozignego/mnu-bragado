@@ -13,6 +13,7 @@ class QueryDashboard < ApplicationDashboard
     name: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    message: Field::String,
     already_read: Field::Boolean,
     created_at: Field::DateTime
   }

@@ -4,7 +4,7 @@ class CreateQueries < ActiveRecord::Migration
     	t.string :name, null: false
       t.string :email, null: false
       t.string :phone_number
-      t.text :comments, null: false
+      t.text :message, null: false
       t.boolean :already_read, default: false
 
       t.timestamps null: false

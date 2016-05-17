@@ -53,6 +53,8 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :admin, controllers: {sessions: 'admin/sessions'}
 
-  get "/", controller: "home", action: :index
+  get "/", controller: "home", action: :index, as: :root
+
+  resource :query
 
 end
