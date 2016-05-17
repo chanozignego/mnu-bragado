@@ -67,61 +67,7 @@
           %h3.section-subheading.text-muted Si todavia no sos uno de eso, es lo que te prometemos que te vas a llevar, asi que anotate. BIENVENIDOS!
   
   / Portfolio Grid Section
-  %section#portfolio.bg-light-gray
-    .container
-      .row
-        .col-lg-12.text-center
-          %h2.section-heading Portfolio
-          %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-      .row
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/principal2.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 General
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/ag4.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 Asamblea General
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/tratados3.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 Sala de Tratados Internacionales
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/cs1.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 Consejo de Seguridad
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/segib.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 SEGIB
-        .col-md-4.col-sm-6.portfolio-item
-          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
-            .portfolio-hover
-              .portfolio-hover-content
-                %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "img/portfolio/principal11.jpg", style: "width: 360px; height: 260px;"}/
-          .portfolio-caption
-            %h4 Autoridades
+  = render "home/portfolio_section"
 
   / About Section
   = render "home/about_section"
