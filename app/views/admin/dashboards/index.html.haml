@@ -88,7 +88,6 @@
                   %th.text-center Participantes
                   %th.text-center Delegados
                   %th.text-center Autoridades
-                  %th.text-center Capacitadores
               %tbody
                 - if @statistics.present? 
                   - @statistics.each do |stat| 
@@ -103,6 +102,3 @@
                         = stat[:delegates]
                       %td.text-center
                         = stat[:authorities]
-                      %td.text-center
-                        = "-"
-
