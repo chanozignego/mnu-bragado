@@ -5,7 +5,7 @@ es-AR:
         name: Nombre
         email: Email
         phone_number: Teléfono
-        comments: Mensaje
+        message: Mensaje
         already_read: Visto?
         created_at: Fecha de creación
         updated_at: Última actualización

@@ -14,7 +14,7 @@ class QueryDashboard < ApplicationDashboard
     email: Field::String,
     phone_number: Field::String,
     message: Field::String,
-    already_read: Field::Boolean,
+    already_read: LabeledBooleanField,
     created_at: Field::DateTime
   }
 

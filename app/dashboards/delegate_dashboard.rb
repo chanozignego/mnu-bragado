@@ -14,7 +14,7 @@ class DelegateDashboard < ApplicationDashboard
     last_name: Field::String,
     email: Field::String,
     phone_number: Field::String,
-    participated: Field::Boolean, 
+    participated: LabeledBooleanField, 
     created_at: Field::DateTime
   }
 
