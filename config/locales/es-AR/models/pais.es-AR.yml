@@ -1,0 +1,11 @@
+es-AR:
+  activerecord:
+    attributes:
+      country:
+        name: Nombre
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      country:
+        one: País
+        other: Paises

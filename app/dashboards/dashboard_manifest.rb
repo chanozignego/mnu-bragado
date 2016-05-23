@@ -18,7 +18,8 @@ class DashboardManifest
     "delegations",
     "schools",
     "trainers",
-    "queries"
+    "queries",
+    "countries"
   ]
 
   # `ROOT_DASHBOARD`
