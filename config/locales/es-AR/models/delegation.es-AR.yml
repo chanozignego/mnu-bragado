@@ -16,6 +16,8 @@ es-AR:
         cs_delegate: Delegado de Consejo de Seguridad
         segib_delegate: Delegado de SEGIB
         country: País
+        country_name: País
+        country_id: País
         year: Año
         delegates: Delegados
         delegates_count: Delegados

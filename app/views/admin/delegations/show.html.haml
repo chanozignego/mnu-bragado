@@ -24,7 +24,7 @@
                 = Delegation.human_attribute_name(:country)
             .col-sm-9
               .span
-                = page.resource.country
+                = page.resource.country.try(:name)
 
           .row.admin-detail-row
             .col-sm-3

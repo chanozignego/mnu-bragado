@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523204954) do
+ActiveRecord::Schema.define(version: 20160523210910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160523204954) do
   end
 
   create_table "delegations", force: :cascade do |t|
-    t.string   "country",            null: false
     t.integer  "year",               null: false
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -40,10 +39,12 @@ ActiveRecord::Schema.define(version: 20160523204954) do
     t.integer  "cs_delegate2_id"
     t.integer  "segib_delegate1_id"
     t.integer  "segib_delegate2_id"
+    t.integer  "country_id"
   end
 
   add_index "delegations", ["ag_delegate1_id"], name: "index_delegations_on_ag_delegate1_id", using: :btree
   add_index "delegations", ["ag_delegate2_id"], name: "index_delegations_on_ag_delegate2_id", using: :btree
+  add_index "delegations", ["country_id"], name: "index_delegations_on_country_id", using: :btree
   add_index "delegations", ["cs_delegate1_id"], name: "index_delegations_on_cs_delegate1_id", using: :btree
   add_index "delegations", ["cs_delegate2_id"], name: "index_delegations_on_cs_delegate2_id", using: :btree
   add_index "delegations", ["segib_delegate1_id"], name: "index_delegations_on_segib_delegate1_id", using: :btree
@@ -198,4 +199,5 @@ ActiveRecord::Schema.define(version: 20160523204954) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "delegations", "countries"
 end
