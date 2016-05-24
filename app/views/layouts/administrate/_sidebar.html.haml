@@ -20,5 +20,9 @@
           = link_to [:admin, resource.to_s.gsub('/', '_')],
             class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" do
             %i.fa.fa-table.fa-fw
+            - dashboard_class = "#{resource.singularize}_dashboard".classify.safe_constantize
             - _resource_class = resource.classify.constantize
             = display_resource_name(_resource_class)
+            - if dashboard_class::ALLOW_NOTIFICATIONS
+              %span.badge.pull-right 
+                = dashboard_class.pending_notifications

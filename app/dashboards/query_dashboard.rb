@@ -2,6 +2,7 @@ require "administrate/base_dashboard"
 
 class QueryDashboard < ApplicationDashboard
   ALLOW_MASS_ASSIGNMENT = false
+  ALLOW_NOTIFICATIONS = true
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -44,6 +45,10 @@ class QueryDashboard < ApplicationDashboard
   MASS_ASSIGNMENT_ACTIONS = [
   #  :approve_revision
   ]
+
+  def self.pending_notifications
+    Query.where(already_read: false).count
+  end 
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
