@@ -7,4 +7,9 @@ class ApplicationDashboard < Administrate::BaseDashboard
   def implements_action?(action)
     !excluded_member_actions.include?(action)
   end
+
+  def self.pending_notifications
+    0
+  end 
+
 end
