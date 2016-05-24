@@ -1,7 +1,6 @@
 require "administrate/base_dashboard"
 
 class DashboardDashboard < ApplicationDashboard
-  ALLOW_MASS_ASSIGNMENT = false
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
