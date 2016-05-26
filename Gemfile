@@ -7,6 +7,7 @@ gem "dotenv-rails", groups: %i[development test]
 
 # Misc
 gem "letter_opener", group: :development
+gem "mail"
 
 # Debugging
 gem "pry"

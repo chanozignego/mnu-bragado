@@ -365,6 +365,7 @@ DEPENDENCIES
   inline_svg
   js-routes
   letter_opener
+  mail
   mailgun_rails
   mini_magick
   money-rails
