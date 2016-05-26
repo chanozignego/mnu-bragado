@@ -1,0 +1,26 @@
+%h2 Ha surgido una nueva consulta
+.row
+  %b
+    Fecha:
+  = @query.created_at.to_date
+%br
+.row
+  %b
+    De:
+  = @query.name
+%br
+.row
+  %b
+    Email:
+  = @query.email
+%br
+.row
+  %b
+    Teléfono:
+  = @query.phone_number
+%br
+.row
+  %b
+    Consulta:
+.row
+  = @query.message
