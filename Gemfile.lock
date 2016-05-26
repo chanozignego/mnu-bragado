@@ -154,6 +154,11 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmail (0.6.0)
+      gmail_xoauth (>= 0.3.0)
+      mail (>= 2.2.1)
+    gmail_xoauth (0.4.1)
+      oauth (>= 0.3.6)
     haml (4.0.7)
       tilt
     hitimes (1.2.3)
@@ -214,6 +219,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (3.0.3)
+    oauth (0.5.1)
     oj (2.15.0)
     oj_mimic_json (1.0.1)
     orm_adapter (0.5.0)
@@ -360,6 +366,7 @@ DEPENDENCIES
   email_validator
   factory_girl_rails
   faker
+  gmail
   haml (~> 4.0.3)
   i18n-js (>= 3.0.0.rc8)
   inline_svg
