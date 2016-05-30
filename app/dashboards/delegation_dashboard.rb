@@ -12,6 +12,7 @@ class DelegationDashboard < ApplicationDashboard
     country_name: Field::String,
     year: Field::String,
     delegates_count: Field::String,
+    representative: Field::String, 
     created_at: Field::DateTime
   }
 
@@ -23,6 +24,7 @@ class DelegationDashboard < ApplicationDashboard
   COLLECTION_ATTRIBUTES = [
     :country_name,
     :delegates_count,
+    :representative,
     :year
   ]
 

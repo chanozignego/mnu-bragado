@@ -19,4 +19,11 @@ class Delegation < ActiveRecord::Base
   	count
   end
 
+  def representative
+    %i[sti_delegate ag_delegate1 ag_delegate2 cs_delegate1 cs_delegate2 segib_delegate1 segib_delegate2].each do |delegate|
+      del = self.send(delegate)
+      return del.index_name if del.present?
+    end
+  end
+
 end

@@ -22,6 +22,10 @@ class Partaker < ActiveRecord::Base
   accepts_nested_attributes_for :professor
   accepts_nested_attributes_for :school
 
+  def index_name
+    "#{first_name} #{last_name}"
+  end
+
   def full_name
     "#{first_name} #{last_name} #{person.present? ? " - DNI #{person.dni}" : ""} #{school.present? ? " - Escuela #{school.name}" : ""}"
   end
