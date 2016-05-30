@@ -26,32 +26,12 @@
                 .row.admin-common-panel__content  
                   = f.simple_fields_for :delegates do |variant_form|
                     = render partial: "admin/shared/delegate_form", locals: { f: variant_form, collapse_panel: true }
-                    %br
-                    %br
 
                   .links.col-xs-12
                     %br
                     = link_to_add_association f, :delegates, class: "btn btn-default", partial: "admin/shared/delegate_form", render_options: { locals: {collapse_panel: false } } do
                       = I18n.t("administrate.actions.add_entity", entity: "Delegado")
                       %i.fa.fa-plus.ml10
-
-
-                / %br
-                / .links.col-xs-12
-                /   = link_to_add_association f, :ag_delegate1, class: "btn btn-default", partial: "admin/delegations/delegate_fields", render_options: { locals: {f: f, item: f.object, type: :ag, title: I18n.t('delegation.ag_title'), label: I18n.t('delegation.ag_delegate'), field: "ag_delegate", collection: Delegate.ag} } do
-                /     = I18n.t("administrate.actions.add_entity", entity: Delegate.model_name.human)
-                /     %i.fa.fa-plus.ml10
-                / %br
-                / .links.col-xs-12
-                /   = link_to_add_association f, :cs_delegate1, class: "btn btn-default", partial: "admin/delegations/delegate_fields", render_options: { locals: {f: f, item: f.object, type: :cs, title: I18n.t('delegation.cs_title'), label: I18n.t('delegation.cs_delegate'), field: "cs_delegate", collection: Delegate.cs} } do
-                /     = I18n.t("administrate.actions.add_entity", entity: Delegate.model_name.human)
-                /     %i.fa.fa-plus.ml10
-                / %br
-                / .links.col-xs-12
-                /   = link_to_add_association f, :segib_delegate1, class: "btn btn-default", partial: "admin/delegations/delegate_fields", render_options: { locals: {f: f, item: f.object, type: :segib, title: I18n.t('delegation.segib_title'), label: I18n.t('delegation.segib_delegate'), field: "segib_delegate", collection: Delegate.segib} } do
-                /     = I18n.t("administrate.actions.add_entity", entity: Delegate.model_name.human)
-                /     %i.fa.fa-plus.ml10
-
 
 
         .col-xs-12
