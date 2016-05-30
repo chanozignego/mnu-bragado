@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523210910) do
+ActiveRecord::Schema.define(version: 20160530214638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,27 +29,13 @@ ActiveRecord::Schema.define(version: 20160523210910) do
   end
 
   create_table "delegations", force: :cascade do |t|
-    t.integer  "year",               null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "sti_delegate_id"
-    t.integer  "ag_delegate1_id"
-    t.integer  "ag_delegate2_id"
-    t.integer  "cs_delegate1_id"
-    t.integer  "cs_delegate2_id"
-    t.integer  "segib_delegate1_id"
-    t.integer  "segib_delegate2_id"
+    t.integer  "year",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "country_id"
   end
 
-  add_index "delegations", ["ag_delegate1_id"], name: "index_delegations_on_ag_delegate1_id", using: :btree
-  add_index "delegations", ["ag_delegate2_id"], name: "index_delegations_on_ag_delegate2_id", using: :btree
   add_index "delegations", ["country_id"], name: "index_delegations_on_country_id", using: :btree
-  add_index "delegations", ["cs_delegate1_id"], name: "index_delegations_on_cs_delegate1_id", using: :btree
-  add_index "delegations", ["cs_delegate2_id"], name: "index_delegations_on_cs_delegate2_id", using: :btree
-  add_index "delegations", ["segib_delegate1_id"], name: "index_delegations_on_segib_delegate1_id", using: :btree
-  add_index "delegations", ["segib_delegate2_id"], name: "index_delegations_on_segib_delegate2_id", using: :btree
-  add_index "delegations", ["sti_delegate_id"], name: "index_delegations_on_sti_delegate_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.integer  "locatable_id"
@@ -100,8 +86,10 @@ ActiveRecord::Schema.define(version: 20160523210910) do
     t.string   "type"
     t.integer  "year"
     t.boolean  "participated",    default: false
+    t.integer  "delegation_id"
   end
 
+  add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
   add_index "partakers", ["medical_data_id"], name: "index_partakers_on_medical_data_id", using: :btree
   add_index "partakers", ["people_id"], name: "index_partakers_on_people_id", using: :btree
   add_index "partakers", ["professor_id"], name: "index_partakers_on_professor_id", using: :btree

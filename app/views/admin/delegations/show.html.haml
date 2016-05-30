@@ -34,99 +34,99 @@
               .span
                 = page.resource.year
 
-          - if page.resource.sti_delegate.present?
-            .admin-common-panel
-              .row.admin-common-panel__header
-                .col-xs-12
-                  %h5
-                    = I18n.t('delegation.sti_title')
-              .row.admin-common-panel__content
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:sti_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.sti_delegate.try(:full_name)
+          / - if page.resource.sti_delegate.present?
+          /   .admin-common-panel
+          /     .row.admin-common-panel__header
+          /       .col-xs-12
+          /         %h5
+          /           = I18n.t('delegation.sti_title')
+          /     .row.admin-common-panel__content
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:sti_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.sti_delegate.try(:full_name)
 
-            %br
-          - if page.resource.ag_delegate1.present? || page.resource.ag_delegate2.present?
-            .admin-common-panel
-              .row.admin-common-panel__header
-                .col-xs-12
-                  %h5
-                    = I18n.t('delegation.ag_title')
-              .row.admin-common-panel__content
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:ag_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.ag_delegate1.try(:full_name)
+          /   %br
+          / - if page.resource.ag_delegate1.present? || page.resource.ag_delegate2.present?
+          /   .admin-common-panel
+          /     .row.admin-common-panel__header
+          /       .col-xs-12
+          /         %h5
+          /           = I18n.t('delegation.ag_title')
+          /     .row.admin-common-panel__content
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:ag_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.ag_delegate1.try(:full_name)
 
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:ag_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.ag_delegate2.try(:full_name)
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:ag_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.ag_delegate2.try(:full_name)
 
-            %br
-          - if page.resource.cs_delegate1.present? || page.resource.cs_delegate2.present?
-            .admin-common-panel
-              .row.admin-common-panel__header
-                .col-xs-12
-                  %h5
-                    = I18n.t('delegation.cs_title')
-              .row.admin-common-panel__content
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:cs_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.cs_delegate1.try(:full_name)
+          /   %br
+          / - if page.resource.cs_delegate1.present? || page.resource.cs_delegate2.present?
+          /   .admin-common-panel
+          /     .row.admin-common-panel__header
+          /       .col-xs-12
+          /         %h5
+          /           = I18n.t('delegation.cs_title')
+          /     .row.admin-common-panel__content
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:cs_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.cs_delegate1.try(:full_name)
 
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:cs_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.cs_delegate2.try(:full_name)
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:cs_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.cs_delegate2.try(:full_name)
 
-            %br
-          - if page.resource.segib_delegate1.present? || page.resource.segib_delegate2.present?
-            .admin-common-panel
-              .row.admin-common-panel__header
-                .col-xs-12
-                  %h5
-                    = I18n.t('delegation.segib_title')
-              .row.admin-common-panel__content
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:segib_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.segib_delegate1.try(:full_name)
+          /   %br
+          / - if page.resource.segib_delegate1.present? || page.resource.segib_delegate2.present?
+          /   .admin-common-panel
+          /     .row.admin-common-panel__header
+          /       .col-xs-12
+          /         %h5
+          /           = I18n.t('delegation.segib_title')
+          /     .row.admin-common-panel__content
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:segib_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.segib_delegate1.try(:full_name)
 
-                .row.admin-detail-row
-                  .col-xs-12
-                    .col-sm-3
-                      .span.bold
-                        = Delegation.human_attribute_name(:segib_delegate)
-                    .col-sm-9
-                      .span
-                        = page.resource.segib_delegate2.try(:full_name)
+          /       .row.admin-detail-row
+          /         .col-xs-12
+          /           .col-sm-3
+          /             .span.bold
+          /               = Delegation.human_attribute_name(:segib_delegate)
+          /           .col-sm-9
+          /             .span
+          /               = page.resource.segib_delegate2.try(:full_name)
 
       .item-actions{style: "margin: 20px;"}
         = render 'item_actions', page: page
