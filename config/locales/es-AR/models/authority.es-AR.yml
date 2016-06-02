@@ -7,6 +7,8 @@ es-AR:
         email: Email
         phone_number: Teléfono
         year: Año
+        has_diet?: "Dieta"
+        has_medical_problems?: "Medico"
         person: Datos personales
         medical_data: Datos médicos
         created_at: Fecha de creación

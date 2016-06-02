@@ -13,6 +13,8 @@ class AuthorityDashboard < ApplicationDashboard
     last_name: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    has_medical_problems?: LabeledBooleanField, 
+    has_diet?: LabeledBooleanField, 
     created_at: Field::DateTime
   }
 
@@ -25,7 +27,9 @@ class AuthorityDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :email,
-    :phone_number
+    :phone_number,
+    :has_medical_problems?,
+    :has_diet?
   ]
 
   # SHOW_PAGE_ATTRIBUTES

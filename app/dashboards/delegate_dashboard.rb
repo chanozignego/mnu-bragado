@@ -14,6 +14,8 @@ class DelegateDashboard < ApplicationDashboard
     email: Field::String,
     phone_number: Field::String,
     participated: LabeledBooleanField, 
+    has_medical_problems?: LabeledBooleanField, 
+    has_diet?: LabeledBooleanField, 
     created_at: Field::DateTime
   }
 
@@ -27,6 +29,8 @@ class DelegateDashboard < ApplicationDashboard
     :last_name,
     :email,
     :phone_number,
+    :has_diet?,
+    :has_medical_problems?,
     :participated
   ]
 
