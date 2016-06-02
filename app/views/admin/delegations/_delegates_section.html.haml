@@ -1,0 +1,7 @@
+.admin-common-panel
+  .row.admin-common-panel__header
+    .col-xs-12
+      %h5
+        Delegados
+  - delegates.each do |delegate|
+    = render 'admin/delegations/delegate_section', delegate: delegate

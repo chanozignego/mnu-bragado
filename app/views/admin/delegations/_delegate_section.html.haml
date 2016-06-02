@@ -1,0 +1,26 @@
+.row.admin-common-panel__content
+  .row.admin-detail-row
+    .col-xs-12
+      .col-sm-3
+        .span.bold
+          = I18n.t("partaker.rols")[delegate.rol.to_sym]
+      .col-sm-8
+        .span
+          = delegate.try(:full_name)
+          
+          .span.label{class: "label-#{delegate.participated ? 'primary' : 'default'}", style: "margin-left: 10px;"}
+            = delegate.participated ? "Participó" : "No participó"
+          
+          - if delegate.has_diet?
+            .span.label.label-success{style: "margin-left: 10px;"}
+              Dieta
+          
+          - if delegate.has_medical_problems?
+            .span.label.label-danger{style: "margin-left: 10px;"}
+              Médico
+      .col-sm-1
+        = link_to admin_delegate_path(delegate.id) do
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
