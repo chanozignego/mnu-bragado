@@ -7,6 +7,9 @@
     = f.input :year, as: :select, collection: (2013..@current_year).to_a, selected: f.object.year || @current_year, input_html: {class: "form-control"}
 
   .col-md-12.form-group
+    = f.input :participated, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.participated, input_html: {class: "form-control"}
+
+  .col-md-12.form-group
     = f.input :professor_id, required: false, input_html: {class: "form-control"},
       collection: Professor.all,
       placeholder: I18n.t("administrate.select_option",

@@ -23,8 +23,9 @@
               .span.bold
                 = Delegate.human_attribute_name(:participated)
             .col-sm-9
-              .span
-                = page.resource.participated
+              - participated = page.resource.participated
+              .span.label{class: "label-#{participated ? 'primary' : 'default'}"}
+                = participated ? "Si" : "No"
 
 
           .row.admin-detail-row

@@ -16,6 +16,7 @@ class Partaker < ActiveRecord::Base
   belongs_to :school, class_name: "School"
 
   delegate :first_name, :last_name, :email, :phone_number, to: :person, allow_nil: true
+  delegate :has_diet?, :has_medical_problems?, to: :medical_data, allow_nil: true, prefix: false
 
   accepts_nested_attributes_for :person
   accepts_nested_attributes_for :medical_data
@@ -29,4 +30,5 @@ class Partaker < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name} #{person.present? ? " - DNI #{person.dni}" : ""} #{school.present? ? " - Escuela #{school.name}" : ""}"
   end
+
 end
