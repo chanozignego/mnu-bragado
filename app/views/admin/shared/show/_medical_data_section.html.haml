@@ -14,8 +14,10 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:has_chronic_desease)
         .col-sm-9
-          .span
-            = resource.has_chronic_desease
+          - has_chronic_desease = resource.has_chronic_desease
+          .span.label{class: "label-#{has_chronic_desease ? 'primary' : 'default'}"}
+            = has_chronic_desease ? "Si" : "No"
+
       .row.admin-detail-row
         .col-sm-3
           .span.bold
@@ -28,8 +30,9 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:take_medication)
         .col-sm-9
-          .span
-            = resource.take_medication
+          - take_medication = resource.take_medication
+          .span.label{class: "label-#{take_medication ? 'primary' : 'default'}"}
+            = take_medication ? "Si" : "No"
       .row.admin-detail-row
         .col-sm-3
           .span.bold
@@ -42,8 +45,9 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:has_medical_background)
         .col-sm-9
-          .span
-            = resource.has_medical_background
+          - has_medical_background = resource.has_medical_background
+          .span.label{class: "label-#{has_medical_background ? 'primary' : 'default'}"}
+            = has_medical_background ? "Si" : "No"
       .row.admin-detail-row
         .col-sm-3
           .span.bold
@@ -56,8 +60,9 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:has_allergy)
         .col-sm-9
-          .span
-            = resource.has_allergy
+          - has_allergy = resource.has_allergy
+          .span.label{class: "label-#{has_allergy ? 'primary' : 'default'}"}
+            = has_allergy ? "Si" : "No"
       .row.admin-detail-row
         .col-sm-3
           .span.bold
@@ -70,8 +75,9 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:has_specific_diet)
         .col-sm-9
-          .span
-            = resource.has_specific_diet
+          - has_specific_diet = resource.has_specific_diet
+          .span.label{class: "label-#{has_specific_diet ? 'primary' : 'default'}"}
+            = has_specific_diet ? "Si" : "No"
       .row.admin-detail-row
         .col-sm-3
           .span.bold
@@ -84,8 +90,9 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:is_vegetarian)
         .col-sm-9
-          .span
-            = resource.is_vegetarian
+          - is_vegetarian = resource.is_vegetarian
+          .span.label{class: "label-#{is_vegetarian ? 'primary' : 'default'}"}
+            = is_vegetarian ? "Si" : "No"
 
 
     .col-sm-12
