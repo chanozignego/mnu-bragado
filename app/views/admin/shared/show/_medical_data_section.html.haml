@@ -108,23 +108,23 @@
         .row.admin-common-panel__content.collapse.in{id: "medical_emergency_section"}  
           .col-xs-12
             .row.admin-detail-row
-              .col-sm-6
+              .col-sm-3
                 .span.bold
                   = MedicalDatum.human_attribute_name(:doctor_name)
-              .col-sm-6
+              .col-sm-9
                 .span
                   = resource.doctor_name
             .row.admin-detail-row
-              .col-sm-6
+              .col-sm-3
                 .span.bold
                   = MedicalDatum.human_attribute_name(:doctor_phone_number)
-              .col-sm-6
+              .col-sm-9
                 .span
                   = resource.doctor_phone_number
             .row.admin-detail-row
-              .col-sm-6
+              .col-sm-3
                 .span.bold
                   = MedicalDatum.human_attribute_name(:urgency_clinic)
-              .col-sm-6
+              .col-sm-9
                 .span
                   = resource.urgency_clinic
