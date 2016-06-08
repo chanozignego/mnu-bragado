@@ -31,14 +31,14 @@ Rails.application.routes.draw do
           end if dashboard.const_defined?("MEMBER_ACTIONS")
         end
 
-        collection do 
-          dashboard::COLLECTION_ACTIONS.each do |action|
-            public_send(
-              action.fetch(:http_method),
-              action.fetch(:name)
-            )
-          end if dashboard::ALLOW_COLLECTION_ACTIONS
-        end
+        # collection do 
+        #   dashboard::COLLECTION_ACTIONS.each do |action|
+        #     #public_send(
+        #     #  action.fetch(:http_method),
+        #     #  action.fetch(:name)
+        #     #)
+        #   end if dashboard::ALLOW_COLLECTION_ACTIONS
+        # end
         
       end
 
@@ -52,6 +52,16 @@ Rails.application.routes.draw do
           resources resource_name, route_options, &route_config_block
         end
       end
+    end
+
+    #REFACTOR THIS!!!!!!!!!!!!!!!
+    namespace :delegates do
+      post :check_participation
+      post :export_to_excel
+    end
+
+    namespace :delegates do
+      post :check_participation
     end
 
     namespace :delegates do

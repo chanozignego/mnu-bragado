@@ -1,10 +1,17 @@
 module Admin
   class DelegatesController < Admin::ApplicationController
-    #self.decorator_class = Admin::DelegateDecorator
+    self.decorator_class = nil #Admin::DelegateDecorator
 
     def check_participation
       CheckParticipationTask.run
       redirect_to action: :index
+    end
+
+    def export_to_excel
+      @delegates = Delegate.all
+      respond_to do |format| 
+        format.xlsx {render xlsx: 'admin/delegates/download', filename: "Delegados-#{@curreny_year}.xls"}
+      end
     end
 
     private

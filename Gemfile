@@ -45,6 +45,9 @@ gem "bower-rails"
 gem "i18n-js", ">= 3.0.0.rc8"
 gem "rails-i18n", "~> 4.0.0"
 gem "simple_form"
+gem 'rubyzip', '= 1.0.0'
+gem 'axlsx', '~> 2.0'
+gem "axlsx_rails"
 
 # Asset Gems (use bower if possible pls?)
 gem "bootstrap-wysihtml5-rails"

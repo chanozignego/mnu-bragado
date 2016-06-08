@@ -68,6 +68,13 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.4.0)
+      axlsx (>= 2.0.1)
+      rails (>= 3.1)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -162,6 +169,7 @@ GEM
     haml (4.0.7)
       tilt
     hitimes (1.2.3)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     i18n-js (3.0.0.rc12)
       i18n (~> 0.6, >= 0.6.6)
@@ -294,6 +302,7 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    rubyzip (1.0.0)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -349,6 +358,8 @@ DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   administrate!
   angular_rails_csrf
+  axlsx (~> 2.0)
+  axlsx_rails
   better_errors
   binding_of_caller
   bootstrap-sass
@@ -388,6 +399,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails-i18n (~> 4.0.0)
   rspec-rails
+  rubyzip (= 1.0.0)
   sass-rails (~> 5.0)
   searchlight
   sidekiq

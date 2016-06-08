@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Delegados") do |sheet|
+    sheet.add_row ["ID", "Name"]
+    @delegates.each do |delegate|
+        sheet.add_row [delegate.id, delegate.full_name]
+    end
+end
