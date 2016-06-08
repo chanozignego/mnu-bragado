@@ -31,6 +31,7 @@ es-AR:
       activate: Activar
       deactivate: Desactivar
       upload_file: Subir archivo
+      export_to_excel: Exportar a excel
     mass_assignment:
       label: Acciones en masa
       actions:

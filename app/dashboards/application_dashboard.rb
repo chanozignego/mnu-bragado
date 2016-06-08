@@ -4,6 +4,7 @@ class ApplicationDashboard < Administrate::BaseDashboard
 
   ALLOW_MASS_ASSIGNMENT = false
   ALLOW_NOTIFICATIONS = false
+  ALLOW_COLLECTION_ACTIONS = false
 
   def implements_action?(action)
     !excluded_member_actions.include?(action)

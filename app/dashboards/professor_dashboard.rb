@@ -1,6 +1,7 @@
 require "administrate/base_dashboard"
 
 class ProfessorDashboard < ApplicationDashboard
+  ALLOW_COLLECTION_ACTIONS = true
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -48,4 +49,10 @@ class ProfessorDashboard < ApplicationDashboard
   # def display_resource(user)
   #   "User ##{user.id}"
   # end
+
+  COLLECTION_ACTIONS = [{
+    name: :export_to_excel,
+    http_method: :get
+  }]
+
 end

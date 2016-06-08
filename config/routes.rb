@@ -30,6 +30,16 @@ Rails.application.routes.draw do
             )
           end if dashboard.const_defined?("MEMBER_ACTIONS")
         end
+
+        collection do 
+          dashboard::COLLECTION_ACTIONS.each do |action|
+            public_send(
+              action.fetch(:http_method),
+              action.fetch(:name)
+            )
+          end if dashboard::ALLOW_COLLECTION_ACTIONS
+        end
+        
       end
 
       DashboardManifest::DASHBOARDS.each do |resource_name|
