@@ -8,7 +8,7 @@ class Professor < ActiveRecord::Base
   accepts_nested_attributes_for :person
   accepts_nested_attributes_for :medical_data
 
-  delegate :first_name, :last_name, :email, :phone_number, to: :person, allow_nil: true
+  delegate :first_name, :last_name, :email, :dni, :birthdate, :phone_number, to: :person, allow_nil: true
 
   def full_name
   	"#{first_name} #{last_name}"

@@ -68,6 +68,10 @@ Rails.application.routes.draw do
       post :export_to_excel
     end
 
+    namespace :professors do
+      post :export_to_excel
+    end
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
