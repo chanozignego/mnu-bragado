@@ -5,7 +5,7 @@ class Delegation < ActiveRecord::Base
 
   accepts_nested_attributes_for :delegates
 
-  delegate :name, to: :country, prefix: true, allow_nil: true
+  delegate :name, :regional_group_name, to: :country, prefix: true, allow_nil: true
 
   def delegates_count
     self.delegates.count

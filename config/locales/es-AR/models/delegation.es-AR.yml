@@ -17,6 +17,7 @@ es-AR:
         segib_delegate: Delegado de SEGIB
         country: País
         country_name: País
+        country_regional_group_name: Grupo Regional
         country_id: País
         year: Año
         representative: Representante

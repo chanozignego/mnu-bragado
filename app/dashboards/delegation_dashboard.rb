@@ -10,6 +10,7 @@ class DelegationDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     country_name: Field::String,
+    country_regional_group_name: Field::String,
     year: Field::String,
     delegates_count: Field::String,
     representative: Field::String, 
@@ -23,6 +24,7 @@ class DelegationDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :country_name,
+    :country_regional_group_name,
     :delegates_count,
     :representative,
     :year
