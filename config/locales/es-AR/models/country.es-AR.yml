@@ -1,0 +1,18 @@
+es-AR:
+  country: 
+    regional_groups: 
+      europe: Europa y otros
+      asia: Asia y Oceanía
+      africa: Africano
+      latam: Latinoamerica y el Caribe
+  activerecord:
+    attributes:
+      country:
+        regional_group: Grupo Regional
+        regional_group_name: Grupo Regional
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      country:
+        one: Pais
+        other: Paises

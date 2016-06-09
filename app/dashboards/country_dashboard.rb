@@ -10,6 +10,8 @@ class CountryDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    regional_group: Field::String,
+    regional_group_name: Field::String,
     created_at: Field::DateTime
   }
 
@@ -21,6 +23,7 @@ class CountryDashboard < ApplicationDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
+    :regional_group_name,
     :created_at
   ]
 
@@ -32,7 +35,8 @@ class CountryDashboard < ApplicationDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name
+    :name,
+    :regional_group
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [

@@ -1,0 +1,39 @@
+= render 'header', page: page
+
+.row
+  .col-xs-12
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5
+            = t("administrate.details")
+      .row.admin-common-panel__content
+        .col-xs-12
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:id)
+            .col-sm-9
+              .span
+                = page.resource.id
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:name)
+            .col-sm-9
+              .span
+                = page.resource.name
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:regional_group)
+            .col-sm-9
+              .span
+                = page.resource.regional_group_name
+
+
+
+      .item-actions{style: "margin: 20px;"}
+        = render 'item_actions', page: page

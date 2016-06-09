@@ -15,6 +15,16 @@
             = f.input :name, input_html: {class: "form-control"}
           %br
 
+          .col-md-12.form-group
+            = f.input :regional_group, required: false, input_html: {class: "form-control"},
+              collection: Country.regional_groups.keys,
+              placeholder: I18n.t("administrate.select_option",
+                option: Country.human_attribute_name(:regional_group)),
+              selected: f.object.regional_group,
+              include_blank: true,
+              label_method: -> (reg) { t("country.regional_groups")[reg.to_sym] }
+          %br
+
         .col-xs-12
           .form-actions.mt20
             = button_tag(type: "submit", class:"btn btn-primary") do

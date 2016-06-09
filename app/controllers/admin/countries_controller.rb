@@ -5,7 +5,7 @@ module Admin
 
       def permitted_attributes
         [
-          :id, :name
+          :id, :name, :regional_group
         ]
       end
 
