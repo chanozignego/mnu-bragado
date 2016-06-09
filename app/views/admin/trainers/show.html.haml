@@ -46,6 +46,22 @@
           .row.admin-detail-row
             .col-sm-3
               .span.bold
+                = Trainer.human_attribute_name(:dni)
+            .col-sm-9
+              .span
+                = page.resource.dni
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Trainer.human_attribute_name(:phone_number)
+            .col-sm-9
+              .span
+                = page.resource.phone_number
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
                 = Trainer.human_attribute_name(:email)
             .col-sm-9
               .span

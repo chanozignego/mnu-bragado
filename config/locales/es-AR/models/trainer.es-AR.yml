@@ -4,6 +4,7 @@ es-AR:
       trainer:
         first_name: Nombre
         last_name: Apellido
+        phone_number: Teléfono
         email: Email
         rol: Rol
         index_number: Orden

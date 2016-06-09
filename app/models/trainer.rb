@@ -7,7 +7,7 @@ class Trainer < ActiveRecord::Base
   mount_uploader :principal_image, PictureUploader
   mount_uploader :secondary_image, PictureUploader
 
-  delegate :first_name, :last_name, :email, :phone_number, to: :user, allow_nil: true
+  delegate :first_name, :last_name, :dni, :email, :phone_number, to: :user, allow_nil: true
 
   def full_name
   	"#{first_name} #{last_name}"
