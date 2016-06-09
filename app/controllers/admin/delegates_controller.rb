@@ -8,7 +8,7 @@ module Admin
     end
 
     def export_to_excel
-      @delegates = Delegate.all
+      @delegates = scoped_collection
       respond_to do |format| 
         filename = "Delegados-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
