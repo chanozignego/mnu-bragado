@@ -15,7 +15,8 @@ class Partaker < ActiveRecord::Base
   belongs_to :professor, class_name: "Professor"
   belongs_to :school, class_name: "School"
 
-  delegate :first_name, :last_name, :email, :phone_number, to: :person, allow_nil: true
+  delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
+  delegate :first_name, :last_name, :dni, :birthdate, :email, :phone_number, to: :person, allow_nil: true
   delegate :has_diet?, :has_medical_problems?, to: :medical_data, allow_nil: true, prefix: false
 
   accepts_nested_attributes_for :person

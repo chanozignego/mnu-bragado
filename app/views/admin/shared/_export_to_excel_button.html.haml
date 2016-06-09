@@ -1,4 +1,6 @@
 - if dashboard.implements_action?(:export_to_excel)
-  = link_to([namespace, page.resource_name.pluralize, :export_to_excel], method: :post, format: :xlsx, class: "btn btn-primary admin-header-buttons__item") do
+  = link_to(admin_delegates_export_to_excel_path(format: :xls), method: :post, class: "btn btn-primary admin-header-buttons__item") do
     %span= I18n.t("administrate.actions.export_to_excel")
     %i.fa.fa-file-excel-o.ml5
+
+- #[namespace, page.resource_name.pluralize, :export_to_excel]
