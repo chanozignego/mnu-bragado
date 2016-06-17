@@ -1,0 +1,20 @@
+es-AR:
+  ex_partaker:
+    partaker_types:
+      delegate: Delegado
+      authority: Autoridad
+  activerecord:
+    attributes:
+      ex_partaker:
+        partaker_type: Rol
+        partaker_type_name: Rol
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Teléfono
+        city_name: Ciudad
+        school_name: Escuela
+        country_name: País que representó
+        year: Año
+        created_at: Fecha de creación
+        updated_at: Última actualización
