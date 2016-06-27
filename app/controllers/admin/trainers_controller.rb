@@ -4,7 +4,7 @@ module Admin
     def export_to_excel
       @trainers = Trainer.all
       respond_to do |format| 
-        filename = "Capacitadores-#{@current_year}.xls"
+        filename = "Capacitadores-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
         header = [["NOMBRE", "APELLIDO", "DNI", "EMAIL", "TELEFONO"]]
         fields = [:first_name, :last_name, :dni, :email, :phone_number]

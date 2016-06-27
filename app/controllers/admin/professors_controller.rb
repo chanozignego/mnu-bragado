@@ -4,7 +4,7 @@ module Admin
     def export_to_excel
       @professors = Professor.all
       respond_to do |format| 
-        filename = "Profesores-#{@current_year}.xls"
+        filename = "Profesores-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
         header = [["NOMBRE", "APELLIDO", "DNI", "FECHA NACIMIENTO", "EMAIL", "TELEFONO"]]
         fields = [:first_name, :last_name, :dni, :birthdate, :email, :phone_number]
