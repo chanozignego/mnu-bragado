@@ -3,7 +3,7 @@
     .col-xs-12
       .col-sm-3
         .span.bold
-          = I18n.t("partaker.rols")[delegate.rol.to_sym]
+          = I18n.t("partaker.rols")[delegate.rol.try(:to_sym)]
       .col-sm-8
         .span
           = delegate.try(:full_name)
