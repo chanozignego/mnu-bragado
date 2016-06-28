@@ -5,7 +5,7 @@
         .col-xs-12
           .col-xs-11
             %h5
-              = "#{f.object.persisted? ? I18n.t("partaker.rols")[f.object.rol.to_sym] : 'Delegado' }      #{(' -- ' + f.object.full_name) if f.object.persisted?}"
+              = "#{f.object.persisted? ? I18n.t("partaker.rols")[f.object.rol.try(:to_sym)] : 'Delegado' }      #{(' -- ' + f.object.full_name) if f.object.persisted?}"
           .col-xs-1
             %button.pull-right{style: "margin-top: 5px;", type: "button", data: {toggle: "collapse",  target: "##{f.object.id}"}}
               .glyphicon.glyphicon-chevron-down
