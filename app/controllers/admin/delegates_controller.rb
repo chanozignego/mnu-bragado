@@ -12,8 +12,8 @@ module Admin
       respond_to do |format| 
         filename = "Delegados-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
-        header = [["NOMBRE", "APELLIDO", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO"]]
-        fields = [:first_name, :last_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number]
+        header = [["NOMBRE", "APELLIDO", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO", "PAIS"]]
+        fields = [:first_name, :last_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number, :delegation_country_name]
         format.xls { send_data(@delegates.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
     end

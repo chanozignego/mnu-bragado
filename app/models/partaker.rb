@@ -18,6 +18,7 @@ class Partaker < ActiveRecord::Base
   delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
   delegate :first_name, :last_name, :dni, :birthdate, :email, :phone_number, to: :person, allow_nil: true
   delegate :has_diet?, :has_medical_problems?, to: :medical_data, allow_nil: true, prefix: false
+  delegate :country_name, to: :delegation, allow_nil: true, prefix: true
 
   accepts_nested_attributes_for :person
   accepts_nested_attributes_for :medical_data
