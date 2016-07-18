@@ -47,6 +47,9 @@ gem "rails-i18n", "~> 4.0.0"
 gem "simple_form"
 gem 'to_xls-rails'
 
+#Bourbon
+gem 'bourbon', '~> 4.0'
+
 # Asset Gems (use bower if possible pls?)
 gem "bootstrap-wysihtml5-rails"
 gem "js-routes"
