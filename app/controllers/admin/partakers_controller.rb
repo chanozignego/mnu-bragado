@@ -8,7 +8,7 @@ module Admin
 
     def export_with_diet
       partakers = scoped_collection.map{|partaker| partaker if partaker.has_diet?}.compact
-      generate_excel(partakers, "ConDieta")
+      generate_excel(partakers, "ConDieta", [:formatted_is_vegetarian?, :specific_diet_detail], ["VEGETARIANO", "DIETA ESPECÍFICA"])
     end
 
     def export_with_medical_problems
@@ -16,12 +16,12 @@ module Admin
       generate_excel(partakers, "ConMedico")
     end
 
-    def generate_excel collection, file_prefix
+    def generate_excel collection, file_prefix, extra_columns = [], extra_headers = []
       respond_to do |format| 
         filename = "#{file_prefix}-UMBragado-#{@current_year}.xls"
-        column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
-        header = [["APELLIDO", "NOMBRE", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO"]]
-        fields = [:last_name, :first_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number]
+        column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
+        header = [["APELLIDO", "NOMBRE", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO"].concat(extra_headers)]
+        fields = [:last_name, :first_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number].concat(extra_columns)
         format.xls { send_data(collection.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
     end
