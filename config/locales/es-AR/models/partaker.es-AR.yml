@@ -8,6 +8,16 @@ es-AR:
   activerecord:
     attributes:
       partaker:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Teléfono
+        year: Año
+        participated: Participó?
+        has_diet?: "Dieta"
+        has_medical_problems?: "Medico"
+        person: Datos personales
+        medical_data: Datos médicos
         rol: Rol
         professor: Docente responsable
         professor_id: Docente responsable
@@ -15,3 +25,8 @@ es-AR:
         school_id: Escuela
         created_at: Fecha de creación
         updated_at: Última actualización
+    models:
+      partaker:
+        one: Participante
+        other: Participantes
+

@@ -1,0 +1,12 @@
+- if dashboard.implements_action?(:export_to_excel)
+  = link_to(send("admin_#{page.resource_name.pluralize}_export_with_diet_path", {format: :xls}), method: :post, class: "btn btn-primary admin-header-buttons__item") do
+    %span= "Exportar con dieta"
+    %i.fa.fa-file-excel-o.ml5
+
+- if dashboard.implements_action?(:export_to_excel)
+  = link_to(send("admin_#{page.resource_name.pluralize}_export_with_medical_problems_path", {format: :xls}), method: :post, class: "btn btn-primary admin-header-buttons__item") do
+    %span= "Exportar con problemas médicos"
+    %i.fa.fa-file-excel-o.ml5
+
+= render "admin/shared/export_to_excel_button", page: page
+= render "admin/application/header_buttons", page: page

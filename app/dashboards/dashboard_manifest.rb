@@ -13,6 +13,7 @@ class DashboardManifest
     "dashboards",
     "users",
     "professors",
+    "partakers",
     "authorities",
     "delegates",
     "delegations",

@@ -72,6 +72,12 @@ Rails.application.routes.draw do
       post :export_to_excel
     end
 
+    namespace :partakers do
+      post :export_to_excel
+      post :export_with_diet
+      post :export_with_medical_problems
+    end
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
