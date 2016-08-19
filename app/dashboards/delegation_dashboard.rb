@@ -50,4 +50,9 @@ class DelegationDashboard < ApplicationDashboard
   # def display_resource(user)
   #   "User ##{user.id}"
   # end
+
+  COLLECTION_ACTIONS = [{
+    name: :export_to_excel,
+    http_method: :get
+  }]
 end

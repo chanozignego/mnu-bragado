@@ -64,6 +64,10 @@ Rails.application.routes.draw do
       post :export_to_excel
     end
 
+    namespace :delegations do
+      post :export_to_excel
+    end
+
     namespace :trainers do
       post :export_to_excel
     end

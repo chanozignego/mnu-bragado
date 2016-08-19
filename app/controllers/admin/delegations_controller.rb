@@ -2,6 +2,17 @@ module Admin
   class DelegationsController < Admin::ApplicationController
     #self.decorator_class = Admin::DelegateDecorator
 
+    def export_to_excel
+      @delegations = scoped_collection.order(:id)
+      respond_to do |format| 
+        filename = "Delegaciones-UMBragado-#{@current_year}.xls"
+        column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25]
+        header = [["PAIS", "GRP. REGIONAL", "DELEGADOS", "REPRESENTANTE"]]
+        fields = [:country_name, :country_regional_group_name, :delegates_count, :representative]
+        format.xls { send_data(@delegations.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
+      end
+    end
+
     private
 
       def permitted_attributes
