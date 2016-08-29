@@ -13,7 +13,7 @@ module Admin
 
     def export_with_medical_problems
       partakers = scoped_collection.map{|partaker| partaker if partaker.has_medical_problems?}.compact
-      generate_excel(partakers, "ConMedico")
+      generate_excel(partakers, "ConMedico", [:medical_problems_detail], ["PROBLEMAS MÉDICOS"])
     end
 
     def generate_excel collection, file_prefix, extra_columns = [], extra_headers = []
