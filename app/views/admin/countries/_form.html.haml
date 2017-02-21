@@ -16,7 +16,7 @@
           %br
 
           .col-md-12.form-group
-            = f.input :regional_group, required: false, input_html: {class: "form-control"},
+            = f.input :regional_group, required: false, input_html: {class: "form-control js-select2"},
               collection: Country.regional_groups.keys,
               placeholder: I18n.t("administrate.select_option",
                 option: Country.human_attribute_name(:regional_group)),

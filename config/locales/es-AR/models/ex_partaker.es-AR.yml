@@ -3,18 +3,27 @@ es-AR:
     partaker_types:
       delegate: Delegado
       authority: Autoridad
+    roles:
+      sti: Embajador
+      ag: Delegado AG
+      cs: Delegado CS
+      segib: Delegado SEGIB
+      ecosoc: Delegado ECOSOC
   activerecord:
     attributes:
       ex_partaker:
-        partaker_type: Rol
-        partaker_type_name: Rol
+        partaker_type: Tipo
+        partaker_type_name: Tipo
         first_name: Nombre
         last_name: Apellido
+        dni: DNI
         email: Email
         phone_number: Teléfono
         city_name: Ciudad
         school_name: Escuela
         country_name: País que representó
+        role: Rol
+        role_name: Rol
         year: Año
         created_at: Fecha de creación
         updated_at: Última actualización

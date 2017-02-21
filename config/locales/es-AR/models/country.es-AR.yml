@@ -5,6 +5,8 @@ es-AR:
       asia: Asia y Oceanía
       africa: Africano
       latam: Latinoamerica y el Caribe
+      observer: Observadora
+      nothing: Nada
   activerecord:
     attributes:
       country:

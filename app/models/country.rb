@@ -1,6 +1,6 @@
 class Country < ActiveRecord::Base
 
-  REGIONAL_GROUPS = %i[europe asia africa latam]
+  REGIONAL_GROUPS = %i[europe asia africa latam observer nothing]
 
   enum regional_group: REGIONAL_GROUPS
 

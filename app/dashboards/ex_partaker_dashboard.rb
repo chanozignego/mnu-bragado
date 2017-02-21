@@ -12,12 +12,14 @@ class ExPartakerDashboard < ApplicationDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
+    dni: Field::String,
     email: Field::String,
     phone_number: Field::String,
     school_name: Field::String,
     city_name: Field::String,
     country_name: Field::String,
     partaker_type_name: Field::String,
+    role_name: Field::String,
     year: Field::Number,
     created_at: Field::DateTime
   }
