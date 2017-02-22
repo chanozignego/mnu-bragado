@@ -15,4 +15,23 @@ namespace :statistics do
     end
   end
 
+  task :generate_from_ex_partakers => :environment do
+    current_year = Date.today.year
+
+    (2013..current_year-1).each do |year|
+      delegations = ExPartaker.where(year: year).where(partaker_type: 0).count(:country_name, distinct: true)
+      partakers = ExPartaker.where(year: year).count
+      delegates = ExPartaker.where(year: year).where(partaker_type: 0).count
+      authorities = ExPartaker.where(year: year).where(partaker_type: 1).count
+      stats = Statistics.where(year: year).first || Statistics.new
+      stats.delegations = delegations
+      stats.partakers = partakers
+      stats.delegates = delegates
+      stats.authorities = authorities
+      stats.year = year
+      stats.save!
+      puts "Statistics for #{stats.year} updated successfully"
+    end
+  end
+
 end
