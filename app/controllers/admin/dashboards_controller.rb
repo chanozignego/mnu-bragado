@@ -3,6 +3,7 @@ module Admin
 
   	def index
       @statistics = []
+      @chart_statistics = []
       current_year = Date.today.year
 
       (2013..current_year - 1).each do |year|
@@ -12,6 +13,7 @@ module Admin
         delegates = year_statistics.delegates
         authorities = year_statistics.authorities
         statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, year: year}
+        @chart_statistics << [year, partakers, delegations, delegates, authorities]
         @statistics << statistics
       end
 
@@ -20,6 +22,7 @@ module Admin
       delegates = Delegate.where(year: current_year).count
       authorities = Authority.where(year: current_year).count
       statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, year: current_year}
+      @chart_statistics << [current_year, partakers, delegations, delegates, authorities]
       @statistics << statistics
 
       @statistics.reverse!

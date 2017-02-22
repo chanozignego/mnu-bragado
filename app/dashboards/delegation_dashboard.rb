@@ -57,7 +57,16 @@ class DelegationDashboard < ApplicationDashboard
   }]
 
   SEARCHABLE_ATTRIBUTES = [
-    [:countries_name_cont]
+    [:countries_name_cont],
+    [:country_regional_group_eq, {as: :select, 
+                  collection: Country.regional_groups,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) { 
+                      I18n.t("country.regional_groups.#{ft.first}") 
+                    }
+                  }]
   ]
 
   def self.search_path

@@ -26,6 +26,11 @@
 //= require shared/mass_assignment
 //= require shared/cocoon
 
+//= require admin/charts/raphael-min.js
+//= require admin/charts/morris.min.js
+//= require admin/charts/morris-data.js
+
+
 //$.fn.select2.defaults.set("theme", "bootstrap");
 
 //$(function() {

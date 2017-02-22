@@ -68,37 +68,69 @@
           .clearfix
 
 
-
+.row.statistics{data: {statistics: @chart_statistics}}
 
 .row
   .col-lg-12
     .panel.panel-default
       .panel-heading
         %i.fa.fa-bar-chart-o.fa-fw
-        Estadisticas
+        General
+      .panel-body
+        .row
+          .col-lg-4
+            .table-responsive
+              %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px;"}
+                %thead
+                  %tr
+                    %th.text-center Año
+                    %th.text-center Delegaciones
+                    %th.text-center Participantes
+                    %th.text-center Delegados
+                    %th.text-center Autoridades
+                %tbody
+                  - if @statistics.present? 
+                    - @statistics.each do |stat| 
+                      %tr
+                        %td.text-center 
+                          = stat[:year]
+                        %td.text-center
+                          = stat[:delegations]
+                        %td.text-center
+                          = stat[:partakers]
+                        %td.text-center
+                          = stat[:delegates]
+                        %td.text-center
+                          = stat[:authorities]
 
-      .row
-        .col-lg-12
-          .table-responsive
-            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px;"}
-              %thead
-                %tr
-                  %th.text-center Año
-                  %th.text-center Delegaciones
-                  %th.text-center Participantes
-                  %th.text-center Delegados
-                  %th.text-center Autoridades
-              %tbody
-                - if @statistics.present? 
-                  - @statistics.each do |stat| 
-                    %tr
-                      %td.text-center 
-                        = stat[:year]
-                      %td.text-center
-                        = stat[:delegations]
-                      %td.text-center
-                        = stat[:partakers]
-                      %td.text-center
-                        = stat[:delegates]
-                      %td.text-center
-                        = stat[:authorities]
+
+          .col-lg-8
+            .partakers-numbers
+              #morris-bar-chart{style: "height: 230px;"}
+
+
+.row
+  .col-lg-8
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        Participantes
+      .panel-body
+        .row
+          .col-lg-12
+            .partakers-numbers
+              #morris-area-chart
+
+  .col-lg-4
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        Delegaciones
+      .panel-body
+        .row
+          .col-lg-12.text-center
+            .partakers-numbers
+              #morris-donut-chart
+
+
+

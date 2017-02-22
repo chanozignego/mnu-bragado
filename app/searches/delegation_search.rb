@@ -9,4 +9,9 @@ class DelegationSearch < Searchlight::Search
     query.joins(:country).where("name ILIKE '%#{opt}%'")
   end
 
+  def search_country_regional_group_eq
+    opt = options[:country_regional_group_eq]
+    query.joins(:country).where("regional_group = #{opt}")
+  end
+
 end
