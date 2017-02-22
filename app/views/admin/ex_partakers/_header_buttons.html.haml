@@ -1,4 +1,11 @@
-= link_to("#", class: "btn btn-primary admin-header-buttons__item") do
-  %span
-    Importar desde excel
-  %i.fa.fa-file-excel-o.ml5
+.row
+  / .col-xs-6
+  /   = link_to(admin_ex_partakers_import_from_excel_path, method: :post, class: "btn btn-primary admin-header-buttons__item") do
+  /     %span
+  /       Importar desde excel
+  /     %i.fa.fa-file-excel-o.ml5
+
+  = simple_form_for :ex_partakers, {url: admin_ex_partakers_import_from_excel_path, method: :post, html: { class: "form-inline" }} do |f|
+    .div{style: "display: inline-flex"}
+      = f.input :file, required: true, as: :file, label: false, input_html: {style: "margin-top: 5px;"}
+      = f.button :submit, "Importar desde excel", class: "btn btn-primary admin-header-buttons__item"

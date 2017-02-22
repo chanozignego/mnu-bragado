@@ -84,6 +84,10 @@ gem "mailgun_rails"
 gem "sidekiq"
 gem "sidetiq"
 
+# Excel manager
+gem "roo", "~> 2.7.0"
+gem 'roo-xls'
+
 # Doc
 group :development do
   gem "yard"

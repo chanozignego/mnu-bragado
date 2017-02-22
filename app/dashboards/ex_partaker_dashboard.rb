@@ -54,6 +54,11 @@ class ExPartakerDashboard < ApplicationDashboard
   MASS_ASSIGNMENT_ACTIONS = [
   ]
 
+  COLLECTION_ACTIONS = [{
+    name: :import_from_excel,
+    http_method: :post
+  }]
+
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
     [:email_cont],

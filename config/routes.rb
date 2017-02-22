@@ -82,6 +82,10 @@ Rails.application.routes.draw do
       post :export_with_medical_problems
     end
 
+    namespace :ex_partakers do
+      post :import_from_excel
+    end
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
