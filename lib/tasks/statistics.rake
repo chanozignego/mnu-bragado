@@ -19,7 +19,7 @@ namespace :statistics do
     current_year = Date.today.year
 
     (2013..current_year-1).each do |year|
-      delegations = ExPartaker.where(year: year).where(partaker_type: 0).count(:country_name, distinct: true)
+      delegations = ExPartaker.where(year: year).map{|par| par.country_name}.uniq.count
       partakers = ExPartaker.where(year: year).count
       delegates = ExPartaker.where(year: year).where(partaker_type: 0).count
       authorities = ExPartaker.where(year: year).where(partaker_type: 1).count
