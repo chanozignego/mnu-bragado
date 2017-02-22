@@ -52,10 +52,13 @@ class SchoolDashboard < ApplicationDashboard
   #  :approve_revision
   ]
 
-  # Overwrite this method to customize how users are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  SEARCHABLE_ATTRIBUTES = [
+    [:name_cont],
+    [:email_cont]
+  ]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_schools_path
+  end
+
 end

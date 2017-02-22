@@ -68,4 +68,13 @@ class PartakerDashboard < ApplicationDashboard
     http_method: :get
   }]
 
+  SEARCHABLE_ATTRIBUTES = [
+    [:full_name_cont],
+    [:email_cont]
+  ]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_partakers_path
+  end
+
 end

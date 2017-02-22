@@ -32,6 +32,7 @@ es-AR:
       deactivate: Desactivar
       upload_file: Subir archivo
       export_to_excel: Exportar a excel
+      clear_form: Limpiar Búsqueda
     mass_assignment:
       label: Acciones en masa
       actions:

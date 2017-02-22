@@ -62,4 +62,13 @@ class DelegateDashboard < ApplicationDashboard
     http_method: :get
   }]
 
+  SEARCHABLE_ATTRIBUTES = [
+    [:full_name_cont],
+    [:email_cont]
+  ]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_delegates_path
+  end
+
 end

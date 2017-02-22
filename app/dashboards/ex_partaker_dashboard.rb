@@ -54,11 +54,12 @@ class ExPartakerDashboard < ApplicationDashboard
   MASS_ASSIGNMENT_ACTIONS = [
   ]
 
-  # Overwrite this method to customize how users are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  SEARCHABLE_ATTRIBUTES = [
+    [:full_name_cont],
+    [:email_cont]
+  ]
 
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_ex_partakers_path
+  end
 end

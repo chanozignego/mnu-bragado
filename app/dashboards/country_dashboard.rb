@@ -43,10 +43,11 @@ class CountryDashboard < ApplicationDashboard
   #  :approve_revision
   ]
 
-  # Overwrite this method to customize how users are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  SEARCHABLE_ATTRIBUTES = [
+    [:name_cont]
+  ]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_countries_path
+  end
 end

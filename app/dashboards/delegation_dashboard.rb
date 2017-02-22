@@ -55,4 +55,12 @@ class DelegationDashboard < ApplicationDashboard
     name: :export_to_excel,
     http_method: :get
   }]
+
+  SEARCHABLE_ATTRIBUTES = [
+    [:countries_name_cont]
+  ]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_delegations_path
+  end
 end

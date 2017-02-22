@@ -14,6 +14,7 @@ es-AR:
         regional_group_name: Grupo Regional
         created_at: Fecha de creación
         updated_at: Última actualización
+        name_cont: Nombre
     models:
       country:
         one: Pais

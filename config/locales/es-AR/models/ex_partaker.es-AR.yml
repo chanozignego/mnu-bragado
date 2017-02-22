@@ -25,6 +25,8 @@ es-AR:
         role: Rol
         role_name: Rol
         year: Año
+        full_name_cont: Nombre
+        email_cont: Email
         created_at: Fecha de creación
         updated_at: Última actualización
     models:

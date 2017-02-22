@@ -24,6 +24,7 @@ es:
       preview_mode: Preview
       clean_filters: Clearn filters
       upload_file: Upload file
+      clear_form: Limpiar Búsqueda
     mass_assignment:
       label: Mass assignment
       actions:

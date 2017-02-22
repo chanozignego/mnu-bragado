@@ -11,6 +11,7 @@ module Admin
     before_filter :set_current_year
 
     helper Admin::ApplicationHelper
+    helper_method :current_dashboard
     delegate :dashboard_class, :current_controller_name, :controller_path_name, to: :resource_resolver
     helper_method :resource_class, :dashboard_class, :dashboard, :current_controller_name, :controller_path_name
 
@@ -82,6 +83,11 @@ module Admin
       resource_class.name.underscore.pluralize
     end 
 
+    def current_dashboard
+      dashboard_class
+      #{}"#{controllers_model_name}Dashboard".safe_constantize
+    end
+
     private
 
     def resource_class_name
@@ -141,7 +147,7 @@ module Admin
     # end
 
     def current_search
-      "#{resource_class.name}::Search".safe_constantize
+      "#{resource_class.name}Search".safe_constantize
     end
 
     def authenticate_admin

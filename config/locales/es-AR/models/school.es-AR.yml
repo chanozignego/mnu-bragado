@@ -12,6 +12,8 @@ es-AR:
         fax_number: Fax
         created_at: Fecha de creación
         updated_at: Última actualización
+        name_cont: Nombre
+        email_cont: Email
     models:
       school:
         one: Escuela
