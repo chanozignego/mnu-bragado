@@ -56,7 +56,20 @@ class ExPartakerDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:dni_cont],
+    [:school_name_cont],
+    [:city_name_cont],
+    [:partaker_type_eq, {as: :select, 
+                  collection: ExPartaker.partaker_types,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) { 
+                      I18n.t("ex_partaker.partaker_types.#{ft.first}") 
+                    }
+                  }],
+    [:year_eq]
   ]
 
   def self.search_path

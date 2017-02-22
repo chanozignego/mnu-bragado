@@ -25,10 +25,15 @@ es-AR:
         role: Rol
         role_name: Rol
         year: Año
-        full_name_cont: Nombre
-        email_cont: Email
         created_at: Fecha de creación
         updated_at: Última actualización
+        full_name_cont: Nombre
+        email_cont: Email
+        dni_cont: DNI
+        year_eq: Año
+        school_name_cont: Escuela
+        city_name_cont: Ciudad
+        partaker_type_eq: Delegado/Autoridad
     models:
       ex_partaker:
         one: ExParticipante

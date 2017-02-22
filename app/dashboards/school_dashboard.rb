@@ -54,7 +54,14 @@ class SchoolDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:province_eq, {as: :select, 
+              collection: Location::PROVINCES,
+              include_blank: true,
+              input_html: { class: "form-control js-select2" }
+              }],
+    [:city_cont],
+    [:street_cont]
   ]
 
   def self.search_path
