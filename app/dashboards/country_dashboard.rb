@@ -44,7 +44,16 @@ class CountryDashboard < ApplicationDashboard
   ]
 
   SEARCHABLE_ATTRIBUTES = [
-    [:name_cont]
+    [:name_cont],
+    [:regional_group_eq, {as: :select, 
+                  collection: Country.regional_groups,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) { 
+                      I18n.t("country.regional_groups.#{ft.first}") 
+                    }
+                  }],
   ]
 
   def self.search_path
