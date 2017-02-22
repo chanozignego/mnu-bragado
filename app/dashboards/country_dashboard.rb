@@ -53,7 +53,7 @@ class CountryDashboard < ApplicationDashboard
                   label_method: -> (ft) { 
                       I18n.t("country.regional_groups.#{ft.first}") 
                     }
-                  }],
+                  }]
   ]
 
   def self.search_path

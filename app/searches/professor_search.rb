@@ -14,4 +14,9 @@ class ProfessorSearch < Searchlight::Search
     query.joins(:person).where("email ILIKE '%#{opt}%'")
   end
 
+  def search_dni_cont
+    opt = options[:dni_cont]
+    query.joins(:person).where("dni ILIKE '%#{opt}%'")
+  end
+
 end

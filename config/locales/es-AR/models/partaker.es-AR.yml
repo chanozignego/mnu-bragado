@@ -25,6 +25,11 @@ es-AR:
         school_id: Escuela
         full_name_cont: Nombre
         email_cont: Email
+        dni_cont: DNI
+        school_id_eq: Escuela
+        type_eq: Delegado/Autoridad
+        has_diet_eq: Dieta
+        has_medical_problems_eq: Problemas médicos
         created_at: Fecha de creación
         updated_at: Última actualización
     models:

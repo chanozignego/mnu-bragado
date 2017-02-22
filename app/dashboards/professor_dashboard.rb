@@ -50,7 +50,8 @@ class ProfessorDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:dni_cont]
   ]
 
   def self.search_path
