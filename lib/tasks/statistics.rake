@@ -23,7 +23,7 @@ namespace :statistics do
       partakers = ExPartaker.where(year: year).count
       delegates = ExPartaker.where(year: year).where(partaker_type: 0).count
       authorities = ExPartaker.where(year: year).where(partaker_type: 1).count
-      stats = Statistics.where(year: year).first || Statistics.new
+      stats = Statistic.where(year: year).first || Statistic.new
       stats.delegations = delegations
       stats.partakers = partakers
       stats.delegates = delegates
