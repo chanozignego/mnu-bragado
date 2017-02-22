@@ -64,7 +64,53 @@ class DelegateDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:dni_cont],
+    [:school_id_eq, {as: :select, 
+                  collection: School.all,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :id,
+                  label_method: -> (s) { 
+                      s.name
+                    }
+                  }],
+    [:participated_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }],
+    [:has_diet_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }],
+    [:has_medical_problems_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }],
+    [:rol_eq, {as: :select, 
+                  collection: Delegate.rols,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) { 
+                      I18n.t("partaker.rols.#{ft.first}") 
+                    }
+                  }]
   ]
 
   def self.search_path
