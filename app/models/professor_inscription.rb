@@ -1,0 +1,2 @@
+class ProfessorInscription < Inscription
+end

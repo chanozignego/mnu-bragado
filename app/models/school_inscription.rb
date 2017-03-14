@@ -1,0 +1,2 @@
+class SchoolInscription < Inscription
+end

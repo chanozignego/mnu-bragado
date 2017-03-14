@@ -1,0 +1,2 @@
+class PartakerInscription < Inscription
+end

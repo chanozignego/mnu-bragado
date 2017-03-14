@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221163812) do
+ActiveRecord::Schema.define(version: 20170301204134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,30 @@ ActiveRecord::Schema.define(version: 20170221163812) do
     t.string   "role"
     t.string   "dni"
   end
+
+  create_table "inscriptions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "email"
+    t.integer  "location_id"
+    t.integer  "people_id"
+    t.integer  "medical_data_id"
+    t.integer  "professor_id"
+    t.integer  "school_id"
+    t.integer  "rol"
+    t.integer  "partaker_type"
+    t.boolean  "participated",    default: false
+    t.string   "type"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "inscriptions", ["location_id"], name: "index_inscriptions_on_location_id", using: :btree
+  add_index "inscriptions", ["medical_data_id"], name: "index_inscriptions_on_medical_data_id", using: :btree
+  add_index "inscriptions", ["people_id"], name: "index_inscriptions_on_people_id", using: :btree
+  add_index "inscriptions", ["professor_id"], name: "index_inscriptions_on_professor_id", using: :btree
+  add_index "inscriptions", ["school_id"], name: "index_inscriptions_on_school_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.integer  "locatable_id"

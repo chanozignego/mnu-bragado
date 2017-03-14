@@ -93,6 +93,8 @@ Rails.application.routes.draw do
 
   get "/", controller: "home", action: :index, as: :root
 
+  resource :inscriptions
+
   resource :query
 
 end
