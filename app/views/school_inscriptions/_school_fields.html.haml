@@ -1,0 +1,19 @@
+.col-xs-12
+  .col-xs-12
+    = f.input :name, input_html: {class: "form-control"}
+    %br
+  .col-md-4
+    = f.input :email, input_html: {class: "form-control"}
+    %br
+  .col-md-4
+    = f.input :phone_number, input_html: {class: "form-control"}
+    %br
+  .col-md-4
+    = f.input :fax_number, input_html: {class: "form-control"}
+    %br
+  %br
+
+  .col-md-12
+    = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|
+      = render 'inscriptions/location_fields', f: variant_form, item: f.object
+  %br

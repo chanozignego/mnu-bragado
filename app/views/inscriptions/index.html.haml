@@ -16,13 +16,7 @@
           %li.hidden
             %a{:href => "#page-top"}
           %li
-            %a.page-scroll{:href => "#services"} Valores
-          %li
-            %a.page-scroll{:href => "#portfolio"} Portfolio
-          %li
-            %a.page-scroll{:href => "#about"} Sobre Nosotros
-          %li
-            %a.page-scroll{:href => "#team"} Equipo
+            %a{:href => "/"} Home  
           %li
             %a.page-scroll{:href => "#contact"} Contacto
 
@@ -33,24 +27,32 @@
       .intro-text
         .intro-lead-in Uniendo Metas, Jóvenes para el Futuro
         .intro-heading Modelo Naciones Unidas Bragado
-        %a.page-scroll.btn.btn-xl{:href => "#services"} Quiero saber más
-        %a.page-scroll.btn.btn-xl{:href => inscriptions_path} Inscripciones 2017
+        .col-xs-12
+          .col-xs-3
+            %a.page-scroll.btn.btn-xl{:href => new_partaker_inscriptions_path} 
+              Inscripción 
+              %br 
+              Delegados
+          .col-xs-3
+            %a.page-scroll.btn.btn-xl{:href => new_partaker_inscriptions_path} 
+              Inscripción 
+              %br
+              Autoridades
+          .col-xs-3
+            %a.page-scroll.btn.btn-xl{:href => new_professor_inscriptions_path} 
+              Inscripción 
+              %br
+              Profesores
+          .col-xs-3
+            %a.page-scroll.btn.btn-xl{:href => new_school_inscriptions_path} 
+              Inscripción 
+              %br
+              Escuelas
  
-  / Services Section
-  = render "home/service_section"
-  
-  / Portfolio Grid Section
-  = render "home/portfolio_section"
 
-  / About Section
-  = render "home/about_section"
-
-  / Team Section
-  = render "home/team_section"
-  
   / Clients Aside
   = render "home/clients_section"
-  
+
   / Contact Section
   = render "home/contact_section"
 

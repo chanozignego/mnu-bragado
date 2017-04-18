@@ -1,0 +1,23 @@
+%section#contact
+  .container
+    .row
+      .col-lg-12
+        %h2.section-heading Delegado
+
+    .row
+      .col-xs-12
+        .js-item-container
+          = simple_form_for(@partaker_inscription, html: { class: "form js-item-form" }) do |f|
+            .admin-common-panel
+              .row.admin-common-panel__content
+                = render "delegate_fields", f: f
+
+                .col-xs-12.text-right
+                  %br
+                  .col-xs-12
+                    #success
+                    = link_to :back, class: "btn btn-default ml10" do
+                      %span
+                        %b
+                          CANCELAR
+                    %button.btn.btn-primary{type: "submit"} Aceptar

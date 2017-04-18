@@ -93,7 +93,10 @@ Rails.application.routes.draw do
 
   get "/", controller: "home", action: :index, as: :root
 
-  resource :inscriptions
+  get "/inscriptions", controller: "inscriptions", action: :index
+  resource :partaker_inscriptions
+  resource :professor_inscriptions
+  resource :school_inscriptions
 
   resource :query
 

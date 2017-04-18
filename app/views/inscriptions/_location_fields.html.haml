@@ -1,0 +1,21 @@
+.admin-common-panel
+  .col-xs-12.admin-common-panel__header
+    %h5
+      = School.human_attribute_name(:location)
+  .row
+    .col-xs-12.admin-common-panel__content
+      .col-md-6
+        = f.input :province, required: false, as: :select, collection: Location::PROVINCES, input_html: {class: "form-control js-select2"}
+      .col-md-6
+        = f.input :city, required: false, input_html: {class: "form-control"}
+        %br
+      .col-xs-6
+        = f.input :street_name, required: false, input_html: {class: "form-control"}
+      .col-xs-3
+        = f.input :street_number, required: false, input_html: {class: "form-control"}
+      .col-xs-3
+        = f.input :zip_code, required: false, input_html: {class: "form-control"}
+        %br
+      .col-xs-12
+        = f.input :details, required: false, as: :text, input_html: {class: "form-control"}, placeholder: "(opcional)"
+
