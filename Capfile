@@ -24,7 +24,7 @@ require 'stackmint/capistrano/postgresql'
 ### SECTION :ssh_config
 default_run_options[:pty]              = true
 ssh_options[:forward_agent]            = true
-#ssh_options[:port]                     = 22
+ssh_options[:port]                     = 22
 ### ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "dev7")]
 
 set :repository, "git@github.com:chanozignego/mnu-bragado.git"

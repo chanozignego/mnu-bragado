@@ -97,8 +97,10 @@ end
 
 # Deployment
 gem "newrelic_rpm"
-gem "foreman", "0.63.0"
-gem 'stackmint', git: "git@github.com:chanozignego/stackmint.git"
-gem "puma"
 
+group :production do
+  gem 'foreman', '0.63.0'
+  gem 'stackmint', git: "git@github.com:chanozignego/stackmint.git"
+  gem 'puma'
+end
 #ruby "2.2.4"
