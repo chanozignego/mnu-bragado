@@ -15,6 +15,7 @@
  *= require_variables
  *= require_agency
  *= require_home
+ *= require_freelancer
  *= require_bootstrap
  *= require_bootstrap.min.css
  */

@@ -20,3 +20,6 @@
 //= require jqBootstrapValidation
 //= require jquery
 //= require bootstrap
+//= require freelancer
+
+
