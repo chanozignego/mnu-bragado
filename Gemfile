@@ -101,4 +101,4 @@ gem "foreman", "0.63.0"
 gem 'stackmint', git: "git@github.com:chanozignego/stackmint.git"
 gem "puma"
 
-ruby "2.2.4"
+#ruby "2.2.4"
