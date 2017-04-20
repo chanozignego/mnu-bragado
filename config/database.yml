@@ -5,8 +5,8 @@ default: &default
 
 with_username_and_password: &with_username_and_password
   host:     <%= ENV["DATABASE_HOST"] || "localhost" %>
-  username: <%= ENV["DATABASE_USER"] || "dev" %>
-  password: <%= ENV["DATABASE_PASSWORD"] || "dev" %>
+  username: <%= ENV["DB_USERNAME"] || ENV["DATABASE_USER"] || "dev"  %>
+  password: <%= ENV["DB_PASSWORD"] || ENV["DATABASE_PASSWORD"] || "dev"  %>
 
 development:
   <<: *default
@@ -21,4 +21,4 @@ test:
 production:
   <<: *default
   <<: *with_username_and_password
-  database: <%= ENV["DATABASE_NAME"] %>
+  database: <%= ENV["DB_DATABASE"] || ENV["DATABASE_NAME"] || "mnubragado_production" %>
