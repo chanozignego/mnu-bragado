@@ -100,7 +100,7 @@ gem "newrelic_rpm"
 
 group :production do
   gem 'foreman', '0.63.0'
-  gem 'stackmint', git: "https://github.com/chanozignego/stackmint.git"
+  gem 'stackmint', git: "git@github.com:chanozignego/stackmint.git"
   gem 'puma'
   gem 'recipient_interceptor' #for staging environment - SET ENV['STAGING'] for to use
 end
