@@ -41,8 +41,8 @@ after "host:install",
   "dev_lib:install",
   "rvm:add_user_to_rvm"
 
-before "bootstrap",
-  "git_config:setup"
+# before "bootstrap",
+#   "git_config:setup"
 
 after "bootstrap",
   "rvm:add_app_to_rvm"
