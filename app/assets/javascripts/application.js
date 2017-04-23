@@ -22,4 +22,9 @@
 //= require bootstrap
 //= require freelancer
 
-
+//= require js/jquery.easing
+//= require js/classie
+//= require js/cbpAnimatedHeader
+//= require js/jqBootstrapValidation
+//= require js/contact_me
+//= require js/agency
