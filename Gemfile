@@ -41,6 +41,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "slim"
 gem "haml", "~> 4.0.3"
+gem "haml-rails", "~> 0.9"
 gem "bower-rails"
 gem "i18n-js", ">= 3.0.0.rc8"
 gem "rails-i18n", "~> 4.0.0"
@@ -88,6 +89,12 @@ gem "sidetiq"
 gem "roo", "~> 2.7.0"
 gem 'roo-xls'
 
+gem 'thin'
+gem 'bcrypt'
+
+#Font Awesome
+gem "font-awesome-rails"
+
 # Doc
 group :development do
   gem "yard"
@@ -104,4 +111,3 @@ group :production do
   gem 'puma'
   gem 'recipient_interceptor' #for staging environment - SET ENV['STAGING'] for to use
 end
-#ruby "2.2.4"
