@@ -20,10 +20,6 @@ Rails.application.config.assets.precompile += %w( agency.css )
 Rails.application.config.assets.precompile += %w( home.css )
 
 
-
-
-
-
 Rails.application.config.assets.precompile += %w( js/bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( js/jquery.easing.min.js )
 Rails.application.config.assets.precompile += %w( js/jquery.js )
