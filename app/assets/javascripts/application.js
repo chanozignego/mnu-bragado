@@ -22,3 +22,4 @@
 //= require jquery
 //= require bootstrap
 //= require freelancer
+//= require select2.full
