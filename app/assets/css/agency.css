@@ -12,6 +12,15 @@ body{overflow-x:hidden;font-family:"Roboto Slab","Helvetica Neue",Helvetica,Aria
   }
 }
 
+// Contact Section
+section#inscription {
+  background-color: @gray-darkest;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 /*.team-member.trainer-member {
   .image:hover {
     .background-color: red;
