@@ -6,7 +6,8 @@
         %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
     
     - @trainers.each do |trainer|
-      = render "home/trainer_section", trainer: trainer
+      - if (trainer.principal_image.present? && trainer.secondary_image.present?)
+        = render "home/trainer_section", trainer: trainer
 
     .row
       .col-lg-8.col-lg-offset-2.text-center
