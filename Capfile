@@ -37,7 +37,7 @@ after "host:install",
   "rvm:install",
   "rvm:install_ruby",
   "bundler:install",
-  "nodejs:install",
+  # "nodejs:install",
   "dev_lib:install",
   "rvm:add_user_to_rvm"
 
