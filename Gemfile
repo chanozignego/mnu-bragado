@@ -61,6 +61,8 @@ gem "inline_svg"
 # Auth
 gem "devise"
 
+gem 'jquery-ui-rails'
+
 # Admin
 gem "administrate",
   github: "micapam/administrate",

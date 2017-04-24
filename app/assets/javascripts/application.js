@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
 //= require agency
 //= require cbpAnimatedHeader
@@ -21,9 +22,3 @@
 //= require jquery
 //= require bootstrap
 //= require freelancer
-
-//= require js/classie
-//= require js/cbpAnimatedHeader
-//= require js/jqBootstrapValidation
-//= require js/contact_me
-//= require js/agency
