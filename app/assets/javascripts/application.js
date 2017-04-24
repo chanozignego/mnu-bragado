@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery/jquery.min
 //= require jquery_ujs
-//= require jquery-ui
 //= require bootstrap
 //= require agency
 //= require cbpAnimatedHeader
