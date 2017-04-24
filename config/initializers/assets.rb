@@ -15,7 +15,6 @@ Rails.application.config.assets.precompile += %w( admin/application.js )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( admin/application.css )
 Rails.application.config.assets.precompile += %w( application.css )
-Rails.application.config.assets.precompile += %w( admin/person/form.js )
 Rails.application.config.assets.precompile += %w( agency.css )
 Rails.application.config.assets.precompile += %w( home.css )
 

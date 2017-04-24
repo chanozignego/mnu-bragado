@@ -18,4 +18,6 @@
  *= require_bootstrap
  *= require_bootstrap.min.css
  *= require jquery-ui
+ *= require select2
+ *= require select2-bootstrap-theme/dist/select2-bootstrap.min
  */

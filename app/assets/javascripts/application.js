@@ -12,6 +12,12 @@
 //= require select2.full
 //= require jquery-easing
 
+//= require i18n
+//= require i18n/translations
+
+//= require shared/app
+//= require shared/common
+
 //$.fn.select2.defaults.set("theme", "bootstrap");
 
 //$(function() {
