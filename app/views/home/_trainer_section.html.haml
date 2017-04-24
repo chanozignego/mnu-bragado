@@ -4,7 +4,7 @@
     .image
       .primary-image
         = image_tag trainer.principal_image.mediumthumb, class: "img-responsive img-circle"
-      .secondary-image
+      .secondary-image{style: "display: none;"}
         = image_tag trainer.secondary_image.mediumthumb, class: "img-responsive img-circle"
     %h4 
       = trainer.full_name
