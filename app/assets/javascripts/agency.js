@@ -25,13 +25,24 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
-$('.team-member.trainer-member').hover(function() {
+$('.team-member.trainer-member .image').hover(function() {
   $(this).find('.primary-image').hide();
   $(this).find('.secondary-image').show();
 });
 
-$('.team-member.trainer-member').on("mouseleave", function() {
+$('.team-member.trainer-member .image').on('mouseleave', function() {
   $(this).find('.primary-image').show();
   $(this).find('.secondary-image').hide();
+});
 
+$('.team-member.trainer-member .image').on('click touch tap', function() {
+  debugger;
+  var primaryVisible = $(this).find('.primary-image').is(':visible');
+  if (primaryVisible) {
+    $(this).find('.primary-image').hide();
+    $(this).find('.secondary-image').show();
+  } else {
+    $(this).find('.primary-image').show();
+    $(this).find('.secondary-image').hide();
+  }
 });
