@@ -21,6 +21,7 @@ class ProfessorInscriptionsController < ApplicationController
     def permitted_attributes
       [
         :id, 
+        :school_id,
         person_attributes: person_attributes,
         medical_data_attributes: medical_data_attributes
       ]

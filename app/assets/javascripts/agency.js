@@ -36,7 +36,6 @@ $('.team-member.trainer-member .image').on('mouseleave', function() {
 });
 
 $('.team-member.trainer-member .image').on('click touch tap', function() {
-  debugger;
   var primaryVisible = $(this).find('.primary-image').is(':visible');
   if (primaryVisible) {
     $(this).find('.primary-image').hide();

@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require agency
+//= require inscriptions
 //= require cbpAnimatedHeader
 //= require classie
 //= require contact_me

@@ -3,7 +3,7 @@ class Partaker < ActiveRecord::Base
   scope :participated, -> { where(participated: true) }
   scope :not_participated, -> { where(participated: false) }
 
-  ROLES = %i[ag cs segib sti]
+  ROLES = %i[ag cs segib sti ecosoc]
 
   enum rol: ROLES
 

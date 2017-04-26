@@ -5,6 +5,8 @@ class Professor < ActiveRecord::Base
     has_one :medical_data, as: :medicable, class_name: "MedicalDatum"
   end
 
+  belongs_to :school
+
   accepts_nested_attributes_for :person
   accepts_nested_attributes_for :medical_data
 

@@ -98,6 +98,12 @@ Rails.application.routes.draw do
   resource :professor_inscriptions
   resource :school_inscriptions
 
+  resource :professors do 
+    collection do
+      get :get_by_school
+    end
+  end
+
   resource :query
 
 end

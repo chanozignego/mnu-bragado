@@ -1,0 +1,9 @@
+en:
+  select2:
+    default_simple_placeholder: Elija una opción
+    no_results_found: No se encontraron resultados
+    searching: Buscando...
+    loading_more: "Cargando más resultados..."
+    input_too_short: "Escriba al menos %{chars} letras"
+    tags:
+      no_results_found: Escriba los tags que desee
