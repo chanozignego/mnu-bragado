@@ -5,10 +5,12 @@ class PartakerInscriptionsController < ApplicationController
   end
 
   def create
-    resource = PartakerInscription.new(partaker_inscription_params)
+    @partaker_inscription = PartakerInscription.new(partaker_inscription_params)
 
-    if resource.save
+    if @partaker_inscription.save
       redirect_to root_path
+    else 
+
     end
   end
 

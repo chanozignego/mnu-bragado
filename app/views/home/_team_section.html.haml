@@ -2,15 +2,16 @@
   .container
     .row
       .col-lg-12.text-center
-        %h2.section-heading Nuestro maravilloso equipo
-        %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+        %h2.section-heading Somos un GRAN equipo!
+        %h3.section-subheading.text-muted 
+        /Lorem ipsum dolor sit amet consectetur.
     
     - @trainers.each_slice(3) do |trainer_group|
       .row
         - trainer_group.each do |trainer|
           - if (trainer.principal_image.present? && trainer.secondary_image.present?)
             = render "home/trainer_section", trainer: trainer
-
+    
     .row
       .col-lg-8.col-lg-offset-2.text-center
-        %p.large.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+        %p.large.text-muted Para lograr nuestros objetivos sabemos que es necesario trabajar de manera vinculada. Por esta razón, Conciencia adopta la articulación con el sector público, privado y de la sociedad civil. De esta manera incrementamos la calidad, replicabilidad e impacto de nuestras actividades.
