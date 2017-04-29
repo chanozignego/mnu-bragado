@@ -37,4 +37,8 @@ class Partaker < ActiveRecord::Base
     is_vegetarian? ? "SI" : "NO"
   end
 
+  def professors
+    school.try(:professors) || []
+  end
+
 end

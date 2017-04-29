@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/knapo/jquery-inputmask-rails.git
+  revision: 20df4fa329da0235b1e2ae3f0e225ce33fcc029c
+  specs:
+    jquery-inputmask-rails (0.4.0)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/lorddoig/yard-rails-plugin.git
   revision: 71f8600a858ff57b9b92c69b310c7ef0151a18f5
   specs:
@@ -461,6 +468,7 @@ DEPENDENCIES
   haml-rails (~> 0.9)
   i18n-js (>= 3.0.0.rc8)
   inline_svg
+  jquery-inputmask-rails!
   jquery-ui-rails
   js-routes
   letter_opener

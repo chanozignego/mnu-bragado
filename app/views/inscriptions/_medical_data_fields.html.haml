@@ -13,8 +13,9 @@
                  :value_method => :last,
                  :as => :radio_buttons, 
                  :label => "¿Padece alguna enfermedad crónica?",
-                 :item_wrapper_class => 'inline'
-          = f.input :chronic_desease_detail, required: false, input_html: {class: "form-control"}
+                 :item_wrapper_class => 'inline',
+                 :input_html => {:id => "has_chronic_desease_checkbox"}
+          = f.input :chronic_desease_detail, required: false, input_html: {class: "form-control", id: "has_chronic_desease_detail"}
           %br
           = f.input :take_medication, 
                  :collection => [["Si", true],["No", false]], 

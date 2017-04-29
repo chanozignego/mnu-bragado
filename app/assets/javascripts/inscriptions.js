@@ -50,8 +50,18 @@ function setDataOnChange(selector, next) {
       }
     });
   });
-};
+}
 
+function setCheckboxOnChange(selector, next) {
+  $(next).attr('disabled', !$(selector).is(':checked'));
+  $(selector).change(function() {
+    $(next).attr('disabled', !$(this).is(':checked'));
+  });
+}
+
+// function setChecked() {
+//   $(next).attr("disabled", !$(this).is(":checked"));
+// }
 
 $(document).ready(function() {
   this.school = {field: '.js-school-field',
@@ -63,5 +73,9 @@ $(document).ready(function() {
 
   setDataOnChange(this.school, this.professor);
   //this.setDataOnChange(this.professor, this.partaker);
+
+  //setCheckboxOnChange('#has_chronic_desease_checkbox', '#has_chronic_desease_detail');
+
+  $('.js-date-field').inputmask('99/99/9999');
 
 });

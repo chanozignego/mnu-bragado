@@ -62,6 +62,7 @@ gem "inline_svg"
 gem "devise"
 
 gem 'jquery-ui-rails'
+gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
 
 # Admin
 gem "administrate",

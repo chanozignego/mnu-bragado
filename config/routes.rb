@@ -94,7 +94,8 @@ Rails.application.routes.draw do
   get "/", controller: "home", action: :index, as: :root
 
   get "/inscriptions", controller: "inscriptions", action: :index
-  resource :partaker_inscriptions
+  resource :delegate_inscriptions
+  resource :authority_inscriptions
   resource :professor_inscriptions
   resource :school_inscriptions
 

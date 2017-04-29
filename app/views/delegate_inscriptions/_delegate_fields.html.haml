@@ -1,0 +1,40 @@
+.col-md-12
+  .col-md-12.form-group
+    = f.input :participated, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.participated, input_html: {class: "form-control js-select2"}
+
+  .col-md-12.form-group
+    = f.input :school_id, required: false, input_html: {class: "form-control js-select2 js-school-field"},
+      collection: School.all,
+      placeholder: I18n.t("administrate.select_option",
+        option: Delegate.human_attribute_name(:school)),
+      selected: f.object.school.try(:id),
+      include_blank: true,
+      label_method: -> (sch) { "#{sch.name} - #{sch.location.city}, #{sch.location.province}" }
+
+  .col-md-12.form-group
+    = f.input :professor_id, required: false, 
+      input_html: add_disabled_unless(f.object.try(:school).present?, {class: "form-control js-select2 js-professor-field"}),
+      collection: f.object.professors,
+      placeholder: I18n.t("administrate.select_option",
+        option: Delegate.human_attribute_name(:professor)),
+      selected: f.object.try(:professor_id),
+      include_blank: true,
+      label_method: -> (prof) { "#{prof.name}" }
+
+  .col-md-12.form-group
+    = f.input :rol, required: false, input_html: {class: "form-control js-select2"},
+      collection: Delegate.rols.keys,
+      placeholder: I18n.t("administrate.select_option",
+        option: Delegate.human_attribute_name(:rol)),
+      selected: f.object.rol,
+      include_blank: true,
+      label_method: -> (org) { t("partaker.rols")[org.to_sym] }
+
+.col-md-12
+  = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
+    = render 'inscriptions/person_fields', f: variant_form, item: f.object
+  %br
+.col-md-12
+  = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+    = render 'inscriptions/medical_data_fields', f: variant_form, item: f.object
+  %br

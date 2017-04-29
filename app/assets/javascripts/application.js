@@ -16,6 +16,9 @@
 //= require i18n
 //= require i18n/translations
 
+//= require inputmask
+//= require jquery.inputmask
+
 //= require shared/app
 //= require shared/common
 

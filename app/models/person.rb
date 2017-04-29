@@ -11,4 +11,10 @@ class Person < ActiveRecord::Base
   BLOOD_TYPES = ["0", "A", "B", "AB"]
   RH_BLOOD_FACTORS = ["+", "-"]
 
+  validates :first_name, :last_name, :dni, :birthdate, :age, 
+            :phone_number, :email, :blood_type, :rh_factor, 
+            :medical_insurance, :medical_insurance_affiliate_number, 
+            :medical_insurance_phone_number, :emergency_person, 
+            :emergency_person_relationship, :emergency_person_phone_number, presence: true
+
 end

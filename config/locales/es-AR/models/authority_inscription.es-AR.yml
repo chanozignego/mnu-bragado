@@ -1,14 +1,7 @@
 es-AR:
-  delegate:
-    rols:
-      ag: Delegado AG
-      cs: Delegado CS
-      segib: Delegado SEGIB
-      sti: Embajador
-      ecosoc: Delegado ECOSOC
   activerecord:
     attributes:
-      delegate:
+      authority_inscription:
         first_name: Nombre
         last_name: Apellido
         email: Email
@@ -19,8 +12,6 @@ es-AR:
         has_medical_problems?: "Medico"
         person: Datos personales
         medical_data: Datos médicos
-        created_at: Fecha de creación
-        updated_at: Última actualización
         rol: Rol
         professor: Docente responsable
         professor_id: Docente responsable
@@ -30,12 +21,13 @@ es-AR:
         email_cont: Email
         dni_cont: DNI
         school_id_eq: Escuela
-        participated_eq: Ya participó
+        type_eq: Delegado/Autoridad
         has_diet_eq: Dieta
         has_medical_problems_eq: Problemas médicos
-        rol_eq: Órgano
-        type_eq: Delegado/Autoridad
+        created_at: Fecha de creación
+        updated_at: Última actualización
     models:
-      delegate:
-        one: Delegado
-        other: Delegados
+      authority_inscription:
+        one: Autoridad
+        other: Autoridades
+

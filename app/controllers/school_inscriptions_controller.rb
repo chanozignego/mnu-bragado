@@ -5,10 +5,12 @@ class SchoolInscriptionsController < ApplicationController
   end
 
   def create
-    resource = SchoolInscription.new(school_inscription_params)
+    @school_inscription = SchoolInscription.new(school_inscription_params)
 
-    if resource.save
+    if @school_inscription.save
       redirect_to root_path
+    else
+      render :new
     end
   end
 

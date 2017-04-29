@@ -1,0 +1,57 @@
+%body#page-top.index
+  / Navigation
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header.page-scroll
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand.page-scroll{:href => root_path} UM Bragado
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.hidden
+            %a{:href => "#page-top"}
+          %li
+            %a{:href => "/"} Home  
+          %li
+            %a.page-scroll{:href => "#contact"} Contacto
+
+
+%section#inscription{style: "background-color: #222; background-image: url('../img/map-image.png'); background-position: center; background-repeat: no-repeat;"}
+  .container
+    .row
+      .col-lg-12
+        %h2.section-heading{style: "color: white;"} Delegado
+
+    .row
+      .col-xs-12
+        .js-item-container
+          = simple_form_for(@delegate_inscription, html: { class: "form js-item-form" }) do |f|
+            .admin-common-panel
+              .row.admin-common-panel__content
+                = render "delegate_fields", f: f
+
+                .col-xs-12.text-right
+                  %br
+                  .col-xs-12
+                    #success
+                    = link_to :back, class: "btn btn-default ml10" do
+                      %span
+                        %b
+                          CANCELAR
+                    %button.btn.btn-primary{type: "submit"} Aceptar
+
+
+
+/ Clients Aside
+= render "home/clients_section"
+
+/ Contact Section
+= render "home/contact_section"
+
+/ Footer
+= render "home/footer"

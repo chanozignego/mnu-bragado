@@ -1,14 +1,13 @@
-class PartakerInscriptionsController < ApplicationController
+class AuthorityInscriptionsController < ApplicationController
 
   def new
-    @partaker_inscription = PartakerInscription.new
+    @authority_inscription = AuthorityInscription.new
   end
 
   def create
-    @partaker_inscription = PartakerInscription.new(partaker_inscription_params)
-    @partaker_inscription.partaker_type = :delegate
+    @authority_inscription = AuthorityInscription.new(authority_inscription_params)
 
-    if @partaker_inscription.save
+    if @authority_inscription.save
       redirect_to root_path
     else 
       render :new
@@ -17,8 +16,8 @@ class PartakerInscriptionsController < ApplicationController
 
   private
 
-    def partaker_inscription_params
-      params.require(:partaker_inscription).permit(permitted_attributes)
+    def authority_inscription_params
+      params.require(:authority_inscription).permit(permitted_attributes)
     end
 
     def permitted_attributes

@@ -5,10 +5,12 @@ class ProfessorInscriptionsController < ApplicationController
   end
 
   def create
-    resource = ProfessorInscription.new(professor_inscription_params)
+    @professor_inscription = ProfessorInscription.new(professor_inscription_params)
 
-    if resource.save
+    if @professor_inscription.save
       redirect_to root_path
+    else 
+      render :new
     end
   end
 
