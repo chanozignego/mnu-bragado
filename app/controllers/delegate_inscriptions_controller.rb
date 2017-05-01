@@ -8,10 +8,13 @@ class DelegateInscriptionsController < ApplicationController
     @delegate_inscription = DelegateInscription.new(delegate_inscription_params)
 
     if @delegate_inscription.save
-      redirect_to root_path
-    else 
+      redirect_to :accepted
+    else
       render :new
     end
+  end
+
+  def accepted
   end
 
   private

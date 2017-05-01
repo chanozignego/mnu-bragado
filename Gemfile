@@ -47,6 +47,8 @@ gem "i18n-js", ">= 3.0.0.rc8"
 gem "rails-i18n", "~> 4.0.0"
 gem "simple_form"
 gem 'to_xls-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 #Bourbon
 gem 'bourbon', '~> 4.0'

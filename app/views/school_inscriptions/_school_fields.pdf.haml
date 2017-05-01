@@ -1,24 +1,32 @@
 .col-xs-12
-  - if f.object.id.present? 
-    .col-xs-12
-      = f.input :id, required: false, disabled: true, input_html: {class: "form-control"}
-      %br
+  .col-xs-12
+    = f.input :id, required: false, input_html: {class: "form-control"}
+    %br
 
   .col-xs-12
     = f.input :name, required: false, input_html: {class: "form-control"}
     %br
-  .col-md-4
+  .col-xs-4
     = f.input :email, required: false, input_html: {class: "form-control"}
     %br
-  .col-md-4
+  .col-xs-4
     = f.input :phone_number, required: false, input_html: {class: "form-control"}
     %br
-  .col-md-4
+  .col-xs-4
     = f.input :fax_number, required: false, input_html: {class: "form-control"}
     %br
   %br
 
-  .col-md-12
+  .col-xs-12
     = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|
       = render 'inscriptions/location_fields', f: variant_form, item: f.object
+  %br
+
+  .col-xs-12
+    %br
+    %br
+    %br
+    %hr{style: "border-top: 1px solid black; margin-bottom: 10px;"}    
+    Responsable del establecimiento (Firma, aclaración y sello)
+
   %br

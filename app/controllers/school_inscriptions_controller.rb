@@ -8,10 +8,23 @@ class SchoolInscriptionsController < ApplicationController
     @school_inscription = SchoolInscription.new(school_inscription_params)
 
     if @school_inscription.save
-      redirect_to root_path
+      redirect_to action: :accepted, id: @school_inscription.id
     else
       render :new
     end
+  end
+
+  def show
+    @school_inscription = SchoolInscription.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render  pdf: "#{@school_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
+      end
+    end
+  end
+
+  def accepted
+    @school_inscription = SchoolInscription.find(params[:id])
   end
 
   private

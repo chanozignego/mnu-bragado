@@ -94,10 +94,26 @@ Rails.application.routes.draw do
   get "/", controller: "home", action: :index, as: :root
 
   get "/inscriptions", controller: "inscriptions", action: :index
-  resource :delegate_inscriptions
-  resource :authority_inscriptions
-  resource :professor_inscriptions
-  resource :school_inscriptions
+  resources :delegate_inscriptions do
+    member do
+      get :accepted
+    end
+  end
+  resources :authority_inscriptions do
+    member do
+      get :accepted
+    end
+  end
+  resources :professor_inscriptions do
+    member do
+      get :accepted
+    end
+  end
+  resources :school_inscriptions do
+    member do
+      get :accepted
+    end
+  end
 
   resource :professors do 
     collection do

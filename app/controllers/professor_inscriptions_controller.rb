@@ -8,10 +8,13 @@ class ProfessorInscriptionsController < ApplicationController
     @professor_inscription = ProfessorInscription.new(professor_inscription_params)
 
     if @professor_inscription.save
-      redirect_to root_path
-    else 
+      redirect_to :accepted
+    else
       render :new
     end
+  end
+
+  def accepted
   end
 
   private
