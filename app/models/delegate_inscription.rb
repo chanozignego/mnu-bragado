@@ -12,4 +12,8 @@ class DelegateInscription < Inscription
     school.try(:professors) || []
   end
 
+  def name
+    "#{person.first_name} #{person.last_name}"
+  end
+
 end

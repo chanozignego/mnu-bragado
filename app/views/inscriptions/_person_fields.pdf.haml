@@ -1,0 +1,61 @@
+.col-xs-6
+  = f.input :first_name, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-6
+  = f.input :last_name, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-4
+  = f.input :dni, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-4
+  = f.input :birthdate, required: false, as: :string, input_html: {class: "form-control"}
+  %br
+.col-xs-4
+  = f.input :age, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-6
+  = f.input :phone_number, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-6
+  = f.input :email, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-6
+  = f.input :blood_type, required: false, input_html: {class: "form-control"}
+  %br
+.col-xs-6
+  = f.input :rh_factor, required: false, input_html: {class: "form-control"}
+  %br
+
+.col-xs-12
+  .admin-common-panel
+    .col-xs-12.admin-common-panel__header
+      .col-xs-12
+        %h5
+          = Person.human_attribute_name(:medical_insurance)
+    .row
+      .col-xs-12.admin-common-panel__content
+        .col-xs-4
+          = f.input :medical_insurance, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :medical_insurance_affiliate_number, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :medical_insurance_phone_number, required: false, input_html: {class: "form-control"}
+
+  %br
+
+.col-xs-12
+  .admin-common-panel
+    .col-xs-12.admin-common-panel__header
+      .col-xs-12
+        %h5
+          = Person.human_attribute_name(:in_case_of_emergency)
+    .row
+      .col-xs-12.admin-common-panel__content
+        .col-xs-4
+          = f.input :emergency_person, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :emergency_person_phone_number, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
+
+  %br

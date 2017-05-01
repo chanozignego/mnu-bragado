@@ -1,0 +1,70 @@
+.col-xs-12
+  .admin-common-panel
+    .col-xs-12.admin-common-panel__header
+      .col-xs-12
+        %h5
+          = Partaker.human_attribute_name(:medical_data)
+    .row
+      .col-md-12.admin-common-panel__content
+        .col-xs-12
+          = f.input :has_chronic_desease, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "¿Padece alguna enfermedad crónica?",
+                 :item_wrapper_class => 'inline',
+                 :input_html => {:id => "has_chronic_desease_checkbox"}
+          = f.input :chronic_desease_detail, required: false, input_html: {class: "form-control", id: "has_chronic_desease_detail"}
+          %br
+          = f.input :take_medication, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "¿Está tomando algún medicamento?",
+                 :item_wrapper_class => 'inline'
+          = f.input :medication_detail, required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :has_medical_background, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "Antecedentes (operaciones, convulsiones, etc.)",
+                 :item_wrapper_class => 'inline'
+          = f.input :medical_background_detail, required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :has_allergy, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "¿Padece alergias de algún tipo? (comidas, medicamentos, picaduras de insectos u otras)",
+                 :item_wrapper_class => 'inline'
+          = f.input :allergy_detail, required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :has_specific_diet, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "¿Debe serguir alguna dieta especial?",
+                 :item_wrapper_class => 'inline'
+          = f.input :specific_diet_detail, required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :is_vegetarian, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :label => "¿Es vegetariana/o?",
+                 :item_wrapper_class => 'inline'
+          %br
+          %br
+          = f.input :doctor_name, label: "Nombre y apellido del médico de cabecera", required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :doctor_phone_number, label: "Teléfono en donde se lo pueda ubicar", required: false, input_html: {class: "form-control"}
+          %br
+          = f.input :urgency_clinic, label: "¿A qué lugar derivar en caso de urgencia?", required: false, input_html: {class: "form-control"}
+          %br

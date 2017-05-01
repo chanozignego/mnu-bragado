@@ -8,13 +8,23 @@ class ProfessorInscriptionsController < ApplicationController
     @professor_inscription = ProfessorInscription.new(professor_inscription_params)
 
     if @professor_inscription.save
-      redirect_to :accepted
+      redirect_to action: :accepted, id: @professor_inscription.id
     else
       render :new
     end
   end
 
+  def show
+    @professor_inscription = ProfessorInscription.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render  pdf: "#{@professor_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
+      end
+    end
+  end
+
   def accepted
+    @professor_inscription = ProfessorInscription.find(params[:id])
   end
 
   private

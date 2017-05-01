@@ -5,4 +5,8 @@ class ProfessorInscription < Inscription
   validates :person, presence: true
   validates :medical_data, presence: true
 
+  def name
+    "#{person.first_name} #{person.last_name}"
+  end
+
 end

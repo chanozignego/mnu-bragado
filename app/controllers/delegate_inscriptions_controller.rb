@@ -8,15 +8,25 @@ class DelegateInscriptionsController < ApplicationController
     @delegate_inscription = DelegateInscription.new(delegate_inscription_params)
 
     if @delegate_inscription.save
-      redirect_to :accepted
+      redirect_to action: :accepted, id: @delegate_inscription.id
     else
       render :new
     end
   end
 
-  def accepted
+  def show
+    @delegate_inscription = DelegateInscription.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render  pdf: "#{@delegate_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
+      end
+    end
   end
 
+  def accepted
+    @delegate_inscription = DelegateInscription.find(params[:id])
+  end
+  
   private
 
     def delegate_inscription_params

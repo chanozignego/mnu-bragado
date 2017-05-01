@@ -8,13 +8,23 @@ class AuthorityInscriptionsController < ApplicationController
     @authority_inscription = AuthorityInscription.new(authority_inscription_params)
 
     if @authority_inscription.save
-      redirect_to :accepted
+      redirect_to action: :accepted, id: @authority_inscription.id
     else
       render :new
     end
   end
 
+  def show
+    @authority_inscription = AuthorityInscription.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render  pdf: "#{@authority_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
+      end
+    end
+  end
+
   def accepted
+    @authority_inscription = AuthorityInscription.find(params[:id])
   end
 
   private

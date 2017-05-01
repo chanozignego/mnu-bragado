@@ -14,4 +14,8 @@ class School < ActiveRecord::Base
 		"#{location_street_name}, #{location_street_number}"
 	end
 
+  def to_s
+    "#{name} - #{location.city}, #{location.province}"
+  end 
+
 end
