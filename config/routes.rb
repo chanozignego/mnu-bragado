@@ -54,6 +54,32 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :partaker_inscriptions do
+      member do
+        put :accept
+      end
+    end
+    resources :authority_inscriptions do
+      member do
+        put :accept
+      end
+    end
+    resources :delegate_inscriptions do
+      member do
+        put :accept
+      end
+    end
+    resources :school_inscriptions do
+      member do
+        put :accept
+      end
+    end
+    resources :professor_inscriptions do
+      member do
+        put :accept
+      end
+    end
+
     #REFACTOR THIS!!!!!!!!!!!!!!!
     namespace :delegates do
       post :check_participation

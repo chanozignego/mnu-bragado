@@ -1,0 +1,23 @@
+.mt20
+  = link_to(accept_admin_school_inscription_path(id: page.resource.try(:id)),
+    method: :put, 
+    class: "btn btn-success") do
+    %span
+      Aprobar inscripción
+    %i.fa.fa-check-square.ml5
+
+  = link_to [namespace, page.resource],
+    class: "btn btn-danger ml10",
+    method: :delete,
+    data: { confirm: t("administrate.actions.confirm") } do
+
+    %span= t("administrate.actions.destroy")
+    %i.fa.fa-trash.ml5
+
+  = render "member_actions",
+    dashboard: dashboard_class,
+    resource: page.resource, link_class: "btn btn-default ml10"
+
+  = link_to :back, class: "btn btn-default ml10" do
+    %span= I18n.t("administrate.actions.back")
+    %i.fa.fa-reply.ml5

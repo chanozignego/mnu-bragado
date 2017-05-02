@@ -6,6 +6,9 @@ es-AR:
         email: Email
         location_province: Provincia
         location_city: Ciudad
+        location_street_name: Calle
+        location_street_number: Número
+        location_zip_code: Código postal
         phone_number: Teléfono
         fax_number: Fax
         first_name: Nombre
@@ -34,6 +37,6 @@ es-AR:
         updated_at: Última actualización
     models:
       school_inscription:
-        one: Escuela
-        other: Escuela
+        one: Inscripción Escuela
+        other: Inscripciones Escuelas
 

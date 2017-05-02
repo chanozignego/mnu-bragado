@@ -5,4 +5,6 @@ class SchoolInscription < Inscription
   validates :email, presence: true
   validates :location, presence: true
 
+  delegate :province, :city, :street_name, :street_number, :zip_code, to: :location, prefix: true, allow_nil: true
+
 end

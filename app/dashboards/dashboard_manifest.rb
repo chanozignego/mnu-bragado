@@ -21,6 +21,7 @@ class DashboardManifest
     "trainers",
     "countries",
     "ex_partakers",
+    "inscriptions",
     "queries"
   ]
 

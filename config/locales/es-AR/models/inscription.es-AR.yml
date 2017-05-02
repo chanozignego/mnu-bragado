@@ -1,0 +1,17 @@
+es-AR:
+  activerecord:
+    attributes:
+      inscription:
+        name: Nombre
+        full_name: Nombre
+        type_name: Tipo 
+        id_eq: Id
+        name_cont: Nombre
+        full_name_cont: Nombre
+        created_at: Fecha de creación
+        updated_at: Última actualización
+    models:
+      inscription:
+        one: Inscripción
+        other: Inscripciones
+

@@ -1,10 +1,10 @@
 class Inscription < ActiveRecord::Base
 
-  ROLES = %i[ag cs segib sti]
-  PARTAKER_TYPES = %i[delegate authority]
+  ROLES = %i[ag cs segib sti ecosoc]
+  #PARTAKER_TYPES = %i[delegate authority]
 
   enum rol: ROLES
-  enum partaker_type: PARTAKER_TYPES
+  #enum partaker_type: PARTAKER_TYPES
 
   with_options dependent: :destroy do
     has_one :person, as: :personable, inverse_of: :personable, class_name: "Person"
@@ -26,5 +26,29 @@ class Inscription < ActiveRecord::Base
   accepts_nested_attributes_for :professor
   accepts_nested_attributes_for :school
   accepts_nested_attributes_for :location
+
+  def type_name
+    if is_a?(ProfessorInscription)
+      "Profesor"
+    elsif is_a?(DelegateInscription)
+      "Delegado"
+    elsif is_a?(AuthorityInscription)
+      "Autoridad"
+    elsif is_a?(SchoolInscription)
+      "Escuela"
+    else
+      "Participante"
+    end
+  end
+
+  def full_name
+    if self.name.present?
+      self.name
+    elsif person.present? 
+      "#{person.first_name} #{person.last_name}"
+    else 
+      ""
+    end
+  end
 
 end

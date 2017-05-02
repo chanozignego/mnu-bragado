@@ -7,6 +7,30 @@ es-AR:
         email: Email
         phone_number: Teléfono
         year: Año
+        birthdate: Fecha de nacimiento
+        age: Edad
+        blood_type: Tipo de sangre 
+        rh_factor: Factor de sangre
+        medical_insurance: Obra social
+        medical_insurance_affiliate_number: Número de afiliado
+        medical_insurance_phone_number: Teléfono obra social
+        emergency_person: Persona de emergencia (Nombre)
+        emergency_person_relationship: Persona de emergencia (Parentezco)
+        emergency_person_phone_number: Persona de emergencia (Teléfono)
+        has_chronic_desease: Enfermedad crónica 
+        chronic_desease_detail: Detalle enfermedad crónica
+        take_medication: Toma medicación
+        medication_detail: Detalle medicación 
+        has_medical_background: Antecedentes (operaciones, convulciones, etc..) 
+        medical_background_detail: Detalle antecedentes
+        has_allergy: Alergia
+        allergy_detail: Detalle alergia
+        has_specific_diet: Dieta especial 
+        specific_diet_detail: Detalle dieta
+        is_vegetarian: Vegetariano 
+        doctor_name: Medico de cabecera (Nombre)
+        doctor_phone_number: Medico de cabecera (Teléfono)
+        urgency_clinic: Derivar en caso de emergencia
         participated: Participó?
         has_diet?: "Dieta"
         has_medical_problems?: "Medico"
@@ -17,6 +41,7 @@ es-AR:
         professor_id: Docente responsable
         school: Escuela
         school_id: Escuela
+        school_name: Escuela
         full_name_cont: Nombre
         email_cont: Email
         dni_cont: DNI
@@ -28,6 +53,6 @@ es-AR:
         updated_at: Última actualización
     models:
       professor_inscription:
-        one: Profesor
-        other: Profesor
+        one: Inscripción Profesor
+        other: Inscripcioes Profesores
 
