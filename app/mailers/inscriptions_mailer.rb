@@ -1,5 +1,5 @@
 class InscriptionsMailer < ApplicationMailer
-  default from: 'mnubragado@gmail.com'
+  #default from: 'mnubragado@gmail.com'
 
   def school_instructions_email(email, name)
     @name = name
