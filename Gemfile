@@ -9,6 +9,7 @@ gem "dotenv-rails", groups: %i[development test]
 gem "letter_opener", group: :development
 gem "mail"
 gem "gmail"
+gem 'mailgun_rails'
 
 # Debugging
 gem "pry"

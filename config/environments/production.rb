@@ -85,4 +85,11 @@ Rails.application.configure do
   #   port:                 587,
   #   domain:               'mnu-bragado.herokuapp.com',
   #   authentication:       'plain'}
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+          api_key: ENV["MAILGUN_API_KEY"],
+          domain: ENV["MAILGUN_DOMAIN"]
+  }
+  
 end
