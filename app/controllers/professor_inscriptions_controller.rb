@@ -8,7 +8,7 @@ class ProfessorInscriptionsController < ApplicationController
     @professor_inscription = ProfessorInscription.new(professor_inscription_params)
 
     if @professor_inscription.save
-      InscriptionsMailer.professor_instructions_email(@professor_inscription.email, @professor_inscription.name).deliver_now
+      #InscriptionsMailer.professor_instructions_email(@professor_inscription.email, @professor_inscription.name).deliver_now
       redirect_to action: :accepted, id: @professor_inscription.id
     else
       render :new
