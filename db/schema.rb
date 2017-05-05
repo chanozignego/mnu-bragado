@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502193359) do
+ActiveRecord::Schema.define(version: 20170505232054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string   "name",           null: false
+    t.string   "name",                       null: false
     t.string   "flag_image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "regional_group"
+    t.integer  "state",          default: 0
+    t.integer  "school_id"
   end
+
+  add_index "countries", ["school_id"], name: "index_countries_on_school_id", using: :btree
 
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false

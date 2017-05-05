@@ -25,6 +25,26 @@
               label_method: -> (reg) { t("country.regional_groups")[reg.to_sym] }
           %br
 
+          .col-md-12.form-group
+            = f.input :state, required: false, input_html: {class: "form-control js-select2"},
+              collection: Country.states.keys,
+              placeholder: I18n.t("administrate.select_option",
+                option: Country.human_attribute_name(:state)),
+              selected: f.object.state,
+              include_blank: true,
+              label_method: -> (reg) { t("country.states")[reg.to_sym] }
+          %br
+
+          .col-md-12.form-group
+            = f.input :school_id, required: false, input_html: {class: "form-control js-select2"},
+              collection: School.all,
+              placeholder: I18n.t("administrate.select_option",
+                option: Country.human_attribute_name(:school)),
+              selected: f.object.school,
+              include_blank: true,
+              label_method: -> (reg) { reg.try(:name) }
+          %br
+
         .col-xs-12
           .form-actions.mt20
             = button_tag(type: "submit", class:"btn btn-primary") do

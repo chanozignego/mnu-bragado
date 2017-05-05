@@ -12,6 +12,10 @@ class CountryDashboard < ApplicationDashboard
     name: Field::String,
     regional_group: Field::String,
     regional_group_name: Field::String,
+    state: Field::String,
+    state_name: Field::String,
+    school: Field::String,
+    school_name: Field::String,
     created_at: Field::DateTime
   }
 
@@ -24,7 +28,8 @@ class CountryDashboard < ApplicationDashboard
     :id,
     :name,
     :regional_group_name,
-    :created_at
+    :state_name,
+    :school_name
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +41,8 @@ class CountryDashboard < ApplicationDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :regional_group
+    :regional_group,
+    :state
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [
@@ -52,6 +58,24 @@ class CountryDashboard < ApplicationDashboard
                   value_method: :last,
                   label_method: -> (ft) { 
                       I18n.t("country.regional_groups.#{ft.first}") 
+                    }
+                  }],
+    [:state_eq, {as: :select, 
+                  collection: Country.states,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) { 
+                      I18n.t("country.states.#{ft.first}") 
+                    }
+                  }],
+    [:school_id_eq, {as: :select, 
+                  collection: School.all,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :id,
+                  label_method: -> (ft) { 
+                      ft.try(:name) 
                     }
                   }]
   ]

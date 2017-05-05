@@ -33,6 +33,22 @@
               .span
                 = page.resource.regional_group_name
 
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:state)
+            .col-sm-9
+              .span
+                = page.resource.state_name
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:school)
+            .col-sm-9
+              .span
+                = page.resource.school.try(:name)
+
 
 
       .item-actions{style: "margin: 20px;"}
