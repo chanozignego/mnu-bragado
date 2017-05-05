@@ -10,7 +10,7 @@ es-AR:
         medical_background_detail: Detalles de los antecedentes
         has_allergy: ¿Padece alergias de algún tipo? (comidas, medicamentos, picaduras de insectos u otras)
         allergy_detail: Detalles de la alergia
-        has_specific_diet: ¿Debe serguir alguna dieta especial?
+        has_specific_diet: ¿Debe seguir alguna dieta especial? (celiaquismo, hipertenso, intolerante a la lactosa, etc)
         specific_diet_detail: Detalles de la dieta
         is_vegetarian: ¿Es vegetariana/o?
         in_case_of_medical_emergency: En caso de emergencia medica
