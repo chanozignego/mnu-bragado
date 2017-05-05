@@ -8,7 +8,11 @@ class AuthorityInscriptionsController < ApplicationController
     @authority_inscription = AuthorityInscription.new(authority_inscription_params)
 
     if @authority_inscription.save
-      #InscriptionsMailer.authority_instructions_email(@authority_inscription.email, @authority_inscription.name).deliver_now
+      begin
+        InscriptionsMailer.authority_instructions_email(@authority_inscription.email, @authority_inscription.name).deliver_now
+      rescue StandardError => e
+        put e.message
+      end
       redirect_to action: :accepted, id: @authority_inscription.id
     else
       render :new

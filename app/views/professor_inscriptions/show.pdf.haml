@@ -8,4 +8,4 @@
           = simple_form_for(@professor_inscription, html: { class: "form js-item-form" }) do |f|
             .admin-common-panel
               .row.admin-common-panel__content
-                = render "professor_fields", f: f
+                = render "/professor_inscriptions/professor_fields", f: f

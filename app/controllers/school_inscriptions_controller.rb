@@ -8,7 +8,11 @@ class SchoolInscriptionsController < ApplicationController
     @school_inscription = SchoolInscription.new(school_inscription_params)
 
     if @school_inscription.save
-      #InscriptionsMailer.school_instructions_email(@school_inscription.email, @school_inscription.name).deliver_now
+      begin 
+        InscriptionsMailer.school_instructions_email(@school_inscription).deliver_now
+      rescue StandardError => e
+        put e.message
+      end
       redirect_to action: :accepted, id: @school_inscription.id
     else
       render :new

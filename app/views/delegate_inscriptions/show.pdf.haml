@@ -8,4 +8,4 @@
           = simple_form_for(@delegate_inscription, html: { class: "form js-item-form" }) do |f|
             .admin-common-panel
               .row.admin-common-panel__content
-                = render "delegate_fields", f: f
+                = render "/delegate_inscriptions/delegate_fields", f: f

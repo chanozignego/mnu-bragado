@@ -8,7 +8,11 @@ class DelegateInscriptionsController < ApplicationController
     @delegate_inscription = DelegateInscription.new(delegate_inscription_params)
 
     if @delegate_inscription.save
-      #InscriptionsMailer.delegate_instructions_email(@delegate_inscription.email, @delegate_inscription.name).deliver_now
+      begin
+        InscriptionsMailer.delegate_instructions_email(@delegate_inscription.email, @delegate_inscription.name).deliver_now
+      rescue StandardError => e
+        put e.message
+      end
       redirect_to action: :accepted, id: @delegate_inscription.id
     else
       render :new

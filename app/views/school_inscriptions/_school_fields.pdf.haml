@@ -25,7 +25,7 @@
 
   .col-xs-12
     = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|
-      = render 'inscriptions/location_fields', f: variant_form, item: f.object
+      = render '/inscriptions/location_fields', f: variant_form, item: f.object
   %br
 
   .col-xs-12
