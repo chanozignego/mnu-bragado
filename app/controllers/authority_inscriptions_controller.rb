@@ -9,9 +9,8 @@ class AuthorityInscriptionsController < ApplicationController
 
     if @authority_inscription.save
       begin
-        InscriptionsMailer.authority_instructions_email(@authority_inscription.email, @authority_inscription.name).deliver_now
+        InscriptionsMailer.authority_instructions_email(@authority_inscription).deliver_now
       rescue StandardError => e
-        put e.message
       end
       redirect_to action: :accepted, id: @authority_inscription.id
     else

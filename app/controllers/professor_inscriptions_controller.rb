@@ -9,9 +9,8 @@ class ProfessorInscriptionsController < ApplicationController
 
     if @professor_inscription.save
       begin
-        InscriptionsMailer.professor_instructions_email(@professor_inscription.email, @professor_inscription.name).deliver_now
+        InscriptionsMailer.professor_instructions_email(@professor_inscription).deliver_now
       rescue StandardError => e
-        put e.message
       end
       redirect_to action: :accepted, id: @professor_inscription.id
     else

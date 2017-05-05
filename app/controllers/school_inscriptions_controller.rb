@@ -11,7 +11,6 @@ class SchoolInscriptionsController < ApplicationController
       begin 
         InscriptionsMailer.school_instructions_email(@school_inscription).deliver_now
       rescue StandardError => e
-        put e.message
       end
       redirect_to action: :accepted, id: @school_inscription.id
     else
