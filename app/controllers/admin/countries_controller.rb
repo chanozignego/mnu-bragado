@@ -5,7 +5,8 @@ module Admin
 
       def permitted_attributes
         [
-          :id, :name, :regional_group, :state, :school, :school_id
+          :id, :name, :regional_group, :state, :school, :school_id, 
+          :ag, :sti, :cs, :segib, :ecosoc
         ]
       end
 

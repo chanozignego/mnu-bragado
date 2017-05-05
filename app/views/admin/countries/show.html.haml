@@ -49,6 +49,50 @@
               .span
                 = page.resource.school.try(:name)
 
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:ag)
+            .col-sm-9
+              - ag = page.resource.ag
+              .span.label{class: "label-#{ag ? 'success' : 'default'}"}
+                = ag ? "Si" : "No"
+          
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:sti)
+            .col-sm-9
+              - sti = page.resource.sti
+              .span.label{class: "label-#{sti ? 'success' : 'default'}"}
+                = sti ? "Si" : "No"
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:cs)
+            .col-sm-9
+              - cs = page.resource.cs
+              .span.label{class: "label-#{cs ? 'success' : 'default'}"}
+                = cs ? "Si" : "No"
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:segib)
+            .col-sm-9
+              - segib = page.resource.segib
+              .span.label{class: "label-#{segib ? 'success' : 'default'}"}
+                = segib ? "Si" : "No"
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Country.human_attribute_name(:ecosoc)
+            .col-sm-9
+              - ecosoc = page.resource.ecosoc
+              .span.label{class: "label-#{ecosoc ? 'success' : 'default'}"}
+                = ecosoc ? "Si" : "No"
 
 
       .item-actions{style: "margin: 20px;"}

@@ -16,6 +16,11 @@ class CountryDashboard < ApplicationDashboard
     state_name: Field::String,
     school: Field::String,
     school_name: Field::String,
+    ag: LabeledBooleanField,
+    sti: LabeledBooleanField,
+    cs: LabeledBooleanField,
+    segib: LabeledBooleanField,
+    ecosoc: LabeledBooleanField,
     created_at: Field::DateTime
   }
 
@@ -29,7 +34,12 @@ class CountryDashboard < ApplicationDashboard
     :name,
     :regional_group_name,
     :state_name,
-    :school_name
+    :school_name,
+    :ag,
+    :sti,
+    :cs,
+    :segib,
+    :ecosoc
   ]
 
   # SHOW_PAGE_ATTRIBUTES

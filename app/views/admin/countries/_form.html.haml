@@ -45,6 +45,52 @@
               label_method: -> (reg) { reg.try(:name) }
           %br
 
+          .col-md-12.form-group
+            = f.input :ag, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :item_wrapper_class => 'inline'
+            %br
+
+          .col-md-12.form-group
+            = f.input :sti, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :item_wrapper_class => 'inline'
+            %br
+
+          .col-md-12.form-group
+            = f.input :cs, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :item_wrapper_class => 'inline'
+            %br
+
+          .col-md-12.form-group
+            = f.input :segib, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :item_wrapper_class => 'inline'
+            %br
+
+          .col-md-12.form-group
+            = f.input :ecosoc, 
+                 :collection => [["Si", true],["No", false]], 
+                 :label_method => :first, 
+                 :value_method => :last,
+                 :as => :radio_buttons, 
+                 :item_wrapper_class => 'inline'
+            %br
+
+
         .col-xs-12
           .form-actions.mt20
             = button_tag(type: "submit", class:"btn btn-primary") do

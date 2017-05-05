@@ -27,6 +27,11 @@ es-AR:
         school_id_eq: Escuela
         school_name: Escuela
         school_eq: Escuela
+        ag: AG
+        sti: STI
+        cs: CS
+        segib: SEGIB
+        ecosoc: ECOSOC
     models:
       country:
         one: Pais
