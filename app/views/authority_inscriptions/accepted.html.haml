@@ -32,7 +32,7 @@
                 %h2.text-center
                   ¡Felicitaciones!
                 %h3.text-center
-                  ¡Ya sos parte del modelo! Para finalizar la inscripción, tenes que imprimir el formulario, firmarlo y presentarlo junto con el dinero de la inscripción en la proxima capacitación
+                  ¡Ya sos parte del modelo! Para finalizar, tenes que imprimir el formulario, firmarlo y presentarlo junto con el costo de la inscripción en el Hogar San Vicente
                   /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
 
               .col-xs-12
@@ -40,6 +40,13 @@
                 .col-xs-12.text-center
                   %button.btn.btn-primary
                     = link_to "Descargar PDF", authority_inscription_path(id: @authority_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+
+                %br
+                %br
+                %br
+              .col-xs-12
+                %h5.text-center
+                  La inscripción tambien te ha sido enviada al email indicado
 
 / Clients Aside
 = render "home/clients_section"

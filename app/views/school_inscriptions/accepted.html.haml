@@ -34,12 +34,18 @@
                 %h3.text-center
                   ¡La escuela ya forma parte del modelo! Para finalizar la inscripción, tenes que imprimir el formulario, firmarlo y enviarlo escaneado a mnubragado@gmail.com
                   /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
-
               .col-xs-12
                 %br
                 .col-xs-12.text-center
                   %button.btn.btn-primary
                     = link_to "Descargar PDF", school_inscription_path(id: @school_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+
+                %br
+                %br
+                %br
+              .col-xs-12
+                %h5.text-center
+                  La inscripción tambien te ha sido enviada al email indicado
 
 / Clients Aside
 = render "home/clients_section"
