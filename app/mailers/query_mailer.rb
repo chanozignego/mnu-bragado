@@ -1,4 +1,5 @@
 class QueryMailer < ApplicationMailer
+  default from: "consultas@mnubragado.com"
 
   def new_query_email(query)
     @query = query
