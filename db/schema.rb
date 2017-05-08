@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505233538) do
+ActiveRecord::Schema.define(version: 20170508221509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -228,13 +228,17 @@ ActiveRecord::Schema.define(version: 20170505233538) do
   add_index "schools", ["location_id"], name: "index_schools_on_location_id", using: :btree
 
   create_table "statistics", force: :cascade do |t|
-    t.integer  "delegations", default: 0,    null: false
-    t.integer  "partakers",   default: 0,    null: false
-    t.integer  "delegates",   default: 0,    null: false
-    t.integer  "authorities", default: 0,    null: false
-    t.integer  "year",        default: 2012, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "delegations",  default: 0,    null: false
+    t.integer  "partakers",    default: 0,    null: false
+    t.integer  "delegates",    default: 0,    null: false
+    t.integer  "authorities",  default: 0,    null: false
+    t.integer  "year",         default: 2012, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "views",        default: 0
+    t.integer  "inscriptions", default: 0
+    t.integer  "queries",      default: 0
+    t.integer  "persons",      default: 0
   end
 
   create_table "trainers", force: :cascade do |t|

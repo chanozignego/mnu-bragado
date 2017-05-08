@@ -9,6 +9,7 @@ class AuthorityInscriptionsController < ApplicationController
 
     if @authority_inscription.save
       begin
+        increment_inscription_counter()
         InscriptionsMailer.authority_instructions_email(@authority_inscription).deliver_now
       rescue StandardError => e
       end
@@ -32,6 +33,12 @@ class AuthorityInscriptionsController < ApplicationController
   end
 
   private
+
+    def increment_inscription_counter
+      stats = Statistic.where(year: @current_year).last
+      stats.inscriptions = stats.inscriptions + 1
+      stats.save
+    end
 
     def authority_inscription_params
       params.require(:authority_inscription).permit(permitted_attributes)

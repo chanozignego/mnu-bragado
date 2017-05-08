@@ -9,6 +9,7 @@ class SchoolInscriptionsController < ApplicationController
 
     if @school_inscription.save
       begin 
+        increment_inscription_counter()
         InscriptionsMailer.school_instructions_email(@school_inscription).deliver_now
       rescue StandardError => e
       end
@@ -32,6 +33,12 @@ class SchoolInscriptionsController < ApplicationController
   end
 
   private
+
+    def increment_inscription_counter
+      stats = Statistic.where(year: @current_year).last
+      stats.inscriptions = stats.inscriptions + 1
+      stats.save
+    end
 
     def school_inscription_params
       params.require(:school_inscription).permit(permitted_attributes)

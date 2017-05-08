@@ -9,6 +9,7 @@ class DelegateInscriptionsController < ApplicationController
 
     if @delegate_inscription.save
       begin
+        increment_inscription_counter()
         InscriptionsMailer.delegate_instructions_email(@delegate_inscription).deliver_now
       rescue StandardError => e
       end
@@ -32,6 +33,12 @@ class DelegateInscriptionsController < ApplicationController
   end
   
   private
+
+    def increment_inscription_counter
+      stats = Statistic.where(year: @current_year).last
+      stats.inscriptions = stats.inscriptions + 1
+      stats.save
+    end
 
     def delegate_inscription_params
       params.require(:delegate_inscription).permit(permitted_attributes)

@@ -2,6 +2,50 @@
 
 .row
   .col-lg-3.col-md-6
+    .panel.panel-info
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-eye.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @model_data[:views]
+            %div Visitas
+  .col-lg-3.col-md-6
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-list.fa-5x
+          .col-xs-9.text-right
+            .huge
+              = @model_data[:inscriptions]
+            %div Inscripciones
+  .col-lg-3.col-md-6
+    .panel.panel-warning
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-comment-o.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @model_data[:queries]
+            %div Consultas
+
+  .col-lg-3.col-md-6
+    .panel.panel-danger
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-group.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @model_data[:persons]
+            %div Personas
+
+
+.row
+  .col-lg-3.col-md-6
     .panel.panel-primary
       .panel-heading
         .row

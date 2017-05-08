@@ -27,6 +27,12 @@ module Admin
 
       @statistics.reverse!
 
+      @model_data = {}
+      @model_data[:views] = Statistic.where(year: current_year).last.try(:views) || 0
+      @model_data[:inscriptions] = Statistic.where(year: current_year).last.try(:inscriptions) || 0
+      @model_data[:queries] = Statistic.where(year: current_year).last.try(:queries) || 0
+      @model_data[:persons] = Statistic.where(year: current_year).last.try(:persons) || 0
+
       super
     end
 
