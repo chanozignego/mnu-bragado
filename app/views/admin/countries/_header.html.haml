@@ -14,16 +14,16 @@
                 %th.text-center ECOSOC
             %tbody
               %tr
-                %td.text-center 
-                  = Country.where(state: "assigned", ag: true).count
-                %td.text-center
-                  = Country.where(state: "assigned", sti: true).count
-                %td.text-center
-                  = Country.where(state: "assigned", cs: true).count
-                %td.text-center
-                  = Country.where(state: "assigned", segib: true).count
-                %td.text-center
-                  = Country.where(state: "assigned", ecosoc: true).count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(ag: true).count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(sti: true).count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(cs: true).count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(segib: true).count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(ecosoc: true).count
 
       .col-lg-8
         .table-responsive{style: "margin-top: 15px;"}
@@ -37,16 +37,16 @@
                 %th.text-center Observadoras
             %tbody
               %tr
-                %td.text-center 
-                  = Country.where(state: "assigned", regional_group: "europe").count
-                %td.text-center
-                  = Country.where(state: "assigned", regional_group: "asia").count
-                %td.text-center
-                  = Country.where(state: "assigned", regional_group: "africa").count
-                %td.text-center
-                  = Country.where(state: "assigned", regional_group: "latam").count
-                %td.text-center
-                  = Country.where(state: "assigned", regional_group: "observer").count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(regional_group: "europe").count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(regional_group: "asia").count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(regional_group: "africa").count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(regional_group: "latam").count
+                %td.col-xs-2.text-center 
+                  = Country.assigned.where(regional_group: "observer").count
 
 
 
