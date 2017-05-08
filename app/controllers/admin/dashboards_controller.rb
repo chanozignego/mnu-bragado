@@ -6,7 +6,7 @@ module Admin
       @chart_statistics = []
       current_year = Date.today.year
 
-      (2013..current_year - 1).each do |year|
+      (2014..current_year - 1).each do |year|
         year_statistics = Statistic.where(year: year).first
         delegations = year_statistics.delegations
         partakers = year_statistics.partakers
