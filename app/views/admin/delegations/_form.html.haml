@@ -23,15 +23,24 @@
                     .col-xs-11
                       %h5
                         = "Delegados"
-                .row.admin-common-panel__content  
-                  = f.simple_fields_for :delegates do |variant_form|
-                    = render partial: "admin/shared/delegate_form", locals: { f: variant_form, collapse_panel: true }
+                / .row.admin-common-panel__content  
+                /   = f.simple_fields_for :delegates do |variant_form|
+                /     = render partial: "admin/shared/delegate_form", locals: { f: variant_form, collapse_panel: true }
 
-                  .links.col-xs-12
-                    %br
-                    = link_to_add_association f, :delegates, class: "btn btn-default", partial: "admin/shared/delegate_form", render_options: { locals: {collapse_panel: false } } do
-                      = I18n.t("administrate.actions.add_entity", entity: "Delegado")
-                      %i.fa.fa-plus.ml10
+                /   .links.col-xs-12
+                /     %br
+                /     = link_to_add_association f, :delegates, class: "btn btn-default", partial: "admin/shared/delegate_form", render_options: { locals: {collapse_panel: false } } do
+                /       = I18n.t("administrate.actions.add_entity", entity: "Delegado")
+                /       %i.fa.fa-plus.ml10
+
+                .row.admin-common-panel__content  
+                  .col-xs-12
+                    = f.collection_select :delegate_ids,
+                      Delegate.all,
+                      :id,
+                      :full_name,
+                      {include_blank: true}, 
+                      {class: 'js-select2 js-model-field form-control', multiple: true}
 
 
         .col-xs-12

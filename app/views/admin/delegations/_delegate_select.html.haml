@@ -1,0 +1,23 @@
+.col-xs-12
+  .admin-common-panel
+    .row.admin-common-panel__header
+      .col-xs-12
+        .col-xs-11
+          %h5
+            Delegado
+    .row.admin-common-panel__content  
+      .col-xs-12
+        = f.input :id,
+          required: false,
+          collection: Delegate.all,
+          label: "Delegado",
+          placeholder: I18n.t("administrate.select_option",
+          option: "Delegado"),
+          value_method: :id,
+          label_method: :full_name,
+          include_blank: true,
+          input_html: {class: 'js-select2 js-model-field full-width form-control'}
+
+
+  %br
+

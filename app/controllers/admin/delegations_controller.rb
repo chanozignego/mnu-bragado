@@ -18,7 +18,8 @@ module Admin
       def permitted_attributes
         [
           :id, :year, :country_id, 
-          delegates_attributes: delegate_attributes
+          delegates_attributes: delegate_attributes,
+          delegate_ids: []
         ]
       end
 
