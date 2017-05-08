@@ -9,6 +9,7 @@ module Admin
       professor.school = @professor_inscription.school
       if professor.save
         flash[:notice] = "Inscripción aceptada correctamente"
+        InscriptionsMailer.approved_inscription_email(@professor_inscription.email, "professor").deliver_now
         ProfessorInscription.find(@professor_inscription.id).destroy
         redirect_to admin_professor_path(id: professor.id)
       else

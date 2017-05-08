@@ -18,4 +18,25 @@ class Country < ActiveRecord::Base
     I18n.t("country.states")[state.try(:to_sym)]
   end
 
+  def delegates_quantity
+    quantity = 0
+    if (ag) 
+      quantity = quantity + 2 
+    end
+    if (sti) 
+      quantity = quantity + 1 
+    end
+    if (cs) 
+      quantity = quantity + 2 
+    end
+    if (segib) 
+      quantity = quantity + 2 
+    end
+    if (ecosoc) 
+      quantity = quantity + 2       
+    end
+    
+    quantity
+  end
+
 end

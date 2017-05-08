@@ -32,6 +32,7 @@ es-AR:
         cs: CS
         segib: SEGIB
         ecosoc: ECOSOC
+        delegates_quantity: Cant.
     models:
       country:
         one: Pais

@@ -1,0 +1,18 @@
+.col-xs-12
+  %h2.text-center
+    ¡Felicitaciones!
+  %h3.text-center
+    Ya hemos validado la inscripción y ya pódes continuar con el proceso de inscripción. 
+    %br
+    - if (@inscription_type == "school")
+      La institución ya se encuentra habilitada para ser seleccionada.
+    - elsif (@inscription_type == "professor")
+      Ya te encontrás habilitado para ser seleccionado como docente responsable.
+
+
+
+  %br
+  %h5
+    Muchas gracias!
+    %br
+    Equipo MNU Bragado

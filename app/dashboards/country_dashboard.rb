@@ -21,6 +21,7 @@ class CountryDashboard < ApplicationDashboard
     cs: LabeledBooleanField,
     segib: LabeledBooleanField,
     ecosoc: LabeledBooleanField,
+    delegates_quantity: Field::Number, 
     created_at: Field::DateTime
   }
 
@@ -39,7 +40,8 @@ class CountryDashboard < ApplicationDashboard
     :sti,
     :cs,
     :segib,
-    :ecosoc
+    :ecosoc,
+    :delegates_quantity
   ]
 
   # SHOW_PAGE_ATTRIBUTES

@@ -11,6 +11,7 @@ module Admin
       school.location = @school_inscription.location
       if school.save
         flash[:notice] = "Inscripción aceptada correctamente"
+        InscriptionsMailer.approved_inscription_email(@school_inscription.email, "school").deliver_now
         SchoolInscription.find(@school_inscription.id).destroy
         redirect_to admin_school_path(id: school.id)
       else

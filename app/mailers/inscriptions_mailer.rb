@@ -46,6 +46,11 @@ class InscriptionsMailer < ApplicationMailer
     mail(to: inscription.email, subject: "Bienvenido a MNU Bragado!")
   end
 
+  def approved_inscription_email(email, inscription_type)
+    @inscription_type = inscription_type
+    mail(to: email, subject: "Inscripción aceptada!")
+  end
+
   def protect_against_forgery?
     false
   end
