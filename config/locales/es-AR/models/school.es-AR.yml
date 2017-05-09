@@ -17,6 +17,7 @@ es-AR:
         province_eq: Provincia
         city_cont: Ciudad
         street_cont: Dirección
+        inscription_image: Comprobante Inscripción
     models:
       school:
         one: Escuela

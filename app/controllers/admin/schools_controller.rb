@@ -6,7 +6,7 @@ module Admin
 
       def permitted_attributes
         [
-          :id, :name, :phone_number, :email,
+          :id, :name, :phone_number, :email, :inscription_image,
           location_attributes: location_attributes
         ]
       end

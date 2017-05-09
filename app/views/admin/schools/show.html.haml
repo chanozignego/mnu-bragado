@@ -14,6 +14,16 @@
           .col-xs-12
             - if page.resource.location.present?
               = render 'admin/shared/show/location_section', page: page, title: School.human_attribute_name(:location), resource: page.resource.location 
+            %br
+
+        .col-xs-12
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = School.human_attribute_name(:inscription_image)
+            .col-sm-9
+              .span
+                = image_tag page.resource.inscription_image.try(:smallthumb)
 
       .item-actions{style: "margin: 20px;"}
         = render 'item_actions', page: page

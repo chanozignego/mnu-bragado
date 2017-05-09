@@ -8,6 +8,8 @@ class School < ActiveRecord::Base
 
 	accepts_nested_attributes_for :location
 
+  mount_uploader :inscription_image, PictureUploader
+
 	delegate :province, :city, :street_name, :street_number, :zip_code, to: :location, prefix: true, allow_nil: true
 
 	def location_street

@@ -7,7 +7,9 @@
 
       .row.admin-common-panel__content
         .col-md-12
-          = f.input :id, readonly: true, input_html: {class: "form-control"} if f.object.persisted?
+          - if f.object.persisted?
+            = f.input :id, readonly: true, input_html: {class: "form-control"}
+            %br
           = f.input :name, input_html: {class: "form-control"}
           %br
         .col-md-4
@@ -21,6 +23,18 @@
           = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|
             = render 'location_fields', f: variant_form, item: f.object
           %br
+
+        .col-md-12.form-group
+          = f.label :inscription_image
+          - image = f.object.inscription_image
+          - if image.present?
+            %br
+            = image_tag image.try(:smallthumb)
+            %br
+            %br
+          = f.file_field :inscription_image
+          %br
+
 
         .col-xs-12
           .form-actions.mt20
