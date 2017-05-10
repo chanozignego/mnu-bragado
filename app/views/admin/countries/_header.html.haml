@@ -38,15 +38,56 @@
             %tbody
               %tr
                 %td.col-xs-2.text-center 
-                  = Country.assigned.where(regional_group: "europe").count
+                  = Country.assigned.europe.count
                 %td.col-xs-2.text-center 
-                  = Country.assigned.where(regional_group: "asia").count
+                  = Country.assigned.asia.count
                 %td.col-xs-2.text-center 
-                  = Country.assigned.where(regional_group: "africa").count
+                  = Country.assigned.africa.count
                 %td.col-xs-2.text-center 
-                  = Country.assigned.where(regional_group: "latam").count
+                  = Country.assigned.latam.count
                 %td.col-xs-2.text-center 
-                  = Country.assigned.where(regional_group: "observer").count
+                  = Country.assigned.observer.count
+
+  .col-xs-12
+    .row
+      .col-lg-12
+        .row.admin-common-panel__header{style: "margin-top: 20px;"}
+          .col-xs-12
+            .col-xs-11
+              %h4
+                Delegaciones por escuela
+            .col-xs-1
+              %button.pull-right{style: "margin-top: 7px;", data: {toggle: "collapse",  target: "#schools_section"}}
+                .glyphicon.glyphicon-chevron-down
+
+        .table-responsive.collapse{id: "schools_section"}
+          %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+            %thead
+              %tr
+                %th.text-center Escuela
+                %th.text-center 3
+                %th.text-center 5 (CS+SEGIB)
+                %th.text-center 5 (CS+ECOSOC)
+                %th.text-center 5 (ECOSOC+SEGIB)
+                %th.text-center 7 
+                %th.text-center Total 
+            %tbody
+              - School.all.each do |school|
+                %tr
+                  %td.col-xs-3.text-center 
+                    = school.name
+                  %td.col-xs-1.text-center 
+                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: false, ecosoc: false, segib: false).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: false, segib: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: true, segib: false).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: false, ecosoc: true, segib: true).count
+                  %td.col-xs-1.text-center 
+                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: true, segib: true).count
+                  %td.col-xs-1.text-center 
+                    = Country.assigned.where(school_id: school.id).count
 
 
 

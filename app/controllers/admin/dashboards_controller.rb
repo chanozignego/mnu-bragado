@@ -21,7 +21,9 @@ module Admin
       partakers = Partaker.where(year: current_year).count
       delegates = Delegate.where(year: current_year).count
       authorities = Authority.where(year: current_year).count
-      statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, year: current_year}
+      professors = Professor.count
+      schools = School.count
+      statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, professors: professors, schools: schools, year: current_year}
       @chart_statistics << [current_year, partakers, delegations, delegates, authorities]
       @statistics << statistics
 

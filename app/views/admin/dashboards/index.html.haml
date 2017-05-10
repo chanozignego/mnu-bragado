@@ -45,7 +45,7 @@
 
 
 .row
-  .col-lg-3.col-md-6
+  .col-lg-2.col-md-6
     .panel.panel-primary
       .panel-heading
         .row
@@ -62,7 +62,7 @@
             %i.fa.fa-arrow-circle-right
           .clearfix
 
-  .col-lg-3.col-md-6
+  .col-lg-2.col-md-6
     .panel.panel-green
       .panel-heading
         .row
@@ -78,7 +78,7 @@
           %span.pull-right
             %i.fa.fa-arrow-circle-right
           .clearfix
-  .col-lg-3.col-md-6
+  .col-lg-2.col-md-6
     .panel.panel-yellow
       .panel-heading
         .row
@@ -94,17 +94,49 @@
           %span.pull-right
             %i.fa.fa-arrow-circle-right
           .clearfix
-  .col-lg-3.col-md-6
+  .col-lg-2.col-md-6
     .panel.panel-red
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-user-secret.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @statistics.first[:authorities]
+            %div Autoridades
+      %a{:href => admin_authorities_path}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-2.col-md-6
+    .panel.panel-success
       .panel-heading
         .row
           .col-xs-3
             %i.fa.glyphicon.glyphicon-education.fa-5x
           .col-xs-9.text-right
             .huge 
-              = @statistics.first[:authorities]
-            %div Autoridades
-      %a{:href => admin_authorities_path}
+              = @statistics.first[:professors]
+            %div Profesores
+      %a{:href => admin_professors_path}
+        .panel-footer
+          %span.pull-left Ver Detalles
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-2.col-md-6
+    .panel.panel-info
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-university.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @statistics.first[:schools]
+            %div Escuelas
+      %a{:href => admin_schools_path}
         .panel-footer
           %span.pull-left Ver Detalles
           %span.pull-right
