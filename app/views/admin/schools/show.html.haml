@@ -22,8 +22,9 @@
               .span.bold
                 = School.human_attribute_name(:inscription_image)
             .col-sm-9
-              .span
-                = image_tag page.resource.inscription_image.try(:smallthumb)
+              %a{href: page.resource.inscription_image.try(:url), about: "_blank"}
+                .span
+                  = image_tag page.resource.inscription_image.try(:smallthumb)
 
       .item-actions{style: "margin: 20px;"}
         = render 'item_actions', page: page
