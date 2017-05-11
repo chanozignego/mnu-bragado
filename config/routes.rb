@@ -112,6 +112,10 @@ Rails.application.routes.draw do
       post :import_from_excel
     end
 
+    namespace :countries do
+      post :import_from_excel
+    end
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 

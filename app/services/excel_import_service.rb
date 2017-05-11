@@ -1,8 +1,41 @@
 class ExcelImportService
   require 'csv'
 
+  def self.import_countries(file)
+    spreadsheet = open_spreadsheet(file)
+    header = ["name", "regional_group", "ag", "sti", "cs", "segib", "ecosoc"]
+    (3..spreadsheet.last_row).each do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
 
-  def self.import(file)
+      row["name"] = "" unless row["name"].present?
+
+      if ["Africano", "africano", "African"].include?(row["regional_group"])
+        row["regional_group"] = :africa
+      elsif ["Asia y Pacífico", "Asia y Pacifico", "Asia y pacífico", "Asia y pacifico", "asia y pacifico", "asia"].include?(row["regional_group"])
+        row["regional_group"] = :asia
+      elsif ["Europa y Otros", "Europa y otros", "Europa", "europa", "europa y otros"].include?(row["regional_group"])
+        row["regional_group"] = :europe
+      elsif ["Latinoamerica y el Caribe", "Latinoamericano", "latinoamericano", "lationamerica y el caribe", "Latinoamerica y el caribe", "Latinoamerica y caribe", "Latinoamerica y Caribe"].include?(row["regional_group"])
+        row["regional_group"] = :latam
+      elsif ["Observadora", "Observador", "observadora", "observador"].include?(row["regional_group"])
+        row["regional_group"] = :observer
+      else
+        row["regional_group"] = :noting
+      end
+
+      row["ag"] = row["ag"].present?
+      row["sti"] = row["sti"].present?
+      row["cs"] = row["cs"].present?
+      row["segib"] = row["segib"].present?
+      row["ecosoc"] = row["ecosoc"].present?
+
+      country = Country.new(row.to_hash)  
+      country.state = :pending    
+      country.save!
+    end
+  end
+
+  def self.import_partakers(file)
     spreadsheet = open_spreadsheet(file)
     header = ["first_name", "last_name", "partaker_type", "school_name", "city_name", "phone_number", "year", "country_name"]
     header = spreadsheet.row(1)

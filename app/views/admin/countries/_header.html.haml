@@ -97,5 +97,10 @@
       /%h5.admin-header__breadcrumb Breadcrumb > Breadcrumb
       %h1.admin-header__title
         = display_resource_name(resource_class)
-    .admin-header-buttons.center-vertical
+    .admin-header-buttons.center-vertical{style: "display: inline-flex;"}
+      = simple_form_for :countries, {url: admin_countries_import_from_excel_path, method: :post, html: { class: "form-inline" }} do |f|
+        .div{style: "display: inline-flex"}
+          = f.input :file, required: true, as: :file, label: false, input_html: {style: "margin-top: 5px;"}
+          = f.button :submit, "Importar desde excel", class: "btn btn-primary admin-header-buttons__item"
+
       = render "header_buttons", page: page if show_buttons
