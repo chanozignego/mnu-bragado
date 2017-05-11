@@ -1,52 +1,179 @@
 - show_buttons = local_assigns[:show_buttons].present?
 %header.row.admin-header__container
-  .col-xs-12.admin-header
+  .col-xs-12
     .row
-      .col-lg-4
-        .table-responsive{style: "margin-top: 15px;"}
-          %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
-            %thead
-              %tr
-                %th.text-center AG
-                %th.text-center STI
-                %th.text-center CS
-                %th.text-center SEGIB
-                %th.text-center ECOSOC
-            %tbody
-              %tr
-                %td.col-xs-2.text-center 
-                  = Country.assigned.where(ag: true).count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.where(sti: true).count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.where(cs: true).count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.where(segib: true).count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.where(ecosoc: true).count
+      .col-lg-12
+        .row.admin-common-panel__header{style: "margin-top: 20px;"}
+          .col-xs-12
+            .col-xs-11
+              %h4
+                Paises totales
+            .col-xs-1
+              %button.pull-right{style: "margin-top: 7px;", data: {toggle: "collapse",  target: "#total_section"}}
+                .glyphicon.glyphicon-chevron-down
+      .div.collapse{id: "total_section"}
+        .col-lg-4
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center AG
+                  %th.text-center STI
+                  %th.text-center CS
+                  %th.text-center SEGIB
+                  %th.text-center ECOSOC
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.where(ag: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.where(sti: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.where(cs: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.where(segib: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.where(ecosoc: true).count
 
-      .col-lg-8
-        .table-responsive{style: "margin-top: 15px;"}
-          %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
-            %thead
-              %tr
-                %th.text-center Europa y Otros
-                %th.text-center Asia y Pacífico
-                %th.text-center África
-                %th.text-center Lat. y Caribe
-                %th.text-center Observadoras
-            %tbody
-              %tr
-                %td.col-xs-2.text-center 
-                  = Country.assigned.europe.count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.asia.count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.africa.count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.latam.count
-                %td.col-xs-2.text-center 
-                  = Country.assigned.observer.count
+        .col-lg-8
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center Europa y Otros
+                  %th.text-center Asia y Pacífico
+                  %th.text-center África
+                  %th.text-center Lat. y Caribe
+                  %th.text-center Observadoras
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.europe.count
+                  %td.col-xs-2.text-center 
+                    = Country.asia.count
+                  %td.col-xs-2.text-center 
+                    = Country.africa.count
+                  %td.col-xs-2.text-center 
+                    = Country.latam.count
+                  %td.col-xs-2.text-center 
+                    = Country.observer.count
+
+  .col-xs-12
+    .row
+      .col-lg-12
+        .row.admin-common-panel__header{style: "margin-top: 20px;"}
+          .col-xs-12
+            .col-xs-11
+              %h4
+                Paises asignados
+            .col-xs-1
+              %button.pull-right{style: "margin-top: 7px;", data: {toggle: "collapse",  target: "#assigned_section"}}
+                .glyphicon.glyphicon-chevron-down
+      .div.collapse.in{id: "assigned_section"}
+        .col-lg-4
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center AG
+                  %th.text-center STI
+                  %th.text-center CS
+                  %th.text-center SEGIB
+                  %th.text-center ECOSOC
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(ag: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(sti: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(cs: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(segib: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.where(ecosoc: true).count
+
+        .col-lg-8
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center Europa y Otros
+                  %th.text-center Asia y Pacífico
+                  %th.text-center África
+                  %th.text-center Lat. y Caribe
+                  %th.text-center Observadoras
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.europe.count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.asia.count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.africa.count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.latam.count
+                  %td.col-xs-2.text-center 
+                    = Country.assigned.observer.count
+
+  .col-xs-12
+    .row
+      .col-lg-12
+        .row.admin-common-panel__header{style: "margin-top: 20px;"}
+          .col-xs-12
+            .col-xs-11
+              %h4
+                Paises disponibles
+            .col-xs-1
+              %button.pull-right{style: "margin-top: 7px;", data: {toggle: "collapse",  target: "#pending_section"}}
+                .glyphicon.glyphicon-chevron-down
+      .div.collapse{id: "pending_section"}
+        .col-lg-4
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center AG
+                  %th.text-center STI
+                  %th.text-center CS
+                  %th.text-center SEGIB
+                  %th.text-center ECOSOC
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.pending.where(ag: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.where(sti: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.where(cs: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.where(segib: true).count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.where(ecosoc: true).count
+
+        .col-lg-8
+          .table-responsive
+            %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+              %thead
+                %tr
+                  %th.text-center Europa y Otros
+                  %th.text-center Asia y Pacífico
+                  %th.text-center África
+                  %th.text-center Lat. y Caribe
+                  %th.text-center Observadoras
+              %tbody
+                %tr
+                  %td.col-xs-2.text-center 
+                    = Country.pending.europe.count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.asia.count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.africa.count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.latam.count
+                  %td.col-xs-2.text-center 
+                    = Country.pending.observer.count
+
 
   .col-xs-12
     .row
