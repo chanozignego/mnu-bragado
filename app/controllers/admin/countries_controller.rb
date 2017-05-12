@@ -1,6 +1,18 @@
 module Admin
   class CountriesController < Admin::ApplicationController
 
+    def index(locals = {})
+      search_term = params[:search].to_s.strip
+      page = Administrate::Page::Collection.new(dashboard, order: order)
+
+      render locals: {
+        resources: resource_collection.order(:name),
+        search_term: search_term,
+        page: page,
+        search: search
+      }.merge(locals)
+    end
+
     def import_from_excel
       if params[:countries].present? && params[:countries][:file].present?
         file = params[:countries][:file]
