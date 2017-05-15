@@ -13,6 +13,9 @@ es-AR:
         full_name_cont: Nombre
         email_cont: Email
         dni_cont: DNI
+        school_name: Escuela
+        school_id: Escuela
+        school_id_eq: Escuela
     models:
       professor:
         one: Profesor

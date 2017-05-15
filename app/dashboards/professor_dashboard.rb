@@ -14,6 +14,7 @@ class ProfessorDashboard < ApplicationDashboard
     last_name: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    school_name: Field::String,
     created_at: Field::DateTime
   }
 
@@ -26,7 +27,8 @@ class ProfessorDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :email,
-    :phone_number
+    :phone_number,
+    :school_name
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -51,7 +53,16 @@ class ProfessorDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
     [:email_cont],
-    [:dni_cont]
+    [:dni_cont],
+    [:school_id_eq, {as: :select, 
+                  collection: School.all,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :id,
+                  label_method: -> (s) { 
+                      s.name
+                    }
+                  }]
   ]
 
   def self.search_path
