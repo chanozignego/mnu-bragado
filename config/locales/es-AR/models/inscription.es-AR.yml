@@ -1,4 +1,10 @@
 es-AR:
+  inscription:
+    types: 
+      school: Escuela
+      professor: Profesor
+      delegate: Delegado
+      authority: Autoridad
   activerecord:
     attributes:
       inscription:

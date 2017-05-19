@@ -49,8 +49,16 @@ class InscriptionDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq],
-    [:full_name_cont]
-    # TODO: type_name_eq
+    [:full_name_cont],
+    [:type_eq, {as: :select, 
+                  collection: Inscription.types,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (s) { 
+                      I18n.t("inscription.types.#{s.first.try(:to_s)}") 
+                    }
+                  }]
   ]
 
   def self.search_path

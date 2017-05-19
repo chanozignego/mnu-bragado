@@ -27,6 +27,10 @@ class Inscription < ActiveRecord::Base
   accepts_nested_attributes_for :school
   accepts_nested_attributes_for :location
 
+  def self.types
+    {school: "SchoolInscription", professor: "ProfessorInscription", delegate: "DelegateInscription", authority: "AuthorityInscription"}
+  end
+
   def type_name
     if is_a?(ProfessorInscription)
       "Profesor"
