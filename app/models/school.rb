@@ -17,7 +17,7 @@ class School < ActiveRecord::Base
 	end
 
   def to_s
-    "#{name} - #{location.city}, #{location.province}"
+    "#{name} - #{location_city}, #{location_province}"
   end 
 
 end

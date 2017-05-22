@@ -193,28 +193,89 @@
               %tr
                 %th.text-center Escuela
                 %th.text-center 3
-                %th.text-center 5 (CS+SEGIB)
-                %th.text-center 5 (CS+ECOSOC)
-                %th.text-center 5 (ECOSOC+SEGIB)
-                %th.text-center 7 
+                %th.text-center 5 (CS)
+                %th.text-center 5 (SEGIB)
+                %th.text-center 5 (ECOSOC)
+                %th.text-center 7 (CS+SEGIB)
+                %th.text-center 7 (CS+ECOSOC)
+                %th.text-center 7 (ECOSOC+SEGIB)
+                %th.text-center Observ.
                 %th.text-center Total 
             %tbody
               - School.all.each do |school|
+                - school_countries = Country.assigned.where(school_id: school.id) 
                 %tr
-                  %td.col-xs-3.text-center 
+                  %td.col-xs-2.text-center 
                     = school.name
                   %td.col-xs-1.text-center 
-                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: false, ecosoc: false, segib: false).count
-                  %td.col-xs-2.text-center 
-                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: false, segib: true).count
-                  %td.col-xs-2.text-center 
-                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: true, segib: false).count
-                  %td.col-xs-2.text-center 
-                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: false, ecosoc: true, segib: true).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, segib: false).count
                   %td.col-xs-1.text-center 
-                    = Country.assigned.where(school_id: school.id, ag: true, sti: true, cs: true, ecosoc: true, segib: true).count
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, segib: false).count
                   %td.col-xs-1.text-center 
-                    = Country.assigned.where(school_id: school.id).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, segib: true).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, segib: false).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, segib: true).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: true, segib: false).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, segib: true).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.observer.count
+                  %td.col-xs-1.text-center 
+                    = school_countries.count
+
+
+
+  .col-xs-12
+    .row
+      .col-lg-12
+        .row.admin-common-panel__header{style: "margin-top: 20px;", data: {toggle: "collapse",  target: "#requests_section"}}
+          .col-xs-12
+            .col-xs-11
+              %h4
+                Pedidos por escuela
+            .col-xs-1
+              %button.pull-right{style: "margin-top: 7px;", data: {toggle: "collapse",  target: "#requests_section"}}
+                .glyphicon.glyphicon-chevron-down
+
+        .table-responsive.collapse{id: "requests_section"}
+          %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px; background-color: white;"}
+            %thead
+              %tr
+                %th.text-center Escuela
+                %th.text-center 3
+                %th.text-center 5 (CS)
+                %th.text-center 5 (SEGIB)
+                %th.text-center 5 (ECOSOC)
+                %th.text-center 7 (CS+SEGIB)
+                %th.text-center 7 (CS+ECOSOC)
+                %th.text-center 7 (ECOSOC+SEGIB)
+                %th.text-center Observ.
+            %tbody
+              - School.all.each do |school|
+                - delegation_request = DelegationRequest.where(school_id: school.id).first
+                - if delegation_request.present? 
+                  %tr
+                    %td.col-xs-2.text-center 
+                      = school.name
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_cs_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_segib_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_ecosoc_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_cs_segib_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_cs_ecosoc_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_ecosoc_segib_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.observer_count
 
 
 

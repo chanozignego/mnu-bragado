@@ -19,6 +19,7 @@ class DashboardManifest
     "delegations",
     "schools",
     "trainers",
+    "delegation_requests",
     "countries",
     "ex_partakers",
     "inscriptions",

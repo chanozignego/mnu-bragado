@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509145340) do
+ActiveRecord::Schema.define(version: 20170521233853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,20 @@ ActiveRecord::Schema.define(version: 20170509145340) do
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "delegation_requests", force: :cascade do |t|
+    t.integer  "ag_sti_count",              default: 0
+    t.integer  "ag_sti_cs_count",           default: 0
+    t.integer  "ag_sti_segib_count",        default: 0
+    t.integer  "ag_sti_ecosoc_count",       default: 0
+    t.integer  "ag_sti_cs_segib_count",     default: 0
+    t.integer  "ag_sti_cs_ecosoc_count",    default: 0
+    t.integer  "ag_sti_ecosoc_segib_count", default: 0
+    t.integer  "observer_count",            default: 0
+    t.integer  "school_id"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "delegations", force: :cascade do |t|

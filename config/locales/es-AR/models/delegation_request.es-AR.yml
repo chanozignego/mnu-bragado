@@ -1,0 +1,24 @@
+es-AR:
+  activerecord:
+    attributes:
+      delegation_request:
+        school: Escuela
+        school_id: Escuela
+        school_name: Escuela
+        school: Escuela
+        school_id: Escuela
+        school_id_eq: Escuela
+        school_name: Escuela
+        school_eq: Escuela
+        ag_sti_count: "3"
+        ag_sti_cs_count: "5 (CS)"
+        ag_sti_segib_count: "5 (SEGIB)"
+        ag_sti_ecosoc_count: "5 (ECOSOC)"
+        ag_sti_cs_segib_count: "7 (CS+SEGIB)"
+        ag_sti_cs_ecosoc_count: "7 (CS+ECOSOC)"
+        ag_sti_ecosoc_segib_count: "7 (ECOSOC+SEGIB)"
+        observer_count: "Observ."
+    models:
+      delegation_request:
+        one: Pedido
+        other: Pedidos
