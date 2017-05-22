@@ -11,6 +11,8 @@ class DelegationRequestDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     school_name: Field::String,
+    school_id: Field::Number,
+    school: Field::BelongsTo,
     ag_sti_count: Field::Number,
     ag_sti_cs_count: Field::Number,
     ag_sti_segib_count: Field::Number,
@@ -42,13 +44,27 @@ class DelegationRequestDashboard < ApplicationDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :id,
+    :school_name,
+    :ag_sti_count,
+    :ag_sti_cs_count,
+    :ag_sti_segib_count,
+    :ag_sti_ecosoc_count,
+    :ag_sti_cs_segib_count,
+    :ag_sti_cs_ecosoc_count,
+    :ag_sti_ecosoc_segib_count,
+    :observer_count,
+    :created_at
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :school_name,
+    :school_id,
+    :school,
     :ag_sti_count,
     :ag_sti_cs_count,
     :ag_sti_segib_count,
