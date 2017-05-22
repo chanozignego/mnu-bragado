@@ -102,6 +102,10 @@ Rails.application.routes.draw do
       post :export_to_excel
     end
 
+    namespace :schools do
+      post :export_to_excel
+    end
+
     namespace :partakers do
       post :export_to_excel
       post :export_with_diet
