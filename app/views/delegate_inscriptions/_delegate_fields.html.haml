@@ -9,7 +9,7 @@
         option: Delegate.human_attribute_name(:school)),
       selected: f.object.school.try(:id),
       include_blank: true,
-      label_method: -> (sch) { "#{sch.name} - #{sch.location.city}, #{sch.location.province}" }
+      label_method: -> (sch) { "#{sch.name} - #{sch.location_city}, #{sch.location_province}" }
 
   .col-md-12.form-group
     = f.input :professor_id, required: false, 
