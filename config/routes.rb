@@ -106,6 +106,10 @@ Rails.application.routes.draw do
       post :export_to_excel
     end
 
+    namespace :inscriptions do
+      post :export_to_excel
+    end
+
     namespace :partakers do
       post :export_to_excel
       post :export_with_diet

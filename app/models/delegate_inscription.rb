@@ -24,7 +24,7 @@ class DelegateInscription < Inscription
   end
 
   def name
-    "#{person.first_name} #{person.last_name}"
+    "#{first_name} #{last_name}"
   end
 
 end

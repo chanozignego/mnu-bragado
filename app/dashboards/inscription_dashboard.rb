@@ -40,6 +40,11 @@ class InscriptionDashboard < ApplicationDashboard
   #  :approve_revision
   ]
 
+  COLLECTION_ACTIONS = [{
+    name: :export_to_excel,
+    http_method: :get
+  }]
+
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
