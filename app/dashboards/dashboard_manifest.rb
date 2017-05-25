@@ -23,6 +23,7 @@ class DashboardManifest
     "countries",
     "ex_partakers",
     "inscriptions",
+    "archives",
     "queries"
   ]
 

@@ -1,0 +1,37 @@
+es-AR:
+  abstract_file: 
+    file_types: 
+      image: Imágen
+      pdf: PDF
+      word: Word
+      excel: Excel
+      folder: Carpeta
+    classifications:
+      ag: Asamblea General
+      sti: Sala de Tratados
+      cs: Consejo de Seguridad
+      segib: SEGIB
+      ecosoc: ECOSOC
+      authorities: Autoridades
+      general: General
+    archive_types:
+      regulation: Reglamentos
+      topic: Tópicos
+      dinamic: Dinámica
+  activerecord:
+    attributes:
+      abstract_file:
+        name: Nombre
+        description: Descripción
+        file: Archivo
+        abstract_file_id: Carpeta
+        abstract_file: Carpeta
+        folder: Carpeta
+        folder_id: Carpeta
+        file_type: Tipo de archivo
+        classification: Clasificación
+        archive_type: Clasificación 2
+    models:
+      abstract_file:
+        one: Archivo
+        other: Archivos

@@ -1,0 +1,24 @@
+class AbstractFile < ActiveRecord::Base
+  belongs_to :folder, class_name: "Folder", foreign_key: 'abstract_file_id'
+
+  FILE_TYPES = %i[image pdf word excel folder]
+  CLASSIFICATIONS = %i[ag sti cs ecosoc segib general authorities]
+  ARCHIVE_TYPES = %i[regulation topic dinamic]
+
+  enum file_type: FILE_TYPES
+  enum classification: CLASSIFICATIONS
+  enum archive_type: ARCHIVE_TYPES
+
+  def file_type_name
+    I18n.t("abstract_file.file_types")[file_type.try(:to_sym)]
+  end
+
+  def classification_name
+    I18n.t("abstract_file.classifications")[classification.try(:to_sym)]
+  end 
+
+  def archive_type_name
+    I18n.t("abstract_file.archive_types")[archive_type.try(:to_sym)]
+  end 
+
+end
