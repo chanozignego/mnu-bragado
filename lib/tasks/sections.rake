@@ -3,11 +3,15 @@ namespace :sections do
   desc "Create Ex Partakers from actual partakers"
   task :create_basic_sections => :environment do
     folders = []
+    folders << Folder.create( name: "General", 
+                                description: "Archivos en general. Tópicos, reglamentos, dinámica y demás",
+                                file_type: "folder", 
+                                classification: "general")
     folders << Folder.create( name: "Asamblea General", 
                                 description: "Archivos para la Asamblea General. Tópicos, reglamentos, dinámica y demás",
                                 file_type: "folder", 
                                 classification: "ag")
-    folders << Folder.create( name: "Sala de Tratados Internacionales", 
+    folders << Folder.create( name: "Sala de Tratados", 
                                 description: "Archivos para la Sala de Tratados Internacionales. Tópicos, reglamentos, dinámica y demás",
                                 file_type: "folder", 
                                 classification: "sti")
@@ -27,10 +31,6 @@ namespace :sections do
                                 description: "Archivos para las Autoridades. Tópicos, reglamentos, dinámica y demás",
                                 file_type: "folder", 
                                 classification: "authorities")
-    folders << Folder.create( name: "General", 
-                                description: "Archivos en general. Tópicos, reglamentos, dinámica y demás",
-                                file_type: "folder", 
-                                classification: "general")
     
     folders.each do |folder|
       Folder.create( name: "Tópicos", 

@@ -21,4 +21,16 @@ class AbstractFile < ActiveRecord::Base
     I18n.t("abstract_file.archive_types")[archive_type.try(:to_sym)]
   end 
 
+  def abstract_files
+    AbstractFile.where(abstract_file_id: id)
+  end
+
+  def full_name
+    if folder.present?
+      folder.full_name + " / " + name
+    else
+      name
+    end
+  end
+
 end

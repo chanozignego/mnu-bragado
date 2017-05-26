@@ -152,13 +152,18 @@ Rails.application.routes.draw do
       get :accepted
     end
   end
-
   resource :professors do 
     collection do
       get :get_by_school
     end
   end
 
+  resources :folders
+  resources :archives do
+    collection do
+      get :topics
+    end
+  end
   resource :query
 
 end
