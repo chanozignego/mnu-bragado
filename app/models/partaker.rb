@@ -30,7 +30,7 @@ class Partaker < ActiveRecord::Base
   end
 
   def full_name
-    "#{first_name} #{last_name} #{person.present? ? " - DNI #{person.dni}" : ""} #{school.present? ? " - Escuela #{school.name}" : ""}"
+    "##{id} - #{first_name} #{last_name} #{person.present? ? " - DNI #{person.dni}" : ""} #{school.present? ? " - Escuela #{school.name}" : ""}"
   end
 
   def formatted_is_vegetarian?

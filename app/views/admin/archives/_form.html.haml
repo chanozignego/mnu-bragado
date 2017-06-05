@@ -30,7 +30,7 @@
 
           .col-md-12.form-group
             = f.input :abstract_file_id, required: false, input_html: {class: "form-control js-select2"},
-              collection: Folder.all,
+              collection: @folders,
               placeholder: I18n.t("administrate.select_option",
                 option: Archive.human_attribute_name(:folder)),
               selected: f.object.folder.try(:id),

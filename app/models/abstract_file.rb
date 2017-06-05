@@ -25,6 +25,10 @@ class AbstractFile < ActiveRecord::Base
     AbstractFile.where(abstract_file_id: id)
   end
 
+  def subfolders
+    Folder.where(abstract_file_id: id)
+  end
+
   def full_name
     if folder.present?
       folder.full_name + " / " + name

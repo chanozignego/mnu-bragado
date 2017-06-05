@@ -2,28 +2,28 @@
   .container
     .row
       .col-lg-12.text-center
-        %h2.section-heading Portfolio
+        %h2.section-heading Material
         %h3.section-subheading.text-muted 
-          /Lorem ipsum dolor sit amet consectetur.
+          Acá vas a poder encontrar todo el material necesario para desarrollarte en el modelo. Reglamentos, Dinámicas, Tópicos, Cronogramas y demás.
 
     .row
       - @sections.each do |section| 
-        .col-md-4.col-sm-6.portfolio-item
+        .col-md-3.col-sm-4.portfolio-item
           %a.portfolio-link{href: folder_path(id: section.id)}
             .portfolio-hover
               .portfolio-hover-content
                 %i.fa.fa-plus.fa-3x
-            %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/#{section.classification}.jpg", style: "width: 360px; height: 260px;"}/
+            %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/#{section.classification}.jpg", style: "width: 360px; height: 200px;"}/
           .portfolio-caption
             %h4 
               = section.name
 
-      .col-md-4.col-sm-6.portfolio-item
+      .col-md-3.col-sm-4.portfolio-item
         %a.portfolio-link{href: topics_archives_path}
           .portfolio-hover
             .portfolio-hover-content
               %i.fa.fa-plus.fa-3x
-          %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/topics.jpg", style: "width: 360px; height: 260px;"}/
+          %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/topics.jpg", style: "width: 360px; height: 200px;"}/
         .portfolio-caption
           %h4 
             Tópicos 2017
