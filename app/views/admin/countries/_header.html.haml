@@ -286,6 +286,11 @@
       %h1.admin-header__title
         = display_resource_name(resource_class)
     .admin-header-buttons.center-vertical{style: "display: inline-flex;"}
+      - if dashboard.implements_action?(:export_to_excel)
+        .div{style: "margin-right: 20px;"}
+          = link_to(send("admin_#{page.resource_name.pluralize}_export_to_excel_path", {format: :xls}), method: :post, class: "btn btn-primary admin-header-buttons__item") do
+            %span= I18n.t("administrate.actions.export_to_excel")
+            %i.fa.fa-file-excel-o.ml5
       = simple_form_for :countries, {url: admin_countries_import_from_excel_path, method: :post, html: { class: "form-inline" }} do |f|
         .div{style: "display: inline-flex"}
           = f.input :file, required: true, as: :file, label: false, input_html: {style: "margin-top: 5px;"}

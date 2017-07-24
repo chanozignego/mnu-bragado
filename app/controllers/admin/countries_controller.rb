@@ -25,6 +25,17 @@ module Admin
       end
     end
 
+    def export_to_excel
+      @countries = Country.all
+      respond_to do |format| 
+        filename = "Paises-UMBragado-#{@current_year}.xls"
+        column_width = [25, 25, 25, 25, 10, 10, 10, 10, 10, 10]
+        header = [["NOMBRE", "GRUPO REGIONAL", "ESTADO", "ESCUELA ASIGNADA", "AG", "STI", "CS", "SEGIB", "ECOSOC", "TOTAL"]]
+        fields = [:name, :regional_group_name, :state_name, :school_name, :ag_translation, :sti_translation, :cs_translation, :segib_translation, :ecosoc_translation, :delegates_quantity]
+        format.xls { send_data(@countries.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
+      end
+    end
+
 
     private
 

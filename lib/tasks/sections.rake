@@ -53,6 +53,7 @@ namespace :sections do
                       classification: folder.classification,
                       archive_type: "dinamic",
                       folder: folder)
+
     end
   end
 

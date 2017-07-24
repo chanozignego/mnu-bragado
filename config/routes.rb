@@ -121,6 +121,7 @@ Rails.application.routes.draw do
     end
 
     namespace :countries do
+      post :export_to_excel
       post :import_from_excel
     end
 

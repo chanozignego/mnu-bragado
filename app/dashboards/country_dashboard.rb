@@ -57,6 +57,11 @@ class CountryDashboard < ApplicationDashboard
     :state
   ]
 
+  COLLECTION_ACTIONS = [{
+    name: :export_to_excel,
+    http_method: :get
+  }]
+
   MASS_ASSIGNMENT_ACTIONS = [
   #  :approve_revision
   ]

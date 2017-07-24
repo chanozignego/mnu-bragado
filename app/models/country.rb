@@ -18,6 +18,26 @@ class Country < ActiveRecord::Base
     I18n.t("country.states")[state.try(:to_sym)]
   end
 
+  def ag_translation
+    (ag) ? "SI" : "NO"
+  end
+
+  def sti_translation
+    (sti) ? "SI" : "NO"
+  end
+
+  def cs_translation
+    (cs) ? "SI" : "NO"
+  end
+
+  def segib_translation
+    (segib) ? "SI" : "NO"
+  end
+
+  def ecosoc_translation
+    (ecosoc) ? "SI" : "NO"
+  end
+
   def delegates_quantity
     quantity = 0
     if (ag) 
