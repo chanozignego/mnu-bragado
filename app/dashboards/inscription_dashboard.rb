@@ -53,7 +53,7 @@ class InscriptionDashboard < ApplicationDashboard
   # end
 
   SEARCHABLE_ATTRIBUTES = [
-    [:id_eq],
+    [:id_eq, {input_html: {type: :number, min: 0}}],
     [:full_name_cont],
     [:type_eq, {as: :select, 
                   collection: Inscription.types,

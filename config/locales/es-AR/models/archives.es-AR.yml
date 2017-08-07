@@ -34,6 +34,8 @@ es-AR:
         classification_name: Órgano
         archive_type: Clasificación
         archive_type_name: Clasificación
+        name_cont: Nombre
+        description_cont: Descripción
     models:
       archive:
         one: Archivo
