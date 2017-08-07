@@ -26,7 +26,9 @@ module Admin
     end
 
     def export_to_excel
+
       @countries = Country.all
+      binding.pry
       respond_to do |format| 
         filename = "Paises-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 10, 10, 10, 10, 10, 10]
