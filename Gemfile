@@ -10,6 +10,7 @@ gem "letter_opener", group: :development
 gem "mail"
 gem "gmail"
 gem 'mailgun_rails'
+gem 'premailer-rails'
 
 # Debugging
 gem "pry"
