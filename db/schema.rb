@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525002532) do
+ActiveRecord::Schema.define(version: 20170928162328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -279,11 +279,17 @@ ActiveRecord::Schema.define(version: 20170525002532) do
     t.string   "instagram_url"
     t.string   "principal_image"
     t.string   "secondary_image"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "index_number",         default: 0
     t.string   "principal_image_name", default: ""
+    t.boolean  "visible",              default: false
+    t.integer  "people_id"
+    t.integer  "medical_data_id"
   end
+
+  add_index "trainers", ["medical_data_id"], name: "index_trainers_on_medical_data_id", using: :btree
+  add_index "trainers", ["people_id"], name: "index_trainers_on_people_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

@@ -1,26 +1,51 @@
-%h2 Ha surgido una nueva consulta
-.row
-  %b
-    Fecha:
-  = @query.created_at.to_date
+%table{:cellpadding => "0", :cellspacing => "0", width: "100%", style: "padding-left: 60px; padding-right: 60px;"}
+  %tbody
+    %tr
+      %td
+        %table{:cellpadding => "0", :cellspacing => "0"}
+          %tbody
+            %tr
+              %h1.text-center Ha surgido una nueva consulta
+              %br
+              .row
+                %b
+                  Fecha:
+                = @query.created_at.to_date
+              .row
+                %b
+                  De:
+                = @query.name
+              .row
+                %b
+                  Email:
+                = @query.email
+              .row
+                %b
+                  Teléfono:
+                = @query.phone_number
+              .row
+                %b
+                  Consulta:
+              .row
+                = @query.message
+
+              
 %br
-.row
-  %b
-    De:
-  = @query.name
+%hr{style: "margin-left: 60px; margin-right: 60px;"}
 %br
-.row
-  %b
-    Email:
-  = @query.email
+
+%table{:cellpadding => "0", :cellspacing => "0", width: "100%", style: "padding-left: 60px; padding-right: 60px;"}
+  %tbody
+    %tr
+      %td
+        %table{:cellpadding => "0", :cellspacing => "0"}
+          %tbody
+            %tr
+              %td
+                .text{style: "font-size: 16px;"}
+                  ¡Muchas Gracias!
+                  %br
+                .text{style: "font-size: 16px;"}
+                  Equipo MNU Bragado
+
 %br
-.row
-  %b
-    Teléfono:
-  = @query.phone_number
-%br
-.row
-  %b
-    Consulta:
-.row
-  = @query.message
