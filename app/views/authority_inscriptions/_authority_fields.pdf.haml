@@ -5,25 +5,28 @@
   %br
 
 .col-xs-12
-  .col-xs-12.form-group
+  .col-xs-2.form-group
     = f.input :id, required: false, input_html: {class: "form-control"}
     
-  .col-xs-12.form-group
-    = f.input :participated, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.participated, input_html: {class: "form-control js-select2"}
-
-  .col-xs-12.form-group
+  .col-xs-5.form-group
     = f.input :school, required: false, input_html: {class: "form-control"}
 
-  .col-xs-12.form-group
+  .col-xs-5.form-group
     = f.input :professor, required: false, input_html: {class: "form-control"}
 
-.col-xs-12
+
+.col-md-12
   = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
-    = render '/inscriptions/person_fields', f: variant_form, item: f.object
-  %br
-.col-xs-12
-  = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
-    = render '/inscriptions/medical_data_fields', f: variant_form, item: f.object
+    .col-xs-4
+      = variant_form.input :first_name, required: false, input_html: {class: "form-control"}
+      %br
+    .col-xs-4
+      = variant_form.input :last_name, required: false, input_html: {class: "form-control"}
+      %br
+    .col-xs-4
+      = variant_form.input :dni, required: false, input_html: {class: "form-control"}
+      %br
+
   %br
   %br
   %br
