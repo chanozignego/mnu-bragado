@@ -1,0 +1,199 @@
+//Team Section
+/*.trainer-member img.hover {
+  display: none;
+}
+
+.trainer-member img.nohover:hover {
+  display: none;
+  .hover{
+    display: block;
+  }
+} */
+
+
+// Purple
+#header-button-purple {
+  color: #524482; 
+  font-weight: bold; 
+}
+
+#header-button-purple a {
+  color: #524482;
+  font-weight: bold; 
+}
+
+#header-button-purple a:hover {
+  color: white; 
+  background: #524482;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
+#header-button-purple.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #524482;  
+} 
+
+
+
+// Blue
+#header-button-blue {
+  color: #2A8CC8; 
+  font-weight: bold; 
+}
+
+#header-button-blue a {
+  color: #2A8CC8;
+  font-weight: bold; 
+}
+
+#header-button-blue a:hover {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #2A8CC8; 
+} 
+
+#header-button-blue.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #2A8CC8;  
+} 
+
+
+
+// Green
+#header-button-green {
+  color: #49AC7B; 
+  font-weight: bold; 
+}
+
+#header-button-green a {
+  color: #49AC7B;
+  font-weight: bold; 
+}
+
+#header-button-green a:hover {
+  color: white; 
+  background: #49AC7B;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
+#header-button-green.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #49AC7B;  
+} 
+
+
+
+// Yellow
+#header-button-yellow {
+  color: #fed136; 
+  font-weight: bold; 
+}
+
+#header-button-yellow a {
+  color: #fed136; 
+  font-weight: bold; 
+}
+
+#header-button-yellow a:hover {
+  color: white; 
+  background: #fed136;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
+#header-button-yellow.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #fed136; 
+} 
+
+
+
+// Red
+#header-button-red {
+  color: #D94F42; 
+  font-weight: bold; 
+}
+
+#header-button-red a {
+  color: #D94F42;
+  font-weight: bold; 
+}
+
+#header-button-red a:hover {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #D94F42;  
+} 
+
+#header-button-red.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #D94F42;  
+} 
+
+
+
+// Brown
+#header-button-brown {
+  color: #A1B550; 
+  font-weight: bold; 
+}
+
+#header-button-brown a {
+  color: #A1B550;
+  font-weight: bold; 
+}
+
+#header-button-brown a:hover {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #A1B550; 
+} 
+
+#header-button-brown.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #A1B550;  
+} 
+
+
+
+// Pink
+#header-button-pink {
+  color: #EFA4AB; 
+  font-weight: bold; 
+}
+
+#header-button-pink a {
+  color: #EFA4AB;
+  font-weight: bold; 
+}
+
+#header-button-pink a:hover {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #EFA4AB;  
+} 
+
+#header-button-pink.active a {
+  color: white; 
+  font-weight: bold; 
+  border-radius: 4px;
+  background: #EFA4AB;  
+} 
