@@ -1,0 +1,22 @@
+/ Navigation
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-shrink{style: "background: white; border-bottom: 1px solid black;"}
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header.page-scroll
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.page-scroll{:href => "#page-top", style: "font-size: 30px; font-weight: bold;"} UM Bragado
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse#header-navbar
+      %ul.nav.navbar-nav.navbar-right
+        %li.hidden
+          %a{:href => "#page-top"}
+        %li#header-button-red
+          %a.page-scroll{:href => root_path}
+            Home
+        %li#header-button-pink
+          %a.page-scroll{:href => "#contact"}
+            Contacto

@@ -1,60 +1,24 @@
 %body#page-top.index
-  / Navigation
-  %nav.navbar.navbar-default.navbar-fixed-top
+  = render "/shared/simple_navbar"
+
+  %header{style: "background-image: url('img/principal/mnubragado-background4.jpeg'); color: #fed136;"}
     .container
-      / Brand and toggle get grouped for better mobile display
-      .navbar-header.page-scroll
-        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand.page-scroll{:href => root_path} UM Bragado
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav.navbar-right
-          %li.hidden
-            %a{:href => "#page-top"}
-          %li
-            %a{:href => "/"} Home  
-          %li
-            %a.page-scroll{:href => "#contact"} Contacto
-
-  / Header
-  /%header{style: "background-image: url('https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/12087222_625663870909890_8410275137166496918_o.jpg');"}
-  %header{style: "background-image: url('img/principal/principal1.gif');"}
-    .container
-      .intro-text
-        .intro-lead-in Uniendo Metas, Jóvenes para el Futuro
-        .intro-heading Modelo Naciones Unidas Bragado
-        .col-xs-12
-          .col-xs-3
-            %a.page-scroll.btn.btn-xl{:href => new_delegate_inscription_path} 
-              Inscripción 
-              %br 
-              Delegados
-          .col-xs-3
-            %a.page-scroll.btn.btn-xl{:href => new_authority_inscription_path} 
-              Inscripción 
-              %br
-              Autoridades
-          .col-xs-3
-            %a.page-scroll.btn.btn-xl{:href => new_professor_inscription_path} 
-              Inscripción 
-              %br
-              Profesores
-          .col-xs-3
-            %a.page-scroll.btn.btn-xl{:href => new_school_inscription_path} 
-              Inscripción 
-              %br
-              Escuelas
- 
-
-  / Clients Aside
-  = render "home/clients_section"
-
-  / Contact Section
-  = render "home/contact_section"
-
-  / Footer
-  = render "home/footer"
+      .intro-text{style: "padding-top: 400px; padding-bottom: 50px; margin-top: 50px;"}
+        .intro-lead-in{style: "color: #524482;"} Uniendo Metas, Jóvenes para el Futuro
+        .intro-heading{style: "color: #2A8CC8;"} Modelo Naciones Unidas Bragado
+        .row
+          .col-xs-12.col-md-6{style: "padding: 5px;"}
+            %a.page-scroll.btn.btn-xl{:href => new_delegate_inscription_path, style: "background: #49AC7B; border-color: #49AC7B; width: 100%;"} 
+              Inscripción Delegados
+          .col-xs-12.col-md-6{style: "padding: 5px;"}
+            %a.page-scroll.btn.btn-xl{:href => new_authority_inscription_path, style: "width: 100%;"} 
+              Inscripción Autoridades
+          .col-xs-12.col-md-6{style: "padding: 5px;"}
+            %a.page-scroll.btn.btn-xl{:href => new_professor_inscription_path, style: "background: #D94F42; border-color: #D94F42; width: 100%;"}   
+              Inscripción Profesores
+          .col-xs-12.col-md-6{style: "padding: 5px;"}
+            %a.page-scroll.btn.btn-xl{:href => new_school_inscription_path, style: "background: #524482; border-color: #524482; width: 100%;"}   
+              Inscripcion Escuelas
+          
+  
+  = render "/shared/simple_footer"

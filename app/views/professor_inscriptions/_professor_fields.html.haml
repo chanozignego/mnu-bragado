@@ -6,7 +6,7 @@
         option: Delegate.human_attribute_name(:school)),
       selected: f.object.school.try(:id),
       include_blank: true,
-      label_method: -> (sch) { "#{sch.name} - #{sch.location.city}, #{sch.location.province}" }
+      label_method: -> (sch) { "#{sch.name} - #{sch.location.try(:city)}, #{sch.location.try(:province)}" }
 .col-md-12
   = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
     = render 'inscriptions/person_fields', f: variant_form, item: f.object

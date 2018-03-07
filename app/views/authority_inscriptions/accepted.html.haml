@@ -1,58 +1,28 @@
 %body#page-top.index
-  / Navigation
-  %nav.navbar.navbar-default.navbar-fixed-top
-    .container
-      / Brand and toggle get grouped for better mobile display
-      .navbar-header.page-scroll
-        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand.page-scroll{:href => root_path} UM Bragado
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav.navbar-right
-          %li.hidden
-            %a{:href => "#page-top"}
-          %li
-            %a{:href => "/"} Home  
-          %li
-            %a.page-scroll{:href => "#contact"} Contacto
+  = render "/shared/simple_navbar"
+
+  %header#inscription{style: "background-color: #222; background-image: url('/img/principal/mnubragado-background4.jpeg');"}
+    .container{style: "padding-top: 300px; padding-bottom: 75px; margin-top: 50px; color: #333;"}
+      .row
+        .col-xs-12
+          %h2.text-center
+            ¡Felicitaciones!
+          %h3.text-center
+            ¡Ya sos parte del modelo! Para finalizar, tenes que imprimir el formulario, firmarlo y presentarlo junto con el costo de la inscripción en el Hogar San Vicente
+            /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
+
+        .col-xs-12
+          %br
+          .col-xs-12.text-center
+            %button.btn.btn-primary
+              = link_to "Descargar PDF", authority_inscription_path(id: @authority_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+
+          %br
+          %br
+          %br
+        .col-xs-12
+          %h5.text-center
+            La inscripción tambien te ha sido enviada al email indicado
 
 
-%section#inscription{style: "background-color: #222; background-image: url('/img/map-image.png'); background-position: center; background-repeat: no-repeat;"}
-  .container
-    .row
-      .col-xs-12
-        .admin-common-panel
-          .row.admin-common-panel__content
-            .col-xs-12
-              .col-xs-12
-                %h2.text-center
-                  ¡Felicitaciones!
-                %h3.text-center
-                  ¡Ya sos parte del modelo! Para finalizar, tenes que imprimir el formulario, firmarlo y presentarlo junto con el costo de la inscripción en el Hogar San Vicente
-                  /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
-
-              .col-xs-12
-                %br
-                .col-xs-12.text-center
-                  %button.btn.btn-primary
-                    = link_to "Descargar PDF", authority_inscription_path(id: @authority_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
-
-                %br
-                %br
-                %br
-              .col-xs-12
-                %h5.text-center
-                  La inscripción tambien te ha sido enviada al email indicado
-
-/ Clients Aside
-= render "home/clients_section"
-
-/ Contact Section
-= render "home/contact_section"
-
-/ Footer
-= render "home/footer"
+  = render "/shared/simple_footer"
