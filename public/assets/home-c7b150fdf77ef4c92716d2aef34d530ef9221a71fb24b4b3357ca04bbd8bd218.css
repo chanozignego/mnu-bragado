@@ -1,0 +1,23 @@
+//Team Section
+/*.trainer-member img.hover {
+  display: none;
+}
+
+.trainer-member img.nohover:hover {
+  display: none;
+  .hover{
+    display: block;
+  }
+} */
+
+
+
+%a.page-scroll.purple {
+  color: #524482; 
+  font-weight: bold; 
+} 
+
+%a.page-scroll.purple:hover {
+  color: white;
+  background: #524482;  
+} 

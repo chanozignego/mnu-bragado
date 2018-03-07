@@ -22,18 +22,29 @@
   font-weight: bold; 
 }
 
-#header-button-purple a:hover {
+#header-button-purple:hover {
   color: white; 
   background: #524482;  
   font-weight: bold; 
   border-radius: 4px;
 } 
 
+#header-button-purple a:hover {
+  color: white; 
+  font-weight: bold; 
+} 
+
+#header-button-purple .active {
+  color: white; 
+  background: #524482;  
+  font-weight: bold; 
+  border-radius: 1px;
+} 
+
 #header-button-purple.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #524482;  
 } 
 
 
@@ -49,18 +60,29 @@
   font-weight: bold; 
 }
 
+#header-button-blue:hover {
+  color: white; 
+  background: #2A8CC8;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
 #header-button-blue a:hover {
   color: white; 
   font-weight: bold; 
-  border-radius: 4px;
-  background: #2A8CC8; 
+} 
+
+#header-button-blue .active {
+  color: white; 
+  background: #2A8CC8;  
+  font-weight: bold; 
+  border-radius: 1px;
 } 
 
 #header-button-blue.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #2A8CC8;  
 } 
 
 
@@ -76,18 +98,29 @@
   font-weight: bold; 
 }
 
-#header-button-green a:hover {
+#header-button-green:hover {
   color: white; 
   background: #49AC7B;  
   font-weight: bold; 
   border-radius: 4px;
 } 
 
+#header-button-green a:hover {
+  color: white; 
+  font-weight: bold; 
+} 
+
+#header-button-green .active {
+  color: white; 
+  background: #49AC7B;  
+  font-weight: bold; 
+  border-radius: 1px;
+} 
+
 #header-button-green.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #49AC7B;  
 } 
 
 
@@ -103,18 +136,28 @@
   font-weight: bold; 
 }
 
-#header-button-yellow a:hover {
+#header-button-yellow:hover {
   color: white; 
   background: #fed136;  
   font-weight: bold; 
   border-radius: 4px;
 } 
 
+#header-button-yellow a:hover {
+  color: white; 
+  font-weight: bold; 
+} 
+
+#header-button-yellow .active {
+  color: white; 
+  background: #fed136;  
+  font-weight: bold; 
+} 
+
 #header-button-yellow.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #fed136; 
 } 
 
 
@@ -130,18 +173,29 @@
   font-weight: bold; 
 }
 
+#header-button-red:hover {
+  color: white; 
+  background: #D94F42;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
 #header-button-red a:hover {
   color: white; 
   font-weight: bold; 
-  border-radius: 4px;
+} 
+
+#header-button-red .active {
+  color: white; 
   background: #D94F42;  
+  font-weight: bold; 
+  border-radius: 1px;
 } 
 
 #header-button-red.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #D94F42;  
 } 
 
 
@@ -157,18 +211,29 @@
   font-weight: bold; 
 }
 
+#header-button-brown:hover {
+  color: white; 
+  background: #A1B550;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
 #header-button-brown a:hover {
   color: white; 
   font-weight: bold; 
-  border-radius: 4px;
-  background: #A1B550; 
+} 
+
+#header-button-brown .active {
+  color: white; 
+  background: #A1B550;  
+  font-weight: bold; 
+  border-radius: 1px;
 } 
 
 #header-button-brown.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #A1B550;  
 } 
 
 
@@ -184,16 +249,27 @@
   font-weight: bold; 
 }
 
+#header-button-pink:hover {
+  color: white; 
+  background: #EFA4AB;  
+  font-weight: bold; 
+  border-radius: 4px;
+} 
+
 #header-button-pink a:hover {
   color: white; 
   font-weight: bold; 
-  border-radius: 4px;
+} 
+
+#header-button-pink .active {
+  color: white; 
   background: #EFA4AB;  
+  font-weight: bold; 
+  border-radius: 1px;
 } 
 
 #header-button-pink.active a {
   color: white; 
   font-weight: bold; 
   border-radius: 4px;
-  background: #EFA4AB;  
 } 

@@ -4,7 +4,7 @@
 //= require bootstrap
 //= require agency
 //= require inscriptions
-//= require cbpAnimatedHeader
+// require cbpAnimatedHeader
 //= require classie
 //= require contact_me
 //= require jqBootstrapValidation

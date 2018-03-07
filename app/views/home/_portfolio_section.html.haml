@@ -1,4 +1,4 @@
-%section#portfolio.bg-light-gray
+%section#portfolio
   .container
     .row
       .col-lg-12.text-center
@@ -14,7 +14,7 @@
               .portfolio-hover-content
                 %i.fa.fa-plus.fa-3x
             %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/#{section.classification}.jpg", style: "width: 360px; height: 200px;"}/
-          .portfolio-caption
+          .portfolio-caption{style: "padding-left: 10px; padding-right: 10px;"}
             %h4 
               = section.name
 
@@ -26,7 +26,7 @@
           %img.img-responsive{:alt => "", :src => "/img/portfolio/sections/topics.jpg", style: "width: 360px; height: 200px;"}/
         .portfolio-caption
           %h4 
-            Tópicos 2017
+            Tópicos 2018
 
 
       / .row
