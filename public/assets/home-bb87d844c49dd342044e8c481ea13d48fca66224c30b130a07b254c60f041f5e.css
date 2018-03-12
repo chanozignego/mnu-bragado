@@ -218,25 +218,36 @@ header.header-navbar {
   color: #fed136;
 }
 
-header.header-navbar .intro-text.intro-text-large {
+header.header-navbar .intro-text {
   padding-top: 375px; 
   padding-bottom: 75px; 
   margin-top: 50px;
 }
 
-header.header-navbar .intro-text.intro-text-small {
-  padding-top: 475px; 
-  padding-bottom: 50px; 
-  margin-top: 180px;
+
+@media (min-width: 768px) {
+
+  header.header-navbar {
+    margin-top: -153px;
+  }
+
+  header.header-navbar .intro-text {
+    padding-top: 475px; 
+    padding-bottom: 50px; 
+    margin-top: 180px;
+  }
+
+  .container.container-navbar {
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .nav-full-width {
+    width: 100%;
+    text-align: center;
+  }
+  
 }
 
-.container.container-navbar {
-  width: 100%;
-  padding-right: 25px;
-  padding-left: 25px;
-}
 
-.nav-full-width {
-  width: 100%;
-  text-align: center;
-}

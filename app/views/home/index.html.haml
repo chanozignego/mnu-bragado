@@ -1,62 +1,10 @@
 %body#page-top.index
   / Navigation
-  %nav.navbar.navbar-default.navbar-fixed-top.navbar-shrink{style: "background: white; border-bottom: 1px solid black;"}
-    .container
-      / Brand and toggle get grouped for better mobile display
-      .navbar-header.page-scroll
-        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand.page-scroll{:href => "#page-top", style: "font-size: 30px; font-weight: bold; padding-top: 10px; padding-bottom: 10px; height: 50px;"} UM Bragado
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse#header-navbar
-        %ul.nav.navbar-nav.navbar-right
-          %li.hidden
-            %a{:href => "#page-top"}
-          %li#header-button-purple
-            %a.page-scroll{:href => topics_archives_path} 
-              Tópicos
-          %li#header-button-blue
-            %a.page-scroll{:href => inscriptions_path}
-              Inscripción
-          %li#header-button-green
-            %a.page-scroll{:href => "#services"}
-              Valores
-          %li#header-button-yellow
-            %a.page-scroll{:href => "#portfolio"}
-              Material
-          %li#header-button-red
-            %a.page-scroll{:href => "#about"}
-              Sobre Nosotros
-          %li#header-button-brown
-            %a.page-scroll{:href => "#team"}
-              Equipo
-          %li#header-button-pink
-            %a.page-scroll{:href => "#contact"}
-              Contacto
+  = render "/home/navbar"
 
   / Header
-  /%header{style: "background-image: url('https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/12087222_625663870909890_8410275137166496918_o.jpg');"}
-  /%header{style: "background-image: url('img/principal/mnubragado-background.jpeg');"}
-  //%header{style: "background-image: url('img/principal/principal1.gif');"}
-  %header{style: "background-image: url('img/principal/mnubragado-background4.jpeg'); color: #fed136;"}
-    .container
-      .intro-text{style: "padding-top: 375px; padding-bottom: 75px; margin-top: 50px;"}
-        .intro-lead-in{style: "color: #524482;"} Uniendo Metas, Jóvenes para el Futuro
-        .intro-heading{style: "color: #2A8CC8;"} Modelo Naciones Unidas Bragado
-        .row
-          .col-xs-12.col-md-4{style: "padding: 5px;"}
-            %a.page-scroll.btn.btn-xl{:href => "#services", style: "background: #49AC7B; border-color: #49AC7B; width: 100%;"} 
-              Quiero saber más
-          .col-xs-12.col-md-4{style: "padding: 5px;"}
-            %a.page-scroll.btn.btn-xl{:href => inscriptions_path, style: "width: 100%;"} 
-              Inscripciones 2018
-          .col-xs-12.col-md-4{style: "padding: 5px;"}
-            %a.page-scroll.btn.btn-xl{:href => topics_archives_path, style: "background: #D94F42; border-color: #D94F42; width: 100%;"}   
-              Tópicos 2018
- 
+  = render "/home/header"
+
   / Services Section
   = render "home/service_section"
   
