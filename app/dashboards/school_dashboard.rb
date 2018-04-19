@@ -9,12 +9,14 @@ class SchoolDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    cue: Field::String, 
     name: Field::String,
     location_province: Field::String,
     location_city: Field::String,
     location_street: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    director_name: Field::String,
     created_at: Field::DateTime
   }
 
@@ -40,12 +42,14 @@ class SchoolDashboard < ApplicationDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :cue, 
     :name,
     :location_province,
     :location_city,
     :location_street,
     :phone_number,
-    :email
+    :email,
+    :director_name
   ]
 
   COLLECTION_ACTIONS = [{

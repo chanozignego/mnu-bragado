@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928162328) do
+ActiveRecord::Schema.define(version: 20180419164543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,8 @@ ActiveRecord::Schema.define(version: 20170928162328) do
     t.string   "type"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "cue"
+    t.string   "director_name"
   end
 
   add_index "inscriptions", ["location_id"], name: "index_inscriptions_on_location_id", using: :btree
@@ -253,6 +255,8 @@ ActiveRecord::Schema.define(version: 20170928162328) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "inscription_image"
+    t.string   "cue"
+    t.string   "director_name"
   end
 
   add_index "schools", ["location_id"], name: "index_schools_on_location_id", using: :btree

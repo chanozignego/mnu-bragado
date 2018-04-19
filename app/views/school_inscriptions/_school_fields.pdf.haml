@@ -8,7 +8,9 @@
   .col-xs-12
     = f.input :id, required: false, input_html: {class: "form-control"}
     %br
-
+  .col-xs-12
+    = f.input :cue, required: false, input_html: {class: "form-control"}
+    %br
   .col-xs-12
     = f.input :name, required: false, input_html: {class: "form-control"}
     %br
@@ -22,6 +24,9 @@
     = f.input :fax_number, required: false, input_html: {class: "form-control"}
     %br
   %br
+  .col-xs-12
+    = f.input :director_name, required: false, input_html: {class: "form-control"}
+    %br
 
   .col-xs-12
     = f.simple_fields_for :location, f.object.location || f.object.build_location do |variant_form|

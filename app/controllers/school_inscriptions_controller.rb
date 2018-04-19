@@ -46,7 +46,7 @@ class SchoolInscriptionsController < ApplicationController
 
     def permitted_attributes
       [
-        :name, :phone_number, :email,
+        :cue, :name, :phone_number, :email, :director_name,
         location_attributes: location_attributes
       ]
     end

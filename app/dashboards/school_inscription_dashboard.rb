@@ -11,9 +11,11 @@ class SchoolInscriptionDashboard < ApplicationDashboard
 
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    cue: Field::String,
     name: Field::String,
     phone_number: Field::String,
     email: Field::String,
+    director_name: Field::String,
     location_province: Field::String,
     location_city: Field::String,
     location_street_name: Field::String,

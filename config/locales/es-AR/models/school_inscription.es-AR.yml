@@ -2,8 +2,10 @@ es-AR:
   activerecord:
     attributes:
       school_inscription:
+        cue: CUE
         name: Nombre
         email: Email
+        director_name: Nombre del Director
         location_province: Provincia
         location_city: Ciudad
         location_street_name: Calle

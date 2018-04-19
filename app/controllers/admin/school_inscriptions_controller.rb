@@ -4,10 +4,12 @@ module Admin
     def accept
       @school_inscription = SchoolInscription.find(params[:id])
       school = School.new
+      school.cue = @school_inscription.cue
       school.name = @school_inscription.name
       school.phone_number = @school_inscription.phone_number
       school.fax_number = @school_inscription.fax_number
       school.email = @school_inscription.email
+      school.director_name = @school_inscription.director_name
       school.location = @school_inscription.location
       if school.save
         flash[:notice] = "Inscripción aceptada correctamente"
