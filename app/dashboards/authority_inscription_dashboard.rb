@@ -11,6 +11,7 @@ class AuthorityInscriptionDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     participated: LabeledBooleanField, 
+    graduated: LabeledBooleanField, 
     school_name: Field::String,
     professor_name: Field::String, 
     first_name: Field::String,

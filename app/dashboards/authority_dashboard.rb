@@ -10,6 +10,7 @@ class AuthorityDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    graduated: LabeledBooleanField,
     first_name: Field::String,
     last_name: Field::String,
     email: Field::String,

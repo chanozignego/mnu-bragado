@@ -1,9 +1,9 @@
 class AuthorityInscription < Inscription
 
-  validates :school, presence: true
-  validates :school_id, presence: true
-  validates :professor, presence: true
-  validates :professor_id, presence: true
+  validates :school, presence: true, if: -> {!graduated}
+  validates :school_id, presence: true, if: -> {!graduated}
+  validates :professor, presence: true, if: -> {!graduated}
+  validates :professor_id, presence: true, if: -> {!graduated}
   validates :person, presence: true
   validates :medical_data, presence: true
 

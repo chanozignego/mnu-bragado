@@ -9,12 +9,29 @@
             = t("administrate.details")
       .row.admin-common-panel__content
         .col-xs-12
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Authority.human_attribute_name(:id)
+            .col-sm-9
+              .span
+                = page.resource.id
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Authority.human_attribute_name(:graduated)
+            .col-sm-9
+              - graduated = page.resource.graduated
+              .span.label{class: "label-#{graduated ? 'primary' : 'default'}"}
+                = graduated ? "Si" : "No"
+
           = render 'admin/shared/show/person_section', page: page, title: "Personal data", resource: page.resource.person, show_title: false
 
           .row.admin-detail-row
             .col-sm-3
               .span.bold
-                = Delegate.human_attribute_name(:school_year)
+                = Authority.human_attribute_name(:school_year)
             .col-sm-9
               .span
                 = page.resource.school_year
@@ -22,7 +39,7 @@
           .row.admin-detail-row
             .col-sm-3
               .span.bold
-                = Delegate.human_attribute_name(:orientation)
+                = Authority.human_attribute_name(:orientation)
             .col-sm-9
               .span
                 = page.resource.orientation

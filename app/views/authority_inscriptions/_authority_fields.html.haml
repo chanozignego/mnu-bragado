@@ -1,6 +1,9 @@
 .col-md-12
-  .col-md-12.form-group
+  .col-md-6.form-group
     = f.input :participated, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.participated, input_html: {class: "form-control js-select2"}
+
+  .col-md-6.form-group
+    = f.input :graduated, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.graduated, input_html: {class: "form-control js-select2 js-graduated-field"}
 
   .col-md-12.form-group
     = f.input :school_id, required: false, input_html: {class: "form-control js-select2 js-school-field"},

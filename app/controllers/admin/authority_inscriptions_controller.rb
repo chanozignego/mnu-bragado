@@ -10,6 +10,7 @@ module Admin
       authority.school = @authority_inscription.school
       authority.school_year = @authority_inscription.school_year
       authority.orientation = @authority_inscription.orientation
+      authority.graduated = @authority_inscription.graduated
       authority.year = @current_year
       authority.participated = @authority_inscription.participated
       if authority.save

@@ -47,7 +47,7 @@ class AuthorityInscriptionsController < ApplicationController
     def permitted_attributes
       [
         :rol, :school_id, :professor_id, :participated, 
-        :school_year, :orientation,
+        :school_year, :orientation, :graduated,
         person_attributes: person_attributes,
         medical_data_attributes: medical_data_attributes
       ]

@@ -59,6 +59,16 @@ function setCheckboxOnChange(selector, next) {
   });
 }
 
+function setGraduatedOnChange(selector, next) {
+  var graduated = ($(selector).val() == 'true');
+  $(next).attr('disabled', graduated);
+  //if (graduated) $(next).select2('val', '');
+  $(selector).change(function() {
+    var graduated = ($(this).val() == 'true');
+    $(next).attr('disabled', graduated);
+    //if (graduated) $(next).select2('val', '');
+  });
+}
 // function setChecked() {
 //   $(next).attr("disabled", !$(this).is(":checked"));
 // }
@@ -74,7 +84,8 @@ $(document).ready(function() {
   setDataOnChange(this.school, this.professor);
   //this.setDataOnChange(this.professor, this.partaker);
 
-  //setCheckboxOnChange('#has_chronic_desease_checkbox', '#has_chronic_desease_detail');
+  setGraduatedOnChange('.js-graduated-field', '.js-school-field');
+  setGraduatedOnChange('.js-graduated-field', '.js-professor-field');
 
   $('.js-date-field').inputmask('99/99/9999');
 

@@ -2,6 +2,8 @@ es-AR:
   activerecord:
     attributes:
       authority:
+        id: Id
+        graduated: Egresó?
         first_name: Nombre
         last_name: Apellido
         email: Email

@@ -1,18 +1,23 @@
 .col-xs-12.text-center
   %b
-    Ficha de Inscripción Alumnos- VIII Encuentro Regional Uniendo Metas, Jóvenes para el Futuro- Bragado-
+    Ficha de Inscripción Alumnos- IX Encuentro Uniendo Metas, Jóvenes para el Futuro- Bragado-
   %br
   %br
 
 .col-xs-12
   .col-xs-2.form-group
     = f.input :id, required: false, input_html: {class: "form-control"}
-    
-  .col-xs-5.form-group
-    = f.input :school, required: false, input_html: {class: "form-control"}
+  
+  - if f.object.graduated  
+    .col-xs-10.form-group
+      %label ¿Ya egresó?
+      .form-control SI
+  - else
+    .col-xs-5.form-group
+      = f.input :school, required: false, input_html: {class: "form-control"}
 
-  .col-xs-5.form-group
-    = f.input :professor, required: false, input_html: {class: "form-control"}
+    .col-xs-5.form-group
+      = f.input :professor, required: false, input_html: {class: "form-control"}
 
 
 .col-md-12
@@ -31,4 +36,4 @@
   %br
   %br
 
-= render '/inscriptions/partaker_authorization_section'
+= render '/inscriptions/partaker_authorization_section', show_school: !f.object.graduated

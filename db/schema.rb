@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419171205) do
+ActiveRecord::Schema.define(version: 20180420165809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20180419171205) do
     t.string   "director_name"
     t.string   "orientation"
     t.string   "school_year"
+    t.boolean  "graduated",       default: false, null: false
   end
 
   add_index "inscriptions", ["location_id"], name: "index_inscriptions_on_location_id", using: :btree
@@ -194,6 +195,7 @@ ActiveRecord::Schema.define(version: 20180419171205) do
     t.integer  "delegation_id"
     t.string   "orientation"
     t.string   "school_year"
+    t.boolean  "graduated",       default: false, null: false
   end
 
   add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
