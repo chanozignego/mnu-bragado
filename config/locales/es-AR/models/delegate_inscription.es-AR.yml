@@ -44,6 +44,8 @@ es-AR:
         person: Datos personales
         medical_data: Datos médicos
         rol: Rol
+        school_year: Año que cursa
+        orientation: Orientación
         professor: Docente responsable
         professor_id: Docente responsable
         professor_name: Docente responsable

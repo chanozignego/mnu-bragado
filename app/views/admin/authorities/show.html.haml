@@ -11,6 +11,22 @@
         .col-xs-12
           = render 'admin/shared/show/person_section', page: page, title: "Personal data", resource: page.resource.person, show_title: false
 
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:school_year)
+            .col-sm-9
+              .span
+                = page.resource.school_year
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:orientation)
+            .col-sm-9
+              .span
+                = page.resource.orientation
+
           = render 'admin/shared/show/medical_data_section', page: page, title: "Medical data", resource: page.resource.medical_data
 
       .item-actions{style: "margin: 20px;"}

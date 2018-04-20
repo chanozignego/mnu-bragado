@@ -21,6 +21,8 @@ class DelegateInscriptionDashboard < ApplicationDashboard
     age: Field::String,
     email: Field::String,
     phone_number: Field::String,
+    school_year: Field::String, 
+    orientation: Field::String,
     blood_type: Field::String, 
     rh_factor: Field::String, 
     medical_insurance: Field::String,

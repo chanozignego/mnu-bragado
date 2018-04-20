@@ -8,6 +8,8 @@ module Admin
       authority.medical_data = @authority_inscription.medical_data
       authority.professor = @authority_inscription.professor
       authority.school = @authority_inscription.school
+      authority.school_year = @authority_inscription.school_year
+      authority.orientation = @authority_inscription.orientation
       authority.year = @current_year
       authority.participated = @authority_inscription.participated
       if authority.save

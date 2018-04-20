@@ -7,6 +7,8 @@ es-AR:
         email: Email
         phone_number: Teléfono
         year: Año
+        school_year: Año que cursa
+        orientation: Orientación
         has_diet?: "Dieta"
         has_medical_problems?: "Medico"
         person: Datos personales

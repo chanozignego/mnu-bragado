@@ -9,6 +9,8 @@ module Admin
       delegate.professor = @delegate_inscription.professor
       delegate.school = @delegate_inscription.school
       delegate.rol = @delegate_inscription.rol
+      delegate.school_year = @delegate_inscription.school_year
+      delegate.orientation = @delegate_inscription.orientation
       delegate.participated = @delegate_inscription.participated
       delegate.year = @current_year
       if delegate.save

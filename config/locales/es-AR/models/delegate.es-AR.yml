@@ -22,6 +22,8 @@ es-AR:
         created_at: Fecha de creación
         updated_at: Última actualización
         rol: Rol
+        school_year: Año que cursa
+        orientation: Orientación
         professor: Docente responsable
         professor_id: Docente responsable
         school: Escuela

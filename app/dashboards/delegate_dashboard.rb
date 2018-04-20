@@ -18,6 +18,8 @@ class DelegateDashboard < ApplicationDashboard
     participated: LabeledBooleanField, 
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField, 
+    school_year: Field::String, 
+    orientation: Field::String,
     created_at: Field::DateTime
   }
 

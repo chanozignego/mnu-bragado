@@ -9,9 +9,8 @@ es-AR:
         year: Año
         birthdate: Fecha de nacimiento
         age: Edad
-
-
-
+        school_year: Año que cursa
+        orientation: Orientación
         blood_type: Tipo de sangre 
         rh_factor: Factor de sangre
         medical_insurance: Obra social
