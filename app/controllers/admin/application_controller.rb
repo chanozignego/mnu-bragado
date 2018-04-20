@@ -106,6 +106,10 @@ module Admin
       super #&& UserDecorator.decorate(super)
     end
 
+    def scoped_collection
+      super.order(id: :desc)
+    end
+
     # def after_resource_destroy_success
     #   flash[:notice] = translate_with_resource("destroy.success")
     #   redirect_to action: :index
@@ -172,7 +176,7 @@ module Admin
     end
 
     def resource_collection
-      _ = search ? search.results : resource_class.all
+      _ = search ? search.results.order(id: :desc) : resource_class.all.order(id: :desc)
       _ = yield(_) if block_given?
       _ = _.page(params[:page]).per(records_per_page)
       _ = decorator_class.decorate_collection(_) if decorator_class?

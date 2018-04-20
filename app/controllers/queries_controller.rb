@@ -17,4 +17,8 @@ class QueriesController < ApplicationController
       params.require(:query).permit(:name, :email, :phone_number, :message)
     end
 
+    def scoped_collection
+      super.order(id: :asc)
+    end
+
 end
