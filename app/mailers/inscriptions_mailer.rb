@@ -1,13 +1,12 @@
 class InscriptionsMailer < ApplicationMailer
-  #default from: 'mnubragado@gmail.com'
-  default from: 'postmaster@mnubragado.com'
+  default from: 'mnubragado@gmail.com'
   helper_method :protect_against_forgery?
 
   def school_instructions_email(inscription)
     @name = inscription.name
     @school_inscription = inscription
 
-    attachments["Inscripcion#{@school_inscription.name}2017.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@school_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/school_inscriptions/show.pdf.haml', layout: 'application.pdf.haml')
     )
     
@@ -18,7 +17,7 @@ class InscriptionsMailer < ApplicationMailer
     @name = inscription.name
     @professor_inscription = inscription
 
-    attachments["Inscripcion#{@professor_inscription.name}2017.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@professor_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/professor_inscriptions/show.pdf.haml', layout: 'application.pdf.haml')
     )
     
@@ -29,7 +28,7 @@ class InscriptionsMailer < ApplicationMailer
     @name = inscription.name
     @delegate_inscription = inscription
 
-    attachments["Inscripcion#{@delegate_inscription.name}2017.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@delegate_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/delegate_inscriptions/show.pdf.haml', layout: 'application.pdf.haml')
     )
     
@@ -40,7 +39,7 @@ class InscriptionsMailer < ApplicationMailer
     @name = inscription.name
     @authority_inscription = inscription
 
-    attachments["Inscripcion#{@authority_inscription.name}2017.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@authority_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/authority_inscriptions/show.pdf.haml', layout: 'application.pdf.haml')
     )
     
