@@ -1,5 +1,6 @@
 class InscriptionsMailer < ApplicationMailer
-  default from: 'mnubragado@gmail.com'
+  #default from: 'mnubragado@gmail.com'
+  default from: 'postmaster@mnubragado.com'
   helper_method :protect_against_forgery?
 
   def school_instructions_email(inscription)
