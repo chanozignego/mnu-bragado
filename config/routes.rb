@@ -118,6 +118,15 @@ Rails.application.routes.draw do
 
     namespace :ex_partakers do
       post :import_from_excel
+      post :export_to_excel
+    end
+
+    namespace :ex_schools do
+      post :export_to_excel
+    end
+
+    namespace :ex_professors do
+      post :export_to_excel
     end
 
     namespace :countries do

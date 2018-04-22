@@ -1,0 +1,8 @@
+- if dashboard.implements_action?(:show)
+  = link_to t("administrate.actions.show"),
+    [namespace, resource],
+    class: "action-show"
+
+= render "member_actions",
+  dashboard: dashboard_class,
+  resource: resource

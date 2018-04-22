@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ExPartakerDashboard < ApplicationDashboard
+class ExProfessorDashboard < ApplicationDashboard
 
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -12,14 +12,10 @@ class ExPartakerDashboard < ApplicationDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    dni: Field::String,
     email: Field::String,
     phone_number: Field::String,
     school_name: Field::String,
     city_name: Field::String,
-    country_name: Field::String,
-    partaker_type_name: Field::String,
-    role_name: Field::String,
     year: Field::Number,
     created_at: Field::DateTime
   }
@@ -37,7 +33,6 @@ class ExPartakerDashboard < ApplicationDashboard
     :phone_number,
     :school_name,
     :city_name,
-    :partaker_type_name,
     :year
 
   ]
@@ -63,22 +58,12 @@ class ExPartakerDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:full_name_cont],
     [:email_cont],
-    [:dni_cont],
     [:school_name_cont],
     [:city_name_cont],
-    [:partaker_type_eq, {as: :select, 
-                  collection: ExPartaker.partaker_types,
-                  include_blank: true,
-                  input_html: { class: "form-control js-select2" },
-                  value_method: :last,
-                  label_method: -> (ft) { 
-                      I18n.t("ex_partaker.partaker_types.#{ft.first}") 
-                    }
-                  }],
     [:year_eq]
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_ex_partakers_path
+    Rails.application.routes.url_helpers.admin_ex_professors_path
   end
 end

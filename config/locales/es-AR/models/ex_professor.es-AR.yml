@@ -1,0 +1,22 @@
+es-AR:
+  activerecord:
+    attributes:
+      ex_professor:
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone_number: Teléfono
+        city_name: Ciudad
+        school_name: Escuela
+        year: Año
+        created_at: Fecha de creación
+        updated_at: Última actualización
+        full_name_cont: Nombre
+        email_cont: Email
+        year_eq: Año
+        school_name_cont: Escuela
+        city_name_cont: Ciudad
+    models:
+      ex_professor:
+        one: ExProfesor
+        other: ExProfesores

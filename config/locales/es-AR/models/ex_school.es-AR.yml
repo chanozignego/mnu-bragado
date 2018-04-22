@@ -1,0 +1,19 @@
+es-AR:
+  activerecord:
+    attributes:
+      ex_school:
+        name: Nombre
+        email: Email
+        phone_number: Teléfono
+        city_name: Ciudad
+        year: Año
+        created_at: Fecha de creación
+        updated_at: Última actualización
+        name_cont: Nombre
+        email_cont: Email
+        year_eq: Año
+        city_name_cont: Ciudad
+    models:
+      ex_school:
+        one: ExEscuela
+        other: ExEscuelas
