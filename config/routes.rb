@@ -130,6 +130,10 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :admin, controllers: {sessions: 'admin/sessions'}
 
+
+
+
+  # FRONT END
   get "/", controller: "home", action: :index, as: :root
 
   get "/inscriptions", controller: "inscriptions", action: :index
@@ -166,5 +170,30 @@ Rails.application.routes.draw do
     end
   end
   resource :query
+
+
+  # API
+  devise_scope :users do
+    post "/api/v1/auth/users/sign_in", to: "api/v1/auth/users/sessions#create"
+    delete "/api/v1/auth/users/sign_out", to: "api/v1/auth/users/sessions#destroy"
+  end
+
+  namespace :api do
+
+    namespace :v1 do
+
+      resources :users, only: [:show] do
+        member do
+          get :shipments
+          get :users
+          get :carriers
+          get :messages
+        end
+      end
+
+
+    end
+
+  end
 
 end

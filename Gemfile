@@ -64,6 +64,12 @@ gem "inline_svg"
 
 # Auth
 gem "devise"
+gem 'devise_token_auth'
+# RailsAPI
+gem 'rails-api'
+
+# ApiPie por API documentation
+gem 'apipie-rails'
 
 gem 'jquery-ui-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
