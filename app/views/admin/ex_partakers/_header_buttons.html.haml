@@ -4,8 +4,11 @@
   /     %span
   /       Importar desde excel
   /     %i.fa.fa-file-excel-o.ml5
-
-  = simple_form_for :ex_partakers, {url: admin_ex_partakers_import_from_excel_path, method: :post, html: { class: "form-inline" }} do |f|
-    .div{style: "display: inline-flex"}
-      = f.input :file, required: true, as: :file, label: false, input_html: {style: "margin-top: 5px;"}
-      = f.button :submit, "Importar desde excel", class: "btn btn-primary admin-header-buttons__item"
+  
+  .col-xs-4
+    = render "admin/shared/export_to_excel_button", page: page
+  .col-xs-8
+    = simple_form_for :ex_partakers, {url: admin_ex_partakers_import_from_excel_path, method: :post, html: { class: "form-inline" }} do |f|
+      .div{style: "display: inline-flex"}
+        = f.input :file, required: true, as: :file, label: false, input_html: {style: "margin-top: 5px;"}
+        = f.button :submit, "Importar desde excel", class: "btn btn-primary admin-header-buttons__item"
