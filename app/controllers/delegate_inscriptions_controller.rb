@@ -23,6 +23,7 @@ class DelegateInscriptionsController < ApplicationController
     @delegate_inscription = DelegateInscription.find(params[:id])
     respond_to do |format|
       format.pdf do
+        @qr = RQRCode::QRCode.new( "#{@delegate_inscription.id}", :size => 4, :level => :h )
         render  pdf: "#{@delegate_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
       end
     end

@@ -1,5 +1,5 @@
 %body#page-top.index
-
+- binding.pry
 %section#inscription{style: "background-color: white;"}
   .container
     .row
@@ -9,3 +9,7 @@
             .admin-common-panel
               .row.admin-common-panel__content
                 = render "/school_inscriptions/school_fields", f: f
+              .row
+                .col-xs-12
+                  = render "/inscriptions/qrcode_section", qr: @qr
+  

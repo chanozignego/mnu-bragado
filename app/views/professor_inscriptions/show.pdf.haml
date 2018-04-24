@@ -9,3 +9,6 @@
             .admin-common-panel
               .row.admin-common-panel__content
                 = render "/professor_inscriptions/professor_fields", f: f
+              .row
+                .col-xs-12
+                  = render "/inscriptions/qrcode_section", qr: @qr

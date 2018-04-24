@@ -23,6 +23,7 @@ class SchoolInscriptionsController < ApplicationController
     @school_inscription = SchoolInscription.find(params[:id])
     respond_to do |format|
       format.pdf do
+        @qr = RQRCode::QRCode.new( "#{@school_inscription.id}", :size => 4, :level => :h )
         render  pdf: "#{@school_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
       end
     end

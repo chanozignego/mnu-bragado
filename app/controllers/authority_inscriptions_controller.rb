@@ -23,6 +23,7 @@ class AuthorityInscriptionsController < ApplicationController
     @authority_inscription = AuthorityInscription.find(params[:id])
     respond_to do |format|
       format.pdf do
+        @qr = RQRCode::QRCode.new( "#{@authority_inscription.id}", :size => 4, :level => :h )
         render  pdf: "#{@authority_inscription.name}-Inscripcion2017", show_as_html: false, layout: "application.pdf.haml"
       end
     end

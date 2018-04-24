@@ -79,6 +79,8 @@ gem "administrate",
   github: "micapam/administrate",
   branch: "feature/namespaced-models"
 
+gem "rqrcode"
+
 # Testing
 gem "rspec-rails"
 gem "factory_girl_rails"
