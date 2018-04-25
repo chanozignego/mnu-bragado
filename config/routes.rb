@@ -181,28 +181,28 @@ Rails.application.routes.draw do
   resource :query
 
 
-  # API
-  devise_scope :users do
-    post "/api/v1/auth/users/sign_in", to: "api/v1/auth/users/sessions#create"
-    delete "/api/v1/auth/users/sign_out", to: "api/v1/auth/users/sessions#destroy"
-  end
+  # # API
+  # devise_scope :users do
+  #   post "/api/v1/auth/users/sign_in", to: "api/v1/auth/users/sessions#create"
+  #   delete "/api/v1/auth/users/sign_out", to: "api/v1/auth/users/sessions#destroy"
+  # end
 
-  namespace :api do
+  # namespace :api do
 
-    namespace :v1 do
+  #   namespace :v1 do
 
-      resources :users, only: [:show] do
-        member do
-          get :shipments
-          get :users
-          get :carriers
-          get :messages
-        end
-      end
+  #     resources :users, only: [:show] do
+  #       member do
+  #         get :shipments
+  #         get :users
+  #         get :carriers
+  #         get :messages
+  #       end
+  #     end
 
 
-    end
+  #   end
 
-  end
+  # end
 
 end

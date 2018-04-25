@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   helper ApplicationHelper
 
-  # protect_from_forgery with: :exception
-  protect_from_forgery prepend: true
+  protect_from_forgery with: :exception
+  #protect_from_forgery prepend: true
   before_filter :set_current_year
   before_filter :set_views
 
