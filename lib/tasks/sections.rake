@@ -31,6 +31,11 @@ namespace :sections do
                                 description: "Archivos para las Autoridades. Tópicos, reglamentos, dinámica y demás",
                                 file_type: "folder", 
                                 classification: "authorities")
+
+    folders << Folder.create( name: "G20", 
+                                description: "Archivos para G20. Tópicos, reglamentos, dinámica y demás",
+                                file_type: "folder", 
+                                classification: "g20")
     
     folders.each do |folder|
       Folder.create( name: "Tópicos", 
@@ -55,6 +60,44 @@ namespace :sections do
                       folder: folder)
 
     end
+  end
+
+  task :refactor_basic_sections => :environment do
+
+    AbstractFile.segib.order(id: :desc).destroy_all
+
+    folder = Folder.create( name: "G20", 
+                            description: "Archivos para G20. Tópicos, reglamentos, dinámica y demás",
+                            file_type: "folder", 
+                            classification: "g20")
+
+    Folder.create( name: "Tópicos", 
+                    description: "Tópicos de #{folder.name}",
+                    file_type: "folder", 
+                    classification: folder.classification,
+                    archive_type: "topic",
+                    folder: folder)
+
+    Folder.create( name: "Reglamentos", 
+                    description: "Reglamentos de #{folder.name}",
+                    file_type: "folder", 
+                    classification: folder.classification,
+                    archive_type: "regulation",
+                    folder: folder)
+
+    Folder.create( name: "Dinámica", 
+                    description: "Dinámica de #{folder.name}",
+                    file_type: "folder", 
+                    classification: folder.classification,
+                    archive_type: "dinamic",
+                    folder: folder)
+
+    Folder.create( name: "Material", 
+                    description: "Material de #{folder.name}",
+                    file_type: "folder", 
+                    classification: folder.classification,
+                    archive_type: "dinamic",
+                    folder: folder)
   end
 
 end

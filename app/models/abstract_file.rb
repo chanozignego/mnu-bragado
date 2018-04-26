@@ -2,7 +2,7 @@ class AbstractFile < ActiveRecord::Base
   belongs_to :folder, class_name: "Folder", foreign_key: 'abstract_file_id'
 
   FILE_TYPES = %i[image pdf word excel folder]
-  CLASSIFICATIONS = %i[ag sti cs ecosoc segib general authorities]
+  CLASSIFICATIONS = %i[ag sti cs ecosoc segib general authorities g20]
   ARCHIVE_TYPES = %i[regulation topic dinamic]
 
   enum file_type: FILE_TYPES
