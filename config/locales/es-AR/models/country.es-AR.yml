@@ -31,7 +31,7 @@ es-AR:
         sti: STI
         cs: CS
         ecosoc: ECOSOC
-        ecosoc: G20
+        g20: G20
         delegates_quantity: Cant.
     models:
       country:

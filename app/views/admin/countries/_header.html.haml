@@ -20,7 +20,7 @@
                   %th.text-center AG
                   %th.text-center STI
                   %th.text-center CS
-                  %th.text-center SEGIB
+                  %th.text-center G20
                   %th.text-center ECOSOC
               %tbody
                 %tr
@@ -31,7 +31,7 @@
                   %td.col-xs-2.text-center 
                     = Country.where(cs: true).count
                   %td.col-xs-2.text-center 
-                    = Country.where(segib: true).count
+                    = Country.where(g20: true).count
                   %td.col-xs-2.text-center 
                     = Country.where(ecosoc: true).count
 
@@ -78,7 +78,7 @@
                   %th.text-center AG
                   %th.text-center STI
                   %th.text-center CS
-                  %th.text-center SEGIB
+                  %th.text-center G20
                   %th.text-center ECOSOC
               %tbody
                 %tr
@@ -89,7 +89,7 @@
                   %td.col-xs-2.text-center 
                     = Country.assigned.where(cs: true).count
                   %td.col-xs-2.text-center 
-                    = Country.assigned.where(segib: true).count
+                    = Country.assigned.where(g20: true).count
                   %td.col-xs-2.text-center 
                     = Country.assigned.where(ecosoc: true).count
 
@@ -136,7 +136,7 @@
                   %th.text-center AG
                   %th.text-center STI
                   %th.text-center CS
-                  %th.text-center SEGIB
+                  %th.text-center G20
                   %th.text-center ECOSOC
               %tbody
                 %tr
@@ -147,7 +147,7 @@
                   %td.col-xs-2.text-center 
                     = Country.pending.where(cs: true).count
                   %td.col-xs-2.text-center 
-                    = Country.pending.where(segib: true).count
+                    = Country.pending.where(g20: true).count
                   %td.col-xs-2.text-center 
                     = Country.pending.where(ecosoc: true).count
 
@@ -194,13 +194,15 @@
                 %th.text-center Escuela
                 %th.text-center 3
                 %th.text-center 5 (CS)
-                %th.text-center 5 (SEGIB)
                 %th.text-center 5 (ECOSOC)
-                %th.text-center 7 (CS+SEGIB)
+                %th.text-center 6 (G20)
                 %th.text-center 7 (CS+ECOSOC)
-                %th.text-center 7 (ECOSOC+SEGIB)
+                %th.text-center 8 (CS+G20)
+                %th.text-center 8 (ECOSOC+G20)
+                %th.text-center 10 (CS+ECOSOC+G20)
                 %th.text-center Observ.
                 %th.text-center Total 
+
             %tbody
               - School.all.each do |school|
                 - school_countries = Country.assigned.where(school_id: school.id) 
@@ -208,19 +210,21 @@
                   %td.col-xs-2.text-center 
                     = school.name
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, segib: false).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, g20: false).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, segib: false).count
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, g20: false).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, segib: true).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, g20: false).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, segib: false).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: false, g20: true).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, segib: true).count
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: true, g20: false).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: true, segib: false).count
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: false, g20: true).count
                   %td.col-xs-1.text-center 
-                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, segib: true).count
+                    = school_countries.where(ag: true, sti: true, cs: false, ecosoc: true, g20: true).count
+                  %td.col-xs-1.text-center 
+                    = school_countries.where(ag: true, sti: true, cs: true, ecosoc: true, g20: true).count
                   %td.col-xs-1.text-center 
                     = school_countries.observer.count
                   %td.col-xs-1.text-center 
@@ -247,12 +251,14 @@
                 %th.text-center Escuela
                 %th.text-center 3
                 %th.text-center 5 (CS)
-                %th.text-center 5 (SEGIB)
                 %th.text-center 5 (ECOSOC)
-                %th.text-center 7 (CS+SEGIB)
+                %th.text-center 6 (G20)
                 %th.text-center 7 (CS+ECOSOC)
-                %th.text-center 7 (ECOSOC+SEGIB)
+                %th.text-center 8 (CS+G20)
+                %th.text-center 8 (ECOSOC+G20)
+                %th.text-center 10 (CS+ECOSOC+G20)
                 %th.text-center Observ.
+                %th.text-center Total 
             %tbody
               - School.all.each do |school|
                 - delegation_request = DelegationRequest.where(school_id: school.id).first
@@ -265,19 +271,21 @@
                     %td.col-xs-1.text-center 
                       = delegation_request.ag_sti_cs_count
                     %td.col-xs-1.text-center 
-                      = delegation_request.ag_sti_segib_count
-                    %td.col-xs-1.text-center 
                       = delegation_request.ag_sti_ecosoc_count
                     %td.col-xs-1.text-center 
-                      = delegation_request.ag_sti_cs_segib_count
+                      = delegation_request.ag_sti_g20_count
                     %td.col-xs-1.text-center 
                       = delegation_request.ag_sti_cs_ecosoc_count
                     %td.col-xs-1.text-center 
-                      = delegation_request.ag_sti_ecosoc_segib_count
+                      = delegation_request.ag_sti_cs_g20_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_ecosoc_g20_count
+                    %td.col-xs-1.text-center 
+                      = delegation_request.ag_sti_cs_ecosoc_g20_count
                     %td.col-xs-1.text-center 
                       = delegation_request.observer_count
-
-
+                    %td.col-xs-1.text-center 
+                      = delegation_request.total
 
 
   .col-xs-12.admin-header
