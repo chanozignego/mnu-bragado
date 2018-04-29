@@ -79,11 +79,11 @@
           .row.admin-detail-row
             .col-sm-3
               .span.bold
-                = Country.human_attribute_name(:segib)
+                = Country.human_attribute_name(:g20)
             .col-sm-9
-              - segib = page.resource.segib
-              .span.label{class: "label-#{segib ? 'success' : 'default'}"}
-                = segib ? "Si" : "No"
+              - g20 = page.resource.g20
+              .span.label{class: "label-#{g20 ? 'success' : 'default'}"}
+                = g20 ? "Si" : "No"
 
           .row.admin-detail-row
             .col-sm-3

@@ -30,8 +30,8 @@ class Country < ActiveRecord::Base
     (cs) ? "SI" : "NO"
   end
 
-  def segib_translation
-    (segib) ? "SI" : "NO"
+  def g20_translation
+    (g20) ? "SI" : "NO"
   end
 
   def ecosoc_translation
@@ -49,8 +49,8 @@ class Country < ActiveRecord::Base
     if (cs) 
       quantity = quantity + 2 
     end
-    if (segib) 
-      quantity = quantity + 2 
+    if (g20) 
+      quantity = quantity + 3 
     end
     if (ecosoc) 
       quantity = quantity + 2       

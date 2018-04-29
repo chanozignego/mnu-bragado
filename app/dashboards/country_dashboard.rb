@@ -19,7 +19,7 @@ class CountryDashboard < ApplicationDashboard
     ag: LabeledBooleanField,
     sti: LabeledBooleanField,
     cs: LabeledBooleanField,
-    segib: LabeledBooleanField,
+    g20: LabeledBooleanField,
     ecosoc: LabeledBooleanField,
     delegates_quantity: Field::Number, 
     created_at: Field::DateTime
@@ -39,7 +39,7 @@ class CountryDashboard < ApplicationDashboard
     :ag,
     :sti,
     :cs,
-    :segib,
+    :g20,
     :ecosoc,
     :delegates_quantity
   ]

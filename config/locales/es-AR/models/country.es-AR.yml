@@ -30,8 +30,8 @@ es-AR:
         ag: AG
         sti: STI
         cs: CS
-        segib: SEGIB
         ecosoc: ECOSOC
+        ecosoc: G20
         delegates_quantity: Cant.
     models:
       country:
