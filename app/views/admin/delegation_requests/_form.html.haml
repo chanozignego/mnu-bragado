@@ -30,15 +30,11 @@
           %br
 
           .col-md-12.form-group
-            = f.input :ag_sti_segib_count, required: false, input_html: {class: "form-control"}
-          %br
-
-          .col-md-12.form-group
             = f.input :ag_sti_ecosoc_count, required: false, input_html: {class: "form-control"}
           %br
 
           .col-md-12.form-group
-            = f.input :ag_sti_cs_segib_count, required: false, input_html: {class: "form-control"}
+            = f.input :ag_sti_g20_count, required: false, input_html: {class: "form-control"}
           %br
 
           .col-md-12.form-group
@@ -46,8 +42,16 @@
           %br
 
           .col-md-12.form-group
-            = f.input :ag_sti_ecosoc_segib_count, required: false, input_html: {class: "form-control"}
+            = f.input :ag_sti_cs_g20_count, required: false, input_html: {class: "form-control"}
           %br
+
+          .col-md-12.form-group
+            = f.input :ag_sti_ecosoc_g20_count, required: false, input_html: {class: "form-control"}
+          %br
+
+          .col-md-12.form-group
+            = f.input :ag_sti_cs_ecosoc_g20_count, required: false, input_html: {class: "form-control"}
+          %br          
 
           .col-md-12.form-group
             = f.input :observer_count, required: false, input_html: {class: "form-control"}

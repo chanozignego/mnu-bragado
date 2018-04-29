@@ -12,11 +12,13 @@ es-AR:
         school_eq: Escuela
         ag_sti_count: "3"
         ag_sti_cs_count: "5 (CS)"
-        ag_sti_segib_count: "5 (SEGIB)"
         ag_sti_ecosoc_count: "5 (ECOSOC)"
-        ag_sti_cs_segib_count: "7 (CS+SEGIB)"
+        ag_sti_g20_count: "6 (G20)"
         ag_sti_cs_ecosoc_count: "7 (CS+ECOSOC)"
-        ag_sti_ecosoc_segib_count: "7 (ECOSOC+SEGIB)"
+        ag_sti_cs_g20_count: "8 (CS+G20)"
+        ag_sti_ecosoc_g20_count: "8 (ECOSOC+G20)"
+        ag_sti_cs_ecosoc_g20_count: "10 (CS+ECOSOC+G20)"
+
         observer_count: "Observ."
     models:
       delegation_request:

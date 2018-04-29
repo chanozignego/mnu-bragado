@@ -15,11 +15,12 @@ class DelegationRequestDashboard < ApplicationDashboard
     school: Field::BelongsTo,
     ag_sti_count: Field::Number,
     ag_sti_cs_count: Field::Number,
-    ag_sti_segib_count: Field::Number,
     ag_sti_ecosoc_count: Field::Number,
-    ag_sti_cs_segib_count: Field::Number,
+    ag_sti_g20_count:  Field::Number,
     ag_sti_cs_ecosoc_count: Field::Number,
-    ag_sti_ecosoc_segib_count: Field::Number,
+    ag_sti_cs_g20_count:  Field::Number,
+    ag_sti_ecosoc_g20_count:  Field::Number,
+    ag_sti_cs_ecosoc_g20_count:  Field::Number,
     observer_count: Field::Number,
     created_at: Field::DateTime
   }
@@ -34,11 +35,12 @@ class DelegationRequestDashboard < ApplicationDashboard
     :school_name,
     :ag_sti_count,
     :ag_sti_cs_count,
-    :ag_sti_segib_count,
     :ag_sti_ecosoc_count,
-    :ag_sti_cs_segib_count,
+    :ag_sti_g20_count,
     :ag_sti_cs_ecosoc_count,
-    :ag_sti_ecosoc_segib_count,
+    :ag_sti_cs_g20_count,
+    :ag_sti_ecosoc_g20_count,
+    :ag_sti_cs_ecosoc_g20_count,
     :observer_count
   ]
 
@@ -49,11 +51,12 @@ class DelegationRequestDashboard < ApplicationDashboard
     :school_name,
     :ag_sti_count,
     :ag_sti_cs_count,
-    :ag_sti_segib_count,
     :ag_sti_ecosoc_count,
-    :ag_sti_cs_segib_count,
+    :ag_sti_g20_count,
     :ag_sti_cs_ecosoc_count,
-    :ag_sti_ecosoc_segib_count,
+    :ag_sti_cs_g20_count,
+    :ag_sti_ecosoc_g20_count,
+    :ag_sti_cs_ecosoc_g20_count,
     :observer_count,
     :created_at
   ]
@@ -67,11 +70,12 @@ class DelegationRequestDashboard < ApplicationDashboard
     :school,
     :ag_sti_count,
     :ag_sti_cs_count,
-    :ag_sti_segib_count,
     :ag_sti_ecosoc_count,
-    :ag_sti_cs_segib_count,
+    :ag_sti_g20_count,
     :ag_sti_cs_ecosoc_count,
-    :ag_sti_ecosoc_segib_count,
+    :ag_sti_cs_g20_count,
+    :ag_sti_ecosoc_g20_count,
+    :ag_sti_cs_ecosoc_g20_count,
     :observer_count
   ]
 

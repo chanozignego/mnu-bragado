@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420220938) do
+ActiveRecord::Schema.define(version: 20180429004500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,17 +54,18 @@ ActiveRecord::Schema.define(version: 20180420220938) do
   end
 
   create_table "delegation_requests", force: :cascade do |t|
-    t.integer  "ag_sti_count",              default: 0
-    t.integer  "ag_sti_cs_count",           default: 0
-    t.integer  "ag_sti_segib_count",        default: 0
-    t.integer  "ag_sti_ecosoc_count",       default: 0
-    t.integer  "ag_sti_cs_segib_count",     default: 0
-    t.integer  "ag_sti_cs_ecosoc_count",    default: 0
-    t.integer  "ag_sti_ecosoc_segib_count", default: 0
-    t.integer  "observer_count",            default: 0
+    t.integer  "ag_sti_count",               default: 0
+    t.integer  "ag_sti_cs_count",            default: 0
+    t.integer  "ag_sti_ecosoc_count",        default: 0
+    t.integer  "ag_sti_cs_ecosoc_count",     default: 0
+    t.integer  "observer_count",             default: 0
     t.integer  "school_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "ag_sti_g20_count",           default: 0, null: false
+    t.integer  "ag_sti_cs_g20_count",        default: 0, null: false
+    t.integer  "ag_sti_ecosoc_g20_count",    default: 0, null: false
+    t.integer  "ag_sti_cs_ecosoc_g20_count", default: 0, null: false
   end
 
   create_table "delegations", force: :cascade do |t|
