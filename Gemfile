@@ -69,7 +69,7 @@ gem "devise"
 # gem 'rails-api'
 
 # # ApiPie por API documentation
-# gem 'apipie-rails'
+#gem 'apipie-rails'
 
 gem 'jquery-ui-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'

@@ -195,22 +195,23 @@ Rails.application.routes.draw do
   #   delete "/api/v1/auth/users/sign_out", to: "api/v1/auth/users/sessions#destroy"
   # end
 
-  # namespace :api do
+  post "/api/v1/auth/users/sign_in", to: "api/v1/auth/users/sessions#create"
+  delete "/api/v1/auth/users/sign_out", to: "api/v1/auth/users/sessions#destroy"
 
-  #   namespace :v1 do
+  namespace :api do
 
-  #     resources :users, only: [:show] do
-  #       member do
-  #         get :shipments
-  #         get :users
-  #         get :carriers
-  #         get :messages
-  #       end
-  #     end
+    namespace :v1 do
+
+      resources :users, only: [:show] do
+        member do
+          get :inscriptions
+          post :approve_inscription
+        end
+      end
 
 
-  #   end
+    end
 
-  # end
+  end
 
 end

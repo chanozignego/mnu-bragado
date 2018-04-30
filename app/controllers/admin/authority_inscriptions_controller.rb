@@ -3,19 +3,9 @@ module Admin
 
     def accept
       @authority_inscription = AuthorityInscription.find(params[:id])
-      authority = Authority.new
-      authority.person = @authority_inscription.person
-      authority.medical_data = @authority_inscription.medical_data
-      authority.professor = @authority_inscription.professor
-      authority.school = @authority_inscription.school
-      authority.school_year = @authority_inscription.school_year
-      authority.orientation = @authority_inscription.orientation
-      authority.graduated = @authority_inscription.graduated
-      authority.year = @current_year
-      authority.participated = @authority_inscription.participated
-      if authority.save
+      response, authority = InscriptionsService.approve(@authority_inscription)
+      if response
         flash[:notice] = "Inscripción aceptada correctamente"
-        AuthorityInscription.find(@authority_inscription.id).destroy
         redirect_to admin_authority_path(id: authority.id)
       else
         flash[:error] = "No se pudo aceptar la inscripción"
