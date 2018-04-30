@@ -1,0 +1,35 @@
+.js-item-container
+  = simple_form_for([namespace, page.resource], html: { class: "form js-item-form" }) do |f|
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h5= t("administrate.details")
+
+      .row.admin-common-panel__content
+        .col-md-12
+          - if f.object.persisted?
+            .col-md-12.form-group
+              = f.input :id, readonly: true, input_html: {class: "form-control"}
+
+          .form-group.col-xs-12
+            = f.input :first_name, required: false, input_html: {class: "form-control"}
+          .form-group.col-xs-12
+            = f.input :last_name, required: false, input_html: {class: "form-control"}
+          .form-group.col-xs-12
+            = f.input :dni, required: false, input_html: {class: "form-control"}
+          .form-group.col-xs-12
+            = f.input :phone_number, required: false, input_html: {class: "form-control"}
+          .form-group.col-xs-12
+            = f.input :email, required: false, input_html: {class: "form-control"}
+
+        .col-xs-12
+          .form-actions.mt20
+            = button_tag(type: "submit", class:"btn btn-primary") do
+              %span
+                = submit_entity_label(f.object)
+              %i.fa.fa-plus.ml5
+            = link_to :back, class: "btn btn-default ml10" do
+              %span
+                = I18n.t("administrate.actions.back")
+              %i.fa.fa-reply.ml5
+

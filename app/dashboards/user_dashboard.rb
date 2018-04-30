@@ -12,6 +12,8 @@ class UserDashboard < ApplicationDashboard
     first_name: Field::String,
     last_name: Field::String,
     email: Field::String,
+    phone_number: Field::String,
+    dni: Field::String,
     created_at: Field::DateTime
   }
 
@@ -35,7 +37,10 @@ class UserDashboard < ApplicationDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :first_name,
-    :last_name
+    :last_name,
+    :email,
+    :phone_number,
+    :dni
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [

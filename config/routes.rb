@@ -134,6 +134,11 @@ Rails.application.routes.draw do
       post :import_from_excel
     end
 
+    resources :users, only: [] do
+      get :change_password
+      put :update_password
+    end
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 

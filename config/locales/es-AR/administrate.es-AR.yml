@@ -33,6 +33,8 @@ es-AR:
       upload_file: Subir archivo
       export_to_excel: Exportar a excel
       clear_form: Limpiar Búsqueda
+      cancel: Cancelar
+      change_password: Cambiar contraseña
     mass_assignment:
       label: Acciones en masa
       actions:
