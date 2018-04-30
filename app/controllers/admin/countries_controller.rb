@@ -26,9 +26,7 @@ module Admin
     end
 
     def export_to_excel
-
       @countries = Country.all
-      binding.pry
       respond_to do |format| 
         filename = "Paises-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 10, 10, 10, 10, 10, 10]
@@ -40,6 +38,14 @@ module Admin
 
 
     private
+
+      def resource_collection
+        _ = search ? search.results.order(:name) : resource_class.all.order(:name)
+        _ = yield(_) if block_given?
+        _ = _.page(params[:page]).per(records_per_page)
+        _ = decorator_class.decorate_collection(_) if decorator_class?
+        _
+      end
 
       def permitted_attributes
         [

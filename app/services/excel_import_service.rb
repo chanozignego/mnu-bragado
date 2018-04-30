@@ -4,7 +4,7 @@ class ExcelImportService
   def self.import_countries(file)
     spreadsheet = open_spreadsheet(file)
     header = ["name", "regional_group", "ag", "sti", "cs", "g20", "ecosoc"]
-    (3..spreadsheet.last_row).each do |i|
+    (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
 
       row["name"] = "" unless row["name"].present?
@@ -15,7 +15,7 @@ class ExcelImportService
         row["regional_group"] = :asia
       elsif ["Europa y Otros", "Europa y otros", "Europa", "europa", "europa y otros"].include?(row["regional_group"])
         row["regional_group"] = :europe
-      elsif ["Latinoamerica y el Caribe", "Latinoamericano", "latinoamericano", "lationamerica y el caribe", "Latinoamerica y el caribe", "Latinoamerica y caribe", "Latinoamerica y Caribe"].include?(row["regional_group"])
+      elsif ["América y el Caribe", "America y el Caribe", "Latinoamerica y el Caribe", "Latinoamericano", "latinoamericano", "lationamerica y el caribe", "Latinoamerica y el caribe", "Latinoamerica y caribe", "Latinoamerica y Caribe"].include?(row["regional_group"])
         row["regional_group"] = :latam
       elsif ["Observadora", "Observador", "observadora", "observador"].include?(row["regional_group"])
         row["regional_group"] = :observer
