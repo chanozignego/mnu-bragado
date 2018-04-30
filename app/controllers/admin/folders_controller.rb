@@ -1,5 +1,5 @@
 module Admin
-  class ArchivesController < Admin::ApplicationController
+  class FoldersController < Admin::ApplicationController
 
     def new
       resource = resource_class.new

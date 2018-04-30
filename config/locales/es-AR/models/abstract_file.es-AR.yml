@@ -19,6 +19,8 @@ es-AR:
       regulation: Reglamentos
       topic: Tópicos
       dinamic: Dinámica
+    actions:
+      confirm: ¿Está de que desea eliminar esta carpeta y todos sus archivos?
   activerecord:
     attributes:
       abstract_file:
@@ -32,6 +34,9 @@ es-AR:
         file_type: Tipo de archivo
         classification: Clasificación
         archive_type: Clasificación 2
+        updated_at: Modificado
+        description_cont: Descripción
+        name_cont: Nombre
     models:
       abstract_file:
         one: Archivo

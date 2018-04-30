@@ -1,4 +1,5 @@
 class AbstractFile < ActiveRecord::Base
+  mount_uploader :file, FileUploader
   belongs_to :folder, class_name: "Folder", foreign_key: 'abstract_file_id'
 
   FILE_TYPES = %i[image pdf word excel folder]

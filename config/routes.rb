@@ -139,6 +139,9 @@ Rails.application.routes.draw do
       put :update_password
     end
 
+    resources :folders, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :archives, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 

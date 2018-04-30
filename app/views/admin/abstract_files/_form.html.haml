@@ -7,6 +7,8 @@
 
       .row.admin-common-panel__content
         .col-md-12
+          = f.input :type, as: :hidden
+
           - if f.object.persisted?
             .col-md-12.form-group
               = f.input :id, readonly: true, input_html: {class: "form-control"}
@@ -17,15 +19,16 @@
           .col-md-12.form-group
             = f.input :description, required: false, input_html: {class: "form-control"}
 
-          .col-md-12.form-group
-            = f.label :file
-            / - image = f.object.inscription_image
-            / - if image.present?
-            /   %br
-            /   = image_tag image.try(:smallthumb)
-            /   %br
-            /   %br
-            = f.file_field :file
+          - if f.object.type == "Archive"
+            .col-md-12.form-group
+              = f.label :file
+              / - image = f.object.inscription_image
+              / - if image.present?
+              /   %br
+              /   = image_tag image.try(:smallthumb)
+              /   %br
+              /   %br
+              = f.file_field :file
 
 
           .col-md-12.form-group
@@ -33,7 +36,7 @@
               collection: Folder.all,
               placeholder: I18n.t("administrate.select_option",
                 option: Archive.human_attribute_name(:folder)),
-              selected: f.object.folder.try(:id),
+              selected: f.object.abstract_file_id,
               include_blank: true,
               label_method: -> (folder) { folder.full_name }
 
@@ -69,7 +72,8 @@
           .form-actions.mt20
             = button_tag(type: "submit", class:"btn btn-primary") do
               %span
-                = submit_entity_label(f.object)
+                // = submit_entity_label(f.object)
+                = "Agregar #{f.object.type == 'Folder' ? 'Carpeta' : 'Archivo'}"
               %i.fa.fa-plus.ml5
             = link_to :back, class: "btn btn-default ml10" do
               %span

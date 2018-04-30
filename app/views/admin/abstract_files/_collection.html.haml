@@ -1,0 +1,34 @@
+= form_tag Rails.application.routes.url_helpers.send("admin_#{controller_path_name}_mass_assignment_path"), class: "js-mass-assignment-form" do 
+  %input{ type: :hidden, class: "js-action", name: "method"}
+  %table.table.table-striped.table-bordered.table-hover.js-resource-table.mt20
+    %thead
+      %tr
+        / - collection_presenter.attribute_types.each do |attr_name, attr_type|
+        /   %th
+        /     = resource_class.human_attribute_name(attr_name)
+        - [:id, :name, :description, :updated_at].each do |attr_name|
+          %th
+            = resource_class.human_attribute_name(attr_name)
+        %th{:colspan => "2"}
+
+    %tbody
+      - resources.each do |resource|
+        %tr.table__row
+          / - collection_presenter.attributes_for(resource).each do |attribute|
+          /   %td{:class => "cell-data cell-data--#{attribute.html_class}"}
+          /     = render_field attribute
+          %td{:class => "cell-data cell-data--string"}
+            =  resource.id
+          %td{:class => "cell-data cell-data--string"}
+            - file_path = resource.file_type == "folder" ? admin_abstract_files_path(id: resource.id) : resource.file.url
+            %a{href: file_path, style: "display: inline-flex;"}
+              %img.img-responsive{:alt => "", :src => "/img/files/#{resource.file_type}.png", style: "width: 20px; height: 20px; margin-right: 5px;"}/
+              = resource.name
+          %td{:class => "cell-data cell-data--string"}
+            =  resource.description
+          %td{:class => "cell-data cell-data--string"}
+            =  "#{resource.updated_at}hs"
+
+
+          %td.table__actions-section
+            = render 'actions', resource: resource          

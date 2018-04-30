@@ -5,6 +5,6 @@
     .center-vertical
       /%h5.admin-header__breadcrumb Breadcrumb > Breadcrumb
       %h1.admin-header__title
-        = display_resource_name(resource_class)
+        = @breadcrumbs || display_resource_name(resource_class)
     .admin-header-buttons.center-vertical
       = render "header_buttons", page: page if show_buttons

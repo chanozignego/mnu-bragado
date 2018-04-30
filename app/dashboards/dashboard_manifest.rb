@@ -25,7 +25,8 @@ class DashboardManifest
     "ex_professors",
     "ex_partakers",
     "inscriptions",
-    "archives",
+    #"archives",
+    "abstract_files",
     "queries"
   ]
 

@@ -1,0 +1,23 @@
+- if dashboard.implements_action?(:new)
+  / = link_to([:new, namespace, page.resource_name], class: "btn btn-primary admin-header-buttons__item") do
+  /   %span= I18n.t("administrate.actions.new_entity", entity: resource_class.model_name.human)
+  /   %i.fa.fa-plus.ml5
+
+  .col-xs-12.pull-right
+    %ul{style: "list-style-type: none; margin-bottom: 0px;"}
+      / /.dropdown
+      %li
+        %a{"data-toggle" => "dropdown", :href => "#"}
+          .btn.btn-primary.admin-header-buttons__item
+            %i.fa.fa-plus.fa-fw
+            Agregar
+            %i.fa.fa-caret-down{style: "margin-left: 3px;"}
+        %ul.dropdown-menu.dropdown-user.pull-right
+          %li
+            %a{:href => new_admin_abstract_file_path(folder_id: @folder_id, type: "Folder")}
+              %i.fa.fa-folder-open.fa-fw
+              Carpeta
+          %li
+            %a{:href => new_admin_abstract_file_path(folder_id: @folder_id, type: "Archive")}
+              %i.fa.fa-file.fa-fw
+              Archivo
