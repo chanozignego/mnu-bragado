@@ -12,21 +12,21 @@ class DashboardManifest
   DASHBOARDS = [
     "dashboards",
     "users",
+    "trainers",
+    "schools",
     "professors",
     "partakers",
     "authorities",
     "delegates",
+    "abstract_files",
     "delegations",
-    "schools",
-    "trainers",
-    "delegation_requests",
+    "inscriptions",
     "countries",
+    "delegation_requests",
     "ex_schools",
     "ex_professors",
     "ex_partakers",
-    "inscriptions",
     #"archives",
-    "abstract_files",
     "queries"
   ]
 

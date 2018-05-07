@@ -15,6 +15,9 @@ es-AR:
         secondary_image: Imágen secundaria
         created_at: Fecha de creación
         updated_at: Última actualización
+
+        full_name_cont: Nombre
+        id_eq: ID
     models:
       trainer:
         one: Capacitador

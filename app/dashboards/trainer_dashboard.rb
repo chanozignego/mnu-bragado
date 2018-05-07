@@ -45,16 +45,18 @@ class TrainerDashboard < ApplicationDashboard
   #  :approve_revision
   ]
 
-  # Overwrite this method to customize how users are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  SEARCHABLE_ATTRIBUTES = [
+    [:id_eq, {input_html: {type: :number, min: 0}}],
+    [:full_name_cont]
+  ]
 
   COLLECTION_ACTIONS = [{
     name: :export_to_excel,
     http_method: :get
   }]
+
+  def self.search_path
+    Rails.application.routes.url_helpers.admin_trainers_path
+  end
 
 end
