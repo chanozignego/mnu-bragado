@@ -41,13 +41,13 @@
             /   required: false,
             /   hint: f.object.principal_image.try(:file).try(:filename)
             / = f.input :principal_image_cache, as: :hidden
-            = f.label :primary_image
+            = f.label :principal_image
             %br
-            - image = f.object.primary_image
+            - image = f.object.principal_image
             - if image.present?
               .primary-image{style: "margin-bottom: 10px;"}
                 = image_tag image.try(:smallthumb)
-            = f.file_field :primary_image
+            = f.file_field :principal_image
             %br
 
 
