@@ -40,7 +40,7 @@
               collection: School.all,
               placeholder: I18n.t("administrate.select_option",
                 option: Country.human_attribute_name(:school)),
-              selected: f.object.school,
+              selected: f.object.school.try(:id),
               include_blank: true,
               label_method: -> (reg) { reg.try(:name) }
           %br
