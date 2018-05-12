@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery/jquery.min
 //= require jquery_ujs
+//= require inputmask
+//= require jquery.inputmask
 //= require selectize
 //= require bootstrap
 //= require underscore

@@ -17,6 +17,12 @@
           = f.simple_fields_for :user, f.object.user || f.object.build_user do |variant_form|
             = render 'admin/shared/user_fields', f: variant_form, object: f.object
           %br
+
+          .form-group.col-xs-6
+            = f.input :birthdate, required: false, as: :string, input_html: {class: "form-control js-date-field"}
+            
+          .form-group.col-xs-6
+            = f.input :age, required: false, input_html: {class: "form-control"}
           
           .col-md-12.form-group
             = f.input :rol, required: false, input_html: {class: "form-control"}
@@ -30,17 +36,110 @@
           .col-md-12.form-group
             = f.input :instagram_url, required: false, input_html: {class: "form-control"}
 
-          .col-md-12.form-group
-            = f.input :principal_image,
-              required: false,
-              hint: f.object.principal_image.try(:file).try(:filename)
-            = f.input :principal_image_cache, as: :hidden
+          .col-md-6.form-group
+            / = f.input :principal_image,
+            /   required: false,
+            /   hint: f.object.principal_image.try(:file).try(:filename)
+            / = f.input :principal_image_cache, as: :hidden
+            = f.label :secondary_image
+            %br
+            - image = f.object.secondary_image
+            - if image.present?
+              .primary-image{style: "margin-bottom: 10px;"}
+                = image_tag image.try(:smallthumb)
+            = f.file_field :secondary_image
+            %br
 
-          .col-md-12.form-group
-            = f.input :secondary_image,
-              required: false,
-              hint: f.object.secondary_image.try(:file).try(:filename)
-            = f.input :secondary_image_cache, as: :hidden
+
+          .col-md-6.form-group
+            = f.label :secondary_image
+            %br
+            - image = f.object.secondary_image
+            - if image.present?
+              .secondary-image{style: "margin-bottom: 10px;"}
+                = image_tag image.try(:smallthumb)
+            = f.file_field :secondary_image
+            %br
+
+            / = f.input :secondary_image,
+            /   required: false,
+            /   hint: f.object.secondary_image.try(:file).try(:filename)
+            / = f.input :secondary_image_cache, as: :hidden
+
+
+
+          .col-xs-4.form-group
+            = f.input :trainer_from, required: false, input_html: {class: "form-control"}
+          .col-xs-4.form-group
+            = f.input :university, required: false, input_html: {class: "form-control"}
+          .col-xs-4.form-group
+            = f.input :career, required: false, input_html: {class: "form-control"}
+
+          / .col-md-12
+          /   = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
+          /     = render 'admin/shared/person_fields', f: variant_form, item: f.object
+          /   %br
+
+
+          .form-group.col-xs-6
+            = f.input :blood_type, required: false, input_html: {class: "form-control js-select2"}, 
+                include_blank: true, 
+                collection: Trainer::BLOOD_TYPES,
+                placeholder: I18n.t("administrate.select_option",
+                  option: Trainer.human_attribute_name(:blood_type)),
+                selected: f.object.blood_type
+          .form-group.col-xs-6
+            = f.input :rh_factor, required: false, input_html: {class: "form-control js-select2"}, 
+                include_blank: true, 
+                collection: Trainer::RH_BLOOD_FACTORS,
+                placeholder: I18n.t("administrate.select_option",
+                  option: Trainer.human_attribute_name(:rh_factor)),
+                selected: f.object.rh_factor
+
+
+          .col-xs-12
+            .admin-common-panel
+              .row.admin-common-panel__header
+                .col-xs-12
+                  %h5
+                    = Trainer.human_attribute_name(:medical_insurance)
+              .row.admin-common-panel__content
+                .col-xs-4
+                  .form-group
+                    = f.input :medical_insurance, required: false, input_html: {class: "form-control"}
+                .col-xs-4
+                  .form-group
+                    = f.input :medical_insurance_affiliate_number, required: false, input_html: {class: "form-control"}
+                .col-xs-4
+                  .form-group
+                    = f.input :medical_insurance_phone_number, required: false, input_html: {class: "form-control"}
+
+            %br
+
+          .col-xs-12
+            .admin-common-panel
+              .row.admin-common-panel__header
+                .col-xs-12
+                  %h5
+                    = Trainer.human_attribute_name(:in_case_of_emergency)
+              .row.admin-common-panel__content
+                .col-xs-4
+                  .form-group
+                    = f.input :emergency_person, required: false, input_html: {class: "form-control"}
+                .col-xs-4
+                  .form-group
+                    = f.input :emergency_person_phone_number, required: false, input_html: {class: "form-control"}
+                .col-xs-4
+                  .form-group
+                    = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
+
+            %br
+
+
+          .col-md-12
+            = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+              = render 'admin/shared/medical_data_fields', f: variant_form, item: f.object
+            %br
 
         .col-xs-12
           .form-actions.mt20
@@ -53,3 +152,4 @@
                 = I18n.t("administrate.actions.back")
               %i.fa.fa-reply.ml5
 
+= javascript_include_tag "admin/person/form"

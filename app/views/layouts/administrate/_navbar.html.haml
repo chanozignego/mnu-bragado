@@ -17,7 +17,8 @@
         %i.fa.fa-caret-down
       %ul.dropdown-menu.dropdown-user
         %li
-          %a{:href => edit_admin_user_path(current_user.try(:id))}
+          - path = current_user.has_trainer? ? edit_admin_trainer_path(current_user.trainer.try(:id)): edit_admin_user_path(current_user.try(:id))
+          %a{:href => path}
             %i.fa.fa-user.fa-fw
             Perfil
         %li

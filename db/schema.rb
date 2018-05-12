@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429005623) do
+ActiveRecord::Schema.define(version: 20180512212217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,13 +290,27 @@ ActiveRecord::Schema.define(version: 20180429005623) do
     t.string   "instagram_url"
     t.string   "principal_image"
     t.string   "secondary_image"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "index_number",         default: 0
-    t.string   "principal_image_name", default: ""
-    t.boolean  "visible",              default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.integer  "index_number",                       default: 0
+    t.string   "principal_image_name",               default: ""
+    t.boolean  "visible",                            default: false
     t.integer  "people_id"
     t.integer  "medical_data_id"
+    t.integer  "trainer_from",                       default: 2013
+    t.string   "university"
+    t.string   "career"
+    t.string   "dni"
+    t.date     "birthdate"
+    t.integer  "age"
+    t.string   "blood_type"
+    t.string   "rh_factor"
+    t.string   "medical_insurance"
+    t.string   "medical_insurance_affiliate_number"
+    t.string   "medical_insurance_phone_number"
+    t.string   "emergency_person"
+    t.string   "emergency_person_relationship"
+    t.string   "emergency_person_phone_number"
   end
 
   add_index "trainers", ["medical_data_id"], name: "index_trainers_on_medical_data_id", using: :btree

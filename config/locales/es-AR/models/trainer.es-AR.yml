@@ -15,6 +15,23 @@ es-AR:
         secondary_image: Imágen secundaria
         created_at: Fecha de creación
         updated_at: Última actualización
+        trainer_from: Capacitador desde
+        university: Universidad
+        career: Carrera
+        person: Datos personales
+        medical_data: Datos médicos
+        dni: DNI
+        birthdate: Fecha de nacimiento
+        age: Edad
+        blood_type: Tipo de sange
+        rh_factor: Factor RH
+        medical_insurance: Obra Social
+        medical_insurance_affiliate_number: Numero de afiliado
+        medical_insurance_phone_number: Teléfono
+        in_case_of_emergency: En caso de emergencia avisar a 
+        emergency_person: Nombre y Apellido
+        emergency_person_relationship: Parentesco
+        emergency_person_phone_number: Teléfono
 
         full_name_cont: Nombre
         id_eq: ID

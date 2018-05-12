@@ -17,4 +17,6 @@ $(document).ready(function () {
   $('#birthdatepicker').focus(function() {
     $('#birthdatepicker').datetimepicker('show');
   });
+
+  $('.js-date-field').inputmask('99/99/9999');
 });

@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   def full_name
   	"#{first_name} #{last_name}"
   end
+
+  def has_trainer?
+    Trainer.where(user_id: id).first.present?
+  end
+
+  def trainer
+    Trainer.where(user_id: id).first
+  end
 end
