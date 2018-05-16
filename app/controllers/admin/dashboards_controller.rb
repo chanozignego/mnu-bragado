@@ -23,11 +23,11 @@ module Admin
       authorities = Authority.where(year: current_year).count
       professors = Professor.count
       schools = School.count
-      statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, professors: professors, schools: schools, year: current_year}
+      @current_year_statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, professors: professors, schools: schools, year: current_year}
 
-      if (statistics[:partakers] != 0)
+      if (@current_year_statistics[:partakers] != 0)
         @chart_statistics << [current_year, partakers, delegations, delegates, authorities]
-        @statistics << statistics
+        @statistics << @current_year_statistics
       end
 
       @statistics.reverse!
