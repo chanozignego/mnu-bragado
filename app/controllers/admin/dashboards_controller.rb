@@ -24,8 +24,11 @@ module Admin
       professors = Professor.count
       schools = School.count
       statistics = {delegations: delegations, partakers: partakers, delegates: delegates, authorities: authorities, professors: professors, schools: schools, year: current_year}
-      @chart_statistics << [current_year, partakers, delegations, delegates, authorities]
-      @statistics << statistics
+
+      if (statistics[:partakers] != 0)
+        @chart_statistics << [current_year, partakers, delegations, delegates, authorities]
+        @statistics << statistics
+      end
 
       @statistics.reverse!
 
