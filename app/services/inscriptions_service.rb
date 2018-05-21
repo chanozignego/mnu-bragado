@@ -21,7 +21,7 @@ class InscriptionsService
       authority.school_year = inscription.school_year
       authority.orientation = inscription.orientation
       authority.graduated = inscription.graduated
-      authority.year = @current_year
+      authority.year = get_current_year
       authority.participated = inscription.participated
       return authority.save, authority
     end
@@ -36,7 +36,7 @@ class InscriptionsService
       delegate.school_year = inscription.school_year
       delegate.orientation = inscription.orientation
       delegate.participated = inscription.participated
-      delegate.year = @current_year
+      delegate.year = get_current_year
       return delegate.save, delegate
     end
 
@@ -77,6 +77,10 @@ class InscriptionsService
     def self.approved_school_inscription_actions inscription
       InscriptionsMailer.approved_inscription_email(inscription.email, "school").deliver_now
       SchoolInscription.find(inscription.id).destroy
+    end
+
+    def self.get_current_year
+      Date.today.year
     end
 
 end
