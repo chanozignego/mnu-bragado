@@ -9,5 +9,14 @@ module Admin
       }
     end
 
+    def destroy
+      if requested_resource.destroy
+        flash[:notice] = translate_with_resource("destroy.success")
+      else
+        flash[:error] = translate_with_resource("destroy.error")
+      end
+      redirect_to :back
+    end
+
   end
 end

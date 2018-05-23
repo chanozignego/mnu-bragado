@@ -10,6 +10,8 @@ class AbstractFile < ActiveRecord::Base
   enum classification: CLASSIFICATIONS
   enum archive_type: ARCHIVE_TYPES
 
+  has_many :abstract_files, dependent: :destroy
+
   def file_type_name
     I18n.t("abstract_file.file_types")[file_type.try(:to_sym)]
   end
@@ -22,9 +24,9 @@ class AbstractFile < ActiveRecord::Base
     I18n.t("abstract_file.archive_types")[archive_type.try(:to_sym)]
   end 
 
-  def abstract_files
-    AbstractFile.where(abstract_file_id: id)
-  end
+  # def abstract_files
+  #   AbstractFile.where(abstract_file_id: id)
+  # end
 
   def subfolders
     Folder.where(abstract_file_id: id)
