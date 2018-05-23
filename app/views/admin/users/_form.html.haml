@@ -21,6 +21,11 @@
             = f.input :phone_number, required: false, input_html: {class: "form-control"}
           .form-group.col-xs-12
             = f.input :email, required: false, input_html: {class: "form-control"}
+          - if !f.object.persisted?
+            .form-group.col-xs-12
+              = f.input :password, required: false, input_html: {class: "form-control"}
+          .form-group.col-xs-12
+            = f.input :roles, as: :select, collection: User::ROLES, label_method: -> (s) { t("user.roles")[s.to_sym] }, input_html: { class: 'js-select2 form-control', multiple: true }
 
         .col-xs-12
           .form-actions.mt20

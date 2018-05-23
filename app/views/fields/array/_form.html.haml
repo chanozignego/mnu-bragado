@@ -1,0 +1,4 @@
+= f.input field.attribute, as: :select, collection: User::ROLES,
+  label_method: -> (s) { t("user.roles")[s.to_sym] },
+  input_html: { class: 'js-select2 js-brand-field full-width', multiple: true }
+%br

@@ -1,6 +1,18 @@
 require "administrate/base_dashboard"
 
 class UserDashboard < ApplicationDashboard
+  PERMISSIONS = { 
+                  index: [:superadmin, :coordination, :commission], 
+                  show: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                  edit:  [:superadmin, :coordination, :commission, :team_leader, :trainer],
+                  update:  [:superadmin, :coordination, :commission, :team_leader, :trainer],  
+                  destroy: [:superadmin, :coordination, :commission], 
+                  create: [:superadmin, :coordination, :commission], 
+                  new: [:superadmin, :coordination, :commission], 
+                  change_password: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                  update_password: [:superadmin, :coordination, :commission, :team_leader, :trainer] 
+                }
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -14,6 +26,8 @@ class UserDashboard < ApplicationDashboard
     email: Field::String,
     phone_number: Field::String,
     dni: Field::String,
+    roles: Field::Array,
+    password: Field::String,
     created_at: Field::DateTime
   }
 
@@ -25,7 +39,8 @@ class UserDashboard < ApplicationDashboard
   COLLECTION_ATTRIBUTES = [
     :first_name,
     :last_name,
-    :email
+    :email,
+    :roles
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,8 +54,10 @@ class UserDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :email,
+    :password,
     :phone_number,
-    :dni
+    :dni,
+    :roles
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [

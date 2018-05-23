@@ -9,6 +9,7 @@ module Admin
     prepend_before_filter :authenticate_user!
     before_filter :authenticate_admin
     before_filter :set_current_year
+    before_filter :authorize_action
 
     helper Admin::ApplicationHelper
     helper_method :current_dashboard
@@ -108,6 +109,14 @@ module Admin
 
     def scoped_collection
       super.order(id: :desc)
+    end
+
+    def authorize_action
+      unless (current_dashboard.authorize!(current_user, params[:action]))
+        flash[:error] = "No está autorizado para realizar esta acción"
+        redirect_to admin_root_path 
+        return false
+      end
     end
 
     # def after_resource_destroy_success

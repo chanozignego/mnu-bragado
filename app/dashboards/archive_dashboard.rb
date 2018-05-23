@@ -2,6 +2,16 @@ require "administrate/base_dashboard"
 
 class ArchiveDashboard < ApplicationDashboard
   ALLOW_COLLECTION_ACTIONS = false
+  PERMISSIONS = { 
+                index: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                show: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                edit: [:superadmin, :coordination, :commission, :team_leader, :trainer],  
+                update: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                destroy: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                create: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
+                new: [:superadmin, :coordination, :commission, :team_leader, :trainer]
+              }
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #

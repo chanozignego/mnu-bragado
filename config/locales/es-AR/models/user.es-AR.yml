@@ -3,6 +3,12 @@ es-AR:
     genders:
       male: Masculino
       female: Femenino
+    roles: 
+      superadmin: SuperAdministrador
+      coordination: Coordinación
+      commission: Comité Organizador
+      team_leader: Team Leader
+      trainer: Capacitador
   activerecord:
     attributes:
       user:

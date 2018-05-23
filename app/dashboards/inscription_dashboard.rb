@@ -2,6 +2,16 @@ require "administrate/base_dashboard"
 
 class InscriptionDashboard < ApplicationDashboard
   ALLOW_COLLECTION_ACTIONS = true
+  PERMISSIONS = { 
+                  index: [:superadmin, :coordination, :commission], 
+                  show: [:superadmin, :coordination, :commission], 
+                  edit:  [:superadmin, :coordination, :commission],
+                  update:  [:superadmin, :coordination, :commission],  
+                  destroy: [:superadmin, :coordination, :commission], 
+                  create: [:superadmin, :coordination, :commission], 
+                  new: [:superadmin, :coordination, :commission]
+                }
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
