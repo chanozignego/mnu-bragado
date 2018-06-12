@@ -9,7 +9,8 @@ class InscriptionDashboard < ApplicationDashboard
                   update:  [:superadmin, :coordination, :commission],  
                   destroy: [:superadmin, :coordination, :commission], 
                   create: [:superadmin, :coordination, :commission], 
-                  new: [:superadmin, :coordination, :commission]
+                  new: [:superadmin, :coordination, :commission],
+                  export_to_excel: [:superadmin, :coordination, :commission]
                 }
 
   # ATTRIBUTE_TYPES
