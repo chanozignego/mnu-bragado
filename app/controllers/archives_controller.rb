@@ -6,7 +6,7 @@ class ArchivesController < ApplicationController
                 {name: "Asamblea General", section: "ag"},
                 {name: "Sala de Tratados", section: "sti"},
                 {name: "Consejo de Seguridad", section: "cs"},
-                {name: "SEGIB", section: "segib"},
+                {name: "G20", section: "g20"},
                 {name: "ECOSOC", section: "ecosoc"},
                 {name: "Autoridades", section: "authorities"}
               ]
