@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180523184920) do
+ActiveRecord::Schema.define(version: 20180813010415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,15 +127,16 @@ ActiveRecord::Schema.define(version: 20180523184920) do
     t.integer  "school_id"
     t.integer  "rol"
     t.integer  "partaker_type"
-    t.boolean  "participated",    default: false
+    t.boolean  "participated",     default: false
     t.string   "type"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "cue"
     t.string   "director_name"
     t.string   "orientation"
     t.string   "school_year"
-    t.boolean  "graduated",       default: false, null: false
+    t.boolean  "graduated",        default: false, null: false
+    t.boolean  "already_approved", default: false, null: false
   end
 
   add_index "inscriptions", ["location_id"], name: "index_inscriptions_on_location_id", using: :btree

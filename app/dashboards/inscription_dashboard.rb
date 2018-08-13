@@ -10,7 +10,8 @@ class InscriptionDashboard < ApplicationDashboard
                   destroy: [:superadmin, :coordination, :commission], 
                   create: [:superadmin, :coordination, :commission], 
                   new: [:superadmin, :coordination, :commission],
-                  export_to_excel: [:superadmin, :coordination, :commission]
+                  export_to_excel: [:superadmin, :coordination, :commission],
+                  check_already_approved: [:superadmin, :coordination, :commission],
                 }
 
   # ATTRIBUTE_TYPES
@@ -23,6 +24,7 @@ class InscriptionDashboard < ApplicationDashboard
     id: Field::Number,
     full_name: Field::String,
     type_name: Field::String,
+    already_approved: LabeledBooleanField,
     created_at: Field::DateTime
   }
 
@@ -34,7 +36,8 @@ class InscriptionDashboard < ApplicationDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :full_name,
-    :type_name
+    :type_name,
+    :already_approved
   ]
 
   # SHOW_PAGE_ATTRIBUTES

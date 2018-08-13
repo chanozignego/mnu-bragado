@@ -1,1 +1,7 @@
+- if dashboard.implements_action?(:new)
+  = link_to(admin_inscriptions_check_already_approved_path, method: :post, class: "btn btn-primary admin-header-buttons__item") do
+    %span
+      Checkear aprobación
+    %i.fa.fa-check.ml5
+
 = render "admin/shared/export_to_excel_button", page: page

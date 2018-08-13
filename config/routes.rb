@@ -108,6 +108,7 @@ Rails.application.routes.draw do
 
     namespace :inscriptions do
       post :export_to_excel
+      post :check_already_approved
     end
 
     namespace :partakers do

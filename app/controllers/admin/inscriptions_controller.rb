@@ -17,11 +17,16 @@ module Admin
       @inscriptions = Inscription.all
       respond_to do |format| 
         filename = "Inscriptiones-UMBragado-#{@current_year}.xls"
-        column_width = [40, 40, 40, 40]
-        header = [["ID", "NOMBRE", "TIPO", "ESCUELA"]]
-        fields = [:id, :name, :type_name, :school_name]
+        column_width = [40, 40, 40, 40, 20]
+        header = [["ID", "NOMBRE", "TIPO", "ESCUELA", "YA APROBADO"]]
+        fields = [:id, :name, :type_name, :school_name, :formatted_already_approved]
         format.xls { send_data(@inscriptions.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
+    end
+
+    def check_already_approved
+      CheckApprovedInscriptionsService.check_approve(Inscription.all)
+      redirect_to action: :index
     end
 
   end

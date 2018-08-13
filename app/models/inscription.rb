@@ -57,4 +57,12 @@ class Inscription < ActiveRecord::Base
     end
   end
 
+  def formatted_already_approved
+    if already_approved
+      "SI"
+    else
+      "NO"
+    end
+  end
+
 end
