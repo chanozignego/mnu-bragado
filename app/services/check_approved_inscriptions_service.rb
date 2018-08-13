@@ -6,8 +6,8 @@ class CheckApprovedInscriptionsService
     professor_inscriptions = Inscription.where(type: "ProfessorInscription")
     school_inscriptions = Inscription.where(type: "SchoolInscription")
 
-    self.check_partaker_inscriptions_approve(delegate_inscriptions)
-    self.check_partaker_inscriptions_approve(authority_inscriptions)
+    self.check_delegate_inscriptions_approve(delegate_inscriptions)
+    self.check_authority_inscriptions_approve(authority_inscriptions)
     self.check_professor_inscriptions_approve(professor_inscriptions)
     self.check_school_inscriptions_approve(school_inscriptions)
 
@@ -16,12 +16,13 @@ class CheckApprovedInscriptionsService
 
   private 
 
-    def self.check_person_inscriptions_approve inscriptions
+    def self.check_person_inscriptions_approve inscriptions, model
+      models = model.joins(:person)
       inscriptions.each do |inscription| 
-        if ( inscription.person.present? && ( Person.where(dni: inscription.person.dni).present? ||
-              ( Person.where(first_name: inscription.person.first_name).present? && 
-                Person.where(last_name: inscription.person.last_name).present? ) || 
-              Person.where(email: inscription.person.email).present? ) )
+        if ( inscription.person.present? && ( models.where(people: { dni: inscription.person.dni}).present? ||
+              ( models.where(people: { first_name: inscription.person.first_name }).present? && 
+                models.where(people: { last_name: inscription.person.last_name }).present? ) || 
+              models.where(people: { email: inscription.person.email }).present? ) )
 
           inscription.already_approved = true
           inscription.save
@@ -30,12 +31,16 @@ class CheckApprovedInscriptionsService
       end
     end 
 
-    def self.check_partaker_inscriptions_approve inscriptions
-      self.check_person_inscriptions_approve(inscriptions)
+    def self.check_delegate_inscriptions_approve inscriptions
+      self.check_person_inscriptions_approve(inscriptions, Delegate)
+    end
+
+    def self.check_authority_inscriptions_approve inscriptions
+      self.check_person_inscriptions_approve(inscriptions, Authority)
     end
 
     def self.check_professor_inscriptions_approve inscriptions
-      self.check_person_inscriptions_approve(inscriptions)
+      self.check_person_inscriptions_approve(inscriptions, Professor)
     end
 
     def self.check_school_inscriptions_approve inscriptions
