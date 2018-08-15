@@ -1,16 +1,17 @@
-%section#team
+%section#team.bg-light-gray
   .container
     .row
       .col-lg-12.text-center
         %h2.section-heading Somos un GRAN equipo!
         %h3.section-subheading.text-muted 
         /Lorem ipsum dolor sit amet consectetur.
-    
+    - num = 1
     - @trainers.each_slice(3) do |trainer_group|
       .row
         - trainer_group.each do |trainer|
           - if (trainer.principal_image.present? && trainer.secondary_image.present?)
-            = render "home/trainer_section", trainer: trainer
+            = render "home/trainer_section", trainer: trainer, color: get_color_by_index(num)
+            - num += 1
     
     / .row
     /   .col-lg-8.col-lg-offset-2.text-center

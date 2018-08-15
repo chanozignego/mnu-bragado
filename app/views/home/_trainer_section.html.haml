@@ -3,9 +3,9 @@
     //%img.img-responsive.img-circle{style: "width: 250px; height: 250px;", alt: ""}/
     .image
       .primary-image
-        = image_tag trainer.principal_image.mediumthumb, class: "img-responsive img-circle"
+        = image_tag trainer.principal_image.mediumthumb, class: "img-responsive img-circle", style: "border: 3px solid #{color};"
       .secondary-image{style: "display: none;"}
-        = image_tag trainer.secondary_image.mediumthumb, class: "img-responsive img-circle"
+        = image_tag trainer.secondary_image.mediumthumb, class: "img-responsive img-circle", style: "border: 3px solid #{color};"
     %h4 
       = trainer.full_name
     %p.text-muted

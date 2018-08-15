@@ -1,23 +1,43 @@
 %li.hidden
   %a{:href => "#page-top"}
-%li#header-button-purple
-  %a.page-scroll{:href => topics_archives_path} 
-    Tópicos
-%li#header-button-blue
-  %a.page-scroll{:href => inscriptions_path}
-    Inscripción
+/ %li#header-button-purple
+/   %a.page-scroll{:href => topics_archives_path} 
+/     Tópicos
+/ %li#header-button-blue
+/   %a.page-scroll{:href => inscriptions_path}
+/     Inscripción
+/ %li#header-button-blue
+/   %a.page-scroll{:href => inscriptions_path}
+/     UM 2018
+%li.dropdown#header-button-blue
+  %a#dropdownButton.btn.dropdown-toggle.page-scroll{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+    UM 2018
+    %i.fa.fa-caret-down
+  %ul.dropdown-menu.dropdown-menu-left.page-scroll{"aria-labelledby" => "dropdownButton"}
+    %li.dropdown-item{style: "margin-right: 5px;"}
+      %a{:href => inscriptions_path} Inscripciones
+    %li.dropdown-item{style: "margin-right: 5px;"}
+      %a{:href => topics_archives_path}  Tópicos
+
 %li#header-button-green
   %a.page-scroll{:href => "#services"}
     Valores
-%li#header-button-yellow
-  %a.page-scroll{:href => "#portfolio"}
-    Material
 %li#header-button-red
   %a.page-scroll{:href => "#about"}
     Sobre Nosotros
+%li#header-button-purple
+  %a.page-scroll{:href => "#extra"}
+    Qué más
 %li#header-button-brown
   %a.page-scroll{:href => "#team"}
     Equipo
+%li#header-button-yellow
+  %a.page-scroll{:href => "#portfolio"}
+    Material
 %li#header-button-pink
   %a.page-scroll{:href => "#contact"}
     Contacto
+
+
+
+

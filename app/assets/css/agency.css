@@ -3,11 +3,11 @@ body{overflow-x:hidden;font-family:"Roboto Slab","Helvetica Neue",Helvetica,Aria
 // About Section
 #about .about-item{margin:0 0 15px;right:0}
 #about .about-item .about-link{display:block;position:relative;max-width:400px;margin:0 auto;height: 200px; background-color: #f7f7f7; color: white;}
-#about .about-item .about-link .about-original{font-size:24px;text-decoration:none;text-align:center;top:50%;font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;}
+#about .about-item .about-link .about-original{font-size:24px;text-decoration:none;text-align:center;top:50%;font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-weight: bold;}
 #about .about-item .about-link .about-original .about-text{z-index: 200; position:absolute;width:100%;height:26px;font-size:24px;text-align:center;top:50%;margin-top:-12px;}
 #about .about-item .about-link .about-hover{z-index: 300; background:rgba(254,209,54,1);position:absolute;width:100%;height:100%;opacity:0;transition:all ease .5s;-webkit-transition:all ease .5s;-moz-transition:all ease .5s}
 #about .about-item .about-link .about-hover:hover{opacity:1}
-#about .about-item .about-link .about-hover .about-hover-content{position:absolute;width:100%;height:60px;font-size:20px;text-align:center;top:43%;color:#fff; padding: 5px;}
+#about .about-item .about-link .about-hover .about-hover-content{position:absolute;width:100%;height:60px;font-size:20px;text-align:center;top:43%;color:#fff; padding: 5px;font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;font-style: italic;font-weight: bold;}
 #about .about-item .about-link .about-hover .about-hover-content h3,#about .about-item .about-link .about-hover .about-hover-content h4{margin:0}
 #about .about-item .about-caption{max-width:400px;margin:0 auto;background-color:#fff;text-align:center;padding:25px}
 #about .about-item .about-caption h4{text-transform:none;margin:0}
@@ -17,5 +17,23 @@ body{overflow-x:hidden;font-family:"Roboto Slab","Helvetica Neue",Helvetica,Aria
 @media (min-width:767px){#about .about-item{margin:0 0 30px}}
 @media (min-width:767px){#about .about-item .about-link .about-original .about-text{font-size: 20px;}}
 @media (min-width:767px){#about .about-item .about-link .about-hover .about-hover-content{font-size: 16px;}}
+
+// Extra Section
+#extra .about-item{margin:0 0 15px;right:0}
+#extra .about-item .about-link{display:block;position:relative;width:300px;margin:0 auto;height: 300px; background-color: #f7f7f7; color: white;}
+#extra .about-item .about-link .about-original{font-size:24px;text-decoration:none;text-align:center;top:50%;font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;}
+#extra .about-item .about-link .about-original .about-text{z-index: 200; position:absolute;width:100%;height:26px;font-size:24px;text-align:center;top:50%;margin-top:-12px;}
+#extra .about-item .about-link .about-hover{z-index: 300; background:rgba(254,209,54,1);position:absolute;width:100%;height:100%;opacity:0;transition:all ease .5s;-webkit-transition:all ease .5s;-moz-transition:all ease .5s}
+#extra .about-item .about-link .about-hover:hover{opacity:1}
+#extra .about-item .about-link .about-hover .about-hover-content{position:absolute;width:100%;height:60px;font-size:20px;text-align:center;top:43%;color:#fff; padding: 5px;top: 50%;font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;font-style: italic;font-weight: bold;}
+#extra .about-item .about-link .about-hover .about-hover-content h3,#extra .about-item .about-link .about-hover .about-hover-content h4{margin:0}
+#extra .about-item .about-caption{max-width:400px;margin:0 auto;background-color:#fff;text-align:center;padding:25px}
+#extra .about-item .about-caption h4{text-transform:none;margin:0}
+#extra .about-item .about-caption p{font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:italic;font-size:16px;margin:0}
+#extra *{z-index:2}
+
+@media (min-width:767px){#extra .about-item{margin:0 0 30px}}
+@media (min-width:767px){#extra .about-item .about-link .about-original .about-text{font-size: 20px;}}
+@media (min-width:767px){#extra .about-item .about-link .about-hover .about-hover-content{font-size: 16px;}}
 
 span.error {color: red;}
