@@ -17,6 +17,7 @@ class AuthorityDashboard < ApplicationDashboard
     phone_number: Field::String,
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField, 
+    rol_translation: Field::String, 
     school_year: Field::String, 
     orientation: Field::String,
     created_at: Field::DateTime
@@ -32,6 +33,7 @@ class AuthorityDashboard < ApplicationDashboard
     :last_name,
     :email,
     :phone_number,
+    :rol_translation,
     :has_medical_problems?,
     :has_diet?
   ]

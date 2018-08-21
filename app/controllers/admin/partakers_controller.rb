@@ -20,8 +20,8 @@ module Admin
       respond_to do |format| 
         filename = "#{file_prefix}-UMBragado-#{@current_year}.xls"
         column_width = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
-        header = [["APELLIDO", "NOMBRE", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO"].concat(extra_headers)]
-        fields = [:last_name, :first_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number].concat(extra_columns)
+        header = [["APELLIDO", "NOMBRE", "DNI", "FECHA NACIMIENTO", "ESCUELA", "LOCALIDAD", "PROVINCIA", "EMAIL", "TELEFONO", "TIPO", "ÓRGANO"].concat(extra_headers)]
+        fields = [:last_name, :first_name, :dni, :birthdate, :school_name, :school_location_city, :school_location_province, :email, :phone_number, :type_translation, :rol_translation].concat(extra_columns)
         format.xls { send_data(collection.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
     end

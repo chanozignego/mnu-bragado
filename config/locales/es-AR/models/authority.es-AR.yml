@@ -9,6 +9,8 @@ es-AR:
         email: Email
         phone_number: Teléfono
         year: Año
+        rol: Órgano
+        rol_translation: Órgano
         school_year: Año que cursa
         orientation: Orientación
         has_diet?: "Dieta"

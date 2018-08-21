@@ -26,6 +26,14 @@
               .span.label{class: "label-#{graduated ? 'primary' : 'default'}"}
                 = graduated ? "Si" : "No"
 
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Authority.human_attribute_name(:rol)
+            .col-sm-9
+              .span
+                = page.resource.rol_translation
+
           = render 'admin/shared/show/person_section', page: page, title: "Personal data", resource: page.resource.person, show_title: false
 
           .row.admin-detail-row

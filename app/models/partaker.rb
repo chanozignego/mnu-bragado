@@ -3,7 +3,7 @@ class Partaker < ActiveRecord::Base
   scope :participated, -> { where(participated: true) }
   scope :not_participated, -> { where(participated: false) }
 
-  ROLES = %i[ag cs segib sti ecosoc]
+  ROLES = %i[ag cs g20 sti ecosoc sg coordi press other]
 
   enum rol: ROLES
 
@@ -39,6 +39,20 @@ class Partaker < ActiveRecord::Base
 
   def professors
     school.try(:professors) || []
+  end
+
+  def type_translation
+    if type == "Delegate"
+      "Delegado"
+    elsif type == "Authority"
+      "Autoridad"
+    else
+      "Participante"
+    end
+  end
+
+  def rol_translation
+    rol.present? ? I18n.t("partaker.rols.#{rol}") : "Ninguno"
   end
 
 end

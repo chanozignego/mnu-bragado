@@ -18,6 +18,8 @@ class PartakerDashboard < ApplicationDashboard
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField,
     school_year: Field::String, 
+    type_translation: Field::String,
+    rol_translation: Field::String, 
     orientation: Field::String,
     created_at: Field::DateTime
   }
@@ -32,6 +34,8 @@ class PartakerDashboard < ApplicationDashboard
     :last_name,
     :email,
     :phone_number,
+    :type_translation,
+    :rol_translation,
     :has_diet?,
     :has_medical_problems?
   ]

@@ -1,11 +1,16 @@
 es-AR:
   partaker:
     rols:
-      ag: Delegado AG
-      cs: Delegado CS
-      segib: Delegado SEGIB
+      ag: Asamblea General
+      cs: Consejo de Seguridad
+      segib: SEGIB
+      g20: G20
       sti: Embajador
-      ecosoc: Delegado ECOSOC
+      ecosoc: ECOSOC
+      sg: Secretaría General
+      coordi: Coordinación
+      press: Prensa
+      other: Otro
   activerecord:
     attributes:
       partaker:
@@ -19,7 +24,9 @@ es-AR:
         has_medical_problems?: "Medico"
         person: Datos personales
         medical_data: Datos médicos
-        rol: Rol
+        rol: Órgano
+        rol_translation: Órgano
+        type_translation: Tipo
         school_year: Año que cursa
         orientation: Orientación
         professor: Docente responsable

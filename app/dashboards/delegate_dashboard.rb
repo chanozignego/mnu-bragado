@@ -18,6 +18,7 @@ class DelegateDashboard < ApplicationDashboard
     participated: LabeledBooleanField, 
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField, 
+    rol_translation: Field::String, 
     school_year: Field::String, 
     orientation: Field::String,
     created_at: Field::DateTime
@@ -33,6 +34,7 @@ class DelegateDashboard < ApplicationDashboard
     :last_name,
     :email,
     :phone_number,
+    :rol_translation, 
     :has_diet?,
     :has_medical_problems?,
     :participated
