@@ -14,4 +14,12 @@ class ArchivesController < ApplicationController
     @files = Archive.topic.send(params[:folder]) unless @show_folders
   end
 
+  def schedule
+    redirect_to "/img/schedule.pdf"
+  end
+
+  def countries
+    redirect_to "/img/countries.pdf"
+  end
+
 end

@@ -185,6 +185,8 @@ Rails.application.routes.draw do
   resources :archives do
     collection do
       get :topics
+      get :schedule
+      get :countries
     end
   end
   resource :query
