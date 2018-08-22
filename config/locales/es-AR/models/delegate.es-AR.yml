@@ -1,11 +1,16 @@
 es-AR:
   delegate:
     rols:
-      ag: Delegado AG
-      cs: Delegado CS
-      segib: Delegado SEGIB
+      ag: Asamblea General
+      cs: Consejo de Seguridad
+      segib: SEGIB
+      g20: G20
       sti: Embajador
-      ecosoc: Delegado ECOSOC
+      ecosoc: ECOSOC
+      sg: Secretaría General
+      coordi: Coordinación
+      press: Prensa
+      other: Otro
   activerecord:
     attributes:
       delegate:
