@@ -1,8 +1,8 @@
 es-AR:
   partaker:
     rols:
-      ag: Asamblea General
-      cs: Consejo de Seguridad
+      ags: Asamblea General
+      cds: Consejo de Seguridad
       segib: SEGIB
       g20: G20
       sti: Embajador
