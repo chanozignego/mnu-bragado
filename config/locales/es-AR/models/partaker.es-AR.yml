@@ -1,12 +1,12 @@
 es-AR:
   partaker:
     rols:
-      ags: Asamblea General
-      cds: Consejo de Seguridad
+      ag: Asamblea General
+      cd: Consejo de Seguridad
       segib: SEGIB
       g20: G20
       sti: Embajador
-      ecosocs: ECOSOC
+      ecosoc: ECOSOC
       sg: Secretaría General
       coordi: Coordinación
       press: Prensa
