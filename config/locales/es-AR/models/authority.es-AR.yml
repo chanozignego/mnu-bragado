@@ -1,12 +1,12 @@
 es-AR:
   authority:
     rols:
-      ag: Asamblea General
-      cs: Consejo de Seguridad
+      agral: Asamblea General
+      cds: Consejo de Seguridad
       segib: SEGIB
       g20: G20
       sti: Embajador
-      ecosoc: ECOSOC
+      cecosoc: ECOSOC
       sg: Secretaría General
       coordi: Coordinación
       press: Prensa
