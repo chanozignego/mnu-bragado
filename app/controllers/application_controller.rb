@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
                   }, 
                   large: {
                     facebook: {width: 300, height: 500},
-                    instagram: {width: 300, height: 400},
+                    instagram: {width: 315, height: 400},
                     twitter: {width: 300, height: 500}
                   }
                 }

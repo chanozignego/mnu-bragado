@@ -439,6 +439,10 @@ header.header-navbar .intro-text.intro-text-small {
     width: 500px;
   }
 
+  .zoom-card#instagram-content {
+    width: 500px;
+  }
+
   .zoom-menu {
     right: 140px;
   }
@@ -467,6 +471,10 @@ header.header-navbar .intro-text.intro-text-small {
   }
 
   .zoom-card#facebook-content {
+    width: 500px;
+  }
+
+  .zoom-card#instagram-content {
     width: 500px;
   }
 
@@ -499,6 +507,10 @@ header.header-navbar .intro-text.intro-text-small {
 
   .zoom-card#facebook-content {
     width: 300px;
+  }
+
+  .zoom-card#instagram-content {
+    width: 315px;
   }
 
   .zoom-menu {

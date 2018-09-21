@@ -1,7 +1,27 @@
 - string_type = type.to_s
+-insta_widget = (type == :large) ? "https://snapwidget.com/embed/601156" : "https://snapwidget.com/embed/601157" 
 .zoom-card.scale-transition.scale-out#instagram-content
-  %ul.zoom-card-content
-    %iframe{:allowtransparency => "true", :frameborder => "0", :height => @sn_sizes[type][:instagram][:height], :scrolling => "yes", :src => "http://instagram.com/p/BnXUV18nRP_/embed", :width => @sn_sizes[type][:instagram][:width], style: "z-index: 1;"}
+  %ul.zoom-card-content{style: "overflow-y: scroll; overflow-x: hidden; height: #{@sn_sizes[type][:instagram][:height]}px;"}
+    //%iframe{:allowtransparency => "true", :frameborder => "0", :height => @sn_sizes[type][:instagram][:height], :scrolling => "yes", :src => "http://instagram.com/p/BnXUV18nRP_/embed", :width => @sn_sizes[type][:instagram][:width], style: "z-index: 1;"}
+
+    .instagram-header{style: "background: white; display: inline-flex; width: 100%;"}
+      .avatar-container
+        %a.avatar{"data-ios-link" => "user?username=umbragado&utm_source=ig_embed", "data-log-event" => "profilePhotoClick", :href => "https://www.instagram.com/umbragado/?utm_source=ig_embed", :target => "_blank"}
+          %img.img-responsive.img-circle{:alt => "umbragado", :src => "https://instagram.faep9-1.fna.fbcdn.net/vp/e984670b02e2580771f667a78e648ad4/5C309D60/t51.2885-19/s150x150/19228590_1756242474636704_4237326322331811840_a.jpg", style: "height: 40px; margin: 10px;"}
+      .header-text{style: "margin-top: 10px; display: grid;"}
+        %a.username{"data-ios-link" => "user?username=umbragado&utm_source=ig_embed", "data-log-event" => "profileClick", :href => "https://www.instagram.com/umbragado/?utm_source=ig_embed", :target => "_blank", style: "color: black; font-weight: bold;"}
+          %span.username-text umbragado
+        %span.followers-count{style: "color: #999; line-height: 14px; font-size: 12px; margin-top: -15px;"}
+          1,303 followers
+
+      %a.view-profile-button{"data-ios-link" => "user?username=umbragado&utm_source=ig_embed", "data-log-event" => "followClick", :href => "https://www.instagram.com/umbragado/?utm_source=ig_embed", :target => "_blank", style: "background-color: #3897f0; border-radius: 3px; color: #fff; flex-shrink: 0; font-weight: 600; margin-left: auto; padding: 5px 12px; text-decoration: none; margin-top: 15px; margin-bottom: 15px; margin-right: 10px;"}
+        %span.view-profile-text
+          Ver Perfil
+
+
+    %script{:src => "https://snapwidget.com/js/snapwidget.js"}
+    %iframe.snapwidget-widget{:allowtransparency => "true", :frameborder => "0", :scrolling => "yes", :src => insta_widget, :style => "border:none; overflow:hidden; height: #{@sn_sizes[type][:instagram][:height]}; width: 100%; margin-top: -5px;", width: @sn_sizes[type][:instagram][:width]}
+
 .zoom-card.scale-transition.scale-out#twitter-content
   %ul.zoom-card-content{style: "overflow-y:  scroll; height: #{@sn_sizes[type][:twitter][:height]}px;"}
     %a.twitter-timeline{"data-dnt" => "true", "data-lang" => "es", "data-theme" => "light", "data-width" => @sn_sizes[type][:twitter][:width], :href => "https://twitter.com/UM_Bragado?ref_src=twsrc%5Etfw", scrolling: "yes"} Tweets by @UM_Bragado
