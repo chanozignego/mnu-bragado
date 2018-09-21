@@ -445,6 +445,10 @@ header.header-navbar .intro-text.intro-text-small {
 }
 
 @media (min-width:1024px){
+  .zoom {
+    bottom: 20px;
+  }
+
   .zoom-fab {
     font-size: 26px;
     width: 40px;
@@ -462,12 +466,20 @@ header.header-navbar .intro-text.intro-text-small {
     width: 500px;
   }
 
+  .zoom-card#facebook-content {
+    width: 500px;
+  }
+
   .zoom-menu {
     right: 70px;
   }
 }
 
 @media (min-width:1256px){
+  .zoom {
+    bottom: 45px;
+  }
+
   .zoom-fab {
     font-size: 26px;
     width: 40px;
@@ -482,6 +494,10 @@ header.header-navbar .intro-text.intro-text-small {
   }
 
   .zoom-card {
+    width: 300px;
+  }
+
+  .zoom-card#facebook-content {
     width: 300px;
   }
 
