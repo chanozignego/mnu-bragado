@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery prepend: true
   before_filter :set_current_year
   before_filter :set_views
+  before_filter :set_social_network_sizes
 
   def set_current_year
     @current_year = Date.today.year
@@ -16,5 +17,24 @@ class ApplicationController < ActionController::Base
     stats = Statistic.where(year: @current_year).last
     stats.views = stats.views + 1
     stats.save
+  end
+
+  def set_social_network_sizes
+    @sn_sizes = { small: {
+                    facebook: {width: 500, height: 1100},
+                    instagram: {width: 700, height: 700},
+                    twitter: {width: 700, height: 1100}
+                  }, 
+                  medium: {
+                    facebook: {width: 500, height: 500},
+                    instagram: {width: 500, height: 400},
+                    twitter: {width: 500, height: 500}
+                  }, 
+                  large: {
+                    facebook: {width: 300, height: 500},
+                    instagram: {width: 300, height: 400},
+                    twitter: {width: 300, height: 500}
+                  }
+                }
   end
 end

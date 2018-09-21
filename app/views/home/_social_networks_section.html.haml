@@ -1,0 +1,19 @@
+.zoom{style: "z-index: 999;"}
+  %a#zoomBtn.zoom-fab.zoom-btn-large.zoom-btn-main  
+    %i.fa.fa-share-alt
+  %ul.zoom-menu
+    %li
+      %a.zoom-fab.zoom-btn-sm.zoom-btn-instagram.scale-transition.scale-out 
+        %i.fa.fa-instagram
+    %li
+      %a.zoom-fab.zoom-btn-sm.zoom-btn-facebook.scale-transition.scale-out
+        %i.fa.fa-facebook
+    %li
+      %a.zoom-fab.zoom-btn-sm.zoom-btn-twitter.scale-transition.scale-out
+        %i.fa.fa-twitter
+  .zoom-card-container.small.hidden-lg.hidden-md.visible-xs.visible-sm
+    = render "social_network_panels", type: :small
+  .zoom-card-container.medium.hidden-xs.hidden-sm.hidden-lg.visible-md
+    = render "social_network_panels", type: :medium
+  .zoom-card-container.large.hidden-xs.hidden-sm.hidden-md.visible-xl
+    = render "social_network_panels", type: :large

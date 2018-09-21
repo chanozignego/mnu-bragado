@@ -1,0 +1,23 @@
+- string_type = type.to_s
+.zoom-card.scale-transition.scale-out#instagram-content
+  %ul.zoom-card-content
+    %iframe{:allowtransparency => "true", :frameborder => "0", :height => @sn_sizes[type][:instagram][:height], :scrolling => "yes", :src => "http://instagram.com/p/BnXUV18nRP_/embed", :width => @sn_sizes[type][:instagram][:width], style: "z-index: 1;"}
+.zoom-card.scale-transition.scale-out#twitter-content
+  %ul.zoom-card-content{style: "overflow-y:  scroll; height: #{@sn_sizes[type][:twitter][:height]}px;"}
+    %a.twitter-timeline{"data-dnt" => "true", "data-lang" => "es", "data-theme" => "light", "data-width" => @sn_sizes[type][:twitter][:width], :href => "https://twitter.com/UM_Bragado?ref_src=twsrc%5Etfw", scrolling: "yes"} Tweets by @UM_Bragado
+    %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
+
+.zoom-card.scale-transition.scale-out#facebook-content
+  %ul.zoom-card-content
+    .fb-page{"data-adapt-container-width" => "true", "data-height" => @sn_sizes[type][:facebook][:height], "data-hide-cover" => "false", "data-href" => "https://www.facebook.com/ModeloNacionesUnidasBragado/", "data-show-facepile" => "true", "data-small-header" => "false", "data-tabs" => "timeline", "data-width" => @sn_sizes[type][:facebook][:width]}
+      %blockquote.fb-xfbml-parse-ignore{:cite => "https://www.facebook.com/ModeloNacionesUnidasBragado/"}
+        %a{:href => "https://www.facebook.com/ModeloNacionesUnidasBragado/"} Uniendo Metas Bragado
+    #fb-root
+      :javascript
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=711908275628167&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));

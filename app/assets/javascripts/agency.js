@@ -45,3 +45,64 @@ $('.team-member.trainer-member .image').on('click touch tap', function() {
     $(this).find('.secondary-image').hide();
   }
 });
+
+$(document).ready(function() {
+  var container = $('.zoom-card-container').filter(function(index) {
+    return $($('.zoom-card-container')[index]).css('display').toLowerCase() == 'block';
+  });
+  if (container.hasClass('large')) {
+    $('.zoom-btn-sm').toggleClass('scale-out');
+    $('.zoom-card').css('background-color', '#bc2a8d');
+    container.find('#instagram-content').toggleClass('scale-out');
+  }
+});
+
+$('#zoomBtn').click(function() {
+  $('.zoom-btn-sm').toggleClass('scale-out');
+  if (!$('.zoom-card').hasClass('scale-out')) {
+    $('.zoom-card').toggleClass('scale-out');
+  }
+
+  var container = $('.zoom-card-container').filter(function(index) {
+    return $($('.zoom-card-container')[index]).css('display').toLowerCase() == 'block';
+  });
+  container.find('#twitter-content').addClass('scale-out');
+  container.find('#instagram-content').addClass('scale-out');
+  container.find('#facebook-content').addClass('scale-out');
+});
+ 
+$('.zoom-btn-sm').click(function() {
+  var btn = $(this);
+  var card = $('.zoom-card');
+
+  var container = $('.zoom-card-container').filter(function(index) {
+    return $($('.zoom-card-container')[index]).css('display').toLowerCase() == 'block';
+  });
+
+  var twitterContent = container.find('#twitter-content');
+  var instagramContent = container.find('#instagram-content');
+  var facebookContent = container.find('#facebook-content');
+
+  if (btn.hasClass('zoom-btn-instagram')) {
+    twitterContent.addClass('scale-out');
+    facebookContent.addClass('scale-out');
+    instagramContent.toggleClass('scale-out');
+    card.css('background-color', '#bc2a8d');
+  } else if (btn.hasClass('zoom-btn-twitter')) {
+    instagramContent.addClass('scale-out');
+    facebookContent.addClass('scale-out');
+    twitterContent.toggleClass('scale-out');
+    card.css('background-color', '#1da1f2');
+  } else if (btn.hasClass('zoom-btn-facebook')) {
+    twitterContent.addClass('scale-out');
+    instagramContent.addClass('scale-out');
+    facebookContent.toggleClass('scale-out');
+    card.css('background-color', '#3b5998');
+  } else {
+    twitterContent.addClass('scale-out');
+    instagramContent.addClass('scale-out');
+    facebookContent.addClass('scale-out');
+    $('.zoom-card').toggleClass('scale-out');
+    card.css('background-color', '#7b1fa2');
+  }
+});
