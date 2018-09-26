@@ -413,6 +413,43 @@ header.header-navbar .intro-text.intro-text-small {
 .zoom-btn-main { background-color: #fed136; }
 .zoom-btn-main:hover { background-color: #fec503; }
 
+/*INSTAGRAM*/
+#instagram-content.zoom-card:before{
+  position: absolute;
+  bottom: -20px;
+  height: 0;
+  width: 0;
+  right: 208px;
+  border: 10px solid transparent;
+  border-top-color: #bc2a8d;
+  content: "";
+}
+
+/*FACEBOOK*/
+#facebook-content.zoom-card:before{
+  position: absolute;
+  bottom: -20px;
+  height: 0;
+  width: 0;
+  right: 149px;
+  border: 10px solid transparent;
+  border-top-color: #3b5998;
+  content: "";
+}
+
+/*TWITTER*/
+#twitter-content.zoom-card:before{
+  position: absolute;
+  bottom: -20px;
+  height: 0;
+  width: 0;
+  right: 91px;
+  border: 10px solid transparent;
+  border-top-color: #1da1f2;
+  content: "";
+}
+
+
 @media (min-width:767px){
   .zoom {
     bottom: 100px;
@@ -433,6 +470,7 @@ header.header-navbar .intro-text.intro-text-small {
 
   .zoom-card {
     width: 700px;
+    margin-bottom: 40px;
   }
 
   .zoom-card#facebook-content {
@@ -441,6 +479,30 @@ header.header-navbar .intro-text.intro-text-small {
 
   .zoom-card#instagram-content {
     width: 500px;
+  }
+
+  /*INSTAGRAM*/
+  #instagram-content.zoom-card:before{
+    bottom: -94px;
+    right: 391px;
+    border: 47px solid transparent;
+    border-top-color: #bc2a8d;
+  }
+
+  /*FACEBOOK*/
+  #facebook-content.zoom-card:before{
+    bottom: -94px;
+    right: 272px;
+    border: 47px solid transparent;
+    border-top-color: #3b5998;
+  }
+
+  /*TWITTER*/
+  #twitter-content.zoom-card:before{
+    bottom: -94px;
+    right: 157px;
+    border: 47px solid transparent;
+    border-top-color: #1da1f2;
   }
 
   .zoom-menu {
@@ -468,6 +530,7 @@ header.header-navbar .intro-text.intro-text-small {
 
   .zoom-card {
     width: 500px;
+    margin-bottom: 20px;
   }
 
   .zoom-card#facebook-content {
@@ -476,6 +539,30 @@ header.header-navbar .intro-text.intro-text-small {
 
   .zoom-card#instagram-content {
     width: 500px;
+  }
+
+  /*INSTAGRAM*/
+  #instagram-content.zoom-card:before{
+    bottom: -50px;
+    right: 193px;
+    border: 25px solid transparent;
+    border-top-color: #bc2a8d;
+  }
+
+  /*FACEBOOK*/
+  #facebook-content.zoom-card:before{
+    bottom: -50px;
+    right: 135px;
+    border: 25px solid transparent;
+    border-top-color: #3b5998;
+  }
+
+  /*TWITTER*/
+  #twitter-content.zoom-card:before{
+    bottom: -50px;
+    right: 76px;
+    border: 25px solid transparent;
+    border-top-color: #1da1f2;
   }
 
   .zoom-menu {
