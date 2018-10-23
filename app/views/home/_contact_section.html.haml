@@ -26,6 +26,14 @@
               #success
 
               .text-center
-                = recaptcha_tags
+                = recaptcha_tags 
 
-              %button.btn.btn-xl{:type => "submit"} Enviar Mensaje
+              %button.btn.btn-xl#submitButton{:type => "submit"} Enviar Mensaje
+
+
+/ :javascript
+/   $('.g-recaptcha').attr("data-callback", "recaptchaCallback");
+
+/   function recaptchaCallback() {
+/     $('#submitButton').prop("disabled", false);
+/   }

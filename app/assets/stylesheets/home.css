@@ -450,6 +450,11 @@ header.header-navbar .intro-text.intro-text-small {
 }
 
 
+.g-recaptcha div {
+  width: inherit !important;
+  margin-bottom: 20px;
+}
+
 @media (min-width:767px){
   .zoom {
     bottom: 100px;
