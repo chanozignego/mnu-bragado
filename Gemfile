@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "4.2.5"
+gem "rails", "4.2.10"
 
 # ENV managing
 gem "dotenv-rails", groups: %i[development test]
@@ -51,6 +51,9 @@ gem "simple_form"
 gem 'to_xls-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+# Captcha
+gem "recaptcha", require: "recaptcha/rails"
 
 #Bourbon
 gem 'bourbon', '~> 4.0'

@@ -1,12 +1,14 @@
 class QueriesController < ApplicationController
 
   def create
-    query = Query.create(query_params)
-    if query.valid?
-    	QueryMailer.new_query_email(query).deliver_now
-      stats = Statistic.where(year: @current_year).last
-      stats.queries = stats.queries + 1
-      stats.save
+    if (params["g-recaptcha-response"].present?) 
+      query = Query.create(query_params)
+      if query.valid?
+      	QueryMailer.new_query_email(query).deliver_now
+        stats = Statistic.where(year: @current_year).last
+        stats.queries = stats.queries + 1
+        stats.save
+      end
     end
     redirect_to root_path
   end
