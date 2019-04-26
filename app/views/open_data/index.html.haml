@@ -1,0 +1,40 @@
+%body#page-top.index
+  = render "/shared/simple_navbar"
+
+  %header{style: "background-color: #222; background-image: url('../img/principal/mnubragado-background4.jpeg');"}
+    .container{style: "padding-top: 240px; padding-bottom: 240px; margin-top: 50px;"}
+    
+  %header{style: "background: white; margin-top: -160px; color: #fed136;"}
+    .container
+      .intro-text{style: "padding-top: 40px; padding-bottom: 50px;"}
+
+
+      .row
+        .col-xs-12
+          %ul#myTab.nav.nav-tabs{:role => "tablist"}
+            %li.nav-item.active
+              %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", :href => "#general", :role => "tab"} General
+            %li.nav-item
+              %a#school-tab.nav-link{"aria-controls" => "school", "aria-selected" => "false", "data-toggle" => "tab", :href => "#school", :role => "tab"} Escuelas
+            %li.nav-item
+              %a#contact-tab.nav-link{"aria-controls" => "contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#contact", :role => "tab"} Contact
+          #myTabContent.tab-content{style: "padding-top: 50px;"}
+            #general.tab-pane.fade.active.in{"aria-labelledby" => "home-tab", :role => "tabpanel"}
+              = render "general_data"
+            #school.tab-pane.fade{"aria-labelledby" => "school-tab", :role => "tabpanel"}
+              = render "schools_data"
+            #contact.tab-pane.fade{"aria-labelledby" => "contact-tab", :role => "tabpanel"}
+              = #render "/shared/simple_navbar"
+
+
+
+        
+
+
+
+          
+  
+  = render "/shared/simple_footer"
+
+
+

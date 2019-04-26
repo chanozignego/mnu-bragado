@@ -1,0 +1,147 @@
+.row
+  .col-lg-4.col-md-6
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-group.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @all_years_statistics[:partakers]
+      %a
+        .panel-footer
+          %span Participantes
+          .clearfix
+
+  .col-lg-4.col-md-6
+    .panel.panel-yellow
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-user.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @all_years_statistics[:delegates]
+      %a
+        .panel-footer
+          %div Delegados
+          .clearfix
+  .col-lg-4.col-md-6
+    .panel.panel-red
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-user-secret.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @all_years_statistics[:authorities]
+      %a
+        .panel-footer
+          %div Autoridades
+          .clearfix
+
+  .col-lg-4.col-md-6
+    .panel.panel-green
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-flag.fa-5x
+          .col-xs-9.text-right
+            .huge
+              = @all_years_statistics[:delegations]
+      %a
+        .panel-footer
+          %div Delegaciones
+          .clearfix
+
+  .col-lg-4.col-md-6
+    .panel.panel-success
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.glyphicon.glyphicon-education.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @all_years_statistics[:professors]
+      %a
+        .panel-footer{style: "color: #3c763d;"}
+          %div Profesores
+          .clearfix
+  .col-lg-4.col-md-6
+    .panel.panel-info
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-university.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @all_years_statistics[:schools]
+      %a
+        .panel-footer{style: "color: #317090;"}
+          %div Escuelas
+          .clearfix
+
+
+.row.statistics{data: {statistics: @chart_statistics}}
+
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        General
+      .panel-body
+        .row
+          / .col-lg-12
+          /   .table-responsive
+          /     %table.table.table-bordered.table-hover.table-striped{style: "margin-bottom: 0px;"}
+          /       %thead
+          /         %tr
+          /           %th.text-center Año
+          /           %th.text-center Delegaciones
+          /           %th.text-center Participantes
+          /           %th.text-center Delegados
+          /           %th.text-center Autoridades
+          /       %tbody
+          /         - if @statistics.present? 
+          /           - @statistics.each do |stat| 
+          /             %tr
+          /               %td.text-center 
+          /                 = stat[:year]
+          /               %td.text-center
+          /                 = stat[:delegations]
+          /               %td.text-center
+          /                 = stat[:partakers]
+          /               %td.text-center
+          /                 = stat[:delegates]
+          /               %td.text-center
+          /                 = stat[:authorities]
+
+
+          .col-lg-12
+            .partakers-numbers
+              #morris-bar-chart{style: "height: 230px;"}
+
+
+.row
+  .col-lg-8
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        Participantes
+      .panel-body
+        .row
+          .col-lg-12
+            .partakers-numbers
+              #morris-area-chart
+
+  .col-lg-4
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bar-chart-o.fa-fw
+        Delegaciones
+      .panel-body
+        .row
+          .col-lg-12.text-center
+            .partakers-numbers
+              #morris-donut-chart

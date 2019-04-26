@@ -1,0 +1,5 @@
+.col-md-12.form-group
+%select.form-control.js-select2.col-xs-12
+  - @schools.each do |school|
+    %option{value: school}
+      = school

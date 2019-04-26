@@ -155,6 +155,7 @@ Rails.application.routes.draw do
   get "/", controller: "home", action: :index, as: :root
 
   get "/inscriptions", controller: "inscriptions", action: :index
+  get "/open_data", controller: "open_data", action: :index
   resources :delegate_inscriptions do
     member do
       get :accepted
