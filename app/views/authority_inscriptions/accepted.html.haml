@@ -1,27 +1,28 @@
 %body#page-top.index
   = render "/shared/simple_navbar"
 
-  %header#inscription{style: "background-color: #222; background-image: url('/img/principal/mnubragado-background4.jpeg');"}
-    .container{style: "padding-top: 300px; padding-bottom: 75px; margin-top: 50px; color: #333;"}
-      .row
-        .col-xs-12
-          %h2.text-center
-            ¡Felicitaciones!
-          %h3.text-center
-            ¡Ya sos parte del modelo! Para finalizar, tenés que imprimir el formulario, firmarlo y presentarselo junto con el costo de la inscripción a tu docente a cargo
+  = render "/shared/shared_header", id: "inscription"
+  
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-xs-12
+        %h2.text-center
+          ¡Felicitaciones!
+        %h3.text-center
+          ¡Ya sos parte del modelo! Para finalizar, tenés que imprimir el formulario, firmarlo y presentarselo junto con el costo de la inscripción a tu docente a cargo
 
-        .col-xs-12
-          %br
-          .col-xs-12.text-center
-            %button.btn.btn-primary
-              = link_to "Descargar PDF", authority_inscription_path(id: @authority_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+      .col-xs-12
+        %br
+        .col-xs-12.text-center
+          %button.btn.btn-primary
+            = link_to "Descargar PDF", authority_inscription_path(id: @authority_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
 
-          %br
-          %br
-          %br
-        .col-xs-12
-          %h5.text-center
-            La inscripción tambien te ha sido enviada al email indicado
+        %br
+        %br
+        %br
+      .col-xs-12
+        %h5.text-center
+          La inscripción tambien te ha sido enviada al email indicado
 
 
   = render "/shared/simple_footer"

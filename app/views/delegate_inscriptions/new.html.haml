@@ -1,12 +1,13 @@
 %body#page-top.index
   = render "/shared/simple_navbar"
 
-  %header#inscription{style: "background-color: #222; background-image: url('../img/principal/mnubragado-background4.jpeg');"}
-    .container{style: "padding-top: 240px; padding-bottom: 240px; margin-top: 50px;"}
-      .row
-        .col-lg-12
-          %h1.section-heading.pull-left{style: "color: #333;"}
-            Delegado
+  = render "/shared/shared_header", id: "inscription"
+
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-lg-12
+        %h1.section-heading.pull-left{style: "color: #333;"}
+          Delegado
 
   %section#inscription{style: "margin-top: -350px;"}
     .container

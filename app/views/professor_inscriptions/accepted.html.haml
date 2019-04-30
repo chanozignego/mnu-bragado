@@ -1,28 +1,29 @@
 %body#page-top.index
   = render "/shared/simple_navbar"
 
-  %header#inscription{style: "background-color: #222; background-image: url('/img/principal/mnubragado-background4.jpeg');"}
-    .container{style: "padding-top: 300px; padding-bottom: 75px; margin-top: 50px; color: #333;"}
-      .row
-        .col-xs-12
-          %h2.text-center
-            ¡Felicitaciones!
-          %h3.text-center
-            ¡Ya sos un docente del modelo! Para finalizar la inscripción, tenes que imprimir el formulario, firmarlo y enviarlo escaneado a mnubragado@gmail.com
-            /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
+  = render "/shared/shared_header", id: "inscription"
 
-        .col-xs-12
-          %br
-          .col-xs-12.text-center
-            %button.btn.btn-primary
-              = link_to "Descargar PDF", professor_inscription_path(id: @professor_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-xs-12
+        %h2.text-center
+          ¡Felicitaciones!
+        %h3.text-center
+          ¡Ya sos un docente del modelo! Para finalizar la inscripción, tenes que imprimir el formulario, firmarlo y enviarlo escaneado a mnubragado@gmail.com
+          /Tu inscripcion fue realizada correctamente. Solo tenés que imprimir el formulario, firmarlo y llevarlo a la próxima capacitacion
 
-          %br
-          %br
-          %br
-        .col-xs-12
-          %h5.text-center
-            La inscripción tambien te ha sido enviada al email indicado
+      .col-xs-12
+        %br
+        .col-xs-12.text-center
+          %button.btn.btn-primary
+            = link_to "Descargar PDF", professor_inscription_path(id: @professor_inscription.id, format: :pdf), style: "color: white; text-decoration: none;"
+
+        %br
+        %br
+        %br
+      .col-xs-12
+        %h5.text-center
+          La inscripción tambien te ha sido enviada al email indicado
 
 
   = render "/shared/simple_footer"

@@ -1,15 +1,16 @@
 %body#page-top.index
   = render "/shared/simple_navbar"
   
-  %header#files{style: "background-color: #222; background-image: url('../img/principal/mnubragado-background4.jpeg');"}
-    .container{style: "padding-top: 240px; padding-bottom: 240px; margin-top: 50px;"}
-      .row
-        .col-lg-12
-          %h1.section-heading.pull-left{style: "color: #333;"}
-            = @folder_name.present? ? "Tópicos / #{@folder_name}" : "Tópicos"
+  = render "/shared/shared_header", id: "files"
+
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-lg-12
+        %h1.section-heading.pull-left{style: "color: #333;"}
+          = @folder_name.present? ? "Tópicos / #{@folder_name}" : "Tópicos"
 
 
-  %section#files{style: "margin-top: -350px;"}
+  %section#files{style: "margin-top: -150px;"}
     .container
       - if @show_folders
         .row
