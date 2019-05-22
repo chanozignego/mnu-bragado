@@ -17,6 +17,7 @@ class AuthorityDashboard < ApplicationDashboard
     phone_number: Field::String,
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField, 
+    paid: LabeledBooleanField, 
     rol_translation: Field::String, 
     school_year: Field::String, 
     orientation: Field::String,
@@ -35,7 +36,8 @@ class AuthorityDashboard < ApplicationDashboard
     :phone_number,
     :rol_translation,
     :has_medical_problems?,
-    :has_diet?
+    :has_diet?,
+    :paid
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -94,7 +96,16 @@ class AuthorityDashboard < ApplicationDashboard
                   label_method: -> (s) { 
                       s.last
                     }
-                  }]
+                  }],
+    [:paid_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }]           
   ]
 
   def self.search_path

@@ -26,6 +26,7 @@ es-AR:
         school_year: Año que cursa
         orientation: Orientación
         has_diet?: "Dieta"
+        paid: "Pagó?"
         has_medical_problems?: "Medico"
         person: Datos personales
         medical_data: Datos médicos
@@ -37,6 +38,7 @@ es-AR:
         school_id_eq: Escuela
         participated_eq: Ya participó
         has_diet_eq: Dieta
+        paid_eq: Pagó?
         has_medical_problems_eq: Problemas médicos
     models:
       authority:

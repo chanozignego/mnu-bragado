@@ -27,6 +27,15 @@
               .span.label{class: "label-#{participated ? 'primary' : 'default'}"}
                 = participated ? "Si" : "No"
 
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:paid)
+            .col-sm-9
+              - paid = page.resource.paid
+              .span.label{class: "label-#{paid ? 'primary' : 'default'}"}
+                = paid ? "Si" : "No"
+
 
           .row.admin-detail-row
             .col-sm-3

@@ -23,7 +23,7 @@ module Admin
       def permitted_attributes
         [
           :id, :year, :rol, :school_id, :professor_id, :participated, 
-          :school_year, :orientation,
+          :school_year, :orientation, :paid,
           person_attributes: person_attributes,
           medical_data_attributes: medical_data_attributes
         ]

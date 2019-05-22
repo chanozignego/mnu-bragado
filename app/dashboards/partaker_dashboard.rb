@@ -17,6 +17,7 @@ class PartakerDashboard < ApplicationDashboard
     phone_number: Field::String,
     has_medical_problems?: LabeledBooleanField, 
     has_diet?: LabeledBooleanField,
+    paid: LabeledBooleanField,
     school_year: Field::String, 
     type_translation: Field::String,
     rol_translation: Field::String, 
@@ -37,7 +38,8 @@ class PartakerDashboard < ApplicationDashboard
     :type_translation,
     :rol_translation,
     :has_diet?,
-    :has_medical_problems?
+    :has_medical_problems?,
+    :paid
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -106,6 +108,15 @@ class PartakerDashboard < ApplicationDashboard
                     }
                   }],
     [:has_medical_problems_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }],
+    [:paid_eq, {as: :select, 
                   collection: [[true, "Si"], [false, "No"]],
                   include_blank: true,
                   input_html: { class: "form-control js-select2" },

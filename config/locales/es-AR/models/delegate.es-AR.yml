@@ -21,6 +21,7 @@ es-AR:
         year: Año
         participated: Participó?
         has_diet?: "Dieta"
+        paid: "Pagó?"
         has_medical_problems?: "Medico"
         person: Datos personales
         medical_data: Datos médicos
@@ -40,6 +41,7 @@ es-AR:
         school_id_eq: Escuela
         participated_eq: Ya participó
         has_diet_eq: Dieta
+        paid_eq: Pagó?
         has_medical_problems_eq: Problemas médicos
         rol_eq: Órgano
         type_eq: Delegado/Autoridad

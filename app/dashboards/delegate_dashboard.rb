@@ -17,7 +17,8 @@ class DelegateDashboard < ApplicationDashboard
     phone_number: Field::String,
     participated: LabeledBooleanField, 
     has_medical_problems?: LabeledBooleanField, 
-    has_diet?: LabeledBooleanField, 
+    has_diet?: LabeledBooleanField,
+    paid: LabeledBooleanField, 
     rol_translation: Field::String, 
     school_year: Field::String, 
     orientation: Field::String,
@@ -37,7 +38,8 @@ class DelegateDashboard < ApplicationDashboard
     :rol_translation, 
     :has_diet?,
     :has_medical_problems?,
-    :participated
+    :participated,
+    :paid
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -106,6 +108,15 @@ class DelegateDashboard < ApplicationDashboard
                       s.last
                     }
                   }],
+    [:paid_eq, {as: :select, 
+                  collection: [[true, "Si"], [false, "No"]],
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :first,
+                  label_method: -> (s) { 
+                      s.last
+                    }
+                  }],              
     [:rol_eq, {as: :select, 
                   collection: Delegate.rols,
                   include_blank: true,

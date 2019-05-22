@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180813010415) do
+ActiveRecord::Schema.define(version: 20190522033811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -198,6 +198,7 @@ ActiveRecord::Schema.define(version: 20180813010415) do
     t.string   "orientation"
     t.string   "school_year"
     t.boolean  "graduated",       default: false, null: false
+    t.boolean  "paid",            default: false, null: false
   end
 
   add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
