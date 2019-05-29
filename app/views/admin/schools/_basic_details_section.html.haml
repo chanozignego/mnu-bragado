@@ -1,4 +1,4 @@
-- %i[cue name phone_number fax_number email director_name].each do |attr|
+- %i[cue name key phone_number fax_number email director_name].each do |attr|
   = render "show_field",
     label: School.human_attribute_name(non_formatted_method(attr)),
     value: resource.public_send(attr)

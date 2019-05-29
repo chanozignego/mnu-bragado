@@ -3,7 +3,7 @@ class ExcelImportService
 
   def self.import_countries(file)
     spreadsheet = open_spreadsheet(file)
-    header = ["name", "regional_group", "ag", "sti", "cs", "g20", "ecosoc"]
+    header = ["name", "regional_group", "ag", "sti", "cs", "g20", "ecosoc", "assign"]
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
 
@@ -29,8 +29,20 @@ class ExcelImportService
       row["g20"] = row["g20"].present?
       row["ecosoc"] = row["ecosoc"].present?
 
+      if row["assign"].present?
+        school = School.find_by_key(row["assign"])
+      end
+
+      row.delete("assign")
+
       country = Country.new(row.to_hash)  
-      country.state = :pending    
+      country.state = :pending
+
+      if school.present?
+        country.school = school
+        country.state = :assigned
+      end
+      
       country.save!
     end
   end

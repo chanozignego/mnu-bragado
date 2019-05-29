@@ -5,6 +5,7 @@ es-AR:
         cue: CUE
         name: Nombre
         email: Email
+        key: Identificador
         director_name: Nombre del Director
         location_province: Provincia
         location_city: Ciudad
@@ -15,6 +16,7 @@ es-AR:
         created_at: Fecha de creación
         updated_at: Última actualización
         name_cont: Nombre
+        key_cont: Identificador
         email_cont: Email
         province_eq: Provincia
         city_cont: Ciudad

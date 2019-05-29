@@ -11,6 +11,7 @@ class SchoolDashboard < ApplicationDashboard
     id: Field::Number,
     cue: Field::String, 
     name: Field::String,
+    key: Field::String,
     location_province: Field::String,
     location_city: Field::String,
     location_street: Field::String,
@@ -27,6 +28,7 @@ class SchoolDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :name,
+    :key,
     :location_province,
     :location_city,
     :location_street,
@@ -44,6 +46,7 @@ class SchoolDashboard < ApplicationDashboard
   FORM_ATTRIBUTES = [
     :cue, 
     :name,
+    :key,
     :location_province,
     :location_city,
     :location_street,
@@ -63,6 +66,7 @@ class SchoolDashboard < ApplicationDashboard
 
   SEARCHABLE_ATTRIBUTES = [
     [:name_cont],
+    [:key_cont],
     [:email_cont],
     [:province_eq, {as: :select, 
               collection: Location::PROVINCES,
