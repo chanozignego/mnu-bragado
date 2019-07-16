@@ -22,4 +22,8 @@ class ArchivesController < ApplicationController
     redirect_to "/img/countries.pdf"
   end
 
+  def concourse
+    redirect_to "/img/concourse.pdf"
+  end
+
 end

@@ -188,6 +188,7 @@ Rails.application.routes.draw do
       get :topics
       get :schedule
       get :countries
+      get :concourse
     end
   end
   resource :query
