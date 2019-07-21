@@ -2,6 +2,19 @@ module Admin
   class PartakersController < Admin::ApplicationController
     self.decorator_class = nil
 
+    def mass_assignment
+      send(params[:method], params[:model_ids])
+      redirect_to action: :index
+    end
+
+    def mark_as_paid model_ids
+      model_ids.each do |id|
+        partaker = Partaker.find(id)
+        partaker.paid = true
+        partaker.save!
+      end
+    end 
+
     def export_to_excel
       generate_excel(scoped_collection, "Participantes")
     end

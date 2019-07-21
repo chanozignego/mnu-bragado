@@ -21,6 +21,7 @@ class ApplicationDashboard < Administrate::BaseDashboard
                   check_participation:  [:superadmin, :coordination, :commission], 
                   export_with_diet: [:superadmin, :coordination, :commission], 
                   export_with_medical_problems: [:superadmin, :coordination, :commission], 
+                  mass_assignment: [:superadmin, :coordination, :commission], 
                 }
 
   def implements_action?(action)

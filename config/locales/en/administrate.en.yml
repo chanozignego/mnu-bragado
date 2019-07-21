@@ -29,6 +29,7 @@ es:
       label: Mass assignment
       actions:
         destroy: Delete
+        mark_as_paid: Marcar como pagado
       flash_messages:
         success: Successfuly mass assignment
     items_not_found: Items not fount

@@ -2,6 +2,7 @@ require "administrate/base_dashboard"
 
 class PartakerDashboard < ApplicationDashboard
   ALLOW_COLLECTION_ACTIONS = true
+  ALLOW_MASS_ASSIGNMENT = true
 
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -53,7 +54,8 @@ class PartakerDashboard < ApplicationDashboard
   ]
 
   MASS_ASSIGNMENT_ACTIONS = [
-  #  :approve_revision
+  # :approve_revision
+    :mark_as_paid
   ]
 
   # Overwrite this method to customize how users are displayed

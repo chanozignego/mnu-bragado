@@ -39,6 +39,7 @@ es-AR:
       label: Acciones en masa
       actions:
         destroy: Eliminar
+        mark_as_paid: Marcar como pagado
       flash_messages:
         success: Acción en masa realizada satisfactoriamente
     items_not_found: No se han encontrado resultados
