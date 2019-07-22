@@ -181,6 +181,11 @@ Rails.application.routes.draw do
       get :get_by_school
     end
   end
+  resources :partakers do 
+    member do
+      get :certificate
+    end
+  end
 
   resources :folders
   resources :archives do

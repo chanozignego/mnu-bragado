@@ -1,0 +1,25 @@
+%section#certificate
+  .row
+    .col-xs-12
+      .row
+        .col-xs-12
+          / = wicked_pdf_image_tag "/img/certificate/logos.jpg", style: "width: 100%; margin-top: 50px;"
+          = wicked_pdf_image_tag "/img/certificate/logos2.png", style: "width: 100%; margin-top: 50px;"
+
+      .row
+        .col-xs-12
+          %p.text-center{style: "font-size: 32px; line-height: 2.1; margin-top: 75px; margin-bottom: 35px; padding-left: 10px; padding-right: 10px; font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;"}
+            Por cuanto 
+            %span{style: "font-style: italic; font-weight: bold; margin-right: 10px; margin-left: 10px; border-bottom: 1px solid black;"}
+              = @partaker.index_name
+            ha participado en el X Encuentro del Programa "Uniendo Metas Bragado, Jóvenes para el Futuro" metodología Modelo de Naciones Unidas, de Asociación Conciencia, realizado el 29, 30 y 31 de Agosto.
+            %br
+            31 de Agosto de 2019, Bragado, Buenos Aires.
+
+        .row
+          .col-xs-12
+            = wicked_pdf_image_tag "/img/certificate/signs.jpg", style: "width: 100%; position: fixed;left: 0;bottom: 20; padding: 50px;"
+
+        / .row
+        /   .col-xs-12
+        /     = wicked_pdf_image_tag "/img/certificate/footer.jpg", style: "width: 107%; margin-left: -50px; margin-right: -50px;"
