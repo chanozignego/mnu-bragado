@@ -9,10 +9,12 @@ module Admin
 
     def mark_as_paid model_ids
       model_ids.each do |id|
-        partaker = Partaker.find(id)
-        partaker.paid = true
-        partaker.save!
-      rescue ActiveRecord::RecordNotFound
+        begin
+          partaker = Partaker.find(id)
+          partaker.paid = true
+          partaker.save!
+        rescue ActiveRecord::RecordNotFound
+        end
       end
     end 
 
