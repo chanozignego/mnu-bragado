@@ -12,6 +12,7 @@ module Admin
         partaker = Partaker.find(id)
         partaker.paid = true
         partaker.save!
+      rescue ActiveRecord::RecordNotFound
       end
     end 
 
