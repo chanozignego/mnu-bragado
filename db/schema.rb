@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190529135248) do
+ActiveRecord::Schema.define(version: 20190820123122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,19 @@ ActiveRecord::Schema.define(version: 20190529135248) do
     t.boolean  "cs",             default: false
     t.boolean  "ecosoc",         default: false
     t.boolean  "g20",            default: false
+    t.string   "slug"
   end
 
   add_index "countries", ["school_id"], name: "index_countries_on_school_id", using: :btree
+
+  create_table "country_pictures", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "country_pictures", ["country_id"], name: "index_country_pictures_on_country_id", using: :btree
 
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false

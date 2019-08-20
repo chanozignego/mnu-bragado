@@ -1,0 +1,56 @@
+%body#page-top.index
+  = render "/shared/simple_navbar"
+
+  = render "/shared/shared_header", id: "inscription"
+
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-lg-12
+        %h1.section-heading.pull-left{style: "color: #333;"}
+          Imágen
+
+  %section#inscription{style: "margin-top: -350px;"}
+    .container
+      .row
+        .col-xs-12
+          .js-item-container
+            = simple_form_for(@picture, html: { class: "form js-item-form" }) do |f|
+              .admin-common-panel
+                .row.admin-common-panel__content
+                  .col-md-12
+                    - if f.object.persisted?
+                      .col-md-12.form-group
+                        = f.input :id, readonly: true, input_html: {class: "form-control"}
+
+                    .col-md-12.form-group
+                      = f.input :country_id, required: false, input_html: {class: "form-control js-select2"},
+                        collection: Country.all,
+                        placeholder: I18n.t("administrate.select_option",
+                          option: CountryPicture.human_attribute_name(:country)),
+                        selected: f.object.country.try(:id),
+                        include_blank: true,
+                        label_method: -> (country) { "#{country.name}" }
+
+                    .col-md-12.form-group
+                      = f.label :image
+                      - image = f.object.image
+                      - if image.present?
+                        %br
+                        = image_tag image.try(:smallthumb)
+                        %br
+                        %br
+                      = f.file_field :image
+                      %br
+
+                  .col-xs-12.text-right
+                    %br
+                    .col-xs-12
+                      #success
+                      = link_to :back, class: "btn btn-default ml10" do
+                        %span
+                          %b
+                            CANCELAR
+                      %button.btn.btn-primary{type: "submit"} Aceptar
+
+
+  = render "/shared/simple_footer"

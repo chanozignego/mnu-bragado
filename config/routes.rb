@@ -156,6 +156,7 @@ Rails.application.routes.draw do
 
   get "/inscriptions", controller: "inscriptions", action: :index
   get "/open_data", controller: "open_data", action: :index
+  get "/imagenes/qr", controller: "country_pictures", action: :new
   resources :delegate_inscriptions do
     member do
       get :accepted
@@ -187,6 +188,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :country_pictures do 
+  end
+
   resources :folders
   resources :archives do
     collection do
@@ -194,6 +198,7 @@ Rails.application.routes.draw do
       get :schedule
       get :countries
       get :concourse
+      get :collect
     end
   end
   resource :query
