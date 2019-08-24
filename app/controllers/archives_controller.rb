@@ -30,4 +30,8 @@ class ArchivesController < ApplicationController
     redirect_to "/img/colecta.pdf"
   end
 
+  def magazine
+    redirect_to "/img/revista.pdf"
+  end
+
 end

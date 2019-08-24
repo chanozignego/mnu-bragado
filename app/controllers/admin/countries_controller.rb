@@ -29,9 +29,9 @@ module Admin
       @countries = Country.all
       respond_to do |format| 
         filename = "Paises-UMBragado-#{@current_year}.xls"
-        column_width = [25, 25, 25, 25, 25, 10, 10, 10, 10, 10, 10]
+        column_width = [25, 25, 25, 25, 25, 10, 10, 10, 10, 10, 10, 25]
         header = [["NOMBRE", "SLUG", "GRUPO REGIONAL", "ESTADO", "ESCUELA ASIGNADA", "AG", "STI", "CS", "G20", "ECOSOC", "TOTAL"]]
-        fields = [:name, :slug, :regional_group_name, :state_name, :school_name, :ag_translation, :sti_translation, :cs_translation, :g20_translation, :ecosoc_translation, :delegates_quantity]
+        fields = [:name, :slug, :regional_group_name, :state_name, :school_name, :ag_translation, :sti_translation, :cs_translation, :g20_translation, :ecosoc_translation, :delegates_quantity, :qr_path]
         format.xls { send_data(@countries.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
     end

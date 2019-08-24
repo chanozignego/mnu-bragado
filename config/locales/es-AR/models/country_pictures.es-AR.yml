@@ -1,0 +1,13 @@
+es-AR:
+  country_pictures: 
+  activerecord:
+    attributes:
+      country_pictures:
+        country: País
+        country_id: País
+        image: Imágen
+        file: Archivo
+    models:
+      country_pictures:
+        one: Imágen
+        other: Imágenes

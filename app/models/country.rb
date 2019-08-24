@@ -59,4 +59,8 @@ class Country < ActiveRecord::Base
     quantity
   end
 
+  def qr_path
+    "https://mnubragado.com/qr/#{slug}"
+  end
+
 end
