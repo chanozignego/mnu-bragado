@@ -1,14 +1,14 @@
-%section#certificate
+%section#certificate{style: "height: 980px;"}
   .row
     .col-xs-12
       .row
         .col-xs-12
           / = wicked_pdf_image_tag "/img/certificate/logos.jpg", style: "width: 100%; margin-top: 50px;"
-          = wicked_pdf_image_tag "/img/certificate/logos3.png", style: "width: 100%; margin-top: 50px;"
+          = wicked_pdf_image_tag "/img/certificate/logos3.png", style: "width: 100%; margin-top: 40px;"
 
       .row
         .col-xs-12
-          %p.text-center{style: "font-size: 32px; line-height: 2.1; margin-top: 75px; margin-bottom: 35px; padding-left: 10px; padding-right: 10px; font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;"}
+          %p.text-center{style: "font-size: 34px; line-height: 2.4; margin-top: 75px; margin-bottom: 45px; padding-left: 10px; padding-right: 10px; font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;"}
             Por cuanto 
             %span{style: "font-style: italic; font-weight: bold; margin-right: 10px; margin-left: 10px; border-bottom: 1px solid black;"}
               = @partaker.index_name
@@ -16,7 +16,8 @@
             %br
             30 de Agosto de 2019, Bragado, Buenos Aires.
 
-      .row
-        .col-xs-12
-          = wicked_pdf_image_tag "/img/certificate/signs.jpg", style: "width: 100%;height: 260px; position: fixed; bottom: 10;"
-          / = wicked_pdf_image_tag "/img/certificate/footer.jpg", style: "width: 100%;position: fixed;left: 0;bottom: 0;"
+  .row{style: "position: fixed; bottom: 0; left: 0"}
+    .col-xs-12
+      = wicked_pdf_image_tag "/img/certificate/signs.jpg", style: "width: 100%;height: 240px; padding-left: 60px; padding-right: 60px; padding-bottom: 40px;"
+      = #wicked_pdf_image_tag "/img/certificate/footer.jpg", style: "width: 100%; margin-top: 10px;"
+
