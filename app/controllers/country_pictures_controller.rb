@@ -6,7 +6,11 @@ class CountryPicturesController < ApplicationController
 
   def show
     @picture = CountryPicture.joins(:country).where("countries.slug = ?", params[:id]).last
-    redirect_to @picture.image.url
+    if @picture != nil && @picture.image.try(:url).present?
+      redirect_to @picture.image.url
+    else
+      render "/country_pictures/not_yet"
+    end
   end
 
   def create

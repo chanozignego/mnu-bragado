@@ -1,0 +1,21 @@
+%body#page-top.index
+  = render "/shared/simple_navbar"
+
+  = render "/shared/shared_header", id: "inscription"
+  
+  .container{style: "margin-top: -50px;"}
+    .row
+      .col-xs-12
+        %h1.text-center
+          ¡Upps!
+        %h3.text-center
+          Todavia no cargamos tu foto a la página :(. 
+          %br
+          Volvé más tarde para comprobar si ya está
+
+
+        %br
+        %br
+        %br
+
+  = render "/shared/simple_footer"
