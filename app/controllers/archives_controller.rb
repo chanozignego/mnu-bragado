@@ -34,4 +34,24 @@ class ArchivesController < ApplicationController
     redirect_to "/img/revista.pdf"
   end
 
+  def photos
+    redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1516690275140574"
+  end
+
+  def concourse_pics
+    redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1516697515139850"
+  end
+
+  def capacitations
+    redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1425863597556576"
+  end
+
+  def winners
+    redirect_to "/img/countries.pdf"
+  end
+
+  def collect_data
+    redirect_to "/img/colecta.pdf"
+  end
+
 end

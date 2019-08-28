@@ -159,6 +159,11 @@ Rails.application.routes.draw do
   get "/imagenes/qr", controller: "country_pictures", action: :new
   get "/qr/:id", controller: "country_pictures", action: :show
   get "/revista", controller: "archives", action: :magazine
+  get "/fotos", controller: "archives", action: :photos
+  get "/concurso/fotos", controller: "archives", action: :concourse_pics
+  get "/ganadores", controller: "archives", action: :winners
+  get "/capacitaciones", controller: "archives", action: :capacitations
+  get "/colecta", controller: "archives", action: :collect_data
   resources :delegate_inscriptions do
     member do
       get :accepted
