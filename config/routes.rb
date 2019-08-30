@@ -112,6 +112,7 @@ Rails.application.routes.draw do
     end
 
     namespace :partakers do
+      post :send_certificates
       post :export_to_excel
       post :export_with_diet
       post :export_with_medical_problems

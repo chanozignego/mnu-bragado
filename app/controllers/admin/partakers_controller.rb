@@ -18,6 +18,11 @@ module Admin
       end
     end 
 
+    def send_certificates
+      SendCertificateTask.run
+      redirect_to action: :index
+    end
+
     def export_to_excel
       generate_excel(scoped_collection, "Participantes")
     end
