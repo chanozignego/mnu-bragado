@@ -1,5 +1,16 @@
 class PartakersController < ApplicationController
 
+  def send_certificate
+    @partaker = Partaker.find(params[:id])
+    begin
+      PartakersMailer.newsletter_email(@partaker).deliver_now
+      @partaker.newsletter = true
+      @partaker.save!
+    rescue StandardError => e
+    end
+    redirect_to action: :accepted, id: @partaker.id
+  end
+
   def certificate
     @partaker = Partaker.find(params[:id])
     respond_to do |format|
