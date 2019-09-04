@@ -19,7 +19,7 @@ module Admin
     end 
 
     def send_certificates
-      SendCertificateTask.run
+      SendCertificateTask.run(Partaker)
       redirect_to action: :index
     end
 

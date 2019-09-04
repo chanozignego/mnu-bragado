@@ -1,12 +1,13 @@
 class SendCertificateTask
 
-  def self.run
-    Partaker.last(3).each do |partaker|
+  def self.run klass
+    klass.where(certificate: false).each do |person|
       begin
-        PartakersMailer.certificate_email(partaker).deliver
-        partaker.save!
+        PartakersMailer.certificate_email(person).deliver
+        person.certificate = true
+        person.save!
       rescue StandardError => e
-        puts "Error in: @{partaker.id}"
+        puts "Error in: @{person.id}"
       end
     end
   end

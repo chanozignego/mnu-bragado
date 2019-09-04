@@ -96,10 +96,12 @@ Rails.application.routes.draw do
 
     namespace :trainers do
       post :export_to_excel
+      post :send_certificates
     end
 
     namespace :professors do
       post :export_to_excel
+      post :send_certificates
     end
 
     namespace :schools do

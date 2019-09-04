@@ -23,4 +23,8 @@ class Trainer < ActiveRecord::Base
   	"#{first_name} #{last_name}"
   end
 
+  def index_name
+    "#{first_name} #{last_name}"
+  end
+
 end

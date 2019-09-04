@@ -13,6 +13,10 @@ class Professor < ActiveRecord::Base
   delegate :first_name, :last_name, :email, :dni, :birthdate, :phone_number, to: :person, allow_nil: true
   delegate :name, to: :school, prefix: true, allow_nil: true
 
+  def index_name
+    "#{first_name} #{last_name}"
+  end
+
   def full_name
   	"#{first_name} #{last_name}"
   end	

@@ -12,6 +12,11 @@ module Admin
       end
     end
 
+    def send_certificates
+      SendCertificateTask.run(Professor)
+      redirect_to action: :index
+    end
+
     private
 
       def permitted_attributes

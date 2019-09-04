@@ -1,7 +1,7 @@
 = link_to(admin_partakers_send_certificates_path(), method: :post, class: "btn btn-primary admin-header-buttons__item") do
   %span
     Enviar Certificados
-  %i.fa.fa-search.ml5
+  %i.fa.fa-envelope.ml5
 
 - if dashboard.implements_action?(:export_to_excel)
   = link_to(send("admin_#{page.resource_name.pluralize}_export_with_diet_path", {format: :xls}), method: :post, class: "btn btn-primary admin-header-buttons__item") do

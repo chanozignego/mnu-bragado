@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190820123122) do
+ActiveRecord::Schema.define(version: 20190904140454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -209,6 +209,8 @@ ActiveRecord::Schema.define(version: 20190820123122) do
     t.string   "school_year"
     t.boolean  "graduated",       default: false, null: false
     t.boolean  "paid",            default: false, null: false
+    t.boolean  "newsletter",      default: false, null: false
+    t.boolean  "certificate",     default: false, null: false
   end
 
   add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree
@@ -246,9 +248,11 @@ ActiveRecord::Schema.define(version: 20190820123122) do
   create_table "professors", force: :cascade do |t|
     t.integer  "people_id"
     t.integer  "medical_data_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "school_id"
+    t.boolean  "newsletter",      default: false, null: false
+    t.boolean  "certificate",     default: false, null: false
   end
 
   add_index "professors", ["medical_data_id"], name: "index_professors_on_medical_data_id", using: :btree
@@ -324,6 +328,8 @@ ActiveRecord::Schema.define(version: 20190820123122) do
     t.string   "emergency_person"
     t.string   "emergency_person_relationship"
     t.string   "emergency_person_phone_number"
+    t.boolean  "newsletter",                         default: false, null: false
+    t.boolean  "certificate",                        default: false, null: false
   end
 
   add_index "trainers", ["medical_data_id"], name: "index_trainers_on_medical_data_id", using: :btree
