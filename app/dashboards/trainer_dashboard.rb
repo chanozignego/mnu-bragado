@@ -11,6 +11,7 @@ class TrainerDashboard < ApplicationDashboard
                 create: [:superadmin, :coordination, :commission], 
                 new: [:superadmin, :coordination, :commission], 
                 send_certificates:  [:superadmin, :coordination, :commission], 
+                send_newsletters:  [:superadmin, :coordination, :commission], 
                 change_password: [:superadmin, :coordination, :commission, :team_leader, :trainer], 
                 update_password: [:superadmin, :coordination, :commission, :team_leader, :trainer] 
               }

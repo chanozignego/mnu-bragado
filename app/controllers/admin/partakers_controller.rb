@@ -23,6 +23,11 @@ module Admin
       redirect_to action: :index
     end
 
+    def send_newsletters
+      SendNewsletterTask.run(Partaker)
+      redirect_to action: :index
+    end
+
     def export_to_excel
       generate_excel(scoped_collection, "Participantes")
     end

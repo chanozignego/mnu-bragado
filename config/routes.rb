@@ -97,11 +97,13 @@ Rails.application.routes.draw do
     namespace :trainers do
       post :export_to_excel
       post :send_certificates
+      post :send_newsletters
     end
 
     namespace :professors do
       post :export_to_excel
       post :send_certificates
+      post :send_newsletters
     end
 
     namespace :schools do
@@ -115,6 +117,7 @@ Rails.application.routes.draw do
 
     namespace :partakers do
       post :send_certificates
+      post :send_newsletters
       post :export_to_excel
       post :export_with_diet
       post :export_with_medical_problems

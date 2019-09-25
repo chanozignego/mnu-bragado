@@ -47,7 +47,7 @@ class ArchivesController < ApplicationController
   end
 
   def winners
-    redirect_to "/img/countries.pdf"
+    redirect_to "/img/ganadores.pdf"
   end
 
   def collect_data

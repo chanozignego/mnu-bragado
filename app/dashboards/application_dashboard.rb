@@ -20,6 +20,7 @@ class ApplicationDashboard < Administrate::BaseDashboard
                   accept:  [:superadmin, :coordination, :commission], 
                   check_participation:  [:superadmin, :coordination, :commission], 
                   send_certificates:  [:superadmin, :coordination, :commission], 
+                  send_newsletters:  [:superadmin, :coordination, :commission], 
                   export_with_diet: [:superadmin, :coordination, :commission], 
                   export_with_medical_problems: [:superadmin, :coordination, :commission], 
                   mass_assignment: [:superadmin, :coordination, :commission], 

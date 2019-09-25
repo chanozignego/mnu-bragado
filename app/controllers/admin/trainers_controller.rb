@@ -17,6 +17,11 @@ module Admin
       redirect_to action: :index
     end
 
+    def send_newsletters
+      SendNewsletterTask.run(Trainer)
+      redirect_to action: :index
+    end
+
     private
 
       def permitted_attributes
