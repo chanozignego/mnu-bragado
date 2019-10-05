@@ -10,7 +10,7 @@ class PartakersMailer < ApplicationMailer
     #   render_to_string(template: '/partakers/newsletter.pdf.haml', layout: 'application.pdf.haml', locals: {qr: @qr})
     # )
     
-    mail(to: @partaker.email, subject: "No te pierdas nada!!")
+    mail(to: @partaker.email, subject: "Para que no nos extrañes... mucho :)")
   end
 
   def certificate_email(partaker)
