@@ -39,7 +39,8 @@ class ArchivesController < ApplicationController
   end
 
   def concourse_pics
-    redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1516697515139850"
+    # redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1516697515139850"
+    redirect_to "/img/GanadoresODSabores.pdf"
   end
 
   def capacitations
