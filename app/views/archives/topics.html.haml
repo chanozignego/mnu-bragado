@@ -20,7 +20,7 @@
               - folders_group.each do |folder| 
                 .col-md-2.col-sm-3.portfolio-item.text-center
                   %a.portfolio-link{href: topics_archives_path(folder: folder[:section], folder_name: folder[:name]), style: "color: white; text-decoration: none;"}
-                    %img.img-responsive{:alt => "", :src => "/img/files/folder.png", style: "width: 175px; height: 150px;"}/
+                    %img.img-responsive{:alt => "", :src => "/img/files/folder.png", style: "height: 100px; margin: 0 auto;"}/
                     .portfolio-caption
                       %h4.text-center{style: "color: #333"}
                         = folder[:name]
@@ -34,7 +34,7 @@
                   - file_path = file.file_type == "folder" ? folder_path(id: file.id) : file.file.url
                   .col-md-2.col-sm-3.portfolio-item.text-center
                     %a.portfolio-link{href: file_path, style: "color: white; text-decoration: none;"}
-                      %img.img-responsive{:alt => "", :src => "/img/files/#{file.file_type}.png", style: "width: 175px; height: 150px;"}/
+                      %img.img-responsive{:alt => "", :src => "/img/files/#{file.file_type}.png", style: "height: 100px; margin: 0 auto;"}/
                       .portfolio-caption
                         %h4.text-center{style: "color: #333"}
                           = file.name
