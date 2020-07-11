@@ -7,7 +7,7 @@ class AuthorityInscription < Inscription
   validates :person, presence: true
   # validates :medical_data, presence: true
 
-  validates :accept_terms_and_conditions, presence: true, acceptance: true
+  validates :accept_terms_and_conditions, presence: true
 
   delegate :name, to: :professor, allow_nil: true, prefix: true
   delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
