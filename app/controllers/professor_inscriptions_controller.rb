@@ -6,7 +6,6 @@ class ProfessorInscriptionsController < ApplicationController
 
   def create
     @professor_inscription = ProfessorInscription.new(professor_inscription_params)
-
     if @professor_inscription.save
       begin
         increment_inscription_counter()
@@ -48,7 +47,7 @@ class ProfessorInscriptionsController < ApplicationController
     def permitted_attributes
       [
         :id, 
-        :school_id,
+        :school_id, :accept_terms_and_conditions,
         person_attributes: person_attributes,
         medical_data_attributes: medical_data_attributes
       ]

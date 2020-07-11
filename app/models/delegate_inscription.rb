@@ -5,8 +5,10 @@ class DelegateInscription < Inscription
   validates :professor, presence: true
   validates :professor_id, presence: true
   validates :person, presence: true
-  validates :medical_data, presence: true
+  # validates :medical_data, presence: true
   #validates :rol, presence: true #if its authority, not
+
+  validates :accept_terms_and_conditions, presence: true, acceptance: true
 
   delegate :name, to: :professor, allow_nil: true, prefix: true
   delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true

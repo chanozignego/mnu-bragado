@@ -7,11 +7,11 @@ class InscriptionsMailer < ApplicationMailer
     @school_inscription = inscription
     @qr = RQRCode::QRCode.new( "#{@school_inscription.id}", :size => 4, :level => :h )
 
-    attachments["Inscripcion#{@school_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@school_inscription.name}2020.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/school_inscriptions/show.pdf.haml', layout: 'application.pdf.haml', locals: {qr: @qr})
     )
     
-    mail(to: inscription.email, subject: "Bienvenido a MNU Bragado!")
+    mail(to: inscription.email, subject: "Bienvenido a UM Bragado!")
   end
 
   def professor_instructions_email(inscription)
@@ -19,11 +19,11 @@ class InscriptionsMailer < ApplicationMailer
     @professor_inscription = inscription
     @qr = RQRCode::QRCode.new( "#{@professor_inscription.id}", :size => 4, :level => :h )
 
-    attachments["Inscripcion#{@professor_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@professor_inscription.name}2020.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/professor_inscriptions/show.pdf.haml', layout: 'application.pdf.haml', locals: {qr: @qr})
     )
     
-    mail(to: inscription.email, subject: "Bienvenido a MNU Bragado!")
+    mail(to: inscription.email, subject: "Bienvenido a UM Bragado!")
   end
 
   def delegate_instructions_email(inscription)
@@ -31,11 +31,11 @@ class InscriptionsMailer < ApplicationMailer
     @delegate_inscription = inscription
     @qr = RQRCode::QRCode.new( "#{@delegate_inscription.id}", :size => 4, :level => :h )
 
-    attachments["Inscripcion#{@delegate_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@delegate_inscription.name}2020.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/delegate_inscriptions/show.pdf.haml', layout: 'application.pdf.haml', locals: {qr: @qr})
     )
     
-    mail(to: inscription.email, subject: "Bienvenido a MNU Bragado!")
+    mail(to: inscription.email, subject: "Bienvenido a UM Bragado!")
   end
 
   def authority_instructions_email(inscription)
@@ -43,11 +43,11 @@ class InscriptionsMailer < ApplicationMailer
     @authority_inscription = inscription
     @qr = RQRCode::QRCode.new( "#{@authority_inscription.id}", :size => 4, :level => :h )
 
-    attachments["Inscripcion#{@authority_inscription.name}2018.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["Inscripcion#{@authority_inscription.name}2020.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/authority_inscriptions/show.pdf.haml', layout: 'application.pdf.haml', locals: {qr: @qr})
     )
     
-    mail(to: inscription.email, subject: "Bienvenido a MNU Bragado!")
+    mail(to: inscription.email, subject: "Bienvenido a UM Bragado!")
   end
 
   def approved_inscription_email(email, inscription_type)

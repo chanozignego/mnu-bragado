@@ -3,7 +3,9 @@ class ProfessorInscription < Inscription
   validates :school, presence: true
   validates :school_id, presence: true
   validates :person, presence: true
-  validates :medical_data, presence: true
+  # validates :medical_data, presence: true
+
+  validates :accept_terms_and_conditions, presence: true
 
   delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
   delegate  :first_name, :last_name, :dni, :birthdate, :email, :phone_number, :age, 

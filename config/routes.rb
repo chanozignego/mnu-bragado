@@ -208,6 +208,8 @@ Rails.application.routes.draw do
   resources :archives do
     collection do
       get :topics
+      get :terms_and_conditions
+      get :privacy_policy
       get :schedule
       get :countries
       get :concourse

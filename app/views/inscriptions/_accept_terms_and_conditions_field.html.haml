@@ -1,0 +1,8 @@
+.col-md-12.form-group
+  .pull-right{style: 'padding-right: 20px; display: inline-flex;'}
+    %label{style: 'padding-right: 30px; padding-top: 15px;'}
+      He leído y acepto los 
+      %a{href: terms_and_conditions_archives_path} Términos y Condiciones
+      y la  
+      %a{href: privacy_policy_archives_path} Política de Privacidad
+    = f.input :accept_terms_and_conditions, as: :boolean, label: false, input_html: {style: "height: 20px !important; width: 20px !important; cursor: pointer;"}

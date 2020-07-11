@@ -42,7 +42,9 @@
     = f.input :orientation, as: :string, input_html: {class: "form-control"}
     %br
 
-.col-md-12
-  = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
-    = render 'inscriptions/medical_data_fields', f: variant_form, item: f.object
-  %br
+/ .col-md-12
+/   = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+/     = render 'inscriptions/medical_data_fields', f: variant_form, item: f.object
+/   %br
+
+= render 'inscriptions/accept_terms_and_conditions_field', f: f
