@@ -14,7 +14,7 @@
           .span.bold
             = MedicalDatum.human_attribute_name(:has_chronic_desease)
         .col-sm-9
-          - has_chronic_desease = resource.has_chronic_desease
+          - has_chronic_desease = resource.try(:has_chronic_desease)
           .span.label{class: "label-#{has_chronic_desease ? 'primary' : 'default'}"}
             = has_chronic_desease ? "Si" : "No"
 
@@ -24,13 +24,13 @@
             = MedicalDatum.human_attribute_name(:chronic_desease_detail)
         .col-sm-9
           .span
-            = resource.chronic_desease_detail
+            = resource.try(:chronic_desease_detail)
       .row.admin-detail-row
         .col-sm-3
           .span.bold
             = MedicalDatum.human_attribute_name(:take_medication)
         .col-sm-9
-          - take_medication = resource.take_medication
+          - take_medication = resource.try(:take_medication)
           .span.label{class: "label-#{take_medication ? 'primary' : 'default'}"}
             = take_medication ? "Si" : "No"
       .row.admin-detail-row
@@ -39,13 +39,13 @@
             = MedicalDatum.human_attribute_name(:medication_detail)
         .col-sm-9
           .span
-            = resource.medication_detail
+            = resource.try(:medication_detail)
       .row.admin-detail-row
         .col-sm-3
           .span.bold
             = MedicalDatum.human_attribute_name(:has_medical_background)
         .col-sm-9
-          - has_medical_background = resource.has_medical_background
+          - has_medical_background = resource.try(:has_medical_background)
           .span.label{class: "label-#{has_medical_background ? 'primary' : 'default'}"}
             = has_medical_background ? "Si" : "No"
       .row.admin-detail-row
@@ -54,13 +54,13 @@
             = MedicalDatum.human_attribute_name(:medical_background_detail)
         .col-sm-9
           .span
-            = resource.medical_background_detail
+            = resource.try(:medical_background_detail)
       .row.admin-detail-row
         .col-sm-3
           .span.bold
             = MedicalDatum.human_attribute_name(:has_allergy)
         .col-sm-9
-          - has_allergy = resource.has_allergy
+          - has_allergy = resource.try(:has_allergy)
           .span.label{class: "label-#{has_allergy ? 'primary' : 'default'}"}
             = has_allergy ? "Si" : "No"
       .row.admin-detail-row
@@ -69,13 +69,13 @@
             = MedicalDatum.human_attribute_name(:allergy_detail)
         .col-sm-9
           .span
-            = resource.allergy_detail
+            = resource.try(:allergy_detail)
       .row.admin-detail-row
         .col-sm-3
           .span.bold
             = MedicalDatum.human_attribute_name(:has_specific_diet)
         .col-sm-9
-          - has_specific_diet = resource.has_specific_diet
+          - has_specific_diet = resource.try(:has_specific_diet)
           .span.label{class: "label-#{has_specific_diet ? 'primary' : 'default'}"}
             = has_specific_diet ? "Si" : "No"
       .row.admin-detail-row
@@ -84,13 +84,13 @@
             = MedicalDatum.human_attribute_name(:specific_diet_detail)
         .col-sm-9
           .span
-            = resource.specific_diet_detail
+            = resource.try(:specific_diet_detail)
       .row.admin-detail-row
         .col-sm-3
           .span.bold
             = MedicalDatum.human_attribute_name(:is_vegetarian)
         .col-sm-9
-          - is_vegetarian = resource.is_vegetarian
+          - is_vegetarian = resource.try(:is_vegetarian)
           .span.label{class: "label-#{is_vegetarian ? 'primary' : 'default'}"}
             = is_vegetarian ? "Si" : "No"
 
@@ -113,18 +113,18 @@
                   = MedicalDatum.human_attribute_name(:doctor_name)
               .col-sm-9
                 .span
-                  = resource.doctor_name
+                  = resource.try(:doctor_name)
             .row.admin-detail-row
               .col-sm-3
                 .span.bold
                   = MedicalDatum.human_attribute_name(:doctor_phone_number)
               .col-sm-9
                 .span
-                  = resource.doctor_phone_number
+                  = resource.try(:doctor_phone_number)
             .row.admin-detail-row
               .col-sm-3
                 .span.bold
                   = MedicalDatum.human_attribute_name(:urgency_clinic)
               .col-sm-9
                 .span
-                  = resource.urgency_clinic
+                  = resource.try(:urgency_clinic)
