@@ -18,8 +18,8 @@ module Admin
       respond_to do |format| 
         filename = "Inscriptiones-UMBragado-#{@current_year}.xls"
         column_width = [40, 40, 40, 40, 20]
-        header = [["ID", "NOMBRE", "TIPO", "ESCUELA", "YA APROBADO"]]
-        fields = [:id, :name, :type_name, :school_name, :formatted_already_approved]
+        header = [["ID", "NOMBRE", "EMAIL", "TIPO", "ESCUELA", "YA APROBADO"]]
+        fields = [:id, :name, :person_email, :type_name, :school_name, :formatted_already_approved]
         format.xls { send_data(@inscriptions.to_xls(only: fields, header: false, column_width: column_width, prepend: header) , filename: filename) }
       end
     end
