@@ -16,6 +16,7 @@ class Inscription < ActiveRecord::Base
   belongs_to :school, class_name: "School"
 
   delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
+  delegate :email, to: :person, allow_nil: true, prefix: true
 
   # delegate :name, :location_city, :location_province, to: :school, allow_nil: true, prefix: true
   # delegate :first_name, :last_name, :dni, :birthdate, :email, :phone_number, to: :person, allow_nil: true
