@@ -34,6 +34,10 @@ class ArchivesController < ApplicationController
     redirect_to "/img/revista.pdf"
   end
 
+  def um_folder
+    redirect_to "/folder/samples/docs/index.html"
+  end
+
   def photos
     redirect_to "https://www.facebook.com/pg/ModeloNacionesUnidasBragado/photos/?tab=album&album_id=1516690275140574"
   end

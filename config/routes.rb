@@ -170,6 +170,7 @@ Rails.application.routes.draw do
   get "/ganadores", controller: "archives", action: :winners
   get "/capacitaciones", controller: "archives", action: :capacitations
   get "/colecta", controller: "archives", action: :collect_data
+  get "/carpeta", controller: "archives", action: :um_folder
   resources :delegate_inscriptions do
     member do
       get :accepted
@@ -215,6 +216,7 @@ Rails.application.routes.draw do
       get :concourse
       get :collect
       get :magazine
+      get :um_folder
     end
   end
   resource :query
