@@ -5,8 +5,8 @@ default: &default
 
 with_username_and_password: &with_username_and_password
   host:     <%= ENV["DATABASE_HOST"] || "localhost" %>
-  username: <%= ENV["DB_USERNAME"] || ENV["DATABASE_USER"] || "dev"  %>
-  password: <%= ENV["DB_PASSWORD"] || ENV["DATABASE_PASSWORD"] || "dev"  %>
+  username: <%= ENV["DB_USERNAME"] || ENV["DATABASE_USER"] || "adminepicast" || "dev"  %>
+  password: <%= ENV["DB_PASSWORD"] || ENV["DATABASE_PASSWORD"] || "adminepicast" || "dev"  %>
 
 development:
   <<: *default
