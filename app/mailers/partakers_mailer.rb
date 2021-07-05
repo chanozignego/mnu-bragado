@@ -17,7 +17,7 @@ class PartakersMailer < ApplicationMailer
     @name = partaker.index_name
     @partaker = partaker
 
-    attachments["#{@partaker.index_name}-Certificado2020.pdf"] = WickedPdf.new.pdf_from_string(
+    attachments["#{@partaker.index_name}-Certificado2021.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string(template: '/partakers/certificate.pdf.haml', 
                         layout: 'application.pdf.haml', 
                         locals: {partaker: @partaker}), 
