@@ -24,7 +24,7 @@ class AuthorityInscriptionsController < ApplicationController
     respond_to do |format|
       format.pdf do
         @qr = RQRCode::QRCode.new( "#{@authority_inscription.id}", :size => 4, :level => :h )
-        render  pdf: "#{@authority_inscription.name}-Inscripcion2018", show_as_html: false, layout: "application.pdf.haml"
+        render  pdf: "#{@authority_inscription.name}-Inscripcion2021", show_as_html: false, layout: "application.pdf.haml"
       end
     end
   end
@@ -50,6 +50,7 @@ class AuthorityInscriptionsController < ApplicationController
         :rol, :school_id, :professor_id, :participated, 
         :school_year, :orientation, :graduated,
         :accept_terms_and_conditions,
+        :tutors_email, :presential_activities,
         person_attributes: person_attributes,
         medical_data_attributes: medical_data_attributes
       ]

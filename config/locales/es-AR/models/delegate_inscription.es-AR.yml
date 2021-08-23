@@ -59,6 +59,8 @@ es-AR:
         type_eq: Delegado/Autoridad
         has_diet_eq: Dieta
         has_medical_problems_eq: Problemas médicos
+        tutors_email: Correo eléctronico del tutor legal
+        presential_activities: ¿Desea participar de actividades presenciales?
         created_at: Fecha de creación
         updated_at: Última actualización
     models:

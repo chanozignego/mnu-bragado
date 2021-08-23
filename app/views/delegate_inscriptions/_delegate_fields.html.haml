@@ -42,9 +42,17 @@
     = f.input :orientation, as: :string, input_html: {class: "form-control"}
     %br
 
-/ .col-md-12
-/   = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
-/     = render 'inscriptions/medical_data_fields', f: variant_form, item: f.object
-/   %br
+.col-md-12
+  = f.simple_fields_for :medical_data, f.object.medical_data || f.object.build_medical_data do |variant_form|
+    = render 'inscriptions/medical_data_fields', f: variant_form, item: f.object
+  %br
+
+.col-md-12
+  %br
+  .col-md-12.form-group
+    = f.input :tutors_email, required: false, input_html: {class: "form-control"}
+
+  .col-md-12.form-group
+    = f.input :presential_activities, as: :select, collection: [["Si", true], ["No", false]], selected: f.object.presential_activities, input_html: {class: "form-control js-select2"}
 
 = render 'inscriptions/accept_terms_and_conditions_field', f: f

@@ -23,6 +23,8 @@ class InscriptionsService
       authority.graduated = inscription.graduated
       authority.year = get_current_year
       authority.participated = inscription.participated
+      authority.tutors_email = inscription.tutors_email
+      authority.presential_activities = inscription.presential_activities
       return authority.save, authority
     end
 
@@ -37,6 +39,8 @@ class InscriptionsService
       delegate.orientation = inscription.orientation
       delegate.participated = inscription.participated
       delegate.year = get_current_year
+      delegate.tutors_email = inscription.tutors_email
+      delegate.presential_activities = inscription.presential_activities
       return delegate.save, delegate
     end
 

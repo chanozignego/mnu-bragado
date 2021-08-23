@@ -45,6 +45,8 @@ es-AR:
         has_medical_problems_eq: Problemas médicos
         rol_eq: Órgano
         type_eq: Delegado/Autoridad
+        tutors_email: Correo eléctronico del tutor legal
+        presential_activities: ¿Desea participar de actividades presenciales?
     models:
       delegate:
         one: Delegado

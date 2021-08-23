@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200711035102) do
+ActiveRecord::Schema.define(version: 20210823105252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,8 @@ ActiveRecord::Schema.define(version: 20200711035102) do
     t.boolean  "graduated",                   default: false, null: false
     t.boolean  "already_approved",            default: false, null: false
     t.boolean  "accept_terms_and_conditions", default: false, null: false
+    t.string   "tutors_email"
+    t.boolean  "presential_activities",       default: false, null: false
   end
 
   add_index "inscriptions", ["location_id"], name: "index_inscriptions_on_location_id", using: :btree
@@ -199,19 +201,21 @@ ActiveRecord::Schema.define(version: 20200711035102) do
     t.integer  "medical_data_id"
     t.integer  "professor_id"
     t.integer  "school_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "rol"
     t.string   "type"
     t.integer  "year"
-    t.boolean  "participated",    default: false
+    t.boolean  "participated",          default: false
     t.integer  "delegation_id"
     t.string   "orientation"
     t.string   "school_year"
-    t.boolean  "graduated",       default: false, null: false
-    t.boolean  "paid",            default: false, null: false
-    t.boolean  "newsletter",      default: false, null: false
-    t.boolean  "certificate",     default: false, null: false
+    t.boolean  "graduated",             default: false, null: false
+    t.boolean  "paid",                  default: false, null: false
+    t.boolean  "newsletter",            default: false, null: false
+    t.boolean  "certificate",           default: false, null: false
+    t.string   "tutors_email"
+    t.boolean  "presential_activities", default: true,  null: false
   end
 
   add_index "partakers", ["delegation_id"], name: "index_partakers_on_delegation_id", using: :btree

@@ -81,5 +81,23 @@
 
           = render 'admin/shared/show/medical_data_section', page: page, title: Delegate.human_attribute_name(:medical_data), resource: page.resource.medical_data
 
+          %br
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:tutors_email)
+            .col-sm-9
+              .span
+                = page.resource.tutors_email
+
+          .row.admin-detail-row
+            .col-sm-3
+              .span.bold
+                = Delegate.human_attribute_name(:presential_activities)
+            .col-sm-9
+              - presential = page.resource.presential_activities
+              .span.label{class: "label-#{presential ? 'primary' : 'default'}"}
+                = presential ? "Si" : "No"
+
       .item-actions{style: "margin: 20px;"}
         = render 'item_actions', page: page

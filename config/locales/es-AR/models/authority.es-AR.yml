@@ -40,6 +40,8 @@ es-AR:
         has_diet_eq: Dieta
         paid_eq: Pagó?
         has_medical_problems_eq: Problemas médicos
+        tutors_email: Correo eléctronico del tutor legal
+        presential_activities: ¿Desea participar de actividades presenciales?
     models:
       authority:
         one: Autoridad

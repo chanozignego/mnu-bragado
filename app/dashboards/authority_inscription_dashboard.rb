@@ -45,6 +45,8 @@ class AuthorityInscriptionDashboard < ApplicationDashboard
     doctor_name: Field::String, 
     doctor_phone_number: Field::String,
     urgency_clinic: Field::String,
+    tutors_email: Field::String,
+    presential_activities: LabeledBooleanField,
     created_at: Field::DateTime
   }
 
