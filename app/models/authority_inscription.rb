@@ -5,7 +5,7 @@ class AuthorityInscription < Inscription
   validates :professor, presence: true, if: -> {!graduated}
   validates :professor_id, presence: true, if: -> {!graduated}
   validates :person, presence: true
-  # validates :medical_data, presence: true
+  validates :medical_data, presence: true
 
   validates :accept_terms_and_conditions, presence: true
 

@@ -19,55 +19,55 @@
 .col-xs-6
   = f.input :email, required: false, input_html: {class: "form-control"}
   %br
-/ .col-xs-6
-/   = f.input :blood_type, required: false, input_html: {class: "form-control js-select2"}, 
-/       include_blank: true, 
-/       collection: Person::BLOOD_TYPES,
-/       placeholder: I18n.t("administrate.select_option",
-/         option: Person.human_attribute_name(:blood_type)),
-/       selected: f.object.blood_type
-/   %br
-/ .col-xs-6
-/   = f.input :rh_factor, required: false, input_html: {class: "form-control js-select2"}, 
-/       include_blank: true, 
-/       collection: Person::RH_BLOOD_FACTORS,
-/       placeholder: I18n.t("administrate.select_option",
-/         option: Person.human_attribute_name(:rh_factor)),
-/       selected: f.object.rh_factor
-/   %br
+.col-xs-6
+  = f.input :blood_type, required: false, input_html: {class: "form-control js-select2"}, 
+      include_blank: true, 
+      collection: Person::BLOOD_TYPES,
+      placeholder: I18n.t("administrate.select_option",
+        option: Person.human_attribute_name(:blood_type)),
+      selected: f.object.blood_type
+  %br
+.col-xs-6
+  = f.input :rh_factor, required: false, input_html: {class: "form-control js-select2"}, 
+      include_blank: true, 
+      collection: Person::RH_BLOOD_FACTORS,
+      placeholder: I18n.t("administrate.select_option",
+        option: Person.human_attribute_name(:rh_factor)),
+      selected: f.object.rh_factor
+  %br
 
-/ .col-xs-12
-/   .admin-common-panel
-/     .col-xs-12.admin-common-panel__header
-/       .col-xs-12
-/         %h5
-/           = Person.human_attribute_name(:medical_insurance)
-/     .row
-/       .col-xs-12.admin-common-panel__content
-/         .col-xs-4
-/           = f.input :medical_insurance, required: false, input_html: {class: "form-control"}
-/         .col-xs-4
-/           = f.input :medical_insurance_affiliate_number, required: false, input_html: {class: "form-control"}
-/         .col-xs-4
-/           = f.input :medical_insurance_phone_number, required: false, input_html: {class: "form-control"}
+.col-xs-12
+  .admin-common-panel
+    .col-xs-12.admin-common-panel__header
+      .col-xs-12
+        %h5
+          = Person.human_attribute_name(:medical_insurance)
+    .row
+      .col-xs-12.admin-common-panel__content
+        .col-xs-4
+          = f.input :medical_insurance, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :medical_insurance_affiliate_number, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :medical_insurance_phone_number, required: false, input_html: {class: "form-control"}
 
-/   %br
+  %br
 
-/ .col-xs-12
-/   .admin-common-panel
-/     .col-xs-12.admin-common-panel__header
-/       .col-xs-12
-/         %h5
-/           = Person.human_attribute_name(:in_case_of_emergency)
-/     .row
-/       .col-xs-12.admin-common-panel__content
-/         .col-xs-4
-/           = f.input :emergency_person, required: false, input_html: {class: "form-control"}
-/         .col-xs-4
-/           = f.input :emergency_person_phone_number, required: false, input_html: {class: "form-control"}
-/         .col-xs-4
-/           = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
+.col-xs-12
+  .admin-common-panel
+    .col-xs-12.admin-common-panel__header
+      .col-xs-12
+        %h5
+          = Person.human_attribute_name(:in_case_of_emergency)
+    .row
+      .col-xs-12.admin-common-panel__content
+        .col-xs-4
+          = f.input :emergency_person, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :emergency_person_phone_number, required: false, input_html: {class: "form-control"}
+        .col-xs-4
+          = f.input :emergency_person_relationship, required: false, input_html: {class: "form-control"}
 
-/   %br
+  %br
 
 = javascript_include_tag "admin/person/form"
