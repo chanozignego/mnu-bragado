@@ -4,36 +4,34 @@
   %br
   %br
 
-.col-xs-12
-  .col-xs-2.form-group
-    = f.input :id, required: false, input_html: {class: "form-control"}
-  
-  - if f.object.graduated  
-    .col-xs-10.form-group
-      %label ¿Ya egresó?
-      .form-control SI
-  - else
-    .col-xs-5.form-group
-      = f.input :school, required: false, input_html: {class: "form-control"}
+.col-xs-2.form-group
+  = f.input :id, required: false, input_html: {class: "form-control"}
 
-    .col-xs-5.form-group
-      = f.input :professor, required: false, input_html: {class: "form-control"}
+- if f.object.graduated  
+  .col-xs-10.form-group
+    %label ¿Ya egresó?
+    .form-control SI
+- else
+  .col-xs-5.form-group
+    = f.input :school, required: false, input_html: {class: "form-control"}
+
+  .col-xs-5.form-group
+    = f.input :professor, required: false, input_html: {class: "form-control"}
 
 
-.col-md-12
-  = f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
-    .col-xs-4
-      = variant_form.input :first_name, required: false, input_html: {class: "form-control"}
-      %br
-    .col-xs-4
-      = variant_form.input :last_name, required: false, input_html: {class: "form-control"}
-      %br
-    .col-xs-4
-      = variant_form.input :dni, required: false, input_html: {class: "form-control"}
-      %br
+= f.simple_fields_for :person, f.object.person || f.object.build_person do |variant_form|
+  .col-xs-4
+    = variant_form.input :first_name, required: false, input_html: {class: "form-control"}
+    %br
+  .col-xs-4
+    = variant_form.input :last_name, required: false, input_html: {class: "form-control"}
+    %br
+  .col-xs-4
+    = variant_form.input :dni, required: false, input_html: {class: "form-control"}
+    %br
 
   %br
   %br
   %br
 
-= render '/inscriptions/partaker_authorization_section', show_school: !f.object.graduated
+= render '/inscriptions/partaker_authorization_section', show_school: !f.object.graduated, school: f.object.school_name
