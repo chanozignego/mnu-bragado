@@ -15,7 +15,7 @@ class PartakersController < ApplicationController
     @partaker = Partaker.find(params[:id])
     respond_to do |format|
       format.pdf do
-        render  pdf: "#{@partaker.index_name}-Certificado2021",
+        render  pdf: "#{@partaker.index_name}-Certificado2022",
                 show_as_html: false, 
                 page_size: 'A4', 
                 orientation: "Landscape", 
@@ -41,7 +41,7 @@ class PartakersController < ApplicationController
     @partaker = Partaker.find(params[:id])
     respond_to do |format|
       format.pdf do
-        render  pdf: "#{@partaker.index_name}-Certificado2021",
+        render  pdf: "#{@partaker.index_name}-Certificado2022",
                 show_as_html: false, 
                 page_size: 'A4', 
                 orientation: "Landscape", 

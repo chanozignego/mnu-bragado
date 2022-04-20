@@ -24,7 +24,7 @@ class DelegateInscriptionsController < ApplicationController
     respond_to do |format|
       format.pdf do
         @qr = RQRCode::QRCode.new( "#{@delegate_inscription.id}", :size => 4, :level => :h )
-        render  pdf: "#{@delegate_inscription.name}-Inscripcion2021", show_as_html: false, layout: "application.pdf.haml"
+        render  pdf: "#{@delegate_inscription.name}-Inscripcion2022", show_as_html: false, layout: "application.pdf.haml"
       end
     end
   end
