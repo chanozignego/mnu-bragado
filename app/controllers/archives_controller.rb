@@ -7,7 +7,7 @@ class ArchivesController < ApplicationController
                 {name: "Sala de Tratados", section: "sti"},
                 {name: "Consejo de Seguridad", section: "cs"},
                 {name: "ECOSOC", section: "ecosoc"},
-                {name: "ONU Mujeres", section: "onumujeres"},
+                {name: "Consejo de Derechos Humanos", section: "cddhh"},
                 {name: "Autoridades", section: "authorities"}
               ]
     @folder_name = params[:folder_name]
